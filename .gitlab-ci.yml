@@ -28,6 +28,7 @@ build_web:
     - master
 
 staging_web:
+  image: node:10
   stage: deploy
   script:
     - npx firebase-tools
