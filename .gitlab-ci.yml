@@ -8,6 +8,7 @@ stages:
     - git clone https://github.com/flutter/flutter.git -b stable --depth 1
     - export PATH=$PATH:$PWD/flutter/bin
     - flutter packages get
+    - flutter clean
 
 test:
   stage: test
@@ -18,8 +19,6 @@ test:
 build_web:
   stage: build
   extends: .flutter
-  before_script:
-    - flutter clean
   script:
     - flutter build web
   artifacts:
