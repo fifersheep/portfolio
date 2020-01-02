@@ -6,6 +6,7 @@ stages:
 .flutter:
   image: cirrusci/flutter:stable-web
   before_script:
+    - flutter config --enable-web
     - flutter packages get
     - flutter clean
 
