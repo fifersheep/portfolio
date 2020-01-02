@@ -1,0 +1,34 @@
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  stage: test
+  script:
+    - flutter test
+  tags:
+    - flutter
+
+build_web:
+  stage: build
+  before_script:
+    - flutter packages get
+    - flutter clean
+  script:
+    - flutter build web
+  tags:
+    - flutter
+  only:
+    - master
+
+staging_web:
+  stage: deploy
+  script:
+    - npx firebase-tools
+    - firebase use --token $FIREBASE_HOSTING_KEY
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_HOSTING_KEY
+  tags:
+    - firebase
+  only:
+    - master
