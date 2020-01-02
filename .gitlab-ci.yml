@@ -4,10 +4,8 @@ stages:
   - deploy
 
 .flutter:
+  image: cirrusci/flutter:stable-web
   before_script:
-    - git clone https://github.com/flutter/flutter.git -b beta --depth 1
-    - export PATH=$PATH:$PWD/flutter/bin
-    - flutter config --enable-web
     - flutter packages get
     - flutter clean
 
@@ -34,7 +32,5 @@ staging_web:
     - npx firebase-tools
     - firebase use --token $FIREBASE_HOSTING_KEY
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_HOSTING_KEY
-  tags:
-    - firebase
   only:
     - master
