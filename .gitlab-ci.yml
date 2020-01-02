@@ -4,22 +4,23 @@ stages:
   - deploy
 
 before_script:
-  - flutter config --enable-web
-  - flutter doctor
-  - flutter packages get
+  - git clone https://github.com/flutter/flutter.git -b beta --depth 1
+  - ./flutter/bin/flutter config --enable-web
+  - ./flutter/bin/flutter doctor
+  - ./flutter/bin/flutter packages get
 
 test:
   stage: test
   script:
-    - flutter test
+    - ./flutter/bin/flutter test
 
 build_web:
   stage: build
   before_script:
-    - flutter packages get
-    - flutter clean
+    - ./flutter/bin/flutter packages get
+    - ./flutter/bin/flutter clean
   script:
-    - flutter build web
+    - ./flutter/bin/flutter build web
   artifacts:
     paths:
       - build/web
