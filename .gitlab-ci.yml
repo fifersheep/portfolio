@@ -3,12 +3,15 @@ stages:
   - build
   - deploy
 
+before_script:
+  - flutter config --enable-web
+  - flutter doctor
+  - flutter packages get
+
 test:
   stage: test
   script:
     - flutter test
-  tags:
-    - flutter
 
 build_web:
   stage: build
@@ -17,8 +20,9 @@ build_web:
     - flutter clean
   script:
     - flutter build web
-  tags:
-    - flutter
+  artifacts:
+    paths:
+      - build/web
   only:
     - master
 
