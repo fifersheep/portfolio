@@ -3,24 +3,25 @@ stages:
   - build
   - deploy
 
-before_script:
-  - git clone https://github.com/flutter/flutter.git -b beta --depth 1
-  - ./flutter/bin/flutter config --enable-web
-  - ./flutter/bin/flutter doctor
-  - ./flutter/bin/flutter packages get
+.flutter:
+  before_script:
+    - git clone https://github.com/flutter/flutter.git -b stable --depth 1
+    - export PATH=$PATH:$PWD/flutter/bin
+    - flutter packages get
 
 test:
   stage: test
+  extends: .flutter
   script:
-    - ./flutter/bin/flutter test
+    - flutter test
 
 build_web:
   stage: build
+  extends: .flutter
   before_script:
-    - ./flutter/bin/flutter packages get
-    - ./flutter/bin/flutter clean
+    - flutter clean
   script:
-    - ./flutter/bin/flutter build web
+    - flutter build web
   artifacts:
     paths:
       - build/web
