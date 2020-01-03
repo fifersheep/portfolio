@@ -31,7 +31,7 @@ staging_web:
   image: node:10
   stage: deploy
   script:
-    - npx firebase-tools
+    - npm i -g firebase-tools
     - firebase use --token $FIREBASE_HOSTING_KEY
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_HOSTING_KEY
   only:
