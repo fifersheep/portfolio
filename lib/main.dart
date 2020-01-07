@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/theme/theme.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,9 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Scott Laing - Portfolio',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: appTheme,
       home: MyHomePage(title: 'Scott Laing - Portfolio'),
     );
   }
