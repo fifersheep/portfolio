@@ -24,8 +24,6 @@ build_web:
   artifacts:
     paths:
       - build/web
-  only:
-    - master
 
 staging_web:
   image: node:10
