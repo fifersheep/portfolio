@@ -74,6 +74,7 @@ List<Widget> _menuItems(
     BuildContext context, String activeRoute, List<NavigationItem> items) {
   return items
       .map((item) => ListTile(
+            key: Key(item.label),
             title: Text(item.label),
             leading: Icon(item.icon),
             onTap: () {

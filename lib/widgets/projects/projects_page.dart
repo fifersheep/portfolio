@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../navigation/navigation_drawer.dart';
 
 class ProjectsPage extends StatelessWidget {
+  const ProjectsPage();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
