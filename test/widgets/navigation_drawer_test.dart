@@ -32,7 +32,7 @@ void main() {
           routes: routes,
           home: Scaffold(
             appBar: AppBar(),
-            drawer: NavigationDrawer(),
+            drawer: NavigationDrawer(pinOpen: false),
           ),
         ));
 

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/theme/colors.dart';
 import 'navigation_route_observer.dart';
 import 'navigation_routes.dart';
 import 'navigation_header.dart';
 
 class NavigationDrawer extends StatefulWidget {
-  const NavigationDrawer({Key key}) : super(key: key);
+  const NavigationDrawer({Key key, @required this.pinOpen}) : super(key: key);
+
+  final bool pinOpen;
 
   @override
   _NavigationDrawerState createState() => _NavigationDrawerState();
@@ -43,7 +46,11 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
   }
 
   @override
-  Widget build(BuildContext context) => Drawer(
+  Widget build(BuildContext context) => Theme(
+      data: Theme.of(context).copyWith(
+        canvasColor: white,
+      ),
+      child: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -59,7 +66,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
             ])
           ],
         ),
-      );
+      ));
 }
 
 class NavigationItem {
