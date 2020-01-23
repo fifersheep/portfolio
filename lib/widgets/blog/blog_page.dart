@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../navigation/navigation_drawer.dart';
+import 'package:portfolio/page_scaffold.dart';
 
 class BlogPage extends StatelessWidget {
   const BlogPage();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Blog Title"),
-      ),
-      drawer: NavigationDrawer(),
+    return PageScaffold(
+      title: Text("Blog Title"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

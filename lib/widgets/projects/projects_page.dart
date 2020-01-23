@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../navigation/navigation_drawer.dart';
+import 'package:portfolio/page_scaffold.dart';
 
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Projects Title"),
-      ),
-      drawer: NavigationDrawer(),
+    return PageScaffold(
+      title: Text("Projects Title"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
