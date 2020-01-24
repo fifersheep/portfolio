@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/navigation/navigation_drawer.dart';
+import 'navigation/navigation_drawer.dart';
 
 class PageScaffold extends StatelessWidget {
   final Widget body;

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/page_scaffold.dart';
+import 'package:portfolio/widgets/page_scaffold.dart';
 
-class BlogPage extends StatelessWidget {
-  const BlogPage();
+class ProjectsPage extends StatelessWidget {
+  const ProjectsPage();
 
   @override
   Widget build(BuildContext context) {
     return PageScaffold(
-      title: Text("Blog Title"),
+      title: Text("Projects Title"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Blog Content',
+              'Projects Content',
             ),
           ],
         ),

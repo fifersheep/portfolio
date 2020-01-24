@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'page_transition.dart';
+import 'package:portfolio/widgets/navigation/page_transition.dart';
 import 'colors.dart';
 
 final ThemeData appTheme = ThemeData(

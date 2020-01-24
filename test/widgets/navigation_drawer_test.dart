@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
-import 'package:portfolio/widgets/blog/blog_page.dart';
-import 'package:portfolio/widgets/experience/experience_page.dart';
-import 'package:portfolio/widgets/intro/intro_page.dart';
+import 'package:portfolio/routes.dart';
+import 'package:portfolio/ui/blog/blog_page.dart';
+import 'package:portfolio/ui/experience/experience_page.dart';
+import 'package:portfolio/ui/intro/intro_page.dart';
+import 'package:portfolio/ui/projects/projects_page.dart';
 import 'package:portfolio/widgets/navigation/navigation_drawer.dart';
-import 'package:portfolio/widgets/navigation/navigation_routes.dart';
-import 'package:portfolio/widgets/projects/projects_page.dart';
+import 'package:mockito/mockito.dart';
 
 class MockNavigatorObserver extends Mock implements NavigatorObserver {}
 
@@ -29,7 +29,7 @@ void main() {
           (tester) async {
         await tester.pumpWidget(MaterialApp(
           navigatorObservers: [navigatorObserver],
-          routes: routes,
+          routes: NavigationRoute.routes,
           home: Scaffold(
             appBar: AppBar(),
             drawer: NavigationDrawer(pinOpen: false),

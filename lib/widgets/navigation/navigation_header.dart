@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/theme/colors.dart';
+import 'package:portfolio/constants/colors.dart';
 
 class NavigationHeader extends StatelessWidget {
   @override

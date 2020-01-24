@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'theme/theme.dart';
-import 'widgets/navigation/navigation_routes.dart';
 import 'widgets/navigation/navigation_route_observer.dart';
+import 'constants/theme.dart';
+import 'routes.dart';
 
 class App extends StatelessWidget {
   @override
@@ -11,7 +10,7 @@ class App extends StatelessWidget {
       title: 'Scott Laing - Portfolio',
       theme: appTheme,
       initialRoute: NavigationRoute.intro,
-      routes: routes,
+      routes: NavigationRoute.routes,
       navigatorObservers: [NavigationRouteObserver()],
     );
   }
