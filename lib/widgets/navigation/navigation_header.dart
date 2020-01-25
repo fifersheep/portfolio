@@ -3,15 +3,28 @@ import 'package:portfolio/constants/colors.dart';
 
 class NavigationHeader extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => UserAccountsDrawerHeader(
-        accountName: Text("Scott Laing"),
-        accountEmail: Text("Sowftware Engineer"),
-        currentAccountPicture: CircleAvatar(
-          child: Icon(
-            Icons.face,
-            color: white,
-          ),
-          backgroundColor: primaryDark,
+  Widget build(BuildContext context) => Container(
+        padding: EdgeInsets.all(24),
+        margin: EdgeInsets.only(bottom: 16),
+        color: primary,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            CircleAvatar(
+              child: Icon(
+                Icons.face,
+                color: white,
+              ),
+              radius: 48,
+              backgroundColor: primaryDark,
+            ),
+            Container(
+                margin: EdgeInsets.only(top: 16),
+                child: Text("Scott Laing",
+                    style: Theme.of(context).primaryTextTheme.display1)),
+            Text("Sowftware Engineer",
+                style: Theme.of(context).primaryTextTheme.subhead),
+          ],
         ),
       );
 }
