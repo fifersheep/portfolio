@@ -11,9 +11,8 @@ class NavigationHeader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
-              child: Icon(
-                Icons.face,
-                color: white,
+              backgroundImage: AssetImage(
+                'assets/images/avatar.jpeg',
               ),
               radius: 48,
               backgroundColor: primaryDark,
