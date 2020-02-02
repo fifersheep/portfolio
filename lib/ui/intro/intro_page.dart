@@ -7,7 +7,10 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageScaffold(
-      title: Text("Intro Title"),
+      title: Text(
+        "Introduction",
+        style: Theme.of(context).primaryTextTheme.title,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

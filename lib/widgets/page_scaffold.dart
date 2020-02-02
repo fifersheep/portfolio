@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'navigation/navigation_drawer.dart';
 
 class PageScaffold extends StatelessWidget {
-  final Widget body;
-  final Widget title;
+  PageScaffold({this.title, this.headerBackground, this.body});
 
-  PageScaffold({this.title, this.body});
+  final Widget title;
+  final Widget headerBackground;
+  final Widget body;
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +21,35 @@ class PageScaffold extends StatelessWidget {
           ),
         Expanded(
           child: Scaffold(
-            appBar: AppBar(
-              automaticallyImplyLeading: isMobile,
-              title: title,
-              elevation: 1,
-            ),
             drawer: isMobile
                 ? const NavigationDrawer(
                     pinOpen: false,
                   )
                 : null,
-            body: body,
+            body: CustomScrollView(
+              slivers: <Widget>[
+                SliverAppBar(
+                  pinned: true,
+                  automaticallyImplyLeading: isMobile,
+                  expandedHeight: 250.0,
+                  flexibleSpace: FlexibleSpaceBar(
+                    title: title,
+                    background: Image.asset(
+                      'assets/images/intro_bg.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      alignment: Alignment.center,
+                      child: body,
+                    )
+                  ]),
+                ),
+              ],
+            ),
           ),
         ),
       ],
