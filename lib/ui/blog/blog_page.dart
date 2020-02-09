@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/strings.dart';
 import 'package:portfolio/widgets/page_scaffold.dart';
 
 class BlogPage extends StatelessWidget {
@@ -7,7 +8,7 @@ class BlogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageScaffold(
-      title: Text("Blog Title"),
+      title: Text(Strings.of(context).blogTitle),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

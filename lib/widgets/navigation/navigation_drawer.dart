@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
+import 'package:portfolio/constants/strings.dart';
 import 'package:portfolio/routes.dart';
 import 'navigation_route_observer.dart';
 import 'navigation_header.dart';
@@ -56,13 +57,10 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
           children: <Widget>[
             NavigationHeader(),
             ..._menuItems(context, _activeRoute, [
-              const NavigationItem("Intro", Icons.face, NavigationRoute.intro),
-              const NavigationItem(
-                  "Projects", Icons.code, NavigationRoute.projects),
-              const NavigationItem(
-                  "Experience", Icons.assignment, NavigationRoute.experience),
-              const NavigationItem(
-                  "Blog", Icons.chat_bubble_outline, NavigationRoute.blog)
+              NavigationItem(Strings.of(context).navItemIntro, Icons.face, NavigationRoute.intro),
+              NavigationItem(Strings.of(context).navItemProjects, Icons.code, NavigationRoute.projects),
+              NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, NavigationRoute.experience),
+              NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, NavigationRoute.blog)
             ])
           ],
         ),
@@ -77,8 +75,7 @@ class NavigationItem {
   const NavigationItem(this.label, this.icon, this.route);
 }
 
-List<Widget> _menuItems(
-    BuildContext context, String activeRoute, List<NavigationItem> items) {
+List<Widget> _menuItems(BuildContext context, String activeRoute, List<NavigationItem> items) {
   return items
       .map((item) => ListTile(
             key: Key(item.label),

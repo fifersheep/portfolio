@@ -35,7 +35,7 @@ class PageScaffold extends StatelessWidget {
                   flexibleSpace: FlexibleSpaceBar(
                     title: title,
                     background: Image.asset(
-                      'assets/images/intro_bg.png',
+                      'assets/images/intro_bg.png', // todo: the intro bg in the page scaffold? pull this up.
                       fit: BoxFit.cover,
                     ),
                   ),

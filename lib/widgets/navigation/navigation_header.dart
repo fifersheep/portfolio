@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
+import 'package:portfolio/constants/strings.dart';
 
 class NavigationHeader extends StatelessWidget {
   @override
@@ -19,9 +20,9 @@ class NavigationHeader extends StatelessWidget {
             ),
             Container(
                 margin: EdgeInsets.only(top: 16),
-                child: Text("Scott Laing",
+                child: Text(Strings.of(context).navHeaderTitle,
                     style: Theme.of(context).primaryTextTheme.display1)),
-            Text("Sowftware Engineer",
+            Text(Strings.of(context).navHeaderSubtitle,
                 style: Theme.of(context).primaryTextTheme.subhead),
           ],
         ),
