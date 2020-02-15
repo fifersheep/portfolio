@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/images.dart';
 import 'package:portfolio/constants/strings.dart';
-import 'package:portfolio/widgets/heading_text.dart';
-import 'package:portfolio/widgets/page_scaffold.dart';
-import 'package:portfolio/widgets/paragraph_text.dart';
+import 'package:portfolio/ui/common/page_scaffold.dart';
+import 'package:portfolio/widgets/text/heading_text.dart';
+import 'package:portfolio/widgets/text/paragraph_text.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage();
 
   @override
   Widget build(BuildContext context) {
+    var strings = Strings.of(context);
+
     return PageScaffold(
-      title: Text(
-        Strings.of(context).introTitle,
-        style: Theme.of(context).primaryTextTheme.title,
-      ),
+      title: strings.introTitle,
+      headerBackground: Images.of(context).introHeaderBackground,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Heading(Strings.of(context).introHeader),
-          Paragraph(Strings.of(context).introContent),
+          Heading(strings.introHeader),
+          Paragraph(strings.introContent),
         ],
       ),
     );

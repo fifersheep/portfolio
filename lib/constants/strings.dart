@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class Strings extends InheritedWidget {
   static Strings of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<Strings>();
 
-  const Strings({Widget child, Key key}) : super(key: key, child: child);
+  const Strings({Key key, @required Widget child}) : super(key: key, child: child);
 
   @override
-  bool updateShouldNotify(Strings oldWidget) => false;
+  bool updateShouldNotify(Strings old) => false;
 
   final String appTitle = 'Scott Laing - Portfolio';
 

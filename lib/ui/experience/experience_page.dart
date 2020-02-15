@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/strings.dart';
-import 'package:portfolio/widgets/page_scaffold.dart';
+import 'package:portfolio/ui/common/page_scaffold.dart';
 
 class ExperiencePage extends StatelessWidget {
   const ExperiencePage();
@@ -8,7 +8,7 @@ class ExperiencePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageScaffold(
-      title: Text(Strings.of(context).experienceTitle),
+      title: Strings.of(context).experienceTitle,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

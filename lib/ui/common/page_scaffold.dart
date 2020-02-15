@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'navigation/navigation_drawer.dart';
+import '../../widgets/navigation/navigation_drawer.dart';
 
 class PageScaffold extends StatelessWidget {
   PageScaffold({this.title, this.headerBackground, this.body});
 
-  final Widget title;
-  final Widget headerBackground;
+  final String title;
+  final String headerBackground;
   final Widget body;
 
   @override
@@ -33,9 +33,12 @@ class PageScaffold extends StatelessWidget {
                   automaticallyImplyLeading: isMobile,
                   expandedHeight: 250.0,
                   flexibleSpace: FlexibleSpaceBar(
-                    title: title,
+                    title: Text(
+                      title,
+                      style: Theme.of(context).primaryTextTheme.headline6,
+                    ),
                     background: Image.asset(
-                      'assets/images/intro_bg.png', // todo: the intro bg in the page scaffold? pull this up.
+                      headerBackground,
                       fit: BoxFit.cover,
                     ),
                   ),

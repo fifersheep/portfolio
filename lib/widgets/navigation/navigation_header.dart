@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
+import 'package:portfolio/constants/images.dart';
 import 'package:portfolio/constants/strings.dart';
 
 class NavigationHeader extends StatelessWidget {
@@ -13,7 +14,7 @@ class NavigationHeader extends StatelessWidget {
           children: <Widget>[
             CircleAvatar(
               backgroundImage: AssetImage(
-                'assets/images/avatar.jpeg',
+                Images.of(context).avatar,
               ),
               radius: 48,
               backgroundColor: primaryDark,
