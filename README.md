@@ -14,4 +14,4 @@ My personal portfolio
 ## Releasing
 
 1. Generate build: `flutter build web`
-1. Deploy: `fiebase deploy`
+1. Deploy: `firebase deploy`
