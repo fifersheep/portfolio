@@ -35,7 +35,8 @@ class PageScaffold extends StatelessWidget {
                   flexibleSpace: FlexibleSpaceBar(
                     title: Text(
                       title,
-                      style: Theme.of(context).primaryTextTheme.headline6,
+                      // todo: this style seems to break on the CI, come back to this later
+                      // style: Theme.of(context).primaryTextTheme.headline6,
                     ),
                     background: headerBackground != null ? Image.asset(
                       headerBackground,

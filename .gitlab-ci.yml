@@ -4,7 +4,7 @@ stages:
   - deploy
 
 .flutter:
-  image: cirrusci/flutter:v1.12.13-hotfix.7-web
+  image: cirrusci/flutter:stable-web
   before_script:
     - flutter config --enable-web
     - flutter packages get
