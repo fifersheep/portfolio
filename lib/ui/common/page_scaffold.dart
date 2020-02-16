@@ -37,10 +37,10 @@ class PageScaffold extends StatelessWidget {
                       title,
                       style: Theme.of(context).primaryTextTheme.headline6,
                     ),
-                    background: Image.asset(
+                    background: headerBackground != null ? Image.asset(
                       headerBackground,
                       fit: BoxFit.cover,
-                    ),
+                    ) : null,
                   ),
                 ),
                 SliverList(
