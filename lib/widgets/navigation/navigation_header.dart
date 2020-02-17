@@ -22,9 +22,9 @@ class NavigationHeader extends StatelessWidget {
             Container(
                 margin: EdgeInsets.only(top: 16),
                 child: Text(Strings.of(context).navHeaderTitle,
-                    style: Theme.of(context).primaryTextTheme.display1)),
+                    style: Theme.of(context).primaryTextTheme.headline4)),
             Text(Strings.of(context).navHeaderSubtitle,
-                style: Theme.of(context).primaryTextTheme.subhead),
+                style: Theme.of(context).primaryTextTheme.headline6.apply(color: textOnPrimary)),
           ],
         ),
       );
