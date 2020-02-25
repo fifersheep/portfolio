@@ -8,7 +8,7 @@ class NavigationHeader extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         padding: EdgeInsets.all(24),
         margin: EdgeInsets.only(bottom: 16),
-        color: primary,
+        color: Theme.of(context).primaryColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -16,15 +16,15 @@ class NavigationHeader extends StatelessWidget {
               backgroundImage: AssetImage(
                 Images.of(context).avatar,
               ),
-              radius: 48,
-              backgroundColor: primaryDark,
+              radius: 64,
+              backgroundColor: Theme.of(context).primaryColorDark,
             ),
             Container(
                 margin: EdgeInsets.only(top: 16),
                 child: Text(Strings.of(context).navHeaderTitle,
-                    style: Theme.of(context).primaryTextTheme.headline4)),
+                    style: Theme.of(context).primaryTextTheme.headline4.apply(color: textOnPrimary))),
             Text(Strings.of(context).navHeaderSubtitle,
-                style: Theme.of(context).primaryTextTheme.headline6.apply(color: textOnPrimary)),
+                style: Theme.of(context).primaryTextTheme.subtitle1),
           ],
         ),
       );

@@ -31,7 +31,7 @@ class PageScaffold extends StatelessWidget {
                 SliverAppBar(
                   pinned: true,
                   automaticallyImplyLeading: isMobile,
-                  expandedHeight: 250.0,
+                  expandedHeight: 300.0,
                   flexibleSpace: FlexibleSpaceBar(
                     title: Text(
                       title,
@@ -46,9 +46,12 @@ class PageScaffold extends StatelessWidget {
                 SliverList(
                   delegate: SliverChildListDelegate([
                     Container(
-                      alignment: Alignment.center,
-                      child: body,
-                    )
+                        alignment: Alignment.center,
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: 1200.0),
+                          child: body,
+                        ),
+                      ),
                   ]),
                 ),
               ],
