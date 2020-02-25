@@ -4,11 +4,8 @@ import 'colors.dart';
 
 final ThemeData appTheme = ThemeData(
   brightness: Brightness.light,
-  primaryColor: primary,
-  primaryTextTheme: Typography.material2018().white.apply(
-        bodyColor: textOnPrimary,
-        displayColor: textOnPrimary,
-      ),
+  primarySwatch: ThemeColors.primary,
+  typography: Typography.material2018(),
   dividerColor: Colors.grey,
   fontFamily: 'Montserrat',
   pageTransitionsTheme: pageTransitionsTheme(),
