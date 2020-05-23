@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/constants/images.dart';
+import 'package:injectable/injectable.dart';
+import 'package:portfolio/injection.dart';
+import 'package:portfolio/presentation/constants/images.dart';
 
-import 'app.dart';
-import 'constants/strings.dart';
+import 'presentation/app.dart';
+import 'presentation/constants/strings.dart';
 
-void main() => runApp(Images(child: Strings(child: App())));
+void main() {
+  configureInjection(Environment.prod);
+  runApp(Images(child: Strings(child: App())));
+}
