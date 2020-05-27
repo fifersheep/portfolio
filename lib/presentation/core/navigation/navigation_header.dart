@@ -12,12 +12,20 @@ class NavigationHeader extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            CircleAvatar(
-              backgroundImage: AssetImage(
-                Images.of(context).avatar,
+            Container(
+              width: 128,
+              height: 128,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(
+                  Images.of(context).avatar,
+                )),
+                shape: BoxShape.circle,
+                color: Theme.of(context).primaryColorDark,
+                border: Border.all(
+                  width: 2,
+                  color: Theme.of(context).primaryTextTheme.headline6.color,
+                ),
               ),
-              radius: 64,
-              backgroundColor: Theme.of(context).primaryColorDark,
             ),
             Container(
                 margin: const EdgeInsets.only(top: 16),
