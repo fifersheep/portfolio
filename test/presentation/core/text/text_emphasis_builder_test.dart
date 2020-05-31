@@ -33,12 +33,12 @@ void main() {
     });
 
     testWidgets('styles the main text correctly', (tester) async {
-      final style = TextStyle(color: Colors.red);
-      await tester.pumpWidget(MaterialApp(
+      const style = TextStyle(color: Colors.red);
+      await tester.pumpWidget(const MaterialApp(
         home: TextEmphasisBuilder(
           text: 'some text to emphasise, emphisising certain words',
           textStyle: style,
-          emphases: const ['emphasise', 'certain words'],
+          emphases: ['emphasise', 'certain words'],
         ),
       ));
 
@@ -52,11 +52,11 @@ void main() {
     });
 
     testWidgets('styles the emphasised text correctly', (tester) async {
-      final style = TextStyle(color: Colors.blue);
-      await tester.pumpWidget(MaterialApp(
+      const style = TextStyle(color: Colors.blue);
+      await tester.pumpWidget(const MaterialApp(
         home: TextEmphasisBuilder(
           text: 'some text to emphasise, emphisising certain words',
-          emphases: const ['emphasise', 'certain words'],
+          emphases: ['emphasise', 'certain words'],
           emphasisStyle: style,
         ),
       ));
