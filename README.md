@@ -13,6 +13,10 @@ My personal portfolio
 - Run all widget tests: `flutter test`
 - Run a single widget test file: `flutter test test/widgets/navigation/navigation_drawer_test.dart`
 
+## Source Control
+
+- Git hooks configured for pre-commit and pre-push. To bypass, append: `--no-verify`
+
 ## Releasing
 
 1. Generate build: `flutter build web`
