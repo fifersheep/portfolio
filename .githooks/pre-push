@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-if [[ `git status --porcelain` ]]; then
-  printf "\e[31;1m%s\e[0m\n" 'Push hooks need to run against committed code only. Commit or stash changes.'
-  exit 1
-fi
+git stash -q --keep-index
 
 printf "\e[33;1m%s\e[0m\n" 'Running flutter analyze'
 flutter analyze
 if [ $? -ne 0 ]; then
+  git stash pop -q
   printf "\e[33;1m%s\e[0m\n" 'Failed flutter analyze'
   exit 1
 fi
@@ -16,7 +14,10 @@ printf "\e[33;1m%s\e[0m\n" 'Finished flutter analyze'
 printf "\e[33;1m%s\e[0m\n" 'Running flutter test'
 flutter test
 if [ $? -ne 0 ]; then
+  git stash pop -q
   printf "\e[33;1m%s\e[0m\n" 'Failed flutter test'
   exit 1
 fi
 printf "\e[33;1m%s\e[0m\n" 'Finished flutter test'
+
+git stash pop -q
