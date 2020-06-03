@@ -7,6 +7,6 @@ import 'presentation/app.dart';
 import 'presentation/constants/strings.dart';
 
 void main() {
-  configureInjection(Environment.prod);
+  configureDependencies(Environment.prod);
   runApp(Images(child: Strings(child: App())));
 }

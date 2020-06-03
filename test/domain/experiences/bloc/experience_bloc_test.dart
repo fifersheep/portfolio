@@ -45,6 +45,8 @@ void main() {
     ];
 
     test('should get data from get experiences repository', () async {
+      when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+
       bloc.add(const ExperiencesEvent.loadExperiences());
       await untilCalled(repository.getExperiences());
 

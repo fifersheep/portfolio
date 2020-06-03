@@ -8,8 +8,7 @@ import 'package:portfolio/domain/experiences/experiences_repository.dart';
 
 import 'package:portfolio/domain/experiences/entities/experience.dart';
 
-@lazySingleton
-@Injectable(as: ExperiencesRepository)
+@LazySingleton(as: ExperiencesRepository)
 class StaticExperiencesRepository implements ExperiencesRepository {
   @override
   Future<Either<Failure, List<Experience>>> getExperiences() {
