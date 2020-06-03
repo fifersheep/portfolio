@@ -47,11 +47,11 @@ void main() {
     test('should return a valid model from json', () async {
       final jsonMap = json.decode(fixture('experience_unknown_category.json')) as Map<String, dynamic>;
       const expected = ExperienceModel(
-          title: 'Title',
-          location: "Location",
-          content: 'Content',
-          timeframe: 'Timeframe',
-          category: ExperienceCategory.unknown,
+        title: 'Title',
+        location: "Location",
+        content: 'Content',
+        timeframe: 'Timeframe',
+        category: ExperienceCategory.unknown,
       );
       expect(ExperienceModel.fromJson(jsonMap), expected);
     });

@@ -10,10 +10,10 @@ class TimelineBuilder<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListView.separated(
-    shrinkWrap: true,
-    physics: const ClampingScrollPhysics(),
-    itemBuilder: (_, index) => builder(items[index]),
-    separatorBuilder: (_, index) => TimelineDivider(),
-    itemCount: items.length,
-  );
+        shrinkWrap: true,
+        physics: const ClampingScrollPhysics(),
+        itemBuilder: (_, index) => builder(items[index]),
+        separatorBuilder: (_, index) => TimelineDivider(),
+        itemCount: items.length,
+      );
 }

@@ -66,31 +66,31 @@ void main() {
     });
 
     test('should map categories to colors and icons', () async {
-        final experiences = [
-          _experienceWithCategory(ExperienceCategory.unknown),
-          _experienceWithCategory(ExperienceCategory.work),
-          _experienceWithCategory(ExperienceCategory.studies),
-          _experienceWithCategory(ExperienceCategory.home),
-          _experienceWithCategory(ExperienceCategory.love),
-        ];
+      final experiences = [
+        _experienceWithCategory(ExperienceCategory.unknown),
+        _experienceWithCategory(ExperienceCategory.work),
+        _experienceWithCategory(ExperienceCategory.studies),
+        _experienceWithCategory(ExperienceCategory.home),
+        _experienceWithCategory(ExperienceCategory.love),
+      ];
 
-        final experienceStates = [
-          _experienceStateWithColorAndIcon(ExperienceColor.blue, ExperienceIcon.done),
-          _experienceStateWithColorAndIcon(ExperienceColor.green, ExperienceIcon.code),
-          _experienceStateWithColorAndIcon(ExperienceColor.red, ExperienceIcon.book),
-          _experienceStateWithColorAndIcon(ExperienceColor.orange, ExperienceIcon.home),
-          _experienceStateWithColorAndIcon(ExperienceColor.purple, ExperienceIcon.heart),
-        ];
+      final experienceStates = [
+        _experienceStateWithColorAndIcon(ExperienceColor.blue, ExperienceIcon.done),
+        _experienceStateWithColorAndIcon(ExperienceColor.green, ExperienceIcon.code),
+        _experienceStateWithColorAndIcon(ExperienceColor.red, ExperienceIcon.book),
+        _experienceStateWithColorAndIcon(ExperienceColor.orange, ExperienceIcon.home),
+        _experienceStateWithColorAndIcon(ExperienceColor.purple, ExperienceIcon.heart),
+      ];
 
-        when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+      when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
 
-        final expected = [
-          bloc.initialState,
-          ExperiencesState.loaded(experienceStates),
-        ];
-        expectLater(bloc, emitsInOrder(expected));
+      final expected = [
+        bloc.initialState,
+        ExperiencesState.loaded(experienceStates),
+      ];
+      expectLater(bloc, emitsInOrder(expected));
 
-        bloc.add(const ExperiencesEvent.loadExperiences());
+      bloc.add(const ExperiencesEvent.loadExperiences());
     });
 
     test('should emit [Loading, Error] when data retrieval is unsuccessful', () async {
@@ -108,18 +108,18 @@ void main() {
 }
 
 Experience _experienceWithCategory(ExperienceCategory category) => Experience(
-  title: "Exp Title",
-  location: "Exp Location",
-  content: "Exp Content",
-  timeframe: "Exp Timeframe",
-  category: category,
-);
+      title: "Exp Title",
+      location: "Exp Location",
+      content: "Exp Content",
+      timeframe: "Exp Timeframe",
+      category: category,
+    );
 
 ExperienceState _experienceStateWithColorAndIcon(ExperienceColor color, ExperienceIcon icon) => ExperienceState(
-  title: "Exp Title",
-  location: "Exp Location",
-  content: "Exp Content",
-  timeframe: "Exp Timeframe",
-  icon: icon,
-  color: color,
-);
+      title: "Exp Title",
+      location: "Exp Location",
+      content: "Exp Content",
+      timeframe: "Exp Timeframe",
+      icon: icon,
+      color: color,
+    );

@@ -16,7 +16,8 @@ class NavigationHeader extends StatelessWidget {
               width: 128,
               height: 128,
               decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage(
+                image: DecorationImage(
+                    image: AssetImage(
                   Images.of(context).avatar,
                 )),
                 shape: BoxShape.circle,

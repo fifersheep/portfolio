@@ -4,12 +4,12 @@ import 'package:portfolio/presentation/constants/colors.dart';
 class TimelineDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.symmetric(vertical: 8),
-    child: CustomPaint(
-      size: const Size(16, 16),
-      painter: TimelinePainter(),
-    ),
-  );
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: CustomPaint(
+          size: const Size(16, 16),
+          painter: TimelinePainter(),
+        ),
+      );
 }
 
 class TimelinePainter extends CustomPainter {

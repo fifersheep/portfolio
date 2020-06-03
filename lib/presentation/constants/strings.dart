@@ -38,7 +38,8 @@ class Strings extends InheritedWidget {
 
   String get experienceTitle => 'Life Experience';
   String get experienceTimelineHeader => 'Life Experience Timeline';
-  String get experienceTimelineSubHeader => 'A place not to list just career accomplishments but life accomplishments and events that I’m proud of.';
+  String get experienceTimelineSubHeader =>
+      'A place not to list just career accomplishments but life accomplishments and events that I’m proud of.';
 
   String get projectsTitle => 'Projects Title';
 

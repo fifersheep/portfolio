@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
+git stash -q --keep-index
 
 printf "\e[33;1m%s\e[0m\n" 'Running build_runner'
 flutter packages pub run build_runner build --delete-conflicting-outputs
 printf "\e[33;1m%s\e[0m\n" 'Finished build_runner'
 
 printf "\e[33;1m%s\e[0m\n" 'Running flutter format'
-flutter format .
+flutter format lib/ test/ --line-length 120
+git add lib/
+git add test/
 printf "\e[33;1m%s\e[0m\n" 'Finished flutter format'
+
+git stash pop -q

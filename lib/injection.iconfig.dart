@@ -11,10 +11,7 @@ import 'package:portfolio/domain/experiences/experiences_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
-  g.registerLazySingleton<ExperiencesRepository>(
-      () => StaticExperiencesRepository());
-  g.registerLazySingleton<NavigationRouteObserver>(
-      () => NavigationRouteObserver());
-  g.registerLazySingleton<ExperiencesBloc>(
-      () => ExperiencesBloc(g<ExperiencesRepository>()));
+  g.registerLazySingleton<ExperiencesRepository>(() => StaticExperiencesRepository());
+  g.registerLazySingleton<NavigationRouteObserver>(() => NavigationRouteObserver());
+  g.registerLazySingleton<ExperiencesBloc>(() => ExperiencesBloc(g<ExperiencesRepository>()));
 }
