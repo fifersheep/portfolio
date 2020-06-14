@@ -2,20 +2,25 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
+import 'package:portfolio/domain/core/formatter/date_formatter.dart';
+import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'package:portfolio/domain/experiences/experience_state.dart';
 import 'package:portfolio/domain/experiences/experiences_bloc.dart';
-import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'package:portfolio/domain/experiences/experiences_repository.dart';
 
 class MockExperiencesRepository extends Mock implements ExperiencesRepository {}
 
+class MockDateFormatter extends Mock implements DateFormatter {}
+
 void main() {
   ExperiencesBloc bloc;
   ExperiencesRepository repository;
+  DateFormatter dateFormatter;
 
   setUp(() {
     repository = MockExperiencesRepository();
-    bloc = ExperiencesBloc(repository);
+    dateFormatter = MockDateFormatter();
+    bloc = ExperiencesBloc(repository, dateFormatter);
   });
 
   test('initial state should be loading', () async {
@@ -24,21 +29,22 @@ void main() {
 
   group('LoadExperiences', () {
     final experiences = [
-      const Experience(
-        title: "Exp Title",
-        location: "Exp Location",
-        content: "Exp Content",
-        timeframe: "Exp Timeframe",
+      Experience(
+        title: 'Exp Title',
+        location: 'Exp Location',
+        content: 'Exp Content',
+        startDate: startDate,
+        endDate: endDate,
         category: ExperienceCategory.work,
-      )
+      ),
     ];
 
     final experienceStates = [
       const ExperienceState(
-        title: "Exp Title",
-        location: "Exp Location",
-        content: "Exp Content",
-        timeframe: "Exp Timeframe",
+        title: 'Exp Title',
+        location: 'Exp Location',
+        content: 'Exp Content',
+        timeframe: timeframe,
         icon: ExperienceIcon.code,
         color: ExperienceColor.green,
       )
@@ -55,6 +61,7 @@ void main() {
 
     test('should emit [Loading, Loaded] when data is retrieved successfully', () async {
       when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+      when(dateFormatter.monthYearRange(startDate, endDate)).thenAnswer((_) => timeframe);
 
       final expected = [
         bloc.initialState,
@@ -83,6 +90,8 @@ void main() {
       ];
 
       when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+      when(dateFormatter.monthYearRange(startDate, endDate)).thenAnswer((_) => timeframe);
+      when(dateFormatter.monthYear(startDate)).thenAnswer((_) => timeframe);
 
       final expected = [
         bloc.initialState,
@@ -92,6 +101,41 @@ void main() {
 
       bloc.add(const ExperiencesEvent.loadExperiences());
     });
+
+    final formatForCategory = [
+      Pair(ExperienceCategory.unknown, 'Range'),
+      Pair(ExperienceCategory.work, 'Range'),
+      Pair(ExperienceCategory.studies, 'Range'),
+      Pair(ExperienceCategory.love, 'Date'),
+      Pair(ExperienceCategory.home, 'Date'),
+    ];
+
+    for (final params in formatForCategory) {
+      test('should format date(s) with ${params.second} for ${params.first}', () async {
+        final experiences = [
+          Experience(
+            title: 'Exp Title',
+            location: 'Exp Location',
+            content: 'Exp Content',
+            startDate: startDate,
+            endDate: endDate,
+            category: params.first,
+          ),
+        ];
+
+        when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+        when(dateFormatter.monthYearRange(startDate, endDate)).thenAnswer((_) => 'Range');
+        when(dateFormatter.monthYear(startDate)).thenAnswer((_) => 'Date');
+
+        bloc.listen((state) {
+          if (state is ExperiencesLoaded) {
+            expect(state.experiences.any((exp) => exp.timeframe == params.second), equals(true));
+          }
+        });
+
+        bloc.add(const ExperiencesEvent.loadExperiences());
+      });
+    }
 
     test('should emit [Loading, Error] when data retrieval is unsuccessful', () async {
       when(repository.getExperiences()).thenAnswer((_) async => Left(DataRetrievalFailure()));
@@ -107,19 +151,31 @@ void main() {
   });
 }
 
+final DateTime startDate = DateTime.parse('2007-09-01');
+final DateTime endDate = DateTime.parse('2007-09-30');
+const String timeframe = 'Exp Timeframe';
+
 Experience _experienceWithCategory(ExperienceCategory category) => Experience(
-      title: "Exp Title",
-      location: "Exp Location",
-      content: "Exp Content",
-      timeframe: "Exp Timeframe",
+      title: 'Exp Title',
+      location: 'Exp Location',
+      content: 'Exp Content',
+      startDate: startDate,
+      endDate: endDate,
       category: category,
     );
 
 ExperienceState _experienceStateWithColorAndIcon(ExperienceColor color, ExperienceIcon icon) => ExperienceState(
-      title: "Exp Title",
-      location: "Exp Location",
-      content: "Exp Content",
-      timeframe: "Exp Timeframe",
+      title: 'Exp Title',
+      location: 'Exp Location',
+      content: 'Exp Content',
+      timeframe: timeframe,
       icon: icon,
       color: color,
     );
+
+class Pair<F, S> {
+  Pair(this.first, this.second);
+
+  final F first;
+  final S second;
+}
