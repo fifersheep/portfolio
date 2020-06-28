@@ -110,6 +110,6 @@ void main() {
 
     final actual = await repository.getExperiences();
 
-    expect(actual, equals(Left(DataRetrievalFailure())));
+    expect(actual, equals(const Left(Failure.dataRetrievalFailure())));
   });
 }

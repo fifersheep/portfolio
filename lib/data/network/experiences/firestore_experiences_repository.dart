@@ -30,6 +30,6 @@ class FirestoreExperiencesRepository implements ExperiencesRepository {
   }
 
   Either<Failure, QuerySnapshot> _failure(Either<Object, QuerySnapshot> either) {
-    return either.leftMap((_) => DataRetrievalFailure());
+    return either.leftMap((_) => const Failure.dataRetrievalFailure());
   }
 }

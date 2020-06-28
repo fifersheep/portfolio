@@ -138,7 +138,7 @@ void main() {
     }
 
     test('should emit [Loading, Error] when data retrieval is unsuccessful', () async {
-      when(repository.getExperiences()).thenAnswer((_) async => Left(DataRetrievalFailure()));
+      when(repository.getExperiences()).thenAnswer((_) async => const Left(Failure.dataRetrievalFailure()));
 
       final expected = [
         bloc.initialState,
