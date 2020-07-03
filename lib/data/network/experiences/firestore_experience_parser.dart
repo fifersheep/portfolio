@@ -5,7 +5,7 @@ import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'experience_parser.dart';
 
 @LazySingleton(as: ExperienceParser)
-class FirebaseExperienceParser extends ExperienceParser<DocumentSnapshot> {
+class FirestoreExperienceParser extends ExperienceParser<DocumentSnapshot> {
   @override
   Experience parse(DocumentSnapshot source) {
     return Experience(

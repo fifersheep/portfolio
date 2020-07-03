@@ -1,16 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:portfolio/data/network/experiences/firebase_experience_parser.dart';
+import 'package:portfolio/data/network/experiences/firestore_experience_parser.dart';
 import 'package:portfolio/domain/experiences/entities/experience.dart';
 
-class MockDocumentSnapshot extends Mock implements DocumentSnapshot {}
+import '../utils/firestore_mocks.dart';
 
 void main() {
-  FirebaseExperienceParser parser;
+  FirestoreExperienceParser parser;
 
   setUp(() async {
-    parser = FirebaseExperienceParser();
+    parser = FirestoreExperienceParser();
   });
 
   test('should parse an experience with all properties', () async {

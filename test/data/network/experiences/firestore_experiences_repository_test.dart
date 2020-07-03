@@ -3,21 +3,19 @@ import 'package:cloud_firestore_mocks/cloud_firestore_mocks.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:portfolio/data/network/experiences/firebase_experience_parser.dart';
+import 'package:portfolio/data/network/experiences/firestore_experience_parser.dart';
 import 'package:portfolio/data/network/experiences/firestore_experiences_repository.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/experiences/entities/experience.dart';
 
-class MockDocumentSnapshot extends Mock implements DocumentSnapshot {}
-
 void main() {
   FirestoreExperiencesRepository repository;
   Firestore firestore;
-  FirebaseExperienceParser parser;
+  FirestoreExperienceParser parser;
 
   setUp(() async {
     firestore = MockFirestoreInstance();
-    parser = FirebaseExperienceParser(); // todo: find a way to run these tests while stubbing the parser
+    parser = FirestoreExperienceParser(); // todo: find a way to run these tests while stubbing the parser
     repository = FirestoreExperiencesRepository(firestore, parser);
   });
 
