@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore_mocks/cloud_firestore_mocks.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:portfolio/data/network/experiences/firestore_experience_parser.dart';
 import 'package:portfolio/data/network/experiences/firestore_experiences_repository.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
