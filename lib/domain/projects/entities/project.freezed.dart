@@ -27,8 +27,11 @@ const $Project = _$ProjectTearOff();
 
 mixin _$Project {
   String get title;
+
   String get summary;
+
   String get detail;
+
   List<ProjectTag> get tags;
 
   $ProjectCopyWith<Project> get copyWith;
@@ -36,6 +39,7 @@ mixin _$Project {
 
 abstract class $ProjectCopyWith<$Res> {
   factory $ProjectCopyWith(Project value, $Res Function(Project) then) = _$ProjectCopyWithImpl<$Res>;
+
   $Res call({String title, String summary, String detail, List<ProjectTag> tags});
 }
 
@@ -43,6 +47,7 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
   _$ProjectCopyWithImpl(this._value, this._then);
 
   final Project _value;
+
   // ignore: unused_field
   final $Res Function(Project) _then;
 
@@ -64,6 +69,7 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
 
 abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
   factory _$ProjectCopyWith(_Project value, $Res Function(_Project) then) = __$ProjectCopyWithImpl<$Res>;
+
   @override
   $Res call({String title, String summary, String detail, List<ProjectTag> tags});
 }
@@ -134,12 +140,16 @@ abstract class _Project implements Project {
 
   @override
   String get title;
+
   @override
   String get summary;
+
   @override
   String get detail;
+
   @override
   List<ProjectTag> get tags;
+
   @override
   _$ProjectCopyWith<_Project> get copyWith;
 }
@@ -161,7 +171,9 @@ const $ProjectTag = _$ProjectTagTearOff();
 
 mixin _$ProjectTag {
   String get label;
+
   String get color;
+
   String get style;
 
   $ProjectTagCopyWith<ProjectTag> get copyWith;
@@ -169,6 +181,7 @@ mixin _$ProjectTag {
 
 abstract class $ProjectTagCopyWith<$Res> {
   factory $ProjectTagCopyWith(ProjectTag value, $Res Function(ProjectTag) then) = _$ProjectTagCopyWithImpl<$Res>;
+
   $Res call({String label, String color, String style});
 }
 
@@ -176,6 +189,7 @@ class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
   _$ProjectTagCopyWithImpl(this._value, this._then);
 
   final ProjectTag _value;
+
   // ignore: unused_field
   final $Res Function(ProjectTag) _then;
 
@@ -195,6 +209,7 @@ class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
 
 abstract class _$ProjectTagCopyWith<$Res> implements $ProjectTagCopyWith<$Res> {
   factory _$ProjectTagCopyWith(_ProjectTag value, $Res Function(_ProjectTag) then) = __$ProjectTagCopyWithImpl<$Res>;
+
   @override
   $Res call({String label, String color, String style});
 }
@@ -260,10 +275,13 @@ abstract class _ProjectTag implements ProjectTag {
 
   @override
   String get label;
+
   @override
   String get color;
+
   @override
   String get style;
+
   @override
   _$ProjectTagCopyWith<_ProjectTag> get copyWith;
 }
