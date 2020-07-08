@@ -13,9 +13,10 @@ import 'package:portfolio/presentation/core/navigation/navigation_route_observer
 import 'package:portfolio/data/network/projects/firestore_project_parser.dart';
 import 'package:portfolio/data/network/projects/project_parser.dart';
 import 'package:portfolio/data/network/projects/firestore_projects_repository.dart';
-import 'package:portfolio/domain/projects/entities/projects_repository.dart';
+import 'package:portfolio/domain/projects/projects_repository.dart';
 import 'package:portfolio/data/network/experiences/firestore_experiences_repository.dart';
 import 'package:portfolio/domain/experiences/experiences_repository.dart';
+import 'package:portfolio/domain/projects/projects_bloc.dart';
 import 'package:portfolio/domain/experiences/experiences_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -30,6 +31,7 @@ void $initGetIt(GetIt g, {String environment}) {
       () => FirestoreProjectsRepository(g<Firestore>(), g<ProjectParser<DocumentSnapshot>>()));
   g.registerLazySingleton<ExperiencesRepository>(
       () => FirestoreExperiencesRepository(g<Firestore>(), g<ExperienceParser<DocumentSnapshot>>()));
+  g.registerLazySingleton<ProjectsBloc>(() => ProjectsBloc(g<ProjectsRepository>()));
   g.registerLazySingleton<ExperiencesBloc>(() => ExperiencesBloc(g<ExperiencesRepository>(), g<DateFormatter>()));
 }
 

@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:portfolio/data/network/projects/project_parser.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/projects/entities/project.dart';
-import 'package:portfolio/domain/projects/entities/projects_repository.dart';
+import 'package:portfolio/domain/projects/projects_repository.dart';
 
 @LazySingleton(as: ProjectsRepository)
 class FirestoreProjectsRepository implements ProjectsRepository {
