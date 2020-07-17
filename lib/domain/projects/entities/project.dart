@@ -17,6 +17,7 @@ abstract class ProjectTag with _$ProjectTag {
   const factory ProjectTag({
     String label,
     String color,
+    String labelColor,
     String style,
   }) = _ProjectTag;
 }

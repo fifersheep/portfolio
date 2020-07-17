@@ -56,7 +56,7 @@ void main() {
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
-      tags: [ProjectTag(label: 'Label', style: 'Style', color: 'Color')],
+      tags: [ProjectTag(label: 'Label', style: 'Style', color: 'Color', labelColor: 'Label Color')],
     );
 
     const tagID = 'Tag';
@@ -70,7 +70,7 @@ void main() {
       'tags': [tag],
     };
 
-    final tagData = {'label': 'Label', 'style': 'Style', 'color': 'Color'};
+    final tagData = {'label': 'Label', 'style': 'Style', 'color': 'Color', 'label_color': 'Label Color'};
 
     await firestore.collection('projects').add(projectData);
     await firestore.collection('project_tags').document(tagID).setData(tagData);

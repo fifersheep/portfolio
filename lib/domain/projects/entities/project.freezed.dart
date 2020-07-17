@@ -27,11 +27,8 @@ const $Project = _$ProjectTearOff();
 
 mixin _$Project {
   String get title;
-
   String get summary;
-
   String get detail;
-
   List<ProjectTag> get tags;
 
   $ProjectCopyWith<Project> get copyWith;
@@ -39,7 +36,6 @@ mixin _$Project {
 
 abstract class $ProjectCopyWith<$Res> {
   factory $ProjectCopyWith(Project value, $Res Function(Project) then) = _$ProjectCopyWithImpl<$Res>;
-
   $Res call({String title, String summary, String detail, List<ProjectTag> tags});
 }
 
@@ -47,7 +43,6 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
   _$ProjectCopyWithImpl(this._value, this._then);
 
   final Project _value;
-
   // ignore: unused_field
   final $Res Function(Project) _then;
 
@@ -69,7 +64,6 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
 
 abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
   factory _$ProjectCopyWith(_Project value, $Res Function(_Project) then) = __$ProjectCopyWithImpl<$Res>;
-
   @override
   $Res call({String title, String summary, String detail, List<ProjectTag> tags});
 }
@@ -140,16 +134,12 @@ abstract class _Project implements Project {
 
   @override
   String get title;
-
   @override
   String get summary;
-
   @override
   String get detail;
-
   @override
   List<ProjectTag> get tags;
-
   @override
   _$ProjectCopyWith<_Project> get copyWith;
 }
@@ -157,10 +147,11 @@ abstract class _Project implements Project {
 class _$ProjectTagTearOff {
   const _$ProjectTagTearOff();
 
-  _ProjectTag call({String label, String color, String style}) {
+  _ProjectTag call({String label, String color, String labelColor, String style}) {
     return _ProjectTag(
       label: label,
       color: color,
+      labelColor: labelColor,
       style: style,
     );
   }
@@ -171,9 +162,8 @@ const $ProjectTag = _$ProjectTagTearOff();
 
 mixin _$ProjectTag {
   String get label;
-
   String get color;
-
+  String get labelColor;
   String get style;
 
   $ProjectTagCopyWith<ProjectTag> get copyWith;
@@ -181,15 +171,13 @@ mixin _$ProjectTag {
 
 abstract class $ProjectTagCopyWith<$Res> {
   factory $ProjectTagCopyWith(ProjectTag value, $Res Function(ProjectTag) then) = _$ProjectTagCopyWithImpl<$Res>;
-
-  $Res call({String label, String color, String style});
+  $Res call({String label, String color, String labelColor, String style});
 }
 
 class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
   _$ProjectTagCopyWithImpl(this._value, this._then);
 
   final ProjectTag _value;
-
   // ignore: unused_field
   final $Res Function(ProjectTag) _then;
 
@@ -197,11 +185,13 @@ class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
   $Res call({
     Object label = freezed,
     Object color = freezed,
+    Object labelColor = freezed,
     Object style = freezed,
   }) {
     return _then(_value.copyWith(
       label: label == freezed ? _value.label : label as String,
       color: color == freezed ? _value.color : color as String,
+      labelColor: labelColor == freezed ? _value.labelColor : labelColor as String,
       style: style == freezed ? _value.style : style as String,
     ));
   }
@@ -209,9 +199,8 @@ class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
 
 abstract class _$ProjectTagCopyWith<$Res> implements $ProjectTagCopyWith<$Res> {
   factory _$ProjectTagCopyWith(_ProjectTag value, $Res Function(_ProjectTag) then) = __$ProjectTagCopyWithImpl<$Res>;
-
   @override
-  $Res call({String label, String color, String style});
+  $Res call({String label, String color, String labelColor, String style});
 }
 
 class __$ProjectTagCopyWithImpl<$Res> extends _$ProjectTagCopyWithImpl<$Res> implements _$ProjectTagCopyWith<$Res> {
@@ -225,29 +214,33 @@ class __$ProjectTagCopyWithImpl<$Res> extends _$ProjectTagCopyWithImpl<$Res> imp
   $Res call({
     Object label = freezed,
     Object color = freezed,
+    Object labelColor = freezed,
     Object style = freezed,
   }) {
     return _then(_ProjectTag(
       label: label == freezed ? _value.label : label as String,
       color: color == freezed ? _value.color : color as String,
+      labelColor: labelColor == freezed ? _value.labelColor : labelColor as String,
       style: style == freezed ? _value.style : style as String,
     ));
   }
 }
 
 class _$_ProjectTag implements _ProjectTag {
-  const _$_ProjectTag({this.label, this.color, this.style});
+  const _$_ProjectTag({this.label, this.color, this.labelColor, this.style});
 
   @override
   final String label;
   @override
   final String color;
   @override
+  final String labelColor;
+  @override
   final String style;
 
   @override
   String toString() {
-    return 'ProjectTag(label: $label, color: $color, style: $style)';
+    return 'ProjectTag(label: $label, color: $color, labelColor: $labelColor, style: $style)';
   }
 
   @override
@@ -256,6 +249,8 @@ class _$_ProjectTag implements _ProjectTag {
         (other is _ProjectTag &&
             (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)) &&
             (identical(other.color, color) || const DeepCollectionEquality().equals(other.color, color)) &&
+            (identical(other.labelColor, labelColor) ||
+                const DeepCollectionEquality().equals(other.labelColor, labelColor)) &&
             (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)));
   }
 
@@ -264,6 +259,7 @@ class _$_ProjectTag implements _ProjectTag {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(label) ^
       const DeepCollectionEquality().hash(color) ^
+      const DeepCollectionEquality().hash(labelColor) ^
       const DeepCollectionEquality().hash(style);
 
   @override
@@ -271,17 +267,16 @@ class _$_ProjectTag implements _ProjectTag {
 }
 
 abstract class _ProjectTag implements ProjectTag {
-  const factory _ProjectTag({String label, String color, String style}) = _$_ProjectTag;
+  const factory _ProjectTag({String label, String color, String labelColor, String style}) = _$_ProjectTag;
 
   @override
   String get label;
-
   @override
   String get color;
-
+  @override
+  String get labelColor;
   @override
   String get style;
-
   @override
   _$ProjectTagCopyWith<_ProjectTag> get copyWith;
 }

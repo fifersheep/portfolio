@@ -41,8 +41,8 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
 
   ProjectTagsState _mapProjectTagStyle(ProjectTag tag) {
     final style = ProjectTagStyle.values
-        .firstWhere((tagStyle) => _matchTagStyle(tagStyle, tag.style), orElse: () => ProjectTagStyle.normal);
-    return ProjectTagsState(label: tag.label, color: tag.color, style: style);
+        .firstWhere((tagStyle) => _matchTagStyle(tagStyle, tag.style), orElse: () => ProjectTagStyle.outline);
+    return ProjectTagsState(label: tag.label, color: tag.color, labelColor: tag.labelColor, style: style);
   }
 
   bool _matchTagStyle(ProjectTagStyle t, String style) => t.toString().split('.')[1] == style;

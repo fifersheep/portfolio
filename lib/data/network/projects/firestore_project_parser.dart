@@ -11,7 +11,11 @@ class FirestoreProjectParser extends ProjectParser<DocumentSnapshot> {
       summary: projectDoc['summary'] as String,
       detail: projectDoc['detail'] as String,
       tags: tagsDoc
-          .map((tag) =>
-              ProjectTag(label: tag['label'] as String, color: tag['color'] as String, style: tag['style'] as String))
+          .map((tag) => ProjectTag(
+                label: tag['label'] as String,
+                color: tag['color'] as String,
+                labelColor: tag['label_color'] as String,
+                style: tag['style'] as String,
+              ))
           .toList());
 }

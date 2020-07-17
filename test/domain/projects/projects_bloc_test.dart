@@ -38,7 +38,8 @@ void main() {
           ProjectTag(
             label: 'Label',
             color: 'Color',
-            style: 'prominent',
+            labelColor: 'Label Color',
+            style: 'outline',
           )
         ],
       )
@@ -53,7 +54,8 @@ void main() {
           ProjectTagsState(
             label: 'Label',
             color: 'Color',
-            style: ProjectTagStyle.prominent,
+            labelColor: 'Label Color',
+            style: ProjectTagStyle.outline,
           )
         ],
       )
@@ -70,7 +72,7 @@ void main() {
     );
 
     blocTest(
-      'should emit [Loaded] when data is retieved successfully',
+      'should emit [Loaded] when data is retrieved successfully',
       build: () async {
         when(repository.getProjects()).thenAnswer((_) async => Right(projects));
         return bloc;
@@ -82,15 +84,15 @@ void main() {
     );
 
     final projectsWithStyles = [
-      _projectWithTagStyle('normal'),
-      _projectWithTagStyle('prominent'),
-      _projectWithTagStyle('subtle'),
+      _projectWithTagStyle('fill'),
+      _projectWithTagStyle('outline'),
+      _projectWithTagStyle('naked'),
     ];
 
     final projectStatesWithStyles = [
-      _projectStateWithTagStyle(ProjectTagStyle.normal),
-      _projectStateWithTagStyle(ProjectTagStyle.prominent),
-      _projectStateWithTagStyle(ProjectTagStyle.subtle),
+      _projectStateWithTagStyle(ProjectTagStyle.fill),
+      _projectStateWithTagStyle(ProjectTagStyle.outline),
+      _projectStateWithTagStyle(ProjectTagStyle.naked),
     ];
 
     blocTest(
@@ -106,14 +108,14 @@ void main() {
     );
 
     blocTest(
-      'tag style should default to normal',
+      'tag style should default to outline',
       build: () async {
         when(repository.getProjects()).thenAnswer((_) async => Right([_projectWithTagStyle('unknown')]));
         return bloc;
       },
       act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       expect: [
-        ProjectsState.loaded([_projectStateWithTagStyle(ProjectTagStyle.normal)]),
+        ProjectsState.loaded([_projectStateWithTagStyle(ProjectTagStyle.outline)]),
       ],
     );
 
@@ -139,6 +141,7 @@ Project _projectWithTagStyle(String style) => Project(
         ProjectTag(
           label: 'Label',
           color: 'Color',
+          labelColor: 'Label Color',
           style: style,
         )
       ],
@@ -152,6 +155,7 @@ ProjectState _projectStateWithTagStyle(ProjectTagStyle style) => ProjectState(
         ProjectTagsState(
           label: 'Label',
           color: 'Color',
+          labelColor: 'Label Color',
           style: style,
         )
       ],

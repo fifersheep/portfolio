@@ -17,8 +17,9 @@ abstract class ProjectTagsState with _$ProjectTagsState {
   const factory ProjectTagsState({
     String label,
     String color,
+    String labelColor,
     ProjectTagStyle style,
   }) = _ProjectTagsState;
 }
 
-enum ProjectTagStyle { prominent, normal, subtle }
+enum ProjectTagStyle { fill, outline, naked }

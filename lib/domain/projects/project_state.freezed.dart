@@ -152,10 +152,11 @@ abstract class _ProjectState implements ProjectState {
 class _$ProjectTagsStateTearOff {
   const _$ProjectTagsStateTearOff();
 
-  _ProjectTagsState call({String label, String color, ProjectTagStyle style}) {
+  _ProjectTagsState call({String label, String color, String labelColor, ProjectTagStyle style}) {
     return _ProjectTagsState(
       label: label,
       color: color,
+      labelColor: labelColor,
       style: style,
     );
   }
@@ -167,6 +168,7 @@ const $ProjectTagsState = _$ProjectTagsStateTearOff();
 mixin _$ProjectTagsState {
   String get label;
   String get color;
+  String get labelColor;
   ProjectTagStyle get style;
 
   $ProjectTagsStateCopyWith<ProjectTagsState> get copyWith;
@@ -175,7 +177,7 @@ mixin _$ProjectTagsState {
 abstract class $ProjectTagsStateCopyWith<$Res> {
   factory $ProjectTagsStateCopyWith(ProjectTagsState value, $Res Function(ProjectTagsState) then) =
       _$ProjectTagsStateCopyWithImpl<$Res>;
-  $Res call({String label, String color, ProjectTagStyle style});
+  $Res call({String label, String color, String labelColor, ProjectTagStyle style});
 }
 
 class _$ProjectTagsStateCopyWithImpl<$Res> implements $ProjectTagsStateCopyWith<$Res> {
@@ -189,11 +191,13 @@ class _$ProjectTagsStateCopyWithImpl<$Res> implements $ProjectTagsStateCopyWith<
   $Res call({
     Object label = freezed,
     Object color = freezed,
+    Object labelColor = freezed,
     Object style = freezed,
   }) {
     return _then(_value.copyWith(
       label: label == freezed ? _value.label : label as String,
       color: color == freezed ? _value.color : color as String,
+      labelColor: labelColor == freezed ? _value.labelColor : labelColor as String,
       style: style == freezed ? _value.style : style as ProjectTagStyle,
     ));
   }
@@ -203,7 +207,7 @@ abstract class _$ProjectTagsStateCopyWith<$Res> implements $ProjectTagsStateCopy
   factory _$ProjectTagsStateCopyWith(_ProjectTagsState value, $Res Function(_ProjectTagsState) then) =
       __$ProjectTagsStateCopyWithImpl<$Res>;
   @override
-  $Res call({String label, String color, ProjectTagStyle style});
+  $Res call({String label, String color, String labelColor, ProjectTagStyle style});
 }
 
 class __$ProjectTagsStateCopyWithImpl<$Res> extends _$ProjectTagsStateCopyWithImpl<$Res>
@@ -218,29 +222,33 @@ class __$ProjectTagsStateCopyWithImpl<$Res> extends _$ProjectTagsStateCopyWithIm
   $Res call({
     Object label = freezed,
     Object color = freezed,
+    Object labelColor = freezed,
     Object style = freezed,
   }) {
     return _then(_ProjectTagsState(
       label: label == freezed ? _value.label : label as String,
       color: color == freezed ? _value.color : color as String,
+      labelColor: labelColor == freezed ? _value.labelColor : labelColor as String,
       style: style == freezed ? _value.style : style as ProjectTagStyle,
     ));
   }
 }
 
 class _$_ProjectTagsState implements _ProjectTagsState {
-  const _$_ProjectTagsState({this.label, this.color, this.style});
+  const _$_ProjectTagsState({this.label, this.color, this.labelColor, this.style});
 
   @override
   final String label;
   @override
   final String color;
   @override
+  final String labelColor;
+  @override
   final ProjectTagStyle style;
 
   @override
   String toString() {
-    return 'ProjectTagsState(label: $label, color: $color, style: $style)';
+    return 'ProjectTagsState(label: $label, color: $color, labelColor: $labelColor, style: $style)';
   }
 
   @override
@@ -249,6 +257,8 @@ class _$_ProjectTagsState implements _ProjectTagsState {
         (other is _ProjectTagsState &&
             (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)) &&
             (identical(other.color, color) || const DeepCollectionEquality().equals(other.color, color)) &&
+            (identical(other.labelColor, labelColor) ||
+                const DeepCollectionEquality().equals(other.labelColor, labelColor)) &&
             (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)));
   }
 
@@ -257,6 +267,7 @@ class _$_ProjectTagsState implements _ProjectTagsState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(label) ^
       const DeepCollectionEquality().hash(color) ^
+      const DeepCollectionEquality().hash(labelColor) ^
       const DeepCollectionEquality().hash(style);
 
   @override
@@ -265,12 +276,15 @@ class _$_ProjectTagsState implements _ProjectTagsState {
 }
 
 abstract class _ProjectTagsState implements ProjectTagsState {
-  const factory _ProjectTagsState({String label, String color, ProjectTagStyle style}) = _$_ProjectTagsState;
+  const factory _ProjectTagsState({String label, String color, String labelColor, ProjectTagStyle style}) =
+      _$_ProjectTagsState;
 
   @override
   String get label;
   @override
   String get color;
+  @override
+  String get labelColor;
   @override
   ProjectTagStyle get style;
   @override
