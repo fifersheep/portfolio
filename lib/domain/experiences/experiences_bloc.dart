@@ -16,13 +16,10 @@ part 'experiences_state.dart';
 
 @lazySingleton
 class ExperiencesBloc extends Bloc<ExperiencesEvent, ExperiencesState> {
-  ExperiencesBloc(this._repository, this._dateFormatter);
+  ExperiencesBloc(this._repository, this._dateFormatter) : super(const ExperiencesState.loading());
 
   final ExperiencesRepository _repository;
   final DateFormatter _dateFormatter;
-
-  @override
-  ExperiencesState get initialState => const ExperiencesState.loading();
 
   @override
   Stream<ExperiencesState> mapEventToState(ExperiencesEvent event) async* {

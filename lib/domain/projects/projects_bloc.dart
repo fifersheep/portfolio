@@ -14,12 +14,9 @@ part 'projects_state.dart';
 
 @lazySingleton
 class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
-  ProjectsBloc(this._repository);
+  ProjectsBloc(this._repository) : super(const ProjectsState.loading());
 
   final ProjectsRepository _repository;
-
-  @override
-  ProjectsState get initialState => const ProjectsState.loading();
 
   @override
   Stream<ProjectsState> mapEventToState(ProjectsEvent event) async* {

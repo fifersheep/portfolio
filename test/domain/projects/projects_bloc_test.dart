@@ -21,11 +21,8 @@ void main() {
 
   blocTest(
     'initial state should be loading',
-    build: () async => bloc,
-    skip: 0,
-    expect: [
-      const ProjectsState.loading(),
-    ],
+    build: () => bloc,
+    verify: (_) async => bloc.state == const ProjectsState.loading(),
   );
 
   group('LoadProjects', () {
@@ -63,7 +60,7 @@ void main() {
 
     blocTest(
       'should get data from get projects repository',
-      build: () async {
+      build: () {
         when(repository.getProjects()).thenAnswer((_) async => Right(projects));
         return bloc;
       },
@@ -73,7 +70,7 @@ void main() {
 
     blocTest(
       'should emit [Loaded] when data is retrieved successfully',
-      build: () async {
+      build: () {
         when(repository.getProjects()).thenAnswer((_) async => Right(projects));
         return bloc;
       },
@@ -97,7 +94,7 @@ void main() {
 
     blocTest(
       'should map tag styles',
-      build: () async {
+      build: () {
         when(repository.getProjects()).thenAnswer((_) async => Right(projectsWithStyles));
         return bloc;
       },
@@ -109,7 +106,7 @@ void main() {
 
     blocTest(
       'tag style should default to outline',
-      build: () async {
+      build: () {
         when(repository.getProjects()).thenAnswer((_) async => Right([_projectWithTagStyle('unknown')]));
         return bloc;
       },
@@ -121,7 +118,7 @@ void main() {
 
     blocTest(
       'should emit [Error] when data retrieval is unsuccessful',
-      build: () async {
+      build: () {
         when(repository.getProjects()).thenAnswer((_) async => const Left(Failure.dataRetrievalFailure()));
         return bloc;
       },
