@@ -10,7 +10,6 @@ class NavigationHeader extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 16),
         color: Theme.of(context).primaryColor,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
               width: 128,

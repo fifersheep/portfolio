@@ -9,6 +9,5 @@ class NakedProjectTag extends StatelessWidget {
   final ProjectTagsState tag;
 
   @override
-  Widget build(BuildContext context) =>
-      ProjectTag(label: tag.label, labelColor: tag.labelColor.toColor(), decoration: null);
+  Widget build(BuildContext context) => ProjectTag(label: tag.label, labelColor: tag.labelColor.toColor());
 }
