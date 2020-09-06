@@ -1,21 +1,43 @@
 #!/usr/bin/env bash
 
-printf "\e[33;1m%s\e[0m\n" 'Stashing unstaged changes'
+printf "\e[33;1m%s\e[0m\n" '[pre-push hook] Stashing unstaged changes'
 git add .
 git stash
 
-printf "\e[33;1m%s\e[0m\n" 'Running flutter analyze'
+exec < /dev/tty
+
+printf "\e[33;1m%s\e[0m\n" '[pre-push hook] Running flutter analyze'
 flutter analyze
 if [ $? -ne 0 ]; then
-  printf "\e[33;1m%s\e[0m\n" 'Failed flutter analyze'
-  exit 1
+  printf "\e[33;1m%s\e[0m\n" '[pre-push hook] Failed flutter analyze'
+  while true; do
+    read -p "[pre-push hook] Would you like to proceed? (y/N) " yn
+    if [ "$yn" = "" ]; then
+      yn='N'
+    fi
+    case $yn in
+        [Yy] ) break;;
+        [Nn] ) exit 1;;
+        * ) echo "Respond with either y or n";;
+    esac
+  done
 fi
 
-printf "\e[33;1m%s\e[0m\n" 'Running flutter test'
+printf "\e[33;1m%s\e[0m\n" '[pre-push hook] Running flutter test'
 flutter test
 if [ $? -ne 0 ]; then
-  printf "\e[33;1m%s\e[0m\n" 'Failed flutter test'
-  exit 1
+  printf "\e[33;1m%s\e[0m\n" '[pre-push hook] Failed flutter test'
+  while true; do
+    read -p "[pre-push hook] Would you like to proceed? (y/N) " yn
+    if [ "$yn" = "" ]; then
+      yn='N'
+    fi
+    case $yn in
+        [Yy] ) break;;
+        [Nn] ) exit 1;;
+        * ) echo "Respond with either y or n";;
+    esac
+  done
 fi
 
-printf "\e[33;1m%s\e[0m\n" 'Previously unstaged changes may have been stashed - pop them if you want them back'
+printf "\e[33;1m%s\e[0m\n" '[pre-push hook] Previously unstaged changes may have been stashed - pop them if you want them back'
