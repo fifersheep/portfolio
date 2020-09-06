@@ -17,10 +17,10 @@ class ExperiencesPage extends StatefulWidget {
   const ExperiencesPage();
 
   @override
-  State<StatefulWidget> createState() => ExperiencesPageState();
+  _ExperiencesPageState createState() => _ExperiencesPageState();
 }
 
-class ExperiencesPageState extends State<ExperiencesPage> {
+class _ExperiencesPageState extends State<ExperiencesPage> {
   final _bloc = getIt<ExperiencesBloc>()..add(const ExperiencesEvent.loadExperiences());
 
   @override
@@ -30,7 +30,7 @@ class ExperiencesPageState extends State<ExperiencesPage> {
       maxWidth: 800,
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Headline(Strings.of(context).experienceTimelineHeader),
-        Paragraph(Strings.of(context).experienceTimelineSubHeader),
+        Paragraph(Strings.of(context).experienceTimelineDescription),
         BlocBuilder<ExperiencesBloc, ExperiencesState>(
           bloc: _bloc,
           builder: (context, state) {
