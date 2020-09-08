@@ -10,6 +10,7 @@ class FirestoreProjectParser extends ProjectParser<DocumentSnapshot> {
       title: projectDoc['title'] as String,
       summary: projectDoc['summary'] as String,
       detail: projectDoc['detail'] as String,
+      coverImageUrl: projectDoc['cover_image_url'] as String,
       tags: tagsDoc
           .map((tag) => ProjectTag(
                 label: tag['label'] as String,

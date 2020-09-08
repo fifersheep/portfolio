@@ -8,6 +8,7 @@ abstract class Project with _$Project {
     String title,
     String summary,
     String detail,
+    String coverImageUrl,
     List<ProjectTag> tags,
   }) = _Project;
 }

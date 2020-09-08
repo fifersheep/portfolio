@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/projects/project_state.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
-import 'package:portfolio/presentation/constants/images.dart';
+import 'package:portfolio/presentation/core/loading.dart';
 import 'package:portfolio/presentation/projects/widgets/project_card_info.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -16,9 +16,15 @@ class ProjectCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Flexible(
-              child: Image.asset(
-                Images.of(context).avatar,
+              child: Image.network(
+                project.coverImageUrl,
                 fit: BoxFit.cover,
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
               ),
             ),
             Container(

@@ -31,6 +31,7 @@ void main() {
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
+      coverImageUrl: 'Cover Image Url',
       tags: [],
     );
 
@@ -38,10 +39,15 @@ void main() {
       'title': 'Title',
       'summary': 'Summary',
       'detail': 'Detail',
+      'cover_image_url': 'Cover Image Url',
       'tags': [],
     };
 
-    final tagData = {'label': 'Label', 'style': 'Style', 'color': 'Color'};
+    final tagData = {
+      'label': 'Label',
+      'style': 'Style',
+      'color': 'Color',
+    };
 
     await firestore.collection('projects').add(projectData);
     await firestore.collection('project_tags').add(tagData);
@@ -56,7 +62,10 @@ void main() {
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
-      tags: [ProjectTag(label: 'Label', style: 'Style', color: 'Color', labelColor: 'Label Color')],
+      coverImageUrl: 'Cover Image',
+      tags: [
+        ProjectTag(label: 'Label', style: 'Style', color: 'Color', labelColor: 'Label Color'),
+      ],
     );
 
     const tagID = 'Tag';
@@ -67,10 +76,16 @@ void main() {
       'title': 'Title',
       'summary': 'Summary',
       'detail': 'Detail',
+      'cover_image_url': 'Cover Image',
       'tags': [tag],
     };
 
-    final tagData = {'label': 'Label', 'style': 'Style', 'color': 'Color', 'label_color': 'Label Color'};
+    final tagData = {
+      'label': 'Label',
+      'style': 'Style',
+      'color': 'Color',
+      'label_color': 'Label Color',
+    };
 
     await firestore.collection('projects').add(projectData);
     await firestore.collection('project_tags').document(tagID).setData(tagData);

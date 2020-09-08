@@ -32,6 +32,7 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
       title: project.title,
       summary: project.summary,
       detail: project.detail,
+      coverImageUrl: project.coverImageUrl,
       tags: project.tags.map(_mapProjectTagStyle).toList(),
     );
   }

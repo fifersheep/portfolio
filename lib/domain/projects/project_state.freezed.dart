@@ -12,11 +12,12 @@ T _$identity<T>(T value) => value;
 class _$ProjectStateTearOff {
   const _$ProjectStateTearOff();
 
-  _ProjectState call({String title, String summary, String detail, List<ProjectTagsState> tags}) {
+  _ProjectState call({String title, String summary, String detail, String coverImageUrl, List<ProjectTagsState> tags}) {
     return _ProjectState(
       title: title,
       summary: summary,
       detail: detail,
+      coverImageUrl: coverImageUrl,
       tags: tags,
     );
   }
@@ -29,6 +30,7 @@ mixin _$ProjectState {
   String get title;
   String get summary;
   String get detail;
+  String get coverImageUrl;
   List<ProjectTagsState> get tags;
 
   $ProjectStateCopyWith<ProjectState> get copyWith;
@@ -37,7 +39,7 @@ mixin _$ProjectState {
 abstract class $ProjectStateCopyWith<$Res> {
   factory $ProjectStateCopyWith(ProjectState value, $Res Function(ProjectState) then) =
       _$ProjectStateCopyWithImpl<$Res>;
-  $Res call({String title, String summary, String detail, List<ProjectTagsState> tags});
+  $Res call({String title, String summary, String detail, String coverImageUrl, List<ProjectTagsState> tags});
 }
 
 class _$ProjectStateCopyWithImpl<$Res> implements $ProjectStateCopyWith<$Res> {
@@ -52,12 +54,14 @@ class _$ProjectStateCopyWithImpl<$Res> implements $ProjectStateCopyWith<$Res> {
     Object title = freezed,
     Object summary = freezed,
     Object detail = freezed,
+    Object coverImageUrl = freezed,
     Object tags = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed ? _value.title : title as String,
       summary: summary == freezed ? _value.summary : summary as String,
       detail: detail == freezed ? _value.detail : detail as String,
+      coverImageUrl: coverImageUrl == freezed ? _value.coverImageUrl : coverImageUrl as String,
       tags: tags == freezed ? _value.tags : tags as List<ProjectTagsState>,
     ));
   }
@@ -67,7 +71,7 @@ abstract class _$ProjectStateCopyWith<$Res> implements $ProjectStateCopyWith<$Re
   factory _$ProjectStateCopyWith(_ProjectState value, $Res Function(_ProjectState) then) =
       __$ProjectStateCopyWithImpl<$Res>;
   @override
-  $Res call({String title, String summary, String detail, List<ProjectTagsState> tags});
+  $Res call({String title, String summary, String detail, String coverImageUrl, List<ProjectTagsState> tags});
 }
 
 class __$ProjectStateCopyWithImpl<$Res> extends _$ProjectStateCopyWithImpl<$Res>
@@ -83,19 +87,21 @@ class __$ProjectStateCopyWithImpl<$Res> extends _$ProjectStateCopyWithImpl<$Res>
     Object title = freezed,
     Object summary = freezed,
     Object detail = freezed,
+    Object coverImageUrl = freezed,
     Object tags = freezed,
   }) {
     return _then(_ProjectState(
       title: title == freezed ? _value.title : title as String,
       summary: summary == freezed ? _value.summary : summary as String,
       detail: detail == freezed ? _value.detail : detail as String,
+      coverImageUrl: coverImageUrl == freezed ? _value.coverImageUrl : coverImageUrl as String,
       tags: tags == freezed ? _value.tags : tags as List<ProjectTagsState>,
     ));
   }
 }
 
 class _$_ProjectState implements _ProjectState {
-  const _$_ProjectState({this.title, this.summary, this.detail, this.tags});
+  const _$_ProjectState({this.title, this.summary, this.detail, this.coverImageUrl, this.tags});
 
   @override
   final String title;
@@ -104,11 +110,13 @@ class _$_ProjectState implements _ProjectState {
   @override
   final String detail;
   @override
+  final String coverImageUrl;
+  @override
   final List<ProjectTagsState> tags;
 
   @override
   String toString() {
-    return 'ProjectState(title: $title, summary: $summary, detail: $detail, tags: $tags)';
+    return 'ProjectState(title: $title, summary: $summary, detail: $detail, coverImageUrl: $coverImageUrl, tags: $tags)';
   }
 
   @override
@@ -118,6 +126,8 @@ class _$_ProjectState implements _ProjectState {
             (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.summary, summary) || const DeepCollectionEquality().equals(other.summary, summary)) &&
             (identical(other.detail, detail) || const DeepCollectionEquality().equals(other.detail, detail)) &&
+            (identical(other.coverImageUrl, coverImageUrl) ||
+                const DeepCollectionEquality().equals(other.coverImageUrl, coverImageUrl)) &&
             (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
@@ -127,6 +137,7 @@ class _$_ProjectState implements _ProjectState {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(summary) ^
       const DeepCollectionEquality().hash(detail) ^
+      const DeepCollectionEquality().hash(coverImageUrl) ^
       const DeepCollectionEquality().hash(tags);
 
   @override
@@ -134,8 +145,12 @@ class _$_ProjectState implements _ProjectState {
 }
 
 abstract class _ProjectState implements ProjectState {
-  const factory _ProjectState({String title, String summary, String detail, List<ProjectTagsState> tags}) =
-      _$_ProjectState;
+  const factory _ProjectState(
+      {String title,
+      String summary,
+      String detail,
+      String coverImageUrl,
+      List<ProjectTagsState> tags}) = _$_ProjectState;
 
   @override
   String get title;
@@ -143,6 +158,8 @@ abstract class _ProjectState implements ProjectState {
   String get summary;
   @override
   String get detail;
+  @override
+  String get coverImageUrl;
   @override
   List<ProjectTagsState> get tags;
   @override

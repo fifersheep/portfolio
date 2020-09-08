@@ -8,6 +8,7 @@ abstract class ProjectState with _$ProjectState {
     String title,
     String summary,
     String detail,
+    String coverImageUrl,
     List<ProjectTagsState> tags,
   }) = _ProjectState;
 }

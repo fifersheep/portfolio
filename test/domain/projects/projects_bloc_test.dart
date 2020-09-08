@@ -31,6 +31,7 @@ void main() {
         title: 'Title',
         summary: 'Summary',
         detail: 'Detail',
+        coverImageUrl: 'Cover Image Url',
         tags: [
           ProjectTag(
             label: 'Label',
@@ -47,6 +48,7 @@ void main() {
         title: 'Title',
         summary: 'Summary',
         detail: 'Detail',
+        coverImageUrl: 'Cover Image Url',
         tags: [
           ProjectTagsState(
             label: 'Label',
@@ -134,6 +136,7 @@ Project _projectWithTagStyle(String style) => Project(
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
+      coverImageUrl: 'Cover Image Url',
       tags: [
         ProjectTag(
           label: 'Label',
@@ -148,6 +151,7 @@ ProjectState _projectStateWithTagStyle(ProjectTagStyle style) => ProjectState(
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
+      coverImageUrl: 'Cover Image Url',
       tags: [
         ProjectTagsState(
           label: 'Label',
