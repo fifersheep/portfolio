@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/projects/project_state.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
-import 'package:portfolio/presentation/core/loading.dart';
 import 'package:portfolio/presentation/projects/widgets/project_card_info.dart';
 
 class ProjectCard extends StatelessWidget {
