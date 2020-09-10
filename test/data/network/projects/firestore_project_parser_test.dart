@@ -17,6 +17,14 @@ void main() {
     when(document['title']).thenReturn('Title');
     when(document['summary']).thenReturn('Summary');
     when(document['detail']).thenReturn('Detail');
+    when(document['cover_image_url']).thenReturn('Cover Image Url');
+    when(document['call_to_actions']).thenReturn([
+      {
+        'type': 'Type',
+        'action': 'Action',
+        'style': 'Style',
+      }
+    ]);
 
     final tagDoc = MockDocumentSnapshot();
     when(tagDoc['label']).thenReturn('Label');
@@ -25,8 +33,11 @@ void main() {
 
     final actual = parser.parseProject(document, [tagDoc]);
 
-    const expected = Project(title: 'Title', summary: 'Summary', detail: 'Detail', tags: [
+    const expected =
+        Project(title: 'Title', summary: 'Summary', detail: 'Detail', coverImageUrl: 'Cover Image Url', tags: [
       ProjectTag(label: 'Label', color: 'Color', style: 'Style'),
+    ], callToActions: [
+      ProjectCallToAction(type: 'Type', action: 'Action', style: 'Style'),
     ]);
 
     expect(actual, equals(expected));
