@@ -26,13 +26,14 @@ void main() {
     expect(actual.getOrElse(() => null), equals([]));
   });
 
-  test('should return a list of untagged projects when firestore returns some', () async {
+  test('should return a list of projects with no tags or call to actions when firestore returns some', () async {
     const project = Project(
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
       coverImageUrl: 'Cover Image Url',
       tags: [],
+      callToActions: [],
     );
 
     final projectData = {
@@ -41,6 +42,7 @@ void main() {
       'detail': 'Detail',
       'cover_image_url': 'Cover Image Url',
       'tags': [],
+      'call_to_actions': [],
     };
 
     final tagData = {
@@ -63,6 +65,7 @@ void main() {
       summary: 'Summary',
       detail: 'Detail',
       coverImageUrl: 'Cover Image',
+      callToActions: [],
       tags: [
         ProjectTag(label: 'Label', style: 'Style', color: 'Color', labelColor: 'Label Color'),
       ],
@@ -78,6 +81,7 @@ void main() {
       'detail': 'Detail',
       'cover_image_url': 'Cover Image',
       'tags': [tag],
+      'call_to_actions': [],
     };
 
     final tagData = {
@@ -89,6 +93,48 @@ void main() {
 
     await firestore.collection('projects').add(projectData);
     await firestore.collection('project_tags').document(tagID).setData(tagData);
+
+    final actual = await repository.getProjects();
+
+    expect(actual | null, equals([project]));
+  });
+
+  test('should return a list of projects with call to action when firestore returns some', () async {
+    const project = Project(
+      title: 'Title',
+      summary: 'Summary',
+      detail: 'Detail',
+      coverImageUrl: 'Cover Image',
+      tags: [],
+      callToActions: [
+        ProjectCallToAction(
+          type: 'Type',
+          action: 'Action',
+          style: 'Style',
+        ),
+      ],
+    );
+
+    const callToActionID = 'CTA';
+    final callToAction = MockDocumentReference();
+    when(callToAction.documentID).thenReturn(callToActionID);
+
+    final callToActionData = {
+      'type': 'Type',
+      'action': 'Action',
+      'style': 'Style',
+    };
+
+    final projectData = {
+      'title': 'Title',
+      'summary': 'Summary',
+      'detail': 'Detail',
+      'cover_image_url': 'Cover Image',
+      'tags': [],
+      'call_to_actions': [callToActionData],
+    };
+
+    await firestore.collection('projects').add(projectData);
 
     final actual = await repository.getProjects();
 

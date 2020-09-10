@@ -18,5 +18,12 @@ class FirestoreProjectParser extends ProjectParser<DocumentSnapshot> {
                 labelColor: tag['label_color'] as String,
                 style: tag['style'] as String,
               ))
+          .toList(),
+      callToActions: (projectDoc['call_to_actions'] as List<dynamic>)
+          .map((callToAction) => ProjectCallToAction(
+                type: callToAction['type'] as String,
+                action: callToAction['action'] as String,
+                style: callToAction['style'] as String,
+              ))
           .toList());
 }

@@ -10,6 +10,7 @@ abstract class Project with _$Project {
     String detail,
     String coverImageUrl,
     List<ProjectTag> tags,
+    List<ProjectCallToAction> callToActions,
   }) = _Project;
 }
 
@@ -21,4 +22,13 @@ abstract class ProjectTag with _$ProjectTag {
     String labelColor,
     String style,
   }) = _ProjectTag;
+}
+
+@freezed
+abstract class ProjectCallToAction with _$ProjectCallToAction {
+  const factory ProjectCallToAction({
+    String type,
+    String action,
+    String style,
+  }) = _ProjectCallToAction;
 }

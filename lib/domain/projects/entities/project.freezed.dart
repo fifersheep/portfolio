@@ -12,13 +12,20 @@ T _$identity<T>(T value) => value;
 class _$ProjectTearOff {
   const _$ProjectTearOff();
 
-  _Project call({String title, String summary, String detail, String coverImageUrl, List<ProjectTag> tags}) {
+  _Project call(
+      {String title,
+      String summary,
+      String detail,
+      String coverImageUrl,
+      List<ProjectTag> tags,
+      List<ProjectCallToAction> callToActions}) {
     return _Project(
       title: title,
       summary: summary,
       detail: detail,
       coverImageUrl: coverImageUrl,
       tags: tags,
+      callToActions: callToActions,
     );
   }
 }
@@ -32,13 +39,20 @@ mixin _$Project {
   String get detail;
   String get coverImageUrl;
   List<ProjectTag> get tags;
+  List<ProjectCallToAction> get callToActions;
 
   $ProjectCopyWith<Project> get copyWith;
 }
 
 abstract class $ProjectCopyWith<$Res> {
   factory $ProjectCopyWith(Project value, $Res Function(Project) then) = _$ProjectCopyWithImpl<$Res>;
-  $Res call({String title, String summary, String detail, String coverImageUrl, List<ProjectTag> tags});
+  $Res call(
+      {String title,
+      String summary,
+      String detail,
+      String coverImageUrl,
+      List<ProjectTag> tags,
+      List<ProjectCallToAction> callToActions});
 }
 
 class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
@@ -55,6 +69,7 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
     Object detail = freezed,
     Object coverImageUrl = freezed,
     Object tags = freezed,
+    Object callToActions = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed ? _value.title : title as String,
@@ -62,6 +77,7 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
       detail: detail == freezed ? _value.detail : detail as String,
       coverImageUrl: coverImageUrl == freezed ? _value.coverImageUrl : coverImageUrl as String,
       tags: tags == freezed ? _value.tags : tags as List<ProjectTag>,
+      callToActions: callToActions == freezed ? _value.callToActions : callToActions as List<ProjectCallToAction>,
     ));
   }
 }
@@ -69,7 +85,13 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
 abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
   factory _$ProjectCopyWith(_Project value, $Res Function(_Project) then) = __$ProjectCopyWithImpl<$Res>;
   @override
-  $Res call({String title, String summary, String detail, String coverImageUrl, List<ProjectTag> tags});
+  $Res call(
+      {String title,
+      String summary,
+      String detail,
+      String coverImageUrl,
+      List<ProjectTag> tags,
+      List<ProjectCallToAction> callToActions});
 }
 
 class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res> implements _$ProjectCopyWith<$Res> {
@@ -85,6 +107,7 @@ class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res> implement
     Object detail = freezed,
     Object coverImageUrl = freezed,
     Object tags = freezed,
+    Object callToActions = freezed,
   }) {
     return _then(_Project(
       title: title == freezed ? _value.title : title as String,
@@ -92,12 +115,13 @@ class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res> implement
       detail: detail == freezed ? _value.detail : detail as String,
       coverImageUrl: coverImageUrl == freezed ? _value.coverImageUrl : coverImageUrl as String,
       tags: tags == freezed ? _value.tags : tags as List<ProjectTag>,
+      callToActions: callToActions == freezed ? _value.callToActions : callToActions as List<ProjectCallToAction>,
     ));
   }
 }
 
 class _$_Project implements _Project {
-  const _$_Project({this.title, this.summary, this.detail, this.coverImageUrl, this.tags});
+  const _$_Project({this.title, this.summary, this.detail, this.coverImageUrl, this.tags, this.callToActions});
 
   @override
   final String title;
@@ -109,10 +133,12 @@ class _$_Project implements _Project {
   final String coverImageUrl;
   @override
   final List<ProjectTag> tags;
+  @override
+  final List<ProjectCallToAction> callToActions;
 
   @override
   String toString() {
-    return 'Project(title: $title, summary: $summary, detail: $detail, coverImageUrl: $coverImageUrl, tags: $tags)';
+    return 'Project(title: $title, summary: $summary, detail: $detail, coverImageUrl: $coverImageUrl, tags: $tags, callToActions: $callToActions)';
   }
 
   @override
@@ -124,7 +150,9 @@ class _$_Project implements _Project {
             (identical(other.detail, detail) || const DeepCollectionEquality().equals(other.detail, detail)) &&
             (identical(other.coverImageUrl, coverImageUrl) ||
                 const DeepCollectionEquality().equals(other.coverImageUrl, coverImageUrl)) &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
+            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
+            (identical(other.callToActions, callToActions) ||
+                const DeepCollectionEquality().equals(other.callToActions, callToActions)));
   }
 
   @override
@@ -134,15 +162,21 @@ class _$_Project implements _Project {
       const DeepCollectionEquality().hash(summary) ^
       const DeepCollectionEquality().hash(detail) ^
       const DeepCollectionEquality().hash(coverImageUrl) ^
-      const DeepCollectionEquality().hash(tags);
+      const DeepCollectionEquality().hash(tags) ^
+      const DeepCollectionEquality().hash(callToActions);
 
   @override
   _$ProjectCopyWith<_Project> get copyWith => __$ProjectCopyWithImpl<_Project>(this, _$identity);
 }
 
 abstract class _Project implements Project {
-  const factory _Project({String title, String summary, String detail, String coverImageUrl, List<ProjectTag> tags}) =
-      _$_Project;
+  const factory _Project(
+      {String title,
+      String summary,
+      String detail,
+      String coverImageUrl,
+      List<ProjectTag> tags,
+      List<ProjectCallToAction> callToActions}) = _$_Project;
 
   @override
   String get title;
@@ -154,6 +188,8 @@ abstract class _Project implements Project {
   String get coverImageUrl;
   @override
   List<ProjectTag> get tags;
+  @override
+  List<ProjectCallToAction> get callToActions;
   @override
   _$ProjectCopyWith<_Project> get copyWith;
 }
@@ -293,4 +329,132 @@ abstract class _ProjectTag implements ProjectTag {
   String get style;
   @override
   _$ProjectTagCopyWith<_ProjectTag> get copyWith;
+}
+
+class _$ProjectCallToActionTearOff {
+  const _$ProjectCallToActionTearOff();
+
+  _ProjectCallToAction call({String type, String action, String style}) {
+    return _ProjectCallToAction(
+      type: type,
+      action: action,
+      style: style,
+    );
+  }
+}
+
+// ignore: unused_element
+const $ProjectCallToAction = _$ProjectCallToActionTearOff();
+
+mixin _$ProjectCallToAction {
+  String get type;
+  String get action;
+  String get style;
+
+  $ProjectCallToActionCopyWith<ProjectCallToAction> get copyWith;
+}
+
+abstract class $ProjectCallToActionCopyWith<$Res> {
+  factory $ProjectCallToActionCopyWith(ProjectCallToAction value, $Res Function(ProjectCallToAction) then) =
+      _$ProjectCallToActionCopyWithImpl<$Res>;
+  $Res call({String type, String action, String style});
+}
+
+class _$ProjectCallToActionCopyWithImpl<$Res> implements $ProjectCallToActionCopyWith<$Res> {
+  _$ProjectCallToActionCopyWithImpl(this._value, this._then);
+
+  final ProjectCallToAction _value;
+  // ignore: unused_field
+  final $Res Function(ProjectCallToAction) _then;
+
+  @override
+  $Res call({
+    Object type = freezed,
+    Object action = freezed,
+    Object style = freezed,
+  }) {
+    return _then(_value.copyWith(
+      type: type == freezed ? _value.type : type as String,
+      action: action == freezed ? _value.action : action as String,
+      style: style == freezed ? _value.style : style as String,
+    ));
+  }
+}
+
+abstract class _$ProjectCallToActionCopyWith<$Res> implements $ProjectCallToActionCopyWith<$Res> {
+  factory _$ProjectCallToActionCopyWith(_ProjectCallToAction value, $Res Function(_ProjectCallToAction) then) =
+      __$ProjectCallToActionCopyWithImpl<$Res>;
+  @override
+  $Res call({String type, String action, String style});
+}
+
+class __$ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopyWithImpl<$Res>
+    implements _$ProjectCallToActionCopyWith<$Res> {
+  __$ProjectCallToActionCopyWithImpl(_ProjectCallToAction _value, $Res Function(_ProjectCallToAction) _then)
+      : super(_value, (v) => _then(v as _ProjectCallToAction));
+
+  @override
+  _ProjectCallToAction get _value => super._value as _ProjectCallToAction;
+
+  @override
+  $Res call({
+    Object type = freezed,
+    Object action = freezed,
+    Object style = freezed,
+  }) {
+    return _then(_ProjectCallToAction(
+      type: type == freezed ? _value.type : type as String,
+      action: action == freezed ? _value.action : action as String,
+      style: style == freezed ? _value.style : style as String,
+    ));
+  }
+}
+
+class _$_ProjectCallToAction implements _ProjectCallToAction {
+  const _$_ProjectCallToAction({this.type, this.action, this.style});
+
+  @override
+  final String type;
+  @override
+  final String action;
+  @override
+  final String style;
+
+  @override
+  String toString() {
+    return 'ProjectCallToAction(type: $type, action: $action, style: $style)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ProjectCallToAction &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.action, action) || const DeepCollectionEquality().equals(other.action, action)) &&
+            (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(action) ^
+      const DeepCollectionEquality().hash(style);
+
+  @override
+  _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith =>
+      __$ProjectCallToActionCopyWithImpl<_ProjectCallToAction>(this, _$identity);
+}
+
+abstract class _ProjectCallToAction implements ProjectCallToAction {
+  const factory _ProjectCallToAction({String type, String action, String style}) = _$_ProjectCallToAction;
+
+  @override
+  String get type;
+  @override
+  String get action;
+  @override
+  String get style;
+  @override
+  _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith;
 }
