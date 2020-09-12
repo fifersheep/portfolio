@@ -24,6 +24,7 @@ class FirestoreProjectParser extends ProjectParser<DocumentSnapshot> {
                 type: callToAction['type'] as String,
                 action: callToAction['action'] as String,
                 style: callToAction['style'] as String,
+                label: callToAction['label'] as String,
               ))
           .toList());
 }

@@ -111,6 +111,7 @@ void main() {
           type: 'Type',
           action: 'Action',
           style: 'Style',
+          label: 'Label',
         ),
       ],
     );
@@ -123,6 +124,7 @@ void main() {
       'type': 'Type',
       'action': 'Action',
       'style': 'Style',
+      'label': 'Label',
     };
 
     final projectData = {

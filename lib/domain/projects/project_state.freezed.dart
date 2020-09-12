@@ -17,7 +17,7 @@ class _$ProjectStateTearOff {
       String summary,
       String detail,
       String coverImageUrl,
-      List<ProjectTagsState> tags,
+      List<ProjectTagState> tags,
       List<ProjectCallToActionState> callToActions}) {
     return _ProjectState(
       title: title,
@@ -38,7 +38,7 @@ mixin _$ProjectState {
   String get summary;
   String get detail;
   String get coverImageUrl;
-  List<ProjectTagsState> get tags;
+  List<ProjectTagState> get tags;
   List<ProjectCallToActionState> get callToActions;
 
   $ProjectStateCopyWith<ProjectState> get copyWith;
@@ -52,7 +52,7 @@ abstract class $ProjectStateCopyWith<$Res> {
       String summary,
       String detail,
       String coverImageUrl,
-      List<ProjectTagsState> tags,
+      List<ProjectTagState> tags,
       List<ProjectCallToActionState> callToActions});
 }
 
@@ -77,7 +77,7 @@ class _$ProjectStateCopyWithImpl<$Res> implements $ProjectStateCopyWith<$Res> {
       summary: summary == freezed ? _value.summary : summary as String,
       detail: detail == freezed ? _value.detail : detail as String,
       coverImageUrl: coverImageUrl == freezed ? _value.coverImageUrl : coverImageUrl as String,
-      tags: tags == freezed ? _value.tags : tags as List<ProjectTagsState>,
+      tags: tags == freezed ? _value.tags : tags as List<ProjectTagState>,
       callToActions: callToActions == freezed ? _value.callToActions : callToActions as List<ProjectCallToActionState>,
     ));
   }
@@ -92,7 +92,7 @@ abstract class _$ProjectStateCopyWith<$Res> implements $ProjectStateCopyWith<$Re
       String summary,
       String detail,
       String coverImageUrl,
-      List<ProjectTagsState> tags,
+      List<ProjectTagState> tags,
       List<ProjectCallToActionState> callToActions});
 }
 
@@ -118,7 +118,7 @@ class __$ProjectStateCopyWithImpl<$Res> extends _$ProjectStateCopyWithImpl<$Res>
       summary: summary == freezed ? _value.summary : summary as String,
       detail: detail == freezed ? _value.detail : detail as String,
       coverImageUrl: coverImageUrl == freezed ? _value.coverImageUrl : coverImageUrl as String,
-      tags: tags == freezed ? _value.tags : tags as List<ProjectTagsState>,
+      tags: tags == freezed ? _value.tags : tags as List<ProjectTagState>,
       callToActions: callToActions == freezed ? _value.callToActions : callToActions as List<ProjectCallToActionState>,
     ));
   }
@@ -136,7 +136,7 @@ class _$_ProjectState implements _ProjectState {
   @override
   final String coverImageUrl;
   @override
-  final List<ProjectTagsState> tags;
+  final List<ProjectTagState> tags;
   @override
   final List<ProjectCallToActionState> callToActions;
 
@@ -179,7 +179,7 @@ abstract class _ProjectState implements ProjectState {
       String summary,
       String detail,
       String coverImageUrl,
-      List<ProjectTagsState> tags,
+      List<ProjectTagState> tags,
       List<ProjectCallToActionState> callToActions}) = _$_ProjectState;
 
   @override
@@ -191,18 +191,18 @@ abstract class _ProjectState implements ProjectState {
   @override
   String get coverImageUrl;
   @override
-  List<ProjectTagsState> get tags;
+  List<ProjectTagState> get tags;
   @override
   List<ProjectCallToActionState> get callToActions;
   @override
   _$ProjectStateCopyWith<_ProjectState> get copyWith;
 }
 
-class _$ProjectTagsStateTearOff {
-  const _$ProjectTagsStateTearOff();
+class _$ProjectTagStateTearOff {
+  const _$ProjectTagStateTearOff();
 
-  _ProjectTagsState call({String label, String color, String labelColor, ProjectTagStyle style}) {
-    return _ProjectTagsState(
+  _ProjectTagState call({String label, String color, String labelColor, ProjectTagStyle style}) {
+    return _ProjectTagState(
       label: label,
       color: color,
       labelColor: labelColor,
@@ -212,29 +212,29 @@ class _$ProjectTagsStateTearOff {
 }
 
 // ignore: unused_element
-const $ProjectTagsState = _$ProjectTagsStateTearOff();
+const $ProjectTagState = _$ProjectTagStateTearOff();
 
-mixin _$ProjectTagsState {
+mixin _$ProjectTagState {
   String get label;
   String get color;
   String get labelColor;
   ProjectTagStyle get style;
 
-  $ProjectTagsStateCopyWith<ProjectTagsState> get copyWith;
+  $ProjectTagStateCopyWith<ProjectTagState> get copyWith;
 }
 
-abstract class $ProjectTagsStateCopyWith<$Res> {
-  factory $ProjectTagsStateCopyWith(ProjectTagsState value, $Res Function(ProjectTagsState) then) =
-      _$ProjectTagsStateCopyWithImpl<$Res>;
+abstract class $ProjectTagStateCopyWith<$Res> {
+  factory $ProjectTagStateCopyWith(ProjectTagState value, $Res Function(ProjectTagState) then) =
+      _$ProjectTagStateCopyWithImpl<$Res>;
   $Res call({String label, String color, String labelColor, ProjectTagStyle style});
 }
 
-class _$ProjectTagsStateCopyWithImpl<$Res> implements $ProjectTagsStateCopyWith<$Res> {
-  _$ProjectTagsStateCopyWithImpl(this._value, this._then);
+class _$ProjectTagStateCopyWithImpl<$Res> implements $ProjectTagStateCopyWith<$Res> {
+  _$ProjectTagStateCopyWithImpl(this._value, this._then);
 
-  final ProjectTagsState _value;
+  final ProjectTagState _value;
   // ignore: unused_field
-  final $Res Function(ProjectTagsState) _then;
+  final $Res Function(ProjectTagState) _then;
 
   @override
   $Res call({
@@ -252,20 +252,20 @@ class _$ProjectTagsStateCopyWithImpl<$Res> implements $ProjectTagsStateCopyWith<
   }
 }
 
-abstract class _$ProjectTagsStateCopyWith<$Res> implements $ProjectTagsStateCopyWith<$Res> {
-  factory _$ProjectTagsStateCopyWith(_ProjectTagsState value, $Res Function(_ProjectTagsState) then) =
-      __$ProjectTagsStateCopyWithImpl<$Res>;
+abstract class _$ProjectTagStateCopyWith<$Res> implements $ProjectTagStateCopyWith<$Res> {
+  factory _$ProjectTagStateCopyWith(_ProjectTagState value, $Res Function(_ProjectTagState) then) =
+      __$ProjectTagStateCopyWithImpl<$Res>;
   @override
   $Res call({String label, String color, String labelColor, ProjectTagStyle style});
 }
 
-class __$ProjectTagsStateCopyWithImpl<$Res> extends _$ProjectTagsStateCopyWithImpl<$Res>
-    implements _$ProjectTagsStateCopyWith<$Res> {
-  __$ProjectTagsStateCopyWithImpl(_ProjectTagsState _value, $Res Function(_ProjectTagsState) _then)
-      : super(_value, (v) => _then(v as _ProjectTagsState));
+class __$ProjectTagStateCopyWithImpl<$Res> extends _$ProjectTagStateCopyWithImpl<$Res>
+    implements _$ProjectTagStateCopyWith<$Res> {
+  __$ProjectTagStateCopyWithImpl(_ProjectTagState _value, $Res Function(_ProjectTagState) _then)
+      : super(_value, (v) => _then(v as _ProjectTagState));
 
   @override
-  _ProjectTagsState get _value => super._value as _ProjectTagsState;
+  _ProjectTagState get _value => super._value as _ProjectTagState;
 
   @override
   $Res call({
@@ -274,7 +274,7 @@ class __$ProjectTagsStateCopyWithImpl<$Res> extends _$ProjectTagsStateCopyWithIm
     Object labelColor = freezed,
     Object style = freezed,
   }) {
-    return _then(_ProjectTagsState(
+    return _then(_ProjectTagState(
       label: label == freezed ? _value.label : label as String,
       color: color == freezed ? _value.color : color as String,
       labelColor: labelColor == freezed ? _value.labelColor : labelColor as String,
@@ -283,8 +283,8 @@ class __$ProjectTagsStateCopyWithImpl<$Res> extends _$ProjectTagsStateCopyWithIm
   }
 }
 
-class _$_ProjectTagsState implements _ProjectTagsState {
-  const _$_ProjectTagsState({this.label, this.color, this.labelColor, this.style});
+class _$_ProjectTagState implements _ProjectTagState {
+  const _$_ProjectTagState({this.label, this.color, this.labelColor, this.style});
 
   @override
   final String label;
@@ -297,13 +297,13 @@ class _$_ProjectTagsState implements _ProjectTagsState {
 
   @override
   String toString() {
-    return 'ProjectTagsState(label: $label, color: $color, labelColor: $labelColor, style: $style)';
+    return 'ProjectTagState(label: $label, color: $color, labelColor: $labelColor, style: $style)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProjectTagsState &&
+        (other is _ProjectTagState &&
             (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)) &&
             (identical(other.color, color) || const DeepCollectionEquality().equals(other.color, color)) &&
             (identical(other.labelColor, labelColor) ||
@@ -320,13 +320,13 @@ class _$_ProjectTagsState implements _ProjectTagsState {
       const DeepCollectionEquality().hash(style);
 
   @override
-  _$ProjectTagsStateCopyWith<_ProjectTagsState> get copyWith =>
-      __$ProjectTagsStateCopyWithImpl<_ProjectTagsState>(this, _$identity);
+  _$ProjectTagStateCopyWith<_ProjectTagState> get copyWith =>
+      __$ProjectTagStateCopyWithImpl<_ProjectTagState>(this, _$identity);
 }
 
-abstract class _ProjectTagsState implements ProjectTagsState {
-  const factory _ProjectTagsState({String label, String color, String labelColor, ProjectTagStyle style}) =
-      _$_ProjectTagsState;
+abstract class _ProjectTagState implements ProjectTagState {
+  const factory _ProjectTagState({String label, String color, String labelColor, ProjectTagStyle style}) =
+      _$_ProjectTagState;
 
   @override
   String get label;
@@ -337,17 +337,19 @@ abstract class _ProjectTagsState implements ProjectTagsState {
   @override
   ProjectTagStyle get style;
   @override
-  _$ProjectTagsStateCopyWith<_ProjectTagsState> get copyWith;
+  _$ProjectTagStateCopyWith<_ProjectTagState> get copyWith;
 }
 
 class _$ProjectCallToActionStateTearOff {
   const _$ProjectCallToActionStateTearOff();
 
-  _ProjectCallToActionState call({ProjectCallToActionType type, ProjectCallToActionStyle style, String action}) {
+  _ProjectCallToActionState call(
+      {ProjectCallToActionType type, ProjectCallToActionStyle style, String action, String label}) {
     return _ProjectCallToActionState(
       type: type,
       style: style,
       action: action,
+      label: label,
     );
   }
 }
@@ -359,6 +361,7 @@ mixin _$ProjectCallToActionState {
   ProjectCallToActionType get type;
   ProjectCallToActionStyle get style;
   String get action;
+  String get label;
 
   $ProjectCallToActionStateCopyWith<ProjectCallToActionState> get copyWith;
 }
@@ -367,7 +370,7 @@ abstract class $ProjectCallToActionStateCopyWith<$Res> {
   factory $ProjectCallToActionStateCopyWith(
           ProjectCallToActionState value, $Res Function(ProjectCallToActionState) then) =
       _$ProjectCallToActionStateCopyWithImpl<$Res>;
-  $Res call({ProjectCallToActionType type, ProjectCallToActionStyle style, String action});
+  $Res call({ProjectCallToActionType type, ProjectCallToActionStyle style, String action, String label});
 }
 
 class _$ProjectCallToActionStateCopyWithImpl<$Res> implements $ProjectCallToActionStateCopyWith<$Res> {
@@ -382,11 +385,13 @@ class _$ProjectCallToActionStateCopyWithImpl<$Res> implements $ProjectCallToActi
     Object type = freezed,
     Object style = freezed,
     Object action = freezed,
+    Object label = freezed,
   }) {
     return _then(_value.copyWith(
       type: type == freezed ? _value.type : type as ProjectCallToActionType,
       style: style == freezed ? _value.style : style as ProjectCallToActionStyle,
       action: action == freezed ? _value.action : action as String,
+      label: label == freezed ? _value.label : label as String,
     ));
   }
 }
@@ -396,7 +401,7 @@ abstract class _$ProjectCallToActionStateCopyWith<$Res> implements $ProjectCallT
           _ProjectCallToActionState value, $Res Function(_ProjectCallToActionState) then) =
       __$ProjectCallToActionStateCopyWithImpl<$Res>;
   @override
-  $Res call({ProjectCallToActionType type, ProjectCallToActionStyle style, String action});
+  $Res call({ProjectCallToActionType type, ProjectCallToActionStyle style, String action, String label});
 }
 
 class __$ProjectCallToActionStateCopyWithImpl<$Res> extends _$ProjectCallToActionStateCopyWithImpl<$Res>
@@ -413,17 +418,19 @@ class __$ProjectCallToActionStateCopyWithImpl<$Res> extends _$ProjectCallToActio
     Object type = freezed,
     Object style = freezed,
     Object action = freezed,
+    Object label = freezed,
   }) {
     return _then(_ProjectCallToActionState(
       type: type == freezed ? _value.type : type as ProjectCallToActionType,
       style: style == freezed ? _value.style : style as ProjectCallToActionStyle,
       action: action == freezed ? _value.action : action as String,
+      label: label == freezed ? _value.label : label as String,
     ));
   }
 }
 
 class _$_ProjectCallToActionState implements _ProjectCallToActionState {
-  const _$_ProjectCallToActionState({this.type, this.style, this.action});
+  const _$_ProjectCallToActionState({this.type, this.style, this.action, this.label});
 
   @override
   final ProjectCallToActionType type;
@@ -431,10 +438,12 @@ class _$_ProjectCallToActionState implements _ProjectCallToActionState {
   final ProjectCallToActionStyle style;
   @override
   final String action;
+  @override
+  final String label;
 
   @override
   String toString() {
-    return 'ProjectCallToActionState(type: $type, style: $style, action: $action)';
+    return 'ProjectCallToActionState(type: $type, style: $style, action: $action, label: $label)';
   }
 
   @override
@@ -443,7 +452,8 @@ class _$_ProjectCallToActionState implements _ProjectCallToActionState {
         (other is _ProjectCallToActionState &&
             (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)) &&
-            (identical(other.action, action) || const DeepCollectionEquality().equals(other.action, action)));
+            (identical(other.action, action) || const DeepCollectionEquality().equals(other.action, action)) &&
+            (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)));
   }
 
   @override
@@ -451,7 +461,8 @@ class _$_ProjectCallToActionState implements _ProjectCallToActionState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(style) ^
-      const DeepCollectionEquality().hash(action);
+      const DeepCollectionEquality().hash(action) ^
+      const DeepCollectionEquality().hash(label);
 
   @override
   _$ProjectCallToActionStateCopyWith<_ProjectCallToActionState> get copyWith =>
@@ -460,7 +471,10 @@ class _$_ProjectCallToActionState implements _ProjectCallToActionState {
 
 abstract class _ProjectCallToActionState implements ProjectCallToActionState {
   const factory _ProjectCallToActionState(
-      {ProjectCallToActionType type, ProjectCallToActionStyle style, String action}) = _$_ProjectCallToActionState;
+      {ProjectCallToActionType type,
+      ProjectCallToActionStyle style,
+      String action,
+      String label}) = _$_ProjectCallToActionState;
 
   @override
   ProjectCallToActionType get type;
@@ -468,6 +482,8 @@ abstract class _ProjectCallToActionState implements ProjectCallToActionState {
   ProjectCallToActionStyle get style;
   @override
   String get action;
+  @override
+  String get label;
   @override
   _$ProjectCallToActionStateCopyWith<_ProjectCallToActionState> get copyWith;
 }

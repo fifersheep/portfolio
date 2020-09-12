@@ -13,19 +13,19 @@ abstract class ProjectState with _$ProjectState {
     String summary,
     String detail,
     String coverImageUrl,
-    List<ProjectTagsState> tags,
+    List<ProjectTagState> tags,
     List<ProjectCallToActionState> callToActions,
   }) = _ProjectState;
 }
 
 @freezed
-abstract class ProjectTagsState with _$ProjectTagsState {
-  const factory ProjectTagsState({
+abstract class ProjectTagState with _$ProjectTagState {
+  const factory ProjectTagState({
     String label,
     String color,
     String labelColor,
     ProjectTagStyle style,
-  }) = _ProjectTagsState;
+  }) = _ProjectTagState;
 }
 
 @freezed
@@ -34,5 +34,6 @@ abstract class ProjectCallToActionState with _$ProjectCallToActionState {
     ProjectCallToActionType type,
     ProjectCallToActionStyle style,
     String action,
+    String label,
   }) = _ProjectCallToActionState;
 }

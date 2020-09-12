@@ -23,6 +23,7 @@ void main() {
         'type': 'Type',
         'action': 'Action',
         'style': 'Style',
+        'label': 'Label',
       }
     ]);
 
@@ -33,12 +34,18 @@ void main() {
 
     final actual = parser.parseProject(document, [tagDoc]);
 
-    const expected =
-        Project(title: 'Title', summary: 'Summary', detail: 'Detail', coverImageUrl: 'Cover Image Url', tags: [
-      ProjectTag(label: 'Label', color: 'Color', style: 'Style'),
-    ], callToActions: [
-      ProjectCallToAction(type: 'Type', action: 'Action', style: 'Style'),
-    ]);
+    const expected = Project(
+      title: 'Title',
+      summary: 'Summary',
+      detail: 'Detail',
+      coverImageUrl: 'Cover Image Url',
+      tags: [
+        ProjectTag(label: 'Label', color: 'Color', style: 'Style'),
+      ],
+      callToActions: [
+        ProjectCallToAction(type: 'Type', action: 'Action', style: 'Style', label: 'Label'),
+      ],
+    );
 
     expect(actual, equals(expected));
   });

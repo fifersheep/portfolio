@@ -334,11 +334,12 @@ abstract class _ProjectTag implements ProjectTag {
 class _$ProjectCallToActionTearOff {
   const _$ProjectCallToActionTearOff();
 
-  _ProjectCallToAction call({String type, String action, String style}) {
+  _ProjectCallToAction call({String type, String action, String style, String label}) {
     return _ProjectCallToAction(
       type: type,
       action: action,
       style: style,
+      label: label,
     );
   }
 }
@@ -350,6 +351,7 @@ mixin _$ProjectCallToAction {
   String get type;
   String get action;
   String get style;
+  String get label;
 
   $ProjectCallToActionCopyWith<ProjectCallToAction> get copyWith;
 }
@@ -357,7 +359,7 @@ mixin _$ProjectCallToAction {
 abstract class $ProjectCallToActionCopyWith<$Res> {
   factory $ProjectCallToActionCopyWith(ProjectCallToAction value, $Res Function(ProjectCallToAction) then) =
       _$ProjectCallToActionCopyWithImpl<$Res>;
-  $Res call({String type, String action, String style});
+  $Res call({String type, String action, String style, String label});
 }
 
 class _$ProjectCallToActionCopyWithImpl<$Res> implements $ProjectCallToActionCopyWith<$Res> {
@@ -372,11 +374,13 @@ class _$ProjectCallToActionCopyWithImpl<$Res> implements $ProjectCallToActionCop
     Object type = freezed,
     Object action = freezed,
     Object style = freezed,
+    Object label = freezed,
   }) {
     return _then(_value.copyWith(
       type: type == freezed ? _value.type : type as String,
       action: action == freezed ? _value.action : action as String,
       style: style == freezed ? _value.style : style as String,
+      label: label == freezed ? _value.label : label as String,
     ));
   }
 }
@@ -385,7 +389,7 @@ abstract class _$ProjectCallToActionCopyWith<$Res> implements $ProjectCallToActi
   factory _$ProjectCallToActionCopyWith(_ProjectCallToAction value, $Res Function(_ProjectCallToAction) then) =
       __$ProjectCallToActionCopyWithImpl<$Res>;
   @override
-  $Res call({String type, String action, String style});
+  $Res call({String type, String action, String style, String label});
 }
 
 class __$ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopyWithImpl<$Res>
@@ -401,17 +405,19 @@ class __$ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopy
     Object type = freezed,
     Object action = freezed,
     Object style = freezed,
+    Object label = freezed,
   }) {
     return _then(_ProjectCallToAction(
       type: type == freezed ? _value.type : type as String,
       action: action == freezed ? _value.action : action as String,
       style: style == freezed ? _value.style : style as String,
+      label: label == freezed ? _value.label : label as String,
     ));
   }
 }
 
 class _$_ProjectCallToAction implements _ProjectCallToAction {
-  const _$_ProjectCallToAction({this.type, this.action, this.style});
+  const _$_ProjectCallToAction({this.type, this.action, this.style, this.label});
 
   @override
   final String type;
@@ -419,10 +425,12 @@ class _$_ProjectCallToAction implements _ProjectCallToAction {
   final String action;
   @override
   final String style;
+  @override
+  final String label;
 
   @override
   String toString() {
-    return 'ProjectCallToAction(type: $type, action: $action, style: $style)';
+    return 'ProjectCallToAction(type: $type, action: $action, style: $style, label: $label)';
   }
 
   @override
@@ -431,7 +439,8 @@ class _$_ProjectCallToAction implements _ProjectCallToAction {
         (other is _ProjectCallToAction &&
             (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.action, action) || const DeepCollectionEquality().equals(other.action, action)) &&
-            (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)));
+            (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)) &&
+            (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)));
   }
 
   @override
@@ -439,7 +448,8 @@ class _$_ProjectCallToAction implements _ProjectCallToAction {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(action) ^
-      const DeepCollectionEquality().hash(style);
+      const DeepCollectionEquality().hash(style) ^
+      const DeepCollectionEquality().hash(label);
 
   @override
   _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith =>
@@ -447,7 +457,7 @@ class _$_ProjectCallToAction implements _ProjectCallToAction {
 }
 
 abstract class _ProjectCallToAction implements ProjectCallToAction {
-  const factory _ProjectCallToAction({String type, String action, String style}) = _$_ProjectCallToAction;
+  const factory _ProjectCallToAction({String type, String action, String style, String label}) = _$_ProjectCallToAction;
 
   @override
   String get type;
@@ -455,6 +465,8 @@ abstract class _ProjectCallToAction implements ProjectCallToAction {
   String get action;
   @override
   String get style;
+  @override
+  String get label;
   @override
   _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith;
 }

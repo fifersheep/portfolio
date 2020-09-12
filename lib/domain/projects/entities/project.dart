@@ -30,5 +30,6 @@ abstract class ProjectCallToAction with _$ProjectCallToAction {
     String type,
     String action,
     String style,
+    String label,
   }) = _ProjectCallToAction;
 }

@@ -35,7 +35,7 @@ void main() {
           style: 'outline',
         )
       ], callToActions: [
-        ProjectCallToAction(type: 'link', action: 'Action', style: 'primary')
+        ProjectCallToAction(type: 'link', action: 'Action', style: 'primary', label: 'Label')
       ])
     ];
 
@@ -46,7 +46,7 @@ void main() {
         detail: 'Detail',
         coverImageUrl: 'Cover Image Url',
         tags: [
-          ProjectTagsState(
+          ProjectTagState(
             label: 'Label',
             color: 'Color',
             labelColor: 'Label Color',
@@ -55,7 +55,10 @@ void main() {
         ],
         callToActions: [
           ProjectCallToActionState(
-              type: ProjectCallToActionType.link, style: ProjectCallToActionStyle.primary, action: 'Action'),
+              type: ProjectCallToActionType.link,
+              style: ProjectCallToActionStyle.primary,
+              action: 'Action',
+              label: 'Label'),
         ],
       )
     ];
@@ -197,7 +200,7 @@ ProjectState _projectStateWithTagStyle(ProjectTagStyle style) => ProjectState(
       detail: 'Detail',
       coverImageUrl: 'Cover Image Url',
       tags: [
-        ProjectTagsState(
+        ProjectTagState(
           label: 'Label',
           color: 'Color',
           labelColor: 'Label Color',
@@ -208,18 +211,12 @@ ProjectState _projectStateWithTagStyle(ProjectTagStyle style) => ProjectState(
     );
 
 Project _projectWithCallToAction(String type, String style) => Project(
-        title: 'Title',
-        summary: 'Summary',
-        detail: 'Detail',
-        coverImageUrl: 'Cover Image Url',
-        tags: [],
-        callToActions: [
-          ProjectCallToAction(
-            type: type,
-            style: style,
-            action: 'Action',
-          )
-        ]);
+    title: 'Title',
+    summary: 'Summary',
+    detail: 'Detail',
+    coverImageUrl: 'Cover Image Url',
+    tags: [],
+    callToActions: [ProjectCallToAction(type: type, style: style, action: 'Action', label: 'Label')]);
 
 ProjectState _projectStateWithCallToAction(ProjectCallToActionType type, ProjectCallToActionStyle style) =>
     ProjectState(
@@ -228,10 +225,4 @@ ProjectState _projectStateWithCallToAction(ProjectCallToActionType type, Project
         detail: 'Detail',
         coverImageUrl: 'Cover Image Url',
         tags: [],
-        callToActions: [
-          ProjectCallToActionState(
-            type: type,
-            style: style,
-            action: 'Action',
-          )
-        ]);
+        callToActions: [ProjectCallToActionState(type: type, style: style, action: 'Action', label: 'Label')]);
