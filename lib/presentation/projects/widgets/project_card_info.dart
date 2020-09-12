@@ -9,7 +9,7 @@ class ProjectCardInfo extends StatelessWidget {
 
   final String title;
   final String summary;
-  final List<ProjectTagsState> tags;
+  final List<ProjectTagState> tags;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class ProjectCardInfo extends StatelessWidget {
     );
   }
 
-  Widget _tagMapper(ProjectTagsState tag) {
+  Widget _tagMapper(ProjectTagState tag) {
     switch (tag.style) {
       case ProjectTagStyle.fill:
         return FilledProjectTag(tag: tag);
