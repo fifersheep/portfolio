@@ -6,7 +6,7 @@ import 'package:portfolio/presentation/core/presentation_extensions.dart';
 class FilledProjectTag extends StatelessWidget {
   const FilledProjectTag({Key key, this.tag}) : super(key: key);
 
-  final ProjectTagsState tag;
+  final ProjectTagState tag;
 
   @override
   Widget build(BuildContext context) => ProjectTag(
