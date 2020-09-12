@@ -27,20 +27,16 @@ void main() {
 
   group('LoadProjects', () {
     final projects = [
-      const Project(
-        title: 'Title',
-        summary: 'Summary',
-        detail: 'Detail',
-        coverImageUrl: 'Cover Image Url',
-        tags: [
-          ProjectTag(
-            label: 'Label',
-            color: 'Color',
-            labelColor: 'Label Color',
-            style: 'outline',
-          )
-        ],
-      )
+      const Project(title: 'Title', summary: 'Summary', detail: 'Detail', coverImageUrl: 'Cover Image Url', tags: [
+        ProjectTag(
+          label: 'Label',
+          color: 'Color',
+          labelColor: 'Label Color',
+          style: 'outline',
+        )
+      ], callToActions: [
+        ProjectCallToAction(type: 'link', action: 'Action', style: 'primary')
+      ])
     ];
 
     final projectStates = [
@@ -56,6 +52,10 @@ void main() {
             labelColor: 'Label Color',
             style: ProjectTagStyle.outline,
           )
+        ],
+        callToActions: [
+          ProjectCallToActionState(
+              type: ProjectCallToActionType.link, style: ProjectCallToActionStyle.primary, action: 'Action'),
         ],
       )
     ];
@@ -118,6 +118,49 @@ void main() {
       ],
     );
 
+    final projectWithCallToActions = [
+      _projectWithCallToAction('link', 'primary'),
+      _projectWithCallToAction('link', 'secondary'),
+      _projectWithCallToAction('link', 'tertiary'),
+      _projectWithCallToAction('route', 'primary'),
+      _projectWithCallToAction('route', 'secondary'),
+      _projectWithCallToAction('route', 'tertiary'),
+    ];
+
+    final projectStateWithCallToActions = [
+      _projectStateWithCallToAction(ProjectCallToActionType.link, ProjectCallToActionStyle.primary),
+      _projectStateWithCallToAction(ProjectCallToActionType.link, ProjectCallToActionStyle.secondary),
+      _projectStateWithCallToAction(ProjectCallToActionType.link, ProjectCallToActionStyle.tertiary),
+      _projectStateWithCallToAction(ProjectCallToActionType.route, ProjectCallToActionStyle.primary),
+      _projectStateWithCallToAction(ProjectCallToActionType.route, ProjectCallToActionStyle.secondary),
+      _projectStateWithCallToAction(ProjectCallToActionType.route, ProjectCallToActionStyle.tertiary),
+    ];
+
+    blocTest(
+      'should map call to action types and styles',
+      build: () {
+        when(repository.getProjects()).thenAnswer((_) async => Right(projectWithCallToActions));
+        return bloc;
+      },
+      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      expect: [
+        ProjectsState.loaded(projectStateWithCallToActions),
+      ],
+    );
+
+    blocTest(
+      'call to action type and style should default to route and secondary',
+      build: () {
+        when(repository.getProjects()).thenAnswer((_) async => Right([_projectWithCallToAction('unknown', 'unknown')]));
+        return bloc;
+      },
+      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      expect: [
+        ProjectsState.loaded(
+            [_projectStateWithCallToAction(ProjectCallToActionType.route, ProjectCallToActionStyle.secondary)]),
+      ],
+    );
+
     blocTest(
       'should emit [Error] when data retrieval is unsuccessful',
       build: () {
@@ -145,6 +188,7 @@ Project _projectWithTagStyle(String style) => Project(
           style: style,
         )
       ],
+      callToActions: [],
     );
 
 ProjectState _projectStateWithTagStyle(ProjectTagStyle style) => ProjectState(
@@ -160,4 +204,34 @@ ProjectState _projectStateWithTagStyle(ProjectTagStyle style) => ProjectState(
           style: style,
         )
       ],
+      callToActions: [],
     );
+
+Project _projectWithCallToAction(String type, String style) => Project(
+        title: 'Title',
+        summary: 'Summary',
+        detail: 'Detail',
+        coverImageUrl: 'Cover Image Url',
+        tags: [],
+        callToActions: [
+          ProjectCallToAction(
+            type: type,
+            style: style,
+            action: 'Action',
+          )
+        ]);
+
+ProjectState _projectStateWithCallToAction(ProjectCallToActionType type, ProjectCallToActionStyle style) =>
+    ProjectState(
+        title: 'Title',
+        summary: 'Summary',
+        detail: 'Detail',
+        coverImageUrl: 'Cover Image Url',
+        tags: [],
+        callToActions: [
+          ProjectCallToActionState(
+            type: type,
+            style: style,
+            action: 'Action',
+          )
+        ]);

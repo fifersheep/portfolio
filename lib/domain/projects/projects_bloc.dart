@@ -34,14 +34,29 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
       detail: project.detail,
       coverImageUrl: project.coverImageUrl,
       tags: project.tags.map(_mapProjectTagStyle).toList(),
+      callToActions: project.callToActions.map(_mapProjectCallToActions).toList(),
     );
   }
 
   ProjectTagsState _mapProjectTagStyle(ProjectTag tag) {
-    final style = ProjectTagStyle.values
-        .firstWhere((tagStyle) => _matchTagStyle(tagStyle, tag.style), orElse: () => ProjectTagStyle.outline);
+    final style = ProjectTagStyle.values.firstWhere(
+      (tagStyle) => _matchEnum(tagStyle, tag.style),
+      orElse: () => ProjectTagStyle.outline,
+    );
     return ProjectTagsState(label: tag.label, color: tag.color, labelColor: tag.labelColor, style: style);
   }
 
-  bool _matchTagStyle(ProjectTagStyle t, String style) => t.toString().split('.')[1] == style;
+  ProjectCallToActionState _mapProjectCallToActions(ProjectCallToAction callToAction) {
+    final type = ProjectCallToActionType.values.firstWhere(
+      (callToActionType) => _matchEnum(callToActionType, callToAction.type),
+      orElse: () => ProjectCallToActionType.route,
+    );
+    final style = ProjectCallToActionStyle.values.firstWhere(
+      (callToActionStyle) => _matchEnum(callToActionStyle, callToAction.style),
+      orElse: () => ProjectCallToActionStyle.secondary,
+    );
+    return ProjectCallToActionState(type: type, style: style, action: callToAction.action);
+  }
+
+  bool _matchEnum<T>(T t, String value) => t.toString().split('.')[1] == value;
 }
