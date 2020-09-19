@@ -9,11 +9,12 @@ import 'routes/routes.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    NavigationRoute.configureRoutes();
     return MaterialApp(
       title: Strings.of(context).appTitle,
       theme: appTheme,
       initialRoute: NavigationRoute.intro,
-      routes: NavigationRoute.routes,
+      onGenerateRoute: NavigationRoute.router.generator,
       navigatorObservers: [getIt<NavigationRouteObserver>()],
     );
   }

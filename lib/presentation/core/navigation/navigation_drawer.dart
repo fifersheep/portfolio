@@ -82,9 +82,7 @@ List<Widget> _menuItems(BuildContext context, String activeRoute, List<Navigatio
             key: Key(item.label),
             title: Text(item.label),
             leading: Icon(item.icon),
-            onTap: () {
-              Navigator.pushNamed(context, item.route);
-            },
+            onTap: () => NavigationRoute.to(context, item.route),
             selected: item.route == activeRoute,
           ))
       .toList();

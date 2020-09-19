@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/projects/project_state.dart';
-import 'package:portfolio/presentation/constants/colors.dart';
+import 'package:portfolio/presentation/core/actions/primary_call_to_action.dart';
+import 'package:portfolio/presentation/core/actions/secondary_call_to_action.dart';
+import 'package:portfolio/presentation/core/actions/tertiary_call_to_action.dart';
 import 'package:portfolio/presentation/projects/widgets/project_card_info.dart';
+import 'package:portfolio/presentation/routes/routes.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({this.project});
@@ -26,16 +30,60 @@ class ProjectCard extends StatelessWidget {
                 },
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: const BoxDecoration(color: ThemeColors.white),
-              child: ProjectCardInfo(
-                title: project.title,
-                summary: project.summary,
-                tags: project.tags,
-              ),
+            Column(
+              children: [
+                ProjectCardInfo(
+                  title: project.title,
+                  summary: project.summary,
+                  tags: project.tags,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: ButtonBar(
+                      alignment: MainAxisAlignment.end,
+                      children: (project.callToActions
+                            ..sort((first, second) => second.style.index.compareTo(first.style.index)))
+                          .map((callToAction) => _callToActionMapper(context, callToAction))
+                          .toList()),
+                ),
+              ],
             )
           ],
         ),
       );
+
+  Widget _callToActionMapper(BuildContext context, ProjectCallToActionState callToAction) {
+    void onPressed() => callToAction.type == ProjectCallToActionType.route
+        ? NavigationRoute.to(context, callToAction.action)
+        : launch(callToAction.action);
+
+    final primaryCallToAction = PrimaryCallToAction(
+      label: callToAction.label,
+      route: callToAction.action,
+      onPressed: onPressed,
+    );
+
+    final secondaryCallToAction = SecondaryCallToAction(
+      label: callToAction.label,
+      route: callToAction.action,
+      onPressed: onPressed,
+    );
+
+    final tertiaryCallToAction = TertiaryCallToAction(
+      label: callToAction.label,
+      route: callToAction.action,
+      onPressed: onPressed,
+    );
+
+    switch (callToAction.style) {
+      case ProjectCallToActionStyle.primary:
+        return primaryCallToAction;
+      case ProjectCallToActionStyle.secondary:
+        return secondaryCallToAction;
+      case ProjectCallToActionStyle.tertiary:
+        return tertiaryCallToAction;
+      default:
+        return secondaryCallToAction;
+    }
+  }
 }

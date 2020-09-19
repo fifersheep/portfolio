@@ -31,6 +31,7 @@ void main() {
     NavigatorObserver navigatorObserver;
 
     setUp(() {
+      NavigationRoute.configureRoutes();
       navigatorObserver = MockNavigatorObserver();
     });
 
@@ -47,7 +48,7 @@ void main() {
             child: Strings(
               child: MaterialApp(
                 navigatorObservers: [navigatorObserver],
-                routes: NavigationRoute.routes,
+                onGenerateRoute: NavigationRoute.router.generator,
                 home: Scaffold(
                   appBar: AppBar(),
                   drawer: const NavigationDrawer(pinOpen: false),
