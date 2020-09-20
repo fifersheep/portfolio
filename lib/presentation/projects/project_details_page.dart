@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/presentation/constants/strings.dart';
+import 'package:portfolio/presentation/core/page_scaffold.dart';
 
 class ProjectDetailsPage extends StatelessWidget {
   const ProjectDetailsPage({@required @PathParam() this.id});
@@ -7,9 +9,17 @@ class ProjectDetailsPage extends StatelessWidget {
   final String id;
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(id),
-    );
-  }
+  Widget build(BuildContext context) => PageScaffold(
+        title: Strings.of(context).projectDetailsTitle,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(Strings.of(context).projectDetailsComingSoon),
+              const SizedBox(height: 8),
+              Text('Project ID: $id'),
+            ],
+          ),
+        ),
+      );
 }

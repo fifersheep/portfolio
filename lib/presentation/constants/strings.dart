@@ -46,6 +46,10 @@ class Strings extends InheritedWidget {
   String get projectsDescription =>
       "Over the years I've worked on a number of software projects. Below I have a list of projects that I'd like to share with you";
 
+  String get projectDetailsTitle => 'Project Details';
+  String get projectDetailsComingSoon => 'Project Details Coming Soon';
+
   String get loading => 'Loading Content';
   String get genericError => "Something's Gone Wrong :(";
+  String get pageNotFound => '404: Page Not Found';
 }
