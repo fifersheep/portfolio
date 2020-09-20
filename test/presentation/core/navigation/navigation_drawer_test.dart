@@ -1,8 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/domain/experiences/experiences_bloc.dart';
+import 'package:portfolio/domain/projects/projects_bloc.dart';
 import 'package:portfolio/injection.dart';
 import 'package:portfolio/presentation/blog/blog_page.dart';
 import 'package:portfolio/presentation/constants/images.dart';
@@ -11,16 +12,19 @@ import 'package:portfolio/presentation/core/navigation/navigation_drawer.dart';
 import 'package:portfolio/presentation/experiences/experiences_page.dart';
 import 'package:portfolio/presentation/intro/intro_page.dart';
 import 'package:portfolio/presentation/projects/projects_page.dart';
-import 'package:portfolio/presentation/routes/routes.dart';
+import 'package:portfolio/presentation/routes/routes.gr.dart';
 
 class MockNavigatorObserver extends Mock implements NavigatorObserver {}
 
 // todo: really to work out how to not depend on bloc mocks here
-class MockExperiencesBloc extends MockBloc<ExperiencesEvent, ExperiencesState> implements ExperiencesBloc {}
+class MockExperiencesBloc extends MockBloc<ExperiencesState> implements ExperiencesBloc {}
+
+class MockProjectsBloc extends MockBloc<ProjectsState> implements ProjectsBloc {}
 
 void main() {
   setUpAll(() {
     getIt.registerLazySingleton<ExperiencesBloc>(() => MockExperiencesBloc());
+    getIt.registerLazySingleton<ProjectsBloc>(() => MockProjectsBloc());
   });
 
   group('NavigationDrawer routing', () {
@@ -38,16 +42,20 @@ void main() {
     };
     routingTestParams.forEach((String key, Type widgetType) {
       testWidgets('$key navigation item navigates to the projects page', (tester) async {
-        await tester.pumpWidget(Images(
+        await tester.pumpWidget(
+          Images(
             child: Strings(
-                child: MaterialApp(
-          navigatorObservers: [navigatorObserver],
-          routes: NavigationRoute.routes,
-          home: Scaffold(
-            appBar: AppBar(),
-            drawer: const NavigationDrawer(pinOpen: false),
+              child: MaterialApp(
+                navigatorObservers: [navigatorObserver],
+                onGenerateRoute: Router(),
+                home: Scaffold(
+                  appBar: AppBar(),
+                  drawer: const NavigationDrawer(pinOpen: false),
+                ),
+              ),
+            ),
           ),
-        ))));
+        );
 
         final locateDrawer = find.byTooltip('Open navigation menu');
         await tester.tap(locateDrawer);

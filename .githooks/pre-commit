@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-printf "\e[33;1m%s\e[0m\n" 'Stashing unstaged changes'
+printf "\e[33;1m%s\e[0m\n" '[pre-commit hook] Stashing unstaged changes'
 git commit -m "WIP" --no-verify
 git add .
 git stash
 git reset --soft HEAD^
 
-printf "\e[33;1m%s\e[0m\n" 'Running build_runner'
+printf "\e[33;1m%s\e[0m\n" '[pre-commit hook] Running build_runner'
 flutter packages pub run build_runner build --delete-conflicting-outputs
 
-printf "\e[33;1m%s\e[0m\n" 'Running flutter format'
+printf "\e[33;1m%s\e[0m\n" '[pre-commit hook] Running flutter format'
 flutter format lib/ test/ --line-length 120
 
-printf "\e[33;1m%s\e[0m\n" 'Adding auto-generated and formatted files'
+printf "\e[33;1m%s\e[0m\n" '[pre-commit hook] Adding auto-generated and formatted files'
 git add lib/
 git add test/
 
-printf "\e[33;1m%s\e[0m\n" 'Previously unstaged changes may have been stashed - pop them if you want them back'
+printf "\e[33;1m%s\e[0m\n" '[pre-commit hook] Previously unstaged changes may have been stashed - pop them if you want them back'

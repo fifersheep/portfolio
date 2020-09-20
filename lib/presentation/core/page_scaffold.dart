@@ -46,16 +46,21 @@ class PageScaffold extends StatelessWidget {
                         : null,
                   ),
                 ),
-                SliverList(
-                  delegate: SliverChildListDelegate([
-                    Container(
-                      alignment: Alignment.center,
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(maxWidth: maxWidth),
-                        child: body,
+                SliverLayoutBuilder(
+                  builder: (context, constraints) => SliverList(
+                    delegate: SliverChildListDelegate([
+                      Container(
+                        alignment: Alignment.center,
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxWidth: maxWidth,
+                            minHeight: constraints.remainingPaintExtent,
+                          ),
+                          child: body,
+                        ),
                       ),
-                    ),
-                  ]),
+                    ]),
+                  ),
                 ),
               ],
             ),

@@ -1,6 +1,10 @@
 include: package:lint/analysis_options.yaml
 
 analyzer:
+  exclude:
+    - lib/**.gr.dart
+    - lib/**.freezed.dart
+    - test/**
   errors:
     missing_required_param: error
     missing_return: error

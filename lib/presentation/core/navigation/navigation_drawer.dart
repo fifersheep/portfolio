@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
-import 'package:portfolio/presentation/routes/routes.dart';
+import 'package:portfolio/presentation/routes/routes.gr.dart';
 
 import 'navigation_header.dart';
 import 'navigation_route_observer.dart';
@@ -58,10 +58,10 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
           children: <Widget>[
             NavigationHeader(),
             ..._menuItems(context, _activeRoute, [
-              NavigationItem(Strings.of(context).navItemIntro, Icons.face, NavigationRoute.intro),
-              NavigationItem(Strings.of(context).navItemProjects, Icons.code, NavigationRoute.projects),
-              NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, NavigationRoute.experiences),
-              NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, NavigationRoute.blog)
+              NavigationItem(Strings.of(context).navItemIntro, Icons.face, Routes.introPage),
+              NavigationItem(Strings.of(context).navItemProjects, Icons.code, Routes.projectsPage),
+              NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, Routes.experiencesPage),
+              NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, Routes.blogPage)
             ])
           ],
         ),
@@ -82,9 +82,7 @@ List<Widget> _menuItems(BuildContext context, String activeRoute, List<Navigatio
             key: Key(item.label),
             title: Text(item.label),
             leading: Icon(item.icon),
-            onTap: () {
-              Navigator.pushNamed(context, item.route);
-            },
+            onTap: () => Navigator.pushNamed(context, item.route),
             selected: item.route == activeRoute,
           ))
       .toList();

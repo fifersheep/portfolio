@@ -38,11 +38,18 @@ class Strings extends InheritedWidget {
 
   String get experienceTitle => 'Life Experience';
   String get experienceTimelineHeader => 'Life Experience Timeline';
-  String get experienceTimelineSubHeader =>
+  String get experienceTimelineDescription =>
       'A place not to list just career accomplishments but life accomplishments and events that I’m proud of.';
 
-  String get projectsTitle => 'Projects Title';
+  String get projectsTitle => 'Projects';
+  String get projectsHeader => 'Software';
+  String get projectsDescription =>
+      "Over the years I've worked on a number of software projects. Below I have a list of projects that I'd like to share with you";
+
+  String get projectDetailsTitle => 'Project Details';
+  String get projectDetailsComingSoon => 'Project Details Coming Soon';
 
   String get loading => 'Loading Content';
   String get genericError => "Something's Gone Wrong :(";
+  String get pageNotFound => '404: Page Not Found';
 }
