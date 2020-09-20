@@ -4,7 +4,6 @@ import 'package:portfolio/presentation/core/actions/primary_call_to_action.dart'
 import 'package:portfolio/presentation/core/actions/secondary_call_to_action.dart';
 import 'package:portfolio/presentation/core/actions/tertiary_call_to_action.dart';
 import 'package:portfolio/presentation/projects/widgets/project_card_info.dart';
-import 'package:portfolio/presentation/routes/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -54,7 +53,7 @@ class ProjectCard extends StatelessWidget {
 
   Widget _callToActionMapper(BuildContext context, ProjectCallToActionState callToAction) {
     void onPressed() => callToAction.type == ProjectCallToActionType.route
-        ? NavigationRoute.to(context, callToAction.action)
+        ? Navigator.pushNamed(context, callToAction.action)
         : launch(callToAction.action);
 
     final primaryCallToAction = PrimaryCallToAction(

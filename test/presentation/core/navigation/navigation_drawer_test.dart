@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/domain/experiences/experiences_bloc.dart';
@@ -12,7 +12,7 @@ import 'package:portfolio/presentation/core/navigation/navigation_drawer.dart';
 import 'package:portfolio/presentation/experiences/experiences_page.dart';
 import 'package:portfolio/presentation/intro/intro_page.dart';
 import 'package:portfolio/presentation/projects/projects_page.dart';
-import 'package:portfolio/presentation/routes/routes.dart';
+import 'package:portfolio/presentation/routes/routes.gr.dart';
 
 class MockNavigatorObserver extends Mock implements NavigatorObserver {}
 
@@ -31,7 +31,6 @@ void main() {
     NavigatorObserver navigatorObserver;
 
     setUp(() {
-      NavigationRoute.configureRoutes();
       navigatorObserver = MockNavigatorObserver();
     });
 
@@ -48,7 +47,7 @@ void main() {
             child: Strings(
               child: MaterialApp(
                 navigatorObservers: [navigatorObserver],
-                onGenerateRoute: NavigationRoute.router.generator,
+                onGenerateRoute: Router(),
                 home: Scaffold(
                   appBar: AppBar(),
                   drawer: const NavigationDrawer(pinOpen: false),
