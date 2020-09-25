@@ -9,5 +9,5 @@ class Images extends InheritedWidget {
   bool updateShouldNotify(Images old) => false;
 
   String get avatar => 'assets/images/avatar.jpeg';
-  String get introHeaderBackground => 'assets/images/intro_bg.png';
+  String get introHeaderBanner => 'assets/images/intro_header_banner.png';
 }

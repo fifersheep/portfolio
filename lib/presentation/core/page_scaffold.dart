@@ -41,7 +41,7 @@ class PageScaffold extends StatelessWidget {
                     background: headerBackground != null
                         ? Image.asset(
                             headerBackground,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fitHeight,
                           )
                         : null,
                   ),

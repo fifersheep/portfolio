@@ -15,7 +15,7 @@ class IntroPage extends StatelessWidget {
 
     return PageScaffold(
       title: strings.introTitle,
-      headerBackground: Images.of(context).introHeaderBackground,
+      headerBackground: Images.of(context).introHeaderBanner,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
