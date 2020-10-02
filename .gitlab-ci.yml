@@ -4,7 +4,7 @@ stages:
   - deploy
 
 .flutter:
-  image: cirrusci/flutter:beta-web
+  image: cirrusci/flutter:beta
   before_script:
     - flutter config --enable-web
     - flutter packages get
