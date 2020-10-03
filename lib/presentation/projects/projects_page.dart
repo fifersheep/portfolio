@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:portfolio/domain/projects/projects_bloc.dart';
 import 'package:portfolio/injection.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
@@ -37,26 +38,27 @@ class _ProjectsPageState extends State<ProjectsPage> {
                   LayoutBuilder(
                     builder: (_, constraints) {
                       int _crossAxisCount;
-                      double _childAspectRatio;
+                      double _imageAspectRatio;
                       if (constraints.maxWidth < 760) {
                         _crossAxisCount = 1;
-                        _childAspectRatio = 5 / 3;
+                        _imageAspectRatio = 5 / 2;
                       } else if (constraints.maxWidth < 1100) {
                         _crossAxisCount = 2;
-                        _childAspectRatio = 5 / 4;
+                        _imageAspectRatio = 5 / 3;
                       } else {
                         _crossAxisCount = 3;
-                        _childAspectRatio = 5 / 4;
+                        _imageAspectRatio = 5 / 3;
                       }
 
-                      return GridView.builder(
+                      return StaggeredGridView.countBuilder(
                         shrinkWrap: true,
                         physics: const ClampingScrollPhysics(),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: _crossAxisCount,
-                          childAspectRatio: _childAspectRatio,
+                        crossAxisCount: _crossAxisCount,
+                        staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
+                        itemBuilder: (_, index) => ProjectCard(
+                          project: state.projects[index],
+                          imageAspectRatio: _imageAspectRatio,
                         ),
-                        itemBuilder: (_, index) => ProjectCard(project: state.projects[index]),
                         itemCount: state.projects.length,
                       );
                     },

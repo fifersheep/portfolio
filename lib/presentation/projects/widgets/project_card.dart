@@ -7,9 +7,10 @@ import 'package:portfolio/presentation/projects/widgets/project_card_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
-  const ProjectCard({this.project});
+  const ProjectCard({this.project, this.imageAspectRatio});
 
   final ProjectState project;
+  final double imageAspectRatio;
 
   @override
   Widget build(BuildContext context) => Card(
@@ -17,7 +18,8 @@ class ProjectCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Flexible(
+            AspectRatio(
+              aspectRatio: imageAspectRatio,
               child: Image.network(
                 project.coverImageUrl,
                 fit: BoxFit.cover,
