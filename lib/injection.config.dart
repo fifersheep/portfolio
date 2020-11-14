@@ -8,19 +8,19 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-import 'domain/core/formatter/date_formatter.dart';
 import 'data/network/experiences/experience_parser.dart';
-import 'domain/experiences/experiences_bloc.dart';
-import 'domain/experiences/experiences_repository.dart';
-import 'data/network/firebase_injectable_module.dart';
 import 'data/network/experiences/firestore_experience_parser.dart';
 import 'data/network/experiences/firestore_experiences_repository.dart';
+import 'data/network/firebase_injectable_module.dart';
 import 'data/network/projects/firestore_project_parser.dart';
 import 'data/network/projects/firestore_projects_repository.dart';
-import 'presentation/core/navigation/navigation_route_observer.dart';
 import 'data/network/projects/project_parser.dart';
+import 'domain/core/formatter/date_formatter.dart';
+import 'domain/experiences/experiences_bloc.dart';
+import 'domain/experiences/experiences_repository.dart';
 import 'domain/projects/projects_bloc.dart';
 import 'domain/projects/projects_repository.dart';
+import 'presentation/core/navigation/navigation_route_observer.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
