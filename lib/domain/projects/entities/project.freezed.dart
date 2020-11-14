@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'project.dart';
 
@@ -9,9 +9,11 @@ part of 'project.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ProjectTearOff {
   const _$ProjectTearOff();
 
+// ignore: unused_element
   _Project call(
       {String title,
       String summary,
@@ -30,9 +32,11 @@ class _$ProjectTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Project = _$ProjectTearOff();
 
+/// @nodoc
 mixin _$Project {
   String get title;
   String get summary;
@@ -44,6 +48,7 @@ mixin _$Project {
   $ProjectCopyWith<Project> get copyWith;
 }
 
+/// @nodoc
 abstract class $ProjectCopyWith<$Res> {
   factory $ProjectCopyWith(Project value, $Res Function(Project) then) = _$ProjectCopyWithImpl<$Res>;
   $Res call(
@@ -55,6 +60,7 @@ abstract class $ProjectCopyWith<$Res> {
       List<ProjectCallToAction> callToActions});
 }
 
+/// @nodoc
 class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
   _$ProjectCopyWithImpl(this._value, this._then);
 
@@ -82,6 +88,7 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
   factory _$ProjectCopyWith(_Project value, $Res Function(_Project) then) = __$ProjectCopyWithImpl<$Res>;
   @override
@@ -94,6 +101,7 @@ abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       List<ProjectCallToAction> callToActions});
 }
 
+/// @nodoc
 class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res> implements _$ProjectCopyWith<$Res> {
   __$ProjectCopyWithImpl(_Project _value, $Res Function(_Project) _then) : super(_value, (v) => _then(v as _Project));
 
@@ -120,6 +128,7 @@ class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res> implement
   }
 }
 
+/// @nodoc
 class _$_Project implements _Project {
   const _$_Project({this.title, this.summary, this.detail, this.coverImageUrl, this.tags, this.callToActions});
 
@@ -194,9 +203,11 @@ abstract class _Project implements Project {
   _$ProjectCopyWith<_Project> get copyWith;
 }
 
+/// @nodoc
 class _$ProjectTagTearOff {
   const _$ProjectTagTearOff();
 
+// ignore: unused_element
   _ProjectTag call({String label, String color, String labelColor, String style}) {
     return _ProjectTag(
       label: label,
@@ -207,9 +218,11 @@ class _$ProjectTagTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProjectTag = _$ProjectTagTearOff();
 
+/// @nodoc
 mixin _$ProjectTag {
   String get label;
   String get color;
@@ -219,11 +232,13 @@ mixin _$ProjectTag {
   $ProjectTagCopyWith<ProjectTag> get copyWith;
 }
 
+/// @nodoc
 abstract class $ProjectTagCopyWith<$Res> {
   factory $ProjectTagCopyWith(ProjectTag value, $Res Function(ProjectTag) then) = _$ProjectTagCopyWithImpl<$Res>;
   $Res call({String label, String color, String labelColor, String style});
 }
 
+/// @nodoc
 class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
   _$ProjectTagCopyWithImpl(this._value, this._then);
 
@@ -247,12 +262,14 @@ class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$ProjectTagCopyWith<$Res> implements $ProjectTagCopyWith<$Res> {
   factory _$ProjectTagCopyWith(_ProjectTag value, $Res Function(_ProjectTag) then) = __$ProjectTagCopyWithImpl<$Res>;
   @override
   $Res call({String label, String color, String labelColor, String style});
 }
 
+/// @nodoc
 class __$ProjectTagCopyWithImpl<$Res> extends _$ProjectTagCopyWithImpl<$Res> implements _$ProjectTagCopyWith<$Res> {
   __$ProjectTagCopyWithImpl(_ProjectTag _value, $Res Function(_ProjectTag) _then)
       : super(_value, (v) => _then(v as _ProjectTag));
@@ -276,6 +293,7 @@ class __$ProjectTagCopyWithImpl<$Res> extends _$ProjectTagCopyWithImpl<$Res> imp
   }
 }
 
+/// @nodoc
 class _$_ProjectTag implements _ProjectTag {
   const _$_ProjectTag({this.label, this.color, this.labelColor, this.style});
 
@@ -331,9 +349,11 @@ abstract class _ProjectTag implements ProjectTag {
   _$ProjectTagCopyWith<_ProjectTag> get copyWith;
 }
 
+/// @nodoc
 class _$ProjectCallToActionTearOff {
   const _$ProjectCallToActionTearOff();
 
+// ignore: unused_element
   _ProjectCallToAction call({String type, String action, String style, String label}) {
     return _ProjectCallToAction(
       type: type,
@@ -344,9 +364,11 @@ class _$ProjectCallToActionTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProjectCallToAction = _$ProjectCallToActionTearOff();
 
+/// @nodoc
 mixin _$ProjectCallToAction {
   String get type;
   String get action;
@@ -356,12 +378,14 @@ mixin _$ProjectCallToAction {
   $ProjectCallToActionCopyWith<ProjectCallToAction> get copyWith;
 }
 
+/// @nodoc
 abstract class $ProjectCallToActionCopyWith<$Res> {
   factory $ProjectCallToActionCopyWith(ProjectCallToAction value, $Res Function(ProjectCallToAction) then) =
       _$ProjectCallToActionCopyWithImpl<$Res>;
   $Res call({String type, String action, String style, String label});
 }
 
+/// @nodoc
 class _$ProjectCallToActionCopyWithImpl<$Res> implements $ProjectCallToActionCopyWith<$Res> {
   _$ProjectCallToActionCopyWithImpl(this._value, this._then);
 
@@ -385,6 +409,7 @@ class _$ProjectCallToActionCopyWithImpl<$Res> implements $ProjectCallToActionCop
   }
 }
 
+/// @nodoc
 abstract class _$ProjectCallToActionCopyWith<$Res> implements $ProjectCallToActionCopyWith<$Res> {
   factory _$ProjectCallToActionCopyWith(_ProjectCallToAction value, $Res Function(_ProjectCallToAction) then) =
       __$ProjectCallToActionCopyWithImpl<$Res>;
@@ -392,6 +417,7 @@ abstract class _$ProjectCallToActionCopyWith<$Res> implements $ProjectCallToActi
   $Res call({String type, String action, String style, String label});
 }
 
+/// @nodoc
 class __$ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopyWithImpl<$Res>
     implements _$ProjectCallToActionCopyWith<$Res> {
   __$ProjectCallToActionCopyWithImpl(_ProjectCallToAction _value, $Res Function(_ProjectCallToAction) _then)
@@ -416,6 +442,7 @@ class __$ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopy
   }
 }
 
+/// @nodoc
 class _$_ProjectCallToAction implements _ProjectCallToAction {
   const _$_ProjectCallToAction({this.type, this.action, this.style, this.label});
 

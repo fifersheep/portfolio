@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'experiences_bloc.dart';
 
@@ -9,24 +9,49 @@ part of 'experiences_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ExperiencesEventTearOff {
   const _$ExperiencesEventTearOff();
 
+// ignore: unused_element
   LoadExperiences loadExperiences() {
     return const LoadExperiences();
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperiencesEvent = _$ExperiencesEventTearOff();
 
-mixin _$ExperiencesEvent {}
+/// @nodoc
+mixin _$ExperiencesEvent {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loadExperiences(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loadExperiences(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loadExperiences(LoadExperiences value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loadExperiences(LoadExperiences value),
+    @required Result orElse(),
+  });
+}
 
+/// @nodoc
 abstract class $ExperiencesEventCopyWith<$Res> {
   factory $ExperiencesEventCopyWith(ExperiencesEvent value, $Res Function(ExperiencesEvent) then) =
       _$ExperiencesEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperiencesEventCopyWithImpl<$Res> implements $ExperiencesEventCopyWith<$Res> {
   _$ExperiencesEventCopyWithImpl(this._value, this._then);
 
@@ -35,11 +60,13 @@ class _$ExperiencesEventCopyWithImpl<$Res> implements $ExperiencesEventCopyWith<
   final $Res Function(ExperiencesEvent) _then;
 }
 
+/// @nodoc
 abstract class $LoadExperiencesCopyWith<$Res> {
   factory $LoadExperiencesCopyWith(LoadExperiences value, $Res Function(LoadExperiences) then) =
       _$LoadExperiencesCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadExperiencesCopyWithImpl<$Res> extends _$ExperiencesEventCopyWithImpl<$Res>
     implements $LoadExperiencesCopyWith<$Res> {
   _$LoadExperiencesCopyWithImpl(LoadExperiences _value, $Res Function(LoadExperiences) _then)
@@ -49,6 +76,7 @@ class _$LoadExperiencesCopyWithImpl<$Res> extends _$ExperiencesEventCopyWithImpl
   LoadExperiences get _value => super._value as LoadExperiences;
 }
 
+/// @nodoc
 class _$LoadExperiences implements LoadExperiences {
   const _$LoadExperiences();
 
@@ -64,33 +92,83 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loadExperiences(),
+  }) {
+    assert(loadExperiences != null);
+    return loadExperiences();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loadExperiences(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadExperiences != null) {
+      return loadExperiences();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loadExperiences(LoadExperiences value),
+  }) {
+    assert(loadExperiences != null);
+    return loadExperiences(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loadExperiences(LoadExperiences value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadExperiences != null) {
+      return loadExperiences(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class LoadExperiences implements ExperiencesEvent {
   const factory LoadExperiences() = _$LoadExperiences;
 }
 
+/// @nodoc
 class _$ExperiencesStateTearOff {
   const _$ExperiencesStateTearOff();
 
+// ignore: unused_element
   ExperiencesLoading loading() {
     return const ExperiencesLoading();
   }
 
+// ignore: unused_element
   ExperiencesLoaded loaded(List<ExperienceState> experiences) {
     return ExperiencesLoaded(
       experiences,
     );
   }
 
+// ignore: unused_element
   ExperiencesError error() {
     return const ExperiencesError();
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperiencesState = _$ExperiencesStateTearOff();
 
+/// @nodoc
 mixin _$ExperiencesState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -120,11 +198,13 @@ mixin _$ExperiencesState {
   });
 }
 
+/// @nodoc
 abstract class $ExperiencesStateCopyWith<$Res> {
   factory $ExperiencesStateCopyWith(ExperiencesState value, $Res Function(ExperiencesState) then) =
       _$ExperiencesStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperiencesStateCopyWithImpl<$Res> implements $ExperiencesStateCopyWith<$Res> {
   _$ExperiencesStateCopyWithImpl(this._value, this._then);
 
@@ -133,11 +213,13 @@ class _$ExperiencesStateCopyWithImpl<$Res> implements $ExperiencesStateCopyWith<
   final $Res Function(ExperiencesState) _then;
 }
 
+/// @nodoc
 abstract class $ExperiencesLoadingCopyWith<$Res> {
   factory $ExperiencesLoadingCopyWith(ExperiencesLoading value, $Res Function(ExperiencesLoading) then) =
       _$ExperiencesLoadingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperiencesLoadingCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
     implements $ExperiencesLoadingCopyWith<$Res> {
   _$ExperiencesLoadingCopyWithImpl(ExperiencesLoading _value, $Res Function(ExperiencesLoading) _then)
@@ -147,6 +229,7 @@ class _$ExperiencesLoadingCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithI
   ExperiencesLoading get _value => super._value as ExperiencesLoading;
 }
 
+/// @nodoc
 class _$ExperiencesLoading implements ExperiencesLoading {
   const _$ExperiencesLoading();
 
@@ -224,12 +307,14 @@ abstract class ExperiencesLoading implements ExperiencesState {
   const factory ExperiencesLoading() = _$ExperiencesLoading;
 }
 
+/// @nodoc
 abstract class $ExperiencesLoadedCopyWith<$Res> {
   factory $ExperiencesLoadedCopyWith(ExperiencesLoaded value, $Res Function(ExperiencesLoaded) then) =
       _$ExperiencesLoadedCopyWithImpl<$Res>;
   $Res call({List<ExperienceState> experiences});
 }
 
+/// @nodoc
 class _$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
     implements $ExperiencesLoadedCopyWith<$Res> {
   _$ExperiencesLoadedCopyWithImpl(ExperiencesLoaded _value, $Res Function(ExperiencesLoaded) _then)
@@ -248,6 +333,7 @@ class _$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithIm
   }
 }
 
+/// @nodoc
 class _$ExperiencesLoaded implements ExperiencesLoaded {
   const _$ExperiencesLoaded(this.experiences) : assert(experiences != null);
 
@@ -338,11 +424,13 @@ abstract class ExperiencesLoaded implements ExperiencesState {
   $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith;
 }
 
+/// @nodoc
 abstract class $ExperiencesErrorCopyWith<$Res> {
   factory $ExperiencesErrorCopyWith(ExperiencesError value, $Res Function(ExperiencesError) then) =
       _$ExperiencesErrorCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperiencesErrorCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
     implements $ExperiencesErrorCopyWith<$Res> {
   _$ExperiencesErrorCopyWithImpl(ExperiencesError _value, $Res Function(ExperiencesError) _then)
@@ -352,6 +440,7 @@ class _$ExperiencesErrorCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImp
   ExperiencesError get _value => super._value as ExperiencesError;
 }
 
+/// @nodoc
 class _$ExperiencesError implements ExperiencesError {
   const _$ExperiencesError();
 

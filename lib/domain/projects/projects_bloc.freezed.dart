@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'projects_bloc.dart';
 
@@ -9,24 +9,49 @@ part of 'projects_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ProjectsEventTearOff {
   const _$ProjectsEventTearOff();
 
+// ignore: unused_element
   LoadProjects loadProjects() {
     return const LoadProjects();
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProjectsEvent = _$ProjectsEventTearOff();
 
-mixin _$ProjectsEvent {}
+/// @nodoc
+mixin _$ProjectsEvent {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loadProjects(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loadProjects(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loadProjects(LoadProjects value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loadProjects(LoadProjects value),
+    @required Result orElse(),
+  });
+}
 
+/// @nodoc
 abstract class $ProjectsEventCopyWith<$Res> {
   factory $ProjectsEventCopyWith(ProjectsEvent value, $Res Function(ProjectsEvent) then) =
       _$ProjectsEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProjectsEventCopyWithImpl<$Res> implements $ProjectsEventCopyWith<$Res> {
   _$ProjectsEventCopyWithImpl(this._value, this._then);
 
@@ -35,11 +60,13 @@ class _$ProjectsEventCopyWithImpl<$Res> implements $ProjectsEventCopyWith<$Res> 
   final $Res Function(ProjectsEvent) _then;
 }
 
+/// @nodoc
 abstract class $LoadProjectsCopyWith<$Res> {
   factory $LoadProjectsCopyWith(LoadProjects value, $Res Function(LoadProjects) then) =
       _$LoadProjectsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LoadProjectsCopyWithImpl<$Res> extends _$ProjectsEventCopyWithImpl<$Res>
     implements $LoadProjectsCopyWith<$Res> {
   _$LoadProjectsCopyWithImpl(LoadProjects _value, $Res Function(LoadProjects) _then)
@@ -49,6 +76,7 @@ class _$LoadProjectsCopyWithImpl<$Res> extends _$ProjectsEventCopyWithImpl<$Res>
   LoadProjects get _value => super._value as LoadProjects;
 }
 
+/// @nodoc
 class _$LoadProjects implements LoadProjects {
   const _$LoadProjects();
 
@@ -64,33 +92,83 @@ class _$LoadProjects implements LoadProjects {
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loadProjects(),
+  }) {
+    assert(loadProjects != null);
+    return loadProjects();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loadProjects(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadProjects != null) {
+      return loadProjects();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loadProjects(LoadProjects value),
+  }) {
+    assert(loadProjects != null);
+    return loadProjects(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loadProjects(LoadProjects value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadProjects != null) {
+      return loadProjects(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class LoadProjects implements ProjectsEvent {
   const factory LoadProjects() = _$LoadProjects;
 }
 
+/// @nodoc
 class _$ProjectsStateTearOff {
   const _$ProjectsStateTearOff();
 
+// ignore: unused_element
   ProjectsLoading loading() {
     return const ProjectsLoading();
   }
 
+// ignore: unused_element
   ProjectsLoaded loaded(List<ProjectState> projects) {
     return ProjectsLoaded(
       projects,
     );
   }
 
+// ignore: unused_element
   ProjectsError error() {
     return const ProjectsError();
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProjectsState = _$ProjectsStateTearOff();
 
+/// @nodoc
 mixin _$ProjectsState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -120,11 +198,13 @@ mixin _$ProjectsState {
   });
 }
 
+/// @nodoc
 abstract class $ProjectsStateCopyWith<$Res> {
   factory $ProjectsStateCopyWith(ProjectsState value, $Res Function(ProjectsState) then) =
       _$ProjectsStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProjectsStateCopyWithImpl<$Res> implements $ProjectsStateCopyWith<$Res> {
   _$ProjectsStateCopyWithImpl(this._value, this._then);
 
@@ -133,11 +213,13 @@ class _$ProjectsStateCopyWithImpl<$Res> implements $ProjectsStateCopyWith<$Res> 
   final $Res Function(ProjectsState) _then;
 }
 
+/// @nodoc
 abstract class $ProjectsLoadingCopyWith<$Res> {
   factory $ProjectsLoadingCopyWith(ProjectsLoading value, $Res Function(ProjectsLoading) then) =
       _$ProjectsLoadingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProjectsLoadingCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
     implements $ProjectsLoadingCopyWith<$Res> {
   _$ProjectsLoadingCopyWithImpl(ProjectsLoading _value, $Res Function(ProjectsLoading) _then)
@@ -147,6 +229,7 @@ class _$ProjectsLoadingCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$R
   ProjectsLoading get _value => super._value as ProjectsLoading;
 }
 
+/// @nodoc
 class _$ProjectsLoading implements ProjectsLoading {
   const _$ProjectsLoading();
 
@@ -224,12 +307,14 @@ abstract class ProjectsLoading implements ProjectsState {
   const factory ProjectsLoading() = _$ProjectsLoading;
 }
 
+/// @nodoc
 abstract class $ProjectsLoadedCopyWith<$Res> {
   factory $ProjectsLoadedCopyWith(ProjectsLoaded value, $Res Function(ProjectsLoaded) then) =
       _$ProjectsLoadedCopyWithImpl<$Res>;
   $Res call({List<ProjectState> projects});
 }
 
+/// @nodoc
 class _$ProjectsLoadedCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
     implements $ProjectsLoadedCopyWith<$Res> {
   _$ProjectsLoadedCopyWithImpl(ProjectsLoaded _value, $Res Function(ProjectsLoaded) _then)
@@ -248,6 +333,7 @@ class _$ProjectsLoadedCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Re
   }
 }
 
+/// @nodoc
 class _$ProjectsLoaded implements ProjectsLoaded {
   const _$ProjectsLoaded(this.projects) : assert(projects != null);
 
@@ -337,11 +423,13 @@ abstract class ProjectsLoaded implements ProjectsState {
   $ProjectsLoadedCopyWith<ProjectsLoaded> get copyWith;
 }
 
+/// @nodoc
 abstract class $ProjectsErrorCopyWith<$Res> {
   factory $ProjectsErrorCopyWith(ProjectsError value, $Res Function(ProjectsError) then) =
       _$ProjectsErrorCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProjectsErrorCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
     implements $ProjectsErrorCopyWith<$Res> {
   _$ProjectsErrorCopyWithImpl(ProjectsError _value, $Res Function(ProjectsError) _then)
@@ -351,6 +439,7 @@ class _$ProjectsErrorCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res
   ProjectsError get _value => super._value as ProjectsError;
 }
 
+/// @nodoc
 class _$ProjectsError implements ProjectsError {
   const _$ProjectsError();
 

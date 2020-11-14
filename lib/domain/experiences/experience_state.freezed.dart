@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'experience_state.dart';
 
@@ -9,9 +9,11 @@ part of 'experience_state.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ExperienceStateTearOff {
   const _$ExperienceStateTearOff();
 
+// ignore: unused_element
   _ExperienceState call(
       {String title, String location, String content, String timeframe, ExperienceIcon icon, ExperienceColor color}) {
     return _ExperienceState(
@@ -25,9 +27,11 @@ class _$ExperienceStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceState = _$ExperienceStateTearOff();
 
+/// @nodoc
 mixin _$ExperienceState {
   String get title;
   String get location;
@@ -39,6 +43,7 @@ mixin _$ExperienceState {
   $ExperienceStateCopyWith<ExperienceState> get copyWith;
 }
 
+/// @nodoc
 abstract class $ExperienceStateCopyWith<$Res> {
   factory $ExperienceStateCopyWith(ExperienceState value, $Res Function(ExperienceState) then) =
       _$ExperienceStateCopyWithImpl<$Res>;
@@ -46,6 +51,7 @@ abstract class $ExperienceStateCopyWith<$Res> {
       {String title, String location, String content, String timeframe, ExperienceIcon icon, ExperienceColor color});
 }
 
+/// @nodoc
 class _$ExperienceStateCopyWithImpl<$Res> implements $ExperienceStateCopyWith<$Res> {
   _$ExperienceStateCopyWithImpl(this._value, this._then);
 
@@ -73,6 +79,7 @@ class _$ExperienceStateCopyWithImpl<$Res> implements $ExperienceStateCopyWith<$R
   }
 }
 
+/// @nodoc
 abstract class _$ExperienceStateCopyWith<$Res> implements $ExperienceStateCopyWith<$Res> {
   factory _$ExperienceStateCopyWith(_ExperienceState value, $Res Function(_ExperienceState) then) =
       __$ExperienceStateCopyWithImpl<$Res>;
@@ -81,6 +88,7 @@ abstract class _$ExperienceStateCopyWith<$Res> implements $ExperienceStateCopyWi
       {String title, String location, String content, String timeframe, ExperienceIcon icon, ExperienceColor color});
 }
 
+/// @nodoc
 class __$ExperienceStateCopyWithImpl<$Res> extends _$ExperienceStateCopyWithImpl<$Res>
     implements _$ExperienceStateCopyWith<$Res> {
   __$ExperienceStateCopyWithImpl(_ExperienceState _value, $Res Function(_ExperienceState) _then)
@@ -109,6 +117,7 @@ class __$ExperienceStateCopyWithImpl<$Res> extends _$ExperienceStateCopyWithImpl
   }
 }
 
+/// @nodoc
 class _$_ExperienceState implements _ExperienceState {
   const _$_ExperienceState({this.title, this.location, this.content, this.timeframe, this.icon, this.color});
 

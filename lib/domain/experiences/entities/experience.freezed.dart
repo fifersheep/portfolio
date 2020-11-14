@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'experience.dart';
 
@@ -9,9 +9,11 @@ part of 'experience.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ExperienceTearOff {
   const _$ExperienceTearOff();
 
+// ignore: unused_element
   _Experience call(
       {String title,
       String location,
@@ -30,9 +32,11 @@ class _$ExperienceTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Experience = _$ExperienceTearOff();
 
+/// @nodoc
 mixin _$Experience {
   String get title;
   String get location;
@@ -44,6 +48,7 @@ mixin _$Experience {
   $ExperienceCopyWith<Experience> get copyWith;
 }
 
+/// @nodoc
 abstract class $ExperienceCopyWith<$Res> {
   factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) = _$ExperienceCopyWithImpl<$Res>;
   $Res call(
@@ -55,6 +60,7 @@ abstract class $ExperienceCopyWith<$Res> {
       ExperienceCategory category});
 }
 
+/// @nodoc
 class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
   _$ExperienceCopyWithImpl(this._value, this._then);
 
@@ -82,6 +88,7 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
   factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) = __$ExperienceCopyWithImpl<$Res>;
   @override
@@ -94,6 +101,7 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
       ExperienceCategory category});
 }
 
+/// @nodoc
 class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> implements _$ExperienceCopyWith<$Res> {
   __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then)
       : super(_value, (v) => _then(v as _Experience));
@@ -121,6 +129,7 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
   }
 }
 
+/// @nodoc
 class _$_Experience implements _Experience {
   const _$_Experience({this.title, this.location, this.content, this.startDate, this.endDate, this.category});
 
