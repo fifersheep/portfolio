@@ -10,9 +10,11 @@ class PrimaryCallToAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      elevation: 0,
-      hoverElevation: 1,
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+        elevation: 0,
+      ),
       onPressed: onPressed,
       child: Text(label),
     );

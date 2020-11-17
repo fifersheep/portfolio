@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/presentation/constants/colors.dart';
 
 class TertiaryCallToAction extends StatelessWidget {
   const TertiaryCallToAction({Key key, @required this.label, @required this.route, @required this.onPressed})
@@ -11,13 +10,13 @@ class TertiaryCallToAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 8),
-      child: FlatButton(
-        onPressed: onPressed,
-        textColor: ThemeColors.blue,
-        child: Text(label),
+    return TextButton(
+      style: TextButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
       ),
+      onPressed: onPressed,
+      child: Text(label),
     );
   }
 }

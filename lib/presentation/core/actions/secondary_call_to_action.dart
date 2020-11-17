@@ -11,16 +11,15 @@ class SecondaryCallToAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 8),
-      child: OutlineButton(
-        onPressed: onPressed,
-        borderSide: const BorderSide(
+    return OutlinedButton(
+      style: OutlinedButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+        side: const BorderSide(
           color: ThemeColors.blue,
         ),
-        textColor: ThemeColors.blue,
-        child: Text(label),
       ),
+      onPressed: onPressed,
+      child: Text(label),
     );
   }
 }
