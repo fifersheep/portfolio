@@ -13,12 +13,12 @@ import 'experience_parser.dart';
 class FirestoreExperiencesRepository implements ExperiencesRepository {
   FirestoreExperiencesRepository(this._firestore, this._parser);
 
-  final Firestore _firestore;
+  final FirebaseFirestore _firestore;
   final ExperienceParser<DocumentSnapshot> _parser;
 
   @override
   Future<Either<Failure, List<Experience>>> getExperiences() async {
-    return Task(() => _firestore.collection('experiences').orderBy('start_date', descending: true).getDocuments())
+    return Task(() => _firestore.collection('experiences').orderBy('start_date', descending: true).get())
         .attempt()
         .map(_failure)
         .run()
@@ -26,7 +26,7 @@ class FirestoreExperiencesRepository implements ExperiencesRepository {
   }
 
   FutureOr<Either<Failure, List<Experience>>> _success(Either<Failure, QuerySnapshot> either) {
-    return either.map((query) => query.documents.map(_parser.parse).toList());
+    return either.map((query) => query.docs.map(_parser.parse).toList());
   }
 
   Either<Failure, QuerySnapshot> _failure(Either<Object, QuerySnapshot> either) {

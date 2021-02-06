@@ -9,7 +9,7 @@ import 'package:portfolio/domain/experiences/entities/experience.dart';
 
 void main() {
   FirestoreExperiencesRepository repository;
-  Firestore firestore;
+  FirebaseFirestore firestore;
   FirestoreExperienceParser parser;
 
   setUp(() async {
@@ -18,7 +18,7 @@ void main() {
     repository = FirestoreExperiencesRepository(firestore, parser);
   });
 
-  test('should return an empty list of expeiences when firestore returns none', () async {
+  test('should return an empty list of experiences when firestore returns none', () async {
     final actual = await repository.getExperiences();
     expect(actual.getOrElse(() => null), equals([]));
   });

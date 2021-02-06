@@ -34,13 +34,13 @@ GetIt $initGetIt(
   final firebaseInjectableModule = _$FirebaseInjectableModule();
   gh.lazySingleton<DateFormatter>(() => DateFormatter());
   gh.lazySingleton<ExperienceParser<DocumentSnapshot>>(() => FirestoreExperienceParser());
-  gh.lazySingleton<Firestore>(() => firebaseInjectableModule.firestore);
+  gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
   gh.lazySingleton<NavigationRouteObserver>(() => NavigationRouteObserver());
   gh.lazySingleton<ProjectParser<DocumentSnapshot>>(() => FirestoreProjectParser());
   gh.lazySingleton<ProjectsRepository>(
-      () => FirestoreProjectsRepository(get<Firestore>(), get<ProjectParser<DocumentSnapshot>>()));
+      () => FirestoreProjectsRepository(get<FirebaseFirestore>(), get<ProjectParser<DocumentSnapshot>>()));
   gh.lazySingleton<ExperiencesRepository>(
-      () => FirestoreExperiencesRepository(get<Firestore>(), get<ExperienceParser<DocumentSnapshot>>()));
+      () => FirestoreExperiencesRepository(get<FirebaseFirestore>(), get<ExperienceParser<DocumentSnapshot>>()));
   gh.lazySingleton<ProjectsBloc>(() => ProjectsBloc(get<ProjectsRepository>()));
   gh.lazySingleton<ExperiencesBloc>(() => ExperiencesBloc(get<ExperiencesRepository>(), get<DateFormatter>()));
   return get;

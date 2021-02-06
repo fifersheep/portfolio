@@ -12,25 +12,25 @@ import 'package:portfolio/domain/projects/projects_repository.dart';
 class FirestoreProjectsRepository implements ProjectsRepository {
   FirestoreProjectsRepository(this._firestore, this._parser);
 
-  final Firestore _firestore;
+  final FirebaseFirestore _firestore;
   final ProjectParser<DocumentSnapshot> _parser;
 
   @override
   Future<Either<Failure, List<Project>>> getProjects() async {
     return Task(() => Future.wait([
-          _firestore.collection('projects').getDocuments(),
-          _firestore.collection('project_tags').getDocuments(),
+          _firestore.collection('projects').get(),
+          _firestore.collection('project_tags').get(),
         ])).attempt().map(_failure).run().then(_success);
   }
 
   FutureOr<Either<Failure, List<Project>>> _success(Either<Failure, List<QuerySnapshot>> either) async {
     return either.map((snapshots) {
-      final projectsQuerySnapshot = snapshots[0].documents;
-      final tagsQuerySnapshot = snapshots[1].documents;
+      final projectsQuerySnapshot = snapshots[0].docs;
+      final tagsQuerySnapshot = snapshots[1].docs;
 
       return projectsQuerySnapshot.map((projectDoc) {
-        final projectTagDocs = projectDoc.data['tags'] as List;
-        bool _projectIsTagged(tagDoc) => projectTagDocs.map((ref) => ref.documentID).contains(tagDoc.documentID);
+        final projectTagDocs = projectDoc.data()['tags'] as List;
+        bool _projectIsTagged(tagDoc) => projectTagDocs.map((ref) => ref.id).contains(tagDoc.id);
         final tags = tagsQuerySnapshot.where(_projectIsTagged).toList();
         return _parser.parseProject(projectDoc, tags);
       }).toList();

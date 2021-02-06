@@ -17,12 +17,15 @@ void main() {
     final startDate = DateTime.parse('2020-05-01');
     final endDate = DateTime.parse('2020-05-30');
     final document = MockDocumentSnapshot();
-    when(document['title']).thenReturn('Title');
-    when(document['location']).thenReturn('Location');
-    when(document['content']).thenReturn('Content');
-    when(document['start_date']).thenReturn(Timestamp.fromDate(startDate));
-    when(document['end_date']).thenReturn(Timestamp.fromDate(endDate));
-    when(document['category']).thenReturn('work');
+    final data = {
+      'title': 'Title',
+      'location': 'Location',
+      'content': 'Content',
+      'start_date': Timestamp.fromDate(startDate),
+      'end_date': Timestamp.fromDate(endDate),
+      'category': 'work',
+    };
+    when(document.data()).thenReturn(data);
 
     final actual = parser.parse(document);
 
@@ -40,7 +43,8 @@ void main() {
 
   test('should parse an experience with no end date', () async {
     final document = MockDocumentSnapshot();
-    when(document['end_date']).thenReturn(null);
+    final data = {'end_date': null};
+    when(document.data()).thenReturn(data);
 
     final actual = parser.parse(document);
 
@@ -58,7 +62,8 @@ void main() {
   categories.forEach((key, category) {
     test('should parse an experience with $category', () async {
       final document = MockDocumentSnapshot();
-      when(document['category']).thenReturn(key);
+      final data = {'category': key};
+      when(document.data()).thenReturn(data);
 
       final actual = parser.parse(document);
 

@@ -13,26 +13,33 @@ void main() {
   });
 
   test('should parse a project with all properties', () async {
-    final document = MockDocumentSnapshot();
-    when(document['title']).thenReturn('Title');
-    when(document['summary']).thenReturn('Summary');
-    when(document['detail']).thenReturn('Detail');
-    when(document['cover_image_url']).thenReturn('Cover Image Url');
-    when(document['call_to_actions']).thenReturn([
-      {
-        'type': 'Type',
-        'action': 'Action',
-        'style': 'Style',
-        'label': 'Label',
-      }
-    ]);
+    final projectDoc = MockDocumentSnapshot();
+    final projectDocData = {
+      'title': 'Title',
+      'summary': 'Summary',
+      'detail': 'Detail',
+      'cover_image_url': 'Cover Image Url',
+      'call_to_actions': [
+        {
+          'type': 'Type',
+          'action': 'Action',
+          'style': 'Style',
+          'label': 'Label',
+        }
+      ],
+    };
 
     final tagDoc = MockDocumentSnapshot();
-    when(tagDoc['label']).thenReturn('Label');
-    when(tagDoc['color']).thenReturn('Color');
-    when(tagDoc['style']).thenReturn('Style');
+    final tagDocData = {
+      'label': 'Label',
+      'color': 'Color',
+      'style': 'Style',
+    };
 
-    final actual = parser.parseProject(document, [tagDoc]);
+    when(projectDoc.data()).thenReturn(projectDocData);
+    when(tagDoc.data()).thenReturn(tagDocData);
+
+    final actual = parser.parseProject(projectDoc, [tagDoc]);
 
     const expected = Project(
       title: 'Title',

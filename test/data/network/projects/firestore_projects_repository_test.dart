@@ -11,7 +11,7 @@ import '../utils/firestore_mocks.dart';
 class MockFirestoreProjectParser extends Mock implements FirestoreProjectParser {}
 
 void main() {
-  Firestore firestore;
+  FirebaseFirestore firestore;
   FirestoreProjectParser parser;
   FirestoreProjectsRepository repository;
 
@@ -73,7 +73,7 @@ void main() {
 
     const tagID = 'Tag';
     final tag = MockDocumentReference();
-    when(tag.documentID).thenReturn(tagID);
+    when(tag.id).thenReturn(tagID);
 
     final projectData = {
       'title': 'Title',
@@ -92,7 +92,7 @@ void main() {
     };
 
     await firestore.collection('projects').add(projectData);
-    await firestore.collection('project_tags').document(tagID).setData(tagData);
+    await firestore.collection('project_tags').doc(tagID).set(tagData);
 
     final actual = await repository.getProjects();
 
@@ -118,7 +118,7 @@ void main() {
 
     const callToActionID = 'CTA';
     final callToAction = MockDocumentReference();
-    when(callToAction.documentID).thenReturn(callToActionID);
+    when(callToAction.id).thenReturn(callToActionID);
 
     final callToActionData = {
       'type': 'Type',
