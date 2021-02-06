@@ -26,22 +26,22 @@ const $Failure = _$FailureTearOff();
 /// @nodoc
 mixin _$Failure {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result dataRetrievalFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult dataRetrievalFailure(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result dataRetrievalFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult dataRetrievalFailure(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result dataRetrievalFailure(DataRetrievalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult dataRetrievalFailure(DataRetrievalFailure value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result dataRetrievalFailure(DataRetrievalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult dataRetrievalFailure(DataRetrievalFailure value),
+    @required TResult orElse(),
   });
 }
 
@@ -94,8 +94,8 @@ class _$DataRetrievalFailure implements DataRetrievalFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result dataRetrievalFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult dataRetrievalFailure(),
   }) {
     assert(dataRetrievalFailure != null);
     return dataRetrievalFailure();
@@ -103,9 +103,9 @@ class _$DataRetrievalFailure implements DataRetrievalFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result dataRetrievalFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult dataRetrievalFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dataRetrievalFailure != null) {
@@ -116,8 +116,8 @@ class _$DataRetrievalFailure implements DataRetrievalFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result dataRetrievalFailure(DataRetrievalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult dataRetrievalFailure(DataRetrievalFailure value),
   }) {
     assert(dataRetrievalFailure != null);
     return dataRetrievalFailure(this);
@@ -125,9 +125,9 @@ class _$DataRetrievalFailure implements DataRetrievalFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result dataRetrievalFailure(DataRetrievalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult dataRetrievalFailure(DataRetrievalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dataRetrievalFailure != null) {

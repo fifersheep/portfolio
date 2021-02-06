@@ -26,22 +26,22 @@ const $ExperiencesEvent = _$ExperiencesEventTearOff();
 /// @nodoc
 mixin _$ExperiencesEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result loadExperiences(),
+  TResult when<TResult extends Object>({
+    @required TResult loadExperiences(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result loadExperiences(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult loadExperiences(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result loadExperiences(LoadExperiences value),
+  TResult map<TResult extends Object>({
+    @required TResult loadExperiences(LoadExperiences value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result loadExperiences(LoadExperiences value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult loadExperiences(LoadExperiences value),
+    @required TResult orElse(),
   });
 }
 
@@ -95,8 +95,8 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result loadExperiences(),
+  TResult when<TResult extends Object>({
+    @required TResult loadExperiences(),
   }) {
     assert(loadExperiences != null);
     return loadExperiences();
@@ -104,9 +104,9 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result loadExperiences(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult loadExperiences(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadExperiences != null) {
@@ -117,8 +117,8 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result loadExperiences(LoadExperiences value),
+  TResult map<TResult extends Object>({
+    @required TResult loadExperiences(LoadExperiences value),
   }) {
     assert(loadExperiences != null);
     return loadExperiences(this);
@@ -126,9 +126,9 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result loadExperiences(LoadExperiences value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult loadExperiences(LoadExperiences value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadExperiences != null) {
@@ -171,30 +171,30 @@ const $ExperiencesState = _$ExperiencesStateTearOff();
 /// @nodoc
 mixin _$ExperiencesState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result loading(),
-    @required Result loaded(List<ExperienceState> experiences),
-    @required Result error(),
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult loaded(List<ExperienceState> experiences),
+    @required TResult error(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result loading(),
-    Result loaded(List<ExperienceState> experiences),
-    Result error(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult loaded(List<ExperienceState> experiences),
+    TResult error(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result loading(ExperiencesLoading value),
-    @required Result loaded(ExperiencesLoaded value),
-    @required Result error(ExperiencesError value),
+  TResult map<TResult extends Object>({
+    @required TResult loading(ExperiencesLoading value),
+    @required TResult loaded(ExperiencesLoaded value),
+    @required TResult error(ExperiencesError value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result loading(ExperiencesLoading value),
-    Result loaded(ExperiencesLoaded value),
-    Result error(ExperiencesError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(ExperiencesLoading value),
+    TResult loaded(ExperiencesLoaded value),
+    TResult error(ExperiencesError value),
+    @required TResult orElse(),
   });
 }
 
@@ -248,10 +248,10 @@ class _$ExperiencesLoading implements ExperiencesLoading {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result loading(),
-    @required Result loaded(List<ExperienceState> experiences),
-    @required Result error(),
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult loaded(List<ExperienceState> experiences),
+    @required TResult error(),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -261,11 +261,11 @@ class _$ExperiencesLoading implements ExperiencesLoading {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result loading(),
-    Result loaded(List<ExperienceState> experiences),
-    Result error(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult loaded(List<ExperienceState> experiences),
+    TResult error(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -276,10 +276,10 @@ class _$ExperiencesLoading implements ExperiencesLoading {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result loading(ExperiencesLoading value),
-    @required Result loaded(ExperiencesLoaded value),
-    @required Result error(ExperiencesError value),
+  TResult map<TResult extends Object>({
+    @required TResult loading(ExperiencesLoading value),
+    @required TResult loaded(ExperiencesLoaded value),
+    @required TResult error(ExperiencesError value),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -289,11 +289,11 @@ class _$ExperiencesLoading implements ExperiencesLoading {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result loading(ExperiencesLoading value),
-    Result loaded(ExperiencesLoaded value),
-    Result error(ExperiencesError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(ExperiencesLoading value),
+    TResult loaded(ExperiencesLoaded value),
+    TResult error(ExperiencesError value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -356,16 +356,17 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
 
+  @JsonKey(ignore: true)
   @override
   $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith =>
       _$ExperiencesLoadedCopyWithImpl<ExperiencesLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result loading(),
-    @required Result loaded(List<ExperienceState> experiences),
-    @required Result error(),
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult loaded(List<ExperienceState> experiences),
+    @required TResult error(),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -375,11 +376,11 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result loading(),
-    Result loaded(List<ExperienceState> experiences),
-    Result error(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult loaded(List<ExperienceState> experiences),
+    TResult error(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loaded != null) {
@@ -390,10 +391,10 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result loading(ExperiencesLoading value),
-    @required Result loaded(ExperiencesLoaded value),
-    @required Result error(ExperiencesError value),
+  TResult map<TResult extends Object>({
+    @required TResult loading(ExperiencesLoading value),
+    @required TResult loaded(ExperiencesLoaded value),
+    @required TResult error(ExperiencesError value),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -403,11 +404,11 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result loading(ExperiencesLoading value),
-    Result loaded(ExperiencesLoaded value),
-    Result error(ExperiencesError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(ExperiencesLoading value),
+    TResult loaded(ExperiencesLoaded value),
+    TResult error(ExperiencesError value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loaded != null) {
@@ -421,6 +422,7 @@ abstract class ExperiencesLoaded implements ExperiencesState {
   const factory ExperiencesLoaded(List<ExperienceState> experiences) = _$ExperiencesLoaded;
 
   List<ExperienceState> get experiences;
+  @JsonKey(ignore: true)
   $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith;
 }
 
@@ -459,10 +461,10 @@ class _$ExperiencesError implements ExperiencesError {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result loading(),
-    @required Result loaded(List<ExperienceState> experiences),
-    @required Result error(),
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult loaded(List<ExperienceState> experiences),
+    @required TResult error(),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -472,11 +474,11 @@ class _$ExperiencesError implements ExperiencesError {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result loading(),
-    Result loaded(List<ExperienceState> experiences),
-    Result error(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult loaded(List<ExperienceState> experiences),
+    TResult error(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -487,10 +489,10 @@ class _$ExperiencesError implements ExperiencesError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result loading(ExperiencesLoading value),
-    @required Result loaded(ExperiencesLoaded value),
-    @required Result error(ExperiencesError value),
+  TResult map<TResult extends Object>({
+    @required TResult loading(ExperiencesLoading value),
+    @required TResult loaded(ExperiencesLoaded value),
+    @required TResult error(ExperiencesError value),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -500,11 +502,11 @@ class _$ExperiencesError implements ExperiencesError {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result loading(ExperiencesLoading value),
-    Result loaded(ExperiencesLoaded value),
-    Result error(ExperiencesError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(ExperiencesLoading value),
+    TResult loaded(ExperiencesLoaded value),
+    TResult error(ExperiencesError value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {

@@ -45,6 +45,7 @@ mixin _$Project {
   List<ProjectTag> get tags;
   List<ProjectCallToAction> get callToActions;
 
+  @JsonKey(ignore: true)
   $ProjectCopyWith<Project> get copyWith;
 }
 
@@ -174,6 +175,7 @@ class _$_Project implements _Project {
       const DeepCollectionEquality().hash(tags) ^
       const DeepCollectionEquality().hash(callToActions);
 
+  @JsonKey(ignore: true)
   @override
   _$ProjectCopyWith<_Project> get copyWith => __$ProjectCopyWithImpl<_Project>(this, _$identity);
 }
@@ -200,6 +202,7 @@ abstract class _Project implements Project {
   @override
   List<ProjectCallToAction> get callToActions;
   @override
+  @JsonKey(ignore: true)
   _$ProjectCopyWith<_Project> get copyWith;
 }
 
@@ -229,6 +232,7 @@ mixin _$ProjectTag {
   String get labelColor;
   String get style;
 
+  @JsonKey(ignore: true)
   $ProjectTagCopyWith<ProjectTag> get copyWith;
 }
 
@@ -330,6 +334,7 @@ class _$_ProjectTag implements _ProjectTag {
       const DeepCollectionEquality().hash(labelColor) ^
       const DeepCollectionEquality().hash(style);
 
+  @JsonKey(ignore: true)
   @override
   _$ProjectTagCopyWith<_ProjectTag> get copyWith => __$ProjectTagCopyWithImpl<_ProjectTag>(this, _$identity);
 }
@@ -346,6 +351,7 @@ abstract class _ProjectTag implements ProjectTag {
   @override
   String get style;
   @override
+  @JsonKey(ignore: true)
   _$ProjectTagCopyWith<_ProjectTag> get copyWith;
 }
 
@@ -375,6 +381,7 @@ mixin _$ProjectCallToAction {
   String get style;
   String get label;
 
+  @JsonKey(ignore: true)
   $ProjectCallToActionCopyWith<ProjectCallToAction> get copyWith;
 }
 
@@ -478,6 +485,7 @@ class _$_ProjectCallToAction implements _ProjectCallToAction {
       const DeepCollectionEquality().hash(style) ^
       const DeepCollectionEquality().hash(label);
 
+  @JsonKey(ignore: true)
   @override
   _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith =>
       __$ProjectCallToActionCopyWithImpl<_ProjectCallToAction>(this, _$identity);
@@ -495,5 +503,6 @@ abstract class _ProjectCallToAction implements ProjectCallToAction {
   @override
   String get label;
   @override
+  @JsonKey(ignore: true)
   _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith;
 }

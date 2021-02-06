@@ -45,6 +45,7 @@ mixin _$Experience {
   DateTime get endDate;
   ExperienceCategory get category;
 
+  @JsonKey(ignore: true)
   $ExperienceCopyWith<Experience> get copyWith;
 }
 
@@ -174,6 +175,7 @@ class _$_Experience implements _Experience {
       const DeepCollectionEquality().hash(endDate) ^
       const DeepCollectionEquality().hash(category);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceCopyWith<_Experience> get copyWith => __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
 }
@@ -200,5 +202,6 @@ abstract class _Experience implements Experience {
   @override
   ExperienceCategory get category;
   @override
+  @JsonKey(ignore: true)
   _$ExperienceCopyWith<_Experience> get copyWith;
 }

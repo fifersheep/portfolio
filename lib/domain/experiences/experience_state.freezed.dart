@@ -40,6 +40,7 @@ mixin _$ExperienceState {
   ExperienceIcon get icon;
   ExperienceColor get color;
 
+  @JsonKey(ignore: true)
   $ExperienceStateCopyWith<ExperienceState> get copyWith;
 }
 
@@ -162,6 +163,7 @@ class _$_ExperienceState implements _ExperienceState {
       const DeepCollectionEquality().hash(icon) ^
       const DeepCollectionEquality().hash(color);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceStateCopyWith<_ExperienceState> get copyWith =>
       __$ExperienceStateCopyWithImpl<_ExperienceState>(this, _$identity);
@@ -189,5 +191,6 @@ abstract class _ExperienceState implements ExperienceState {
   @override
   ExperienceColor get color;
   @override
+  @JsonKey(ignore: true)
   _$ExperienceStateCopyWith<_ExperienceState> get copyWith;
 }
