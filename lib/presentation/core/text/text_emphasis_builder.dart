@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class TextEmphasisBuilder extends StatelessWidget {
-  const TextEmphasisBuilder({this.text, this.textStyle, this.emphases = const [], this.emphasisStyle});
+  const TextEmphasisBuilder(
+      {this.text, this.textStyle, this.emphases = const [], this.emphasisStyle, this.maxLines, this.overflow});
 
   final String text;
   final TextStyle textStyle;
   final List<String> emphases;
   final TextStyle emphasisStyle;
+  final int maxLines;
+  final TextOverflow overflow;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +30,8 @@ class TextEmphasisBuilder extends StatelessWidget {
 
     return Text.rich(
       TextSpan(children: spans),
+      maxLines: maxLines,
+      overflow: overflow,
     );
   }
 }

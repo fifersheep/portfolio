@@ -16,25 +16,28 @@ class IntroPage extends StatelessWidget {
     return PageScaffold(
       title: strings.introTitle,
       headerBackground: Images.of(context).introHeaderBanner,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Headline(strings.introHeader),
-          Paragraph(
-            strings.introContent,
-            emphases: const ['Scott Laing'],
-          ),
-          SectionHeadline(strings.introCareerHeader),
-          Paragraph(
-            strings.introCareerContent,
-            emphases: const ['Android', 'React', 'Flutter'],
-          ),
-          SectionHeadline(strings.introInterestsHeader),
-          Paragraph(
-            strings.introInterestsContent,
-            emphases: const ['American football', 'Pittsburgh Steelers', 'Edinburgh Wolves', 'Battlefield V'],
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(left: 24, right: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Headline(strings.introHeader),
+            Paragraph(
+              strings.introContent,
+              emphases: const ['Scott Laing'],
+            ),
+            SectionHeadline(strings.introCareerHeader),
+            Paragraph(
+              strings.introCareerContent,
+              emphases: const ['Android', 'React', 'Flutter'],
+            ),
+            SectionHeadline(strings.introInterestsHeader),
+            Paragraph(
+              strings.introInterestsContent,
+              emphases: const ['American football', 'Pittsburgh Steelers', 'Edinburgh Wolves', 'Battlefield V'],
+            ),
+          ],
+        ),
       ),
     );
   }

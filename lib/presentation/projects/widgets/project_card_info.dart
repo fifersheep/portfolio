@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/projects/project_state.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
+import 'package:portfolio/presentation/core/text/paragraph_text.dart';
 import 'package:portfolio/presentation/projects/widgets/filled_project_tag.dart';
 import 'package:portfolio/presentation/projects/widgets/naked_project_tag.dart';
 import 'package:portfolio/presentation/projects/widgets/outline_project_tag.dart';
@@ -28,7 +29,7 @@ class ProjectCardInfo extends StatelessWidget {
               children: tags.map(_tagMapper).toList(),
             ),
             const SizedBox(height: 8),
-            Text(
+            Paragraph(
               summary,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,

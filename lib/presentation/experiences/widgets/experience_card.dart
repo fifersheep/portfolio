@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/experiences/experience_state.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
+import 'package:portfolio/presentation/core/text/paragraph_text.dart';
 
 class ExperienceCard extends StatelessWidget {
   const ExperienceCard({this.experience});
@@ -49,7 +50,6 @@ Widget _top(
 ) =>
     Container(
       key: const Key('experience_card_top_container'),
-      margin: const EdgeInsets.only(left: 16, right: 16),
       decoration: BoxDecoration(
         color: color,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(radius)),
@@ -108,7 +108,6 @@ Widget _top(
 
 Widget _bottom(BuildContext context, Color color, String content) => Container(
       key: const Key('experience_card_bottom_container'),
-      margin: const EdgeInsets.only(left: 16, right: 16),
       decoration: BoxDecoration(
         border: Border.all(
           color: color,
@@ -116,5 +115,5 @@ Widget _bottom(BuildContext context, Color color, String content) => Container(
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(radius)),
       ),
       padding: const EdgeInsets.all(16),
-      child: Text(content),
+      child: Paragraph(content),
     );
