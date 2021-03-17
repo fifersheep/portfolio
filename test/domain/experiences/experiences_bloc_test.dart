@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/core/formatter/date_formatter.dart';
+import 'package:portfolio/domain/core/formatter/new_line_formatter.dart';
 import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'package:portfolio/domain/experiences/experience_state.dart';
 import 'package:portfolio/domain/experiences/experiences_bloc.dart';
@@ -13,15 +14,23 @@ class MockExperiencesRepository extends Mock implements ExperiencesRepository {}
 
 class MockDateFormatter extends Mock implements DateFormatter {}
 
+class MockNewLineFormatter extends Mock implements NewLineFormatter {}
+
 void main() {
   ExperiencesBloc bloc;
   ExperiencesRepository repository;
   DateFormatter dateFormatter;
+  NewLineFormatter newLineFormatter;
 
   setUp(() {
     repository = MockExperiencesRepository();
     dateFormatter = MockDateFormatter();
-    bloc = ExperiencesBloc(repository, dateFormatter);
+    newLineFormatter = MockNewLineFormatter();
+    bloc = ExperiencesBloc(repository, dateFormatter, newLineFormatter);
+
+    when(dateFormatter.monthYearRange(startDate, endDate)).thenAnswer((_) => timeframe);
+    when(dateFormatter.monthYear(startDate)).thenAnswer((_) => timeframe);
+    when(newLineFormatter.format('Exp Content')).thenAnswer((_) => 'Exp Content');
   });
 
   blocTest(
@@ -67,7 +76,6 @@ void main() {
       'should emit [Loading, Loaded] when data is retrieved successfully',
       build: () {
         when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
-        when(dateFormatter.monthYearRange(startDate, endDate)).thenAnswer((_) => timeframe);
         return bloc;
       },
       act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
@@ -96,8 +104,6 @@ void main() {
       'should map categories to colors and icons',
       build: () {
         when(repository.getExperiences()).thenAnswer((_) async => Right(experiencesWithCategory));
-        when(dateFormatter.monthYearRange(startDate, endDate)).thenAnswer((_) => timeframe);
-        when(dateFormatter.monthYear(startDate)).thenAnswer((_) => timeframe);
         return bloc;
       },
       act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
@@ -115,31 +121,6 @@ void main() {
     ];
 
     for (final params in formatForCategory) {
-//      test('should format date(s) with ${params.second} for ${params.first}', () async {
-//        final experiences = [
-//          Experience(
-//            title: 'Exp Title',
-//            location: 'Exp Location',
-//            content: 'Exp Content',
-//            startDate: startDate,
-//            endDate: endDate,
-//            category: params.first,
-//          ),
-//        ];
-//
-//        when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
-//        when(dateFormatter.monthYearRange(startDate, endDate)).thenAnswer((_) => 'Range');
-//        when(dateFormatter.monthYear(startDate)).thenAnswer((_) => 'Date');
-//
-//        bloc.listen((state) {
-//          if (state is ExperiencesLoaded) {
-//            expect(state.experiences.any((exp) => exp.timeframe == params.second), equals(true));
-//          }
-//        });
-//
-//        bloc.add(const ExperiencesEvent.loadExperiences());
-//      });
-
       blocTest('should format date(s) with ${params.second} for ${params.first}',
           build: () {
             final experiences = [
@@ -166,6 +147,39 @@ void main() {
             });
           });
     }
+
+    blocTest(
+      'should format new lines in content',
+      build: () {
+        final content = 'Unformatted Content';
+        final experiences = [
+          Experience(
+            title: 'Exp Title',
+            location: 'Exp Location',
+            content: content,
+            startDate: startDate,
+            endDate: endDate,
+            category: ExperienceCategory.work,
+          ),
+        ];
+        when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+        when(newLineFormatter.format(content)).thenAnswer((_) => 'Formatted Content');
+        return bloc;
+      },
+      act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
+      expect: [
+        ExperiencesState.loaded([
+          const ExperienceState(
+            title: 'Exp Title',
+            location: 'Exp Location',
+            content: 'Formatted Content',
+            timeframe: timeframe,
+            icon: ExperienceIcon.code,
+            color: ExperienceColor.green,
+          )
+        ]),
+      ],
+    );
 
     blocTest(
       'should emit [Loading, Error] when data retrieval is unsuccessful',

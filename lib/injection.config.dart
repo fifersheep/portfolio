@@ -18,6 +18,7 @@ import 'data/network/experiences/firestore_experiences_repository.dart';
 import 'data/network/projects/firestore_project_parser.dart';
 import 'data/network/projects/firestore_projects_repository.dart';
 import 'presentation/core/navigation/navigation_route_observer.dart';
+import 'domain/core/formatter/new_line_formatter.dart';
 import 'data/network/projects/project_parser.dart';
 import 'domain/projects/projects_bloc.dart';
 import 'domain/projects/projects_repository.dart';
@@ -36,13 +37,18 @@ GetIt $initGetIt(
   gh.lazySingleton<ExperienceParser<DocumentSnapshot>>(() => FirestoreExperienceParser());
   gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
   gh.lazySingleton<NavigationRouteObserver>(() => NavigationRouteObserver());
+  gh.lazySingleton<NewLineFormatter>(() => NewLineFormatter());
   gh.lazySingleton<ProjectParser<DocumentSnapshot>>(() => FirestoreProjectParser());
   gh.lazySingleton<ProjectsRepository>(
       () => FirestoreProjectsRepository(get<FirebaseFirestore>(), get<ProjectParser<DocumentSnapshot>>()));
   gh.lazySingleton<ExperiencesRepository>(
       () => FirestoreExperiencesRepository(get<FirebaseFirestore>(), get<ExperienceParser<DocumentSnapshot>>()));
   gh.lazySingleton<ProjectsBloc>(() => ProjectsBloc(get<ProjectsRepository>()));
-  gh.lazySingleton<ExperiencesBloc>(() => ExperiencesBloc(get<ExperiencesRepository>(), get<DateFormatter>()));
+  gh.lazySingleton<ExperiencesBloc>(() => ExperiencesBloc(
+        get<ExperiencesRepository>(),
+        get<DateFormatter>(),
+        get<NewLineFormatter>(),
+      ));
   return get;
 }
 

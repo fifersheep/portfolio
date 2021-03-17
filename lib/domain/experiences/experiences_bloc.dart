@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:portfolio/domain/core/formatter/date_formatter.dart';
+import 'package:portfolio/domain/core/formatter/new_line_formatter.dart';
 import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'package:portfolio/domain/experiences/experience_state.dart';
 import 'package:portfolio/domain/experiences/experiences_repository.dart';
@@ -16,10 +17,12 @@ part 'experiences_state.dart';
 
 @lazySingleton
 class ExperiencesBloc extends Bloc<ExperiencesEvent, ExperiencesState> {
-  ExperiencesBloc(this._repository, this._dateFormatter) : super(const ExperiencesState.loading());
+  ExperiencesBloc(this._repository, this._dateFormatter, this._newLineFormatter)
+      : super(const ExperiencesState.loading());
 
   final ExperiencesRepository _repository;
   final DateFormatter _dateFormatter;
+  final NewLineFormatter _newLineFormatter;
 
   @override
   Stream<ExperiencesState> mapEventToState(ExperiencesEvent event) async* {
@@ -47,7 +50,7 @@ class ExperiencesBloc extends Bloc<ExperiencesEvent, ExperiencesState> {
     return ExperienceState(
         title: experience.title,
         location: experience.location,
-        content: experience.content,
+        content: _newLineFormatter.format(experience.content),
         timeframe: formatterFunc,
         icon: categoryState.icon,
         color: categoryState.color);

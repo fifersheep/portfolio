@@ -12,7 +12,7 @@ class Paragraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => TextEmphasisBuilder(
-        text: text.replaceAll('\\n', '\n'),
+        text: text,
         textStyle: const TextStyle(height: 1.5),
         maxLines: maxLines,
         overflow: overflow,
