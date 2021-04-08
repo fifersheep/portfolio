@@ -25,7 +25,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
     return PageScaffold(
       title: Strings.of(context).projectsTitle,
       body: BlocBuilder<ProjectsBloc, ProjectsState>(
-        cubit: _bloc,
+        bloc: _bloc,
         builder: (context, state) {
           if (state is ProjectsLoading) {
             return LoadingIndicator();
