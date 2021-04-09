@@ -33,4 +33,4 @@ staging_web:
     - firebase use --token $FIREBASE_HOSTING_KEY
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_HOSTING_KEY
   only:
-    - master
+    - main
