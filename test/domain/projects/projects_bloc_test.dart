@@ -80,7 +80,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
-      expect: [
+      expect: () => [
         ProjectsState.loaded(projectStates),
       ],
     );
@@ -104,7 +104,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
-      expect: [
+      expect: () => [
         ProjectsState.loaded(projectStatesWithStyles),
       ],
     );
@@ -116,7 +116,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
-      expect: [
+      expect: () => [
         ProjectsState.loaded([_projectStateWithTagStyle(ProjectTagStyle.outline)]),
       ],
     );
@@ -146,7 +146,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
-      expect: [
+      expect: () => [
         ProjectsState.loaded(projectStateWithCallToActions),
       ],
     );
@@ -158,7 +158,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
-      expect: [
+      expect: () => [
         ProjectsState.loaded(
             [_projectStateWithCallToAction(ProjectCallToActionType.route, ProjectCallToActionStyle.secondary)]),
       ],
@@ -171,7 +171,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
-      expect: [
+      expect: () => [
         const ProjectsState.error(),
       ],
     );

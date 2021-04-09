@@ -34,7 +34,7 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
           Headline(Strings.of(context).experienceTimelineHeader),
           Paragraph(Strings.of(context).experienceTimelineDescription),
           BlocBuilder<ExperiencesBloc, ExperiencesState>(
-            cubit: _bloc,
+            bloc: _bloc,
             builder: (context, state) {
               if (state is ExperiencesLoading) {
                 return LoadingIndicator();

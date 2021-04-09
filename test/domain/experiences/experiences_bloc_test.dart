@@ -79,7 +79,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
-      expect: [
+      expect: () => [
         ExperiencesState.loaded(experienceStates),
       ],
     );
@@ -107,7 +107,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
-      expect: [
+      expect: () => [
         ExperiencesState.loaded(experienceStatesWithColorAndIcon),
       ],
     );
@@ -167,7 +167,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
-      expect: [
+      expect: () => [
         ExperiencesState.loaded([
           const ExperienceState(
             title: 'Exp Title',
@@ -188,7 +188,7 @@ void main() {
         return bloc;
       },
       act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
-      expect: [
+      expect: () => [
         const ExperiencesState.error(),
       ],
     );

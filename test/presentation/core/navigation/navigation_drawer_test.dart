@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart' hide Mock, any, verify;
 import 'package:portfolio/domain/experiences/experiences_bloc.dart';
 import 'package:portfolio/domain/projects/projects_bloc.dart';
 import 'package:portfolio/injection.dart';
@@ -17,14 +18,19 @@ import 'package:portfolio/presentation/routes/routes.gr.dart';
 class MockNavigatorObserver extends Mock implements NavigatorObserver {}
 
 // todo: really to work out how to not depend on bloc mocks here
-class MockExperiencesBloc extends MockBloc<ExperiencesState> implements ExperiencesBloc {}
+class MockExperiencesBloc extends MockBloc<ExperiencesEvent, ExperiencesState> implements ExperiencesBloc {}
 
-class MockProjectsBloc extends MockBloc<ProjectsState> implements ProjectsBloc {}
+class MockProjectsBloc extends MockBloc<ProjectsEvent, ProjectsState> implements ProjectsBloc {}
 
 void main() {
   setUpAll(() {
     getIt.registerLazySingleton<ExperiencesBloc>(() => MockExperiencesBloc());
+    registerFallbackValue<ExperiencesEvent>(ExperiencesEvent.loadExperiences());
+    registerFallbackValue<ExperiencesState>(ExperiencesState.loading());
+
     getIt.registerLazySingleton<ProjectsBloc>(() => MockProjectsBloc());
+    registerFallbackValue<ProjectsEvent>(ProjectsEvent.loadProjects());
+    registerFallbackValue<ProjectsState>(ProjectsState.loading());
   });
 
   group('NavigationDrawer routing', () {
