@@ -7,33 +7,33 @@ enum ProjectCallToActionType { route, link }
 enum ProjectCallToActionStyle { primary, secondary, tertiary }
 
 @freezed
-abstract class ProjectState with _$ProjectState {
-  const factory ProjectState({
-    String title,
-    String summary,
-    String detail,
-    String coverImageUrl,
-    List<ProjectTagState> tags,
-    List<ProjectCallToActionState> callToActions,
+class ProjectState with _$ProjectState {
+  factory ProjectState({
+    required String title,
+    required String summary,
+    required String detail,
+    required String coverImageUrl,
+    required List<ProjectTagState> tags,
+    required List<ProjectCallToActionState> callToActions,
   }) = _ProjectState;
 }
 
 @freezed
-abstract class ProjectTagState with _$ProjectTagState {
-  const factory ProjectTagState({
-    String label,
-    String color,
-    String labelColor,
-    ProjectTagStyle style,
+class ProjectTagState with _$ProjectTagState {
+  factory ProjectTagState({
+    required String label,
+    required String color,
+    required String labelColor,
+    required ProjectTagStyle style,
   }) = _ProjectTagState;
 }
 
 @freezed
-abstract class ProjectCallToActionState with _$ProjectCallToActionState {
-  const factory ProjectCallToActionState({
-    ProjectCallToActionType type,
-    ProjectCallToActionStyle style,
-    String action,
-    String label,
+class ProjectCallToActionState with _$ProjectCallToActionState {
+  factory ProjectCallToActionState({
+    required ProjectCallToActionType type,
+    required ProjectCallToActionStyle style,
+    required String action,
+    required String label,
   }) = _ProjectCallToActionState;
 }

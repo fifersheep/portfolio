@@ -4,7 +4,7 @@ import 'package:portfolio/presentation/projects/widgets/project_tag.dart';
 import 'package:portfolio/presentation/core/presentation_extensions.dart';
 
 class FilledProjectTag extends StatelessWidget {
-  const FilledProjectTag({Key key, this.tag}) : super(key: key);
+  const FilledProjectTag({Key? key, required this.tag}) : super(key: key);
 
   final ProjectTagState tag;
 

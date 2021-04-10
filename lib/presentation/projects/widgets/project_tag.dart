@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ProjectTag extends StatelessWidget {
-  const ProjectTag({Key key, this.label, this.labelColor, this.decoration}) : super(key: key);
+  const ProjectTag({Key? key, required this.label, this.labelColor, this.decoration}) : super(key: key);
 
   final String label;
-  final Color labelColor;
-  final BoxDecoration decoration;
+  final Color? labelColor;
+  final BoxDecoration? decoration;
 
   @override
   Widget build(BuildContext context) => Container(

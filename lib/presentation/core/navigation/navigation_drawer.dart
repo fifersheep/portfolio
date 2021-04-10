@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
@@ -7,7 +8,7 @@ import 'navigation_header.dart';
 import 'navigation_route_observer.dart';
 
 class NavigationDrawer extends StatefulWidget {
-  const NavigationDrawer({Key key, @required this.pinOpen}) : super(key: key);
+  const NavigationDrawer({Key? key, required this.pinOpen}) : super(key: key);
 
   final bool pinOpen;
 
@@ -16,8 +17,8 @@ class NavigationDrawer extends StatefulWidget {
 }
 
 class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
-  String _activeRoute;
-  NavigationRouteObserver _routeObserver;
+  String? _activeRoute;
+  NavigationRouteObserver? _routeObserver;
 
   @override
   void initState() {
@@ -28,23 +29,32 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _routeObserver.subscribe(this, ModalRoute.of(context));
+    final route = ModalRoute.of(context);
+    if (route != null) {
+      _routeObserver?.subscribe(this, route);
+    }
   }
 
   @override
   void dispose() {
-    _routeObserver.unsubscribe(this);
+    _routeObserver?.unsubscribe(this);
     super.dispose();
   }
 
   @override
   void didPush() {
-    setState(() => _activeRoute = ModalRoute.of(context).settings.name);
+    final route = ModalRoute.of(context);
+    if (route != null) {
+      setState(() => _activeRoute = route.settings.name);
+    }
   }
 
   @override
   void didPop() {
-    setState(() => _activeRoute = ModalRoute.of(context).settings.name);
+    final route = ModalRoute.of(context);
+    if (route != null) {
+      setState(() => _activeRoute = route.settings.name);
+    }
   }
 
   @override
@@ -58,10 +68,10 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
           children: <Widget>[
             NavigationHeader(),
             ..._menuItems(context, _activeRoute, [
-              NavigationItem(Strings.of(context).navItemIntro, Icons.face, Routes.introPage),
-              NavigationItem(Strings.of(context).navItemProjects, Icons.code, Routes.projectsPage),
-              NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, Routes.experiencesPage),
-              NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, Routes.blogPage)
+              NavigationItem(Strings.of(context).navItemIntro, Icons.face, const IntroRoute()),
+              NavigationItem(Strings.of(context).navItemProjects, Icons.code, const ProjectsRoute()),
+              NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, const ExperiencesRoute()),
+              NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, const BlogRoute())
             ])
           ],
         ),
@@ -71,19 +81,19 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
 class NavigationItem {
   final String label;
   final IconData icon;
-  final String route;
+  final PageRouteInfo route;
 
   const NavigationItem(this.label, this.icon, this.route);
 }
 
-List<Widget> _menuItems(BuildContext context, String activeRoute, List<NavigationItem> items) {
+List<Widget> _menuItems(BuildContext context, String? activeRoute, List<NavigationItem> items) {
   return items
       .map((item) => ListTile(
             key: Key(item.label),
             title: Text(item.label),
             leading: Icon(item.icon),
-            onTap: () => Navigator.pushNamed(context, item.route),
-            selected: item.route == activeRoute,
+            onTap: () => context.router.push(item.route),
+            selected: item.route.routeName == activeRoute,
           ))
       .toList();
 }

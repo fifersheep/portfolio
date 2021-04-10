@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Images extends InheritedWidget {
-  static Images of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<Images>();
+  static Images of(BuildContext context) {
+    final result = context.dependOnInheritedWidgetOfExactType<Images>();
+    assert(result != null, 'No Images found in context');
+    return result!;
+  }
 
-  const Images({Key key, @required Widget child}) : super(key: key, child: child);
+  const Images({Key? key, required Widget child}) : super(key: key, child: child);
 
   @override
   bool updateShouldNotify(Images old) => false;

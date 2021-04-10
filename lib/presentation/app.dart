@@ -9,12 +9,16 @@ import 'core/navigation/navigation_route_observer.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final router = Router();
+
+    return MaterialApp.router(
       title: Strings.of(context).appTitle,
       theme: appTheme,
-      initialRoute: Routes.introPage,
-      onGenerateRoute: Router(),
-      navigatorObservers: [getIt<NavigationRouteObserver>()],
+      routeInformationParser: router.defaultRouteParser(),
+      routerDelegate: router.delegate(
+        initialRoutes: [const IntroRoute()],
+        navigatorObservers: [getIt<NavigationRouteObserver>()],
+      ),
     );
   }
 }

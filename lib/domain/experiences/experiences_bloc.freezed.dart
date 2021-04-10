@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experiences_bloc.dart';
 
@@ -9,40 +9,45 @@ part of 'experiences_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExperiencesEventTearOff {
   const _$ExperiencesEventTearOff();
 
-// ignore: unused_element
   LoadExperiences loadExperiences() {
     return const LoadExperiences();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperiencesEvent = _$ExperiencesEventTearOff();
 
 /// @nodoc
 mixin _$ExperiencesEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loadExperiences(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadExperiences,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loadExperiences(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadExperiences,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loadExperiences(LoadExperiences value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadExperiences value) loadExperiences,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loadExperiences(LoadExperiences value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadExperiences value)? loadExperiences,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -95,20 +100,18 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loadExperiences(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadExperiences,
   }) {
-    assert(loadExperiences != null);
     return loadExperiences();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loadExperiences(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadExperiences,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadExperiences != null) {
       return loadExperiences();
     }
@@ -117,20 +120,18 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loadExperiences(LoadExperiences value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadExperiences value) loadExperiences,
   }) {
-    assert(loadExperiences != null);
     return loadExperiences(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loadExperiences(LoadExperiences value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadExperiences value)? loadExperiences,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadExperiences != null) {
       return loadExperiences(this);
     }
@@ -146,56 +147,56 @@ abstract class LoadExperiences implements ExperiencesEvent {
 class _$ExperiencesStateTearOff {
   const _$ExperiencesStateTearOff();
 
-// ignore: unused_element
   ExperiencesLoading loading() {
     return const ExperiencesLoading();
   }
 
-// ignore: unused_element
   ExperiencesLoaded loaded(List<ExperienceState> experiences) {
     return ExperiencesLoaded(
       experiences,
     );
   }
 
-// ignore: unused_element
   ExperiencesError error() {
     return const ExperiencesError();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ExperiencesState = _$ExperiencesStateTearOff();
 
 /// @nodoc
 mixin _$ExperiencesState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult loaded(List<ExperienceState> experiences),
-    @required TResult error(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<ExperienceState> experiences) loaded,
+    required TResult Function() error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult loaded(List<ExperienceState> experiences),
-    TResult error(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<ExperienceState> experiences)? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(ExperiencesLoading value),
-    @required TResult loaded(ExperiencesLoaded value),
-    @required TResult error(ExperiencesError value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExperiencesLoading value) loading,
+    required TResult Function(ExperiencesLoaded value) loaded,
+    required TResult Function(ExperiencesError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(ExperiencesLoading value),
-    TResult loaded(ExperiencesLoaded value),
-    TResult error(ExperiencesError value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExperiencesLoading value)? loading,
+    TResult Function(ExperiencesLoaded value)? loaded,
+    TResult Function(ExperiencesError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -248,26 +249,22 @@ class _$ExperiencesLoading implements ExperiencesLoading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult loaded(List<ExperienceState> experiences),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<ExperienceState> experiences) loaded,
+    required TResult Function() error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult loaded(List<ExperienceState> experiences),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<ExperienceState> experiences)? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -276,26 +273,22 @@ class _$ExperiencesLoading implements ExperiencesLoading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(ExperiencesLoading value),
-    @required TResult loaded(ExperiencesLoaded value),
-    @required TResult error(ExperiencesError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExperiencesLoading value) loading,
+    required TResult Function(ExperiencesLoaded value) loaded,
+    required TResult Function(ExperiencesError value) error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(ExperiencesLoading value),
-    TResult loaded(ExperiencesLoaded value),
-    TResult error(ExperiencesError value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExperiencesLoading value)? loading,
+    TResult Function(ExperiencesLoaded value)? loaded,
+    TResult Function(ExperiencesError value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -325,17 +318,20 @@ class _$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithIm
 
   @override
   $Res call({
-    Object experiences = freezed,
+    Object? experiences = freezed,
   }) {
     return _then(ExperiencesLoaded(
-      experiences == freezed ? _value.experiences : experiences as List<ExperienceState>,
+      experiences == freezed
+          ? _value.experiences
+          : experiences // ignore: cast_nullable_to_non_nullable
+              as List<ExperienceState>,
     ));
   }
 }
 
 /// @nodoc
 class _$ExperiencesLoaded implements ExperiencesLoaded {
-  const _$ExperiencesLoaded(this.experiences) : assert(experiences != null);
+  const _$ExperiencesLoaded(this.experiences);
 
   @override
   final List<ExperienceState> experiences;
@@ -363,26 +359,22 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult loaded(List<ExperienceState> experiences),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<ExperienceState> experiences) loaded,
+    required TResult Function() error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return loaded(experiences);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult loaded(List<ExperienceState> experiences),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<ExperienceState> experiences)? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(experiences);
     }
@@ -391,26 +383,22 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(ExperiencesLoading value),
-    @required TResult loaded(ExperiencesLoaded value),
-    @required TResult error(ExperiencesError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExperiencesLoading value) loading,
+    required TResult Function(ExperiencesLoaded value) loaded,
+    required TResult Function(ExperiencesError value) error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(ExperiencesLoading value),
-    TResult loaded(ExperiencesLoaded value),
-    TResult error(ExperiencesError value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExperiencesLoading value)? loading,
+    TResult Function(ExperiencesLoaded value)? loaded,
+    TResult Function(ExperiencesError value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -421,9 +409,9 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 abstract class ExperiencesLoaded implements ExperiencesState {
   const factory ExperiencesLoaded(List<ExperienceState> experiences) = _$ExperiencesLoaded;
 
-  List<ExperienceState> get experiences;
+  List<ExperienceState> get experiences => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith;
+  $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -461,26 +449,22 @@ class _$ExperiencesError implements ExperiencesError {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult loaded(List<ExperienceState> experiences),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<ExperienceState> experiences) loaded,
+    required TResult Function() error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return error();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult loaded(List<ExperienceState> experiences),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<ExperienceState> experiences)? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error();
     }
@@ -489,26 +473,22 @@ class _$ExperiencesError implements ExperiencesError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(ExperiencesLoading value),
-    @required TResult loaded(ExperiencesLoaded value),
-    @required TResult error(ExperiencesError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExperiencesLoading value) loading,
+    required TResult Function(ExperiencesLoaded value) loaded,
+    required TResult Function(ExperiencesError value) error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(ExperiencesLoading value),
-    TResult loaded(ExperiencesLoaded value),
-    TResult error(ExperiencesError value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExperiencesLoading value)? loading,
+    TResult Function(ExperiencesLoaded value)? loaded,
+    TResult Function(ExperiencesError value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }

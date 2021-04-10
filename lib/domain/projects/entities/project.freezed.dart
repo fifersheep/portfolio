@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'project.dart';
 
@@ -9,18 +9,20 @@ part of 'project.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ProjectTearOff {
   const _$ProjectTearOff();
 
-// ignore: unused_element
   _Project call(
-      {String title,
-      String summary,
-      String detail,
-      String coverImageUrl,
-      List<ProjectTag> tags,
-      List<ProjectCallToAction> callToActions}) {
+      {required String title,
+      required String summary,
+      required String detail,
+      required String coverImageUrl,
+      required List<ProjectTag> tags,
+      required List<ProjectCallToAction> callToActions}) {
     return _Project(
       title: title,
       summary: summary,
@@ -33,20 +35,19 @@ class _$ProjectTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Project = _$ProjectTearOff();
 
 /// @nodoc
 mixin _$Project {
-  String get title;
-  String get summary;
-  String get detail;
-  String get coverImageUrl;
-  List<ProjectTag> get tags;
-  List<ProjectCallToAction> get callToActions;
+  String get title => throw _privateConstructorUsedError;
+  String get summary => throw _privateConstructorUsedError;
+  String get detail => throw _privateConstructorUsedError;
+  String get coverImageUrl => throw _privateConstructorUsedError;
+  List<ProjectTag> get tags => throw _privateConstructorUsedError;
+  List<ProjectCallToAction> get callToActions => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProjectCopyWith<Project> get copyWith;
+  $ProjectCopyWith<Project> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -71,20 +72,38 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
 
   @override
   $Res call({
-    Object title = freezed,
-    Object summary = freezed,
-    Object detail = freezed,
-    Object coverImageUrl = freezed,
-    Object tags = freezed,
-    Object callToActions = freezed,
+    Object? title = freezed,
+    Object? summary = freezed,
+    Object? detail = freezed,
+    Object? coverImageUrl = freezed,
+    Object? tags = freezed,
+    Object? callToActions = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed ? _value.title : title as String,
-      summary: summary == freezed ? _value.summary : summary as String,
-      detail: detail == freezed ? _value.detail : detail as String,
-      coverImageUrl: coverImageUrl == freezed ? _value.coverImageUrl : coverImageUrl as String,
-      tags: tags == freezed ? _value.tags : tags as List<ProjectTag>,
-      callToActions: callToActions == freezed ? _value.callToActions : callToActions as List<ProjectCallToAction>,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      summary: summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as String,
+      detail: detail == freezed
+          ? _value.detail
+          : detail // ignore: cast_nullable_to_non_nullable
+              as String,
+      coverImageUrl: coverImageUrl == freezed
+          ? _value.coverImageUrl
+          : coverImageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<ProjectTag>,
+      callToActions: callToActions == freezed
+          ? _value.callToActions
+          : callToActions // ignore: cast_nullable_to_non_nullable
+              as List<ProjectCallToAction>,
     ));
   }
 }
@@ -111,27 +130,51 @@ class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res> implement
 
   @override
   $Res call({
-    Object title = freezed,
-    Object summary = freezed,
-    Object detail = freezed,
-    Object coverImageUrl = freezed,
-    Object tags = freezed,
-    Object callToActions = freezed,
+    Object? title = freezed,
+    Object? summary = freezed,
+    Object? detail = freezed,
+    Object? coverImageUrl = freezed,
+    Object? tags = freezed,
+    Object? callToActions = freezed,
   }) {
     return _then(_Project(
-      title: title == freezed ? _value.title : title as String,
-      summary: summary == freezed ? _value.summary : summary as String,
-      detail: detail == freezed ? _value.detail : detail as String,
-      coverImageUrl: coverImageUrl == freezed ? _value.coverImageUrl : coverImageUrl as String,
-      tags: tags == freezed ? _value.tags : tags as List<ProjectTag>,
-      callToActions: callToActions == freezed ? _value.callToActions : callToActions as List<ProjectCallToAction>,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      summary: summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as String,
+      detail: detail == freezed
+          ? _value.detail
+          : detail // ignore: cast_nullable_to_non_nullable
+              as String,
+      coverImageUrl: coverImageUrl == freezed
+          ? _value.coverImageUrl
+          : coverImageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<ProjectTag>,
+      callToActions: callToActions == freezed
+          ? _value.callToActions
+          : callToActions // ignore: cast_nullable_to_non_nullable
+              as List<ProjectCallToAction>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Project implements _Project {
-  const _$_Project({this.title, this.summary, this.detail, this.coverImageUrl, this.tags, this.callToActions});
+  _$_Project(
+      {required this.title,
+      required this.summary,
+      required this.detail,
+      required this.coverImageUrl,
+      required this.tags,
+      required this.callToActions});
 
   @override
   final String title;
@@ -181,37 +224,36 @@ class _$_Project implements _Project {
 }
 
 abstract class _Project implements Project {
-  const factory _Project(
-      {String title,
-      String summary,
-      String detail,
-      String coverImageUrl,
-      List<ProjectTag> tags,
-      List<ProjectCallToAction> callToActions}) = _$_Project;
+  factory _Project(
+      {required String title,
+      required String summary,
+      required String detail,
+      required String coverImageUrl,
+      required List<ProjectTag> tags,
+      required List<ProjectCallToAction> callToActions}) = _$_Project;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get summary;
+  String get summary => throw _privateConstructorUsedError;
   @override
-  String get detail;
+  String get detail => throw _privateConstructorUsedError;
   @override
-  String get coverImageUrl;
+  String get coverImageUrl => throw _privateConstructorUsedError;
   @override
-  List<ProjectTag> get tags;
+  List<ProjectTag> get tags => throw _privateConstructorUsedError;
   @override
-  List<ProjectCallToAction> get callToActions;
+  List<ProjectCallToAction> get callToActions => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ProjectCopyWith<_Project> get copyWith;
+  _$ProjectCopyWith<_Project> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ProjectTagTearOff {
   const _$ProjectTagTearOff();
 
-// ignore: unused_element
-  _ProjectTag call({String label, String color, String labelColor, String style}) {
+  _ProjectTag call({required String label, required String color, required String labelColor, required String style}) {
     return _ProjectTag(
       label: label,
       color: color,
@@ -222,18 +264,17 @@ class _$ProjectTagTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ProjectTag = _$ProjectTagTearOff();
 
 /// @nodoc
 mixin _$ProjectTag {
-  String get label;
-  String get color;
-  String get labelColor;
-  String get style;
+  String get label => throw _privateConstructorUsedError;
+  String get color => throw _privateConstructorUsedError;
+  String get labelColor => throw _privateConstructorUsedError;
+  String get style => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProjectTagCopyWith<ProjectTag> get copyWith;
+  $ProjectTagCopyWith<ProjectTag> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -252,16 +293,28 @@ class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
 
   @override
   $Res call({
-    Object label = freezed,
-    Object color = freezed,
-    Object labelColor = freezed,
-    Object style = freezed,
+    Object? label = freezed,
+    Object? color = freezed,
+    Object? labelColor = freezed,
+    Object? style = freezed,
   }) {
     return _then(_value.copyWith(
-      label: label == freezed ? _value.label : label as String,
-      color: color == freezed ? _value.color : color as String,
-      labelColor: labelColor == freezed ? _value.labelColor : labelColor as String,
-      style: style == freezed ? _value.style : style as String,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String,
+      labelColor: labelColor == freezed
+          ? _value.labelColor
+          : labelColor // ignore: cast_nullable_to_non_nullable
+              as String,
+      style: style == freezed
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -283,23 +336,35 @@ class __$ProjectTagCopyWithImpl<$Res> extends _$ProjectTagCopyWithImpl<$Res> imp
 
   @override
   $Res call({
-    Object label = freezed,
-    Object color = freezed,
-    Object labelColor = freezed,
-    Object style = freezed,
+    Object? label = freezed,
+    Object? color = freezed,
+    Object? labelColor = freezed,
+    Object? style = freezed,
   }) {
     return _then(_ProjectTag(
-      label: label == freezed ? _value.label : label as String,
-      color: color == freezed ? _value.color : color as String,
-      labelColor: labelColor == freezed ? _value.labelColor : labelColor as String,
-      style: style == freezed ? _value.style : style as String,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String,
+      labelColor: labelColor == freezed
+          ? _value.labelColor
+          : labelColor // ignore: cast_nullable_to_non_nullable
+              as String,
+      style: style == freezed
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_ProjectTag implements _ProjectTag {
-  const _$_ProjectTag({this.label, this.color, this.labelColor, this.style});
+  _$_ProjectTag({required this.label, required this.color, required this.labelColor, required this.style});
 
   @override
   final String label;
@@ -340,27 +405,31 @@ class _$_ProjectTag implements _ProjectTag {
 }
 
 abstract class _ProjectTag implements ProjectTag {
-  const factory _ProjectTag({String label, String color, String labelColor, String style}) = _$_ProjectTag;
+  factory _ProjectTag(
+      {required String label,
+      required String color,
+      required String labelColor,
+      required String style}) = _$_ProjectTag;
 
   @override
-  String get label;
+  String get label => throw _privateConstructorUsedError;
   @override
-  String get color;
+  String get color => throw _privateConstructorUsedError;
   @override
-  String get labelColor;
+  String get labelColor => throw _privateConstructorUsedError;
   @override
-  String get style;
+  String get style => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ProjectTagCopyWith<_ProjectTag> get copyWith;
+  _$ProjectTagCopyWith<_ProjectTag> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ProjectCallToActionTearOff {
   const _$ProjectCallToActionTearOff();
 
-// ignore: unused_element
-  _ProjectCallToAction call({String type, String action, String style, String label}) {
+  _ProjectCallToAction call(
+      {required String type, required String action, required String style, required String label}) {
     return _ProjectCallToAction(
       type: type,
       action: action,
@@ -371,18 +440,17 @@ class _$ProjectCallToActionTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ProjectCallToAction = _$ProjectCallToActionTearOff();
 
 /// @nodoc
 mixin _$ProjectCallToAction {
-  String get type;
-  String get action;
-  String get style;
-  String get label;
+  String get type => throw _privateConstructorUsedError;
+  String get action => throw _privateConstructorUsedError;
+  String get style => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProjectCallToActionCopyWith<ProjectCallToAction> get copyWith;
+  $ProjectCallToActionCopyWith<ProjectCallToAction> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -402,16 +470,28 @@ class _$ProjectCallToActionCopyWithImpl<$Res> implements $ProjectCallToActionCop
 
   @override
   $Res call({
-    Object type = freezed,
-    Object action = freezed,
-    Object style = freezed,
-    Object label = freezed,
+    Object? type = freezed,
+    Object? action = freezed,
+    Object? style = freezed,
+    Object? label = freezed,
   }) {
     return _then(_value.copyWith(
-      type: type == freezed ? _value.type : type as String,
-      action: action == freezed ? _value.action : action as String,
-      style: style == freezed ? _value.style : style as String,
-      label: label == freezed ? _value.label : label as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      action: action == freezed
+          ? _value.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as String,
+      style: style == freezed
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as String,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -435,23 +515,35 @@ class __$ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopy
 
   @override
   $Res call({
-    Object type = freezed,
-    Object action = freezed,
-    Object style = freezed,
-    Object label = freezed,
+    Object? type = freezed,
+    Object? action = freezed,
+    Object? style = freezed,
+    Object? label = freezed,
   }) {
     return _then(_ProjectCallToAction(
-      type: type == freezed ? _value.type : type as String,
-      action: action == freezed ? _value.action : action as String,
-      style: style == freezed ? _value.style : style as String,
-      label: label == freezed ? _value.label : label as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      action: action == freezed
+          ? _value.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as String,
+      style: style == freezed
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as String,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_ProjectCallToAction implements _ProjectCallToAction {
-  const _$_ProjectCallToAction({this.type, this.action, this.style, this.label});
+  _$_ProjectCallToAction({required this.type, required this.action, required this.style, required this.label});
 
   @override
   final String type;
@@ -492,17 +584,21 @@ class _$_ProjectCallToAction implements _ProjectCallToAction {
 }
 
 abstract class _ProjectCallToAction implements ProjectCallToAction {
-  const factory _ProjectCallToAction({String type, String action, String style, String label}) = _$_ProjectCallToAction;
+  factory _ProjectCallToAction(
+      {required String type,
+      required String action,
+      required String style,
+      required String label}) = _$_ProjectCallToAction;
 
   @override
-  String get type;
+  String get type => throw _privateConstructorUsedError;
   @override
-  String get action;
+  String get action => throw _privateConstructorUsedError;
   @override
-  String get style;
+  String get style => throw _privateConstructorUsedError;
   @override
-  String get label;
+  String get label => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith;
+  _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith => throw _privateConstructorUsedError;
 }

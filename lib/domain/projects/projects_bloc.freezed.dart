@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'projects_bloc.dart';
 
@@ -9,40 +9,45 @@ part of 'projects_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ProjectsEventTearOff {
   const _$ProjectsEventTearOff();
 
-// ignore: unused_element
   LoadProjects loadProjects() {
     return const LoadProjects();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ProjectsEvent = _$ProjectsEventTearOff();
 
 /// @nodoc
 mixin _$ProjectsEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loadProjects(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadProjects,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loadProjects(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadProjects,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loadProjects(LoadProjects value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadProjects value) loadProjects,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loadProjects(LoadProjects value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadProjects value)? loadProjects,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -95,20 +100,18 @@ class _$LoadProjects implements LoadProjects {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loadProjects(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadProjects,
   }) {
-    assert(loadProjects != null);
     return loadProjects();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loadProjects(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadProjects,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadProjects != null) {
       return loadProjects();
     }
@@ -117,20 +120,18 @@ class _$LoadProjects implements LoadProjects {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loadProjects(LoadProjects value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadProjects value) loadProjects,
   }) {
-    assert(loadProjects != null);
     return loadProjects(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loadProjects(LoadProjects value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadProjects value)? loadProjects,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadProjects != null) {
       return loadProjects(this);
     }
@@ -146,56 +147,56 @@ abstract class LoadProjects implements ProjectsEvent {
 class _$ProjectsStateTearOff {
   const _$ProjectsStateTearOff();
 
-// ignore: unused_element
   ProjectsLoading loading() {
     return const ProjectsLoading();
   }
 
-// ignore: unused_element
   ProjectsLoaded loaded(List<ProjectState> projects) {
     return ProjectsLoaded(
       projects,
     );
   }
 
-// ignore: unused_element
   ProjectsError error() {
     return const ProjectsError();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ProjectsState = _$ProjectsStateTearOff();
 
 /// @nodoc
 mixin _$ProjectsState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult loaded(List<ProjectState> projects),
-    @required TResult error(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<ProjectState> projects) loaded,
+    required TResult Function() error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult loaded(List<ProjectState> projects),
-    TResult error(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<ProjectState> projects)? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(ProjectsLoading value),
-    @required TResult loaded(ProjectsLoaded value),
-    @required TResult error(ProjectsError value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectsLoading value) loading,
+    required TResult Function(ProjectsLoaded value) loaded,
+    required TResult Function(ProjectsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(ProjectsLoading value),
-    TResult loaded(ProjectsLoaded value),
-    TResult error(ProjectsError value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectsLoading value)? loading,
+    TResult Function(ProjectsLoaded value)? loaded,
+    TResult Function(ProjectsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -248,26 +249,22 @@ class _$ProjectsLoading implements ProjectsLoading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult loaded(List<ProjectState> projects),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<ProjectState> projects) loaded,
+    required TResult Function() error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult loaded(List<ProjectState> projects),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<ProjectState> projects)? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -276,26 +273,22 @@ class _$ProjectsLoading implements ProjectsLoading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(ProjectsLoading value),
-    @required TResult loaded(ProjectsLoaded value),
-    @required TResult error(ProjectsError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectsLoading value) loading,
+    required TResult Function(ProjectsLoaded value) loaded,
+    required TResult Function(ProjectsError value) error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(ProjectsLoading value),
-    TResult loaded(ProjectsLoaded value),
-    TResult error(ProjectsError value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectsLoading value)? loading,
+    TResult Function(ProjectsLoaded value)? loaded,
+    TResult Function(ProjectsError value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -325,17 +318,20 @@ class _$ProjectsLoadedCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Re
 
   @override
   $Res call({
-    Object projects = freezed,
+    Object? projects = freezed,
   }) {
     return _then(ProjectsLoaded(
-      projects == freezed ? _value.projects : projects as List<ProjectState>,
+      projects == freezed
+          ? _value.projects
+          : projects // ignore: cast_nullable_to_non_nullable
+              as List<ProjectState>,
     ));
   }
 }
 
 /// @nodoc
 class _$ProjectsLoaded implements ProjectsLoaded {
-  const _$ProjectsLoaded(this.projects) : assert(projects != null);
+  const _$ProjectsLoaded(this.projects);
 
   @override
   final List<ProjectState> projects;
@@ -362,26 +358,22 @@ class _$ProjectsLoaded implements ProjectsLoaded {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult loaded(List<ProjectState> projects),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<ProjectState> projects) loaded,
+    required TResult Function() error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return loaded(projects);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult loaded(List<ProjectState> projects),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<ProjectState> projects)? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(projects);
     }
@@ -390,26 +382,22 @@ class _$ProjectsLoaded implements ProjectsLoaded {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(ProjectsLoading value),
-    @required TResult loaded(ProjectsLoaded value),
-    @required TResult error(ProjectsError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectsLoading value) loading,
+    required TResult Function(ProjectsLoaded value) loaded,
+    required TResult Function(ProjectsError value) error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(ProjectsLoading value),
-    TResult loaded(ProjectsLoaded value),
-    TResult error(ProjectsError value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectsLoading value)? loading,
+    TResult Function(ProjectsLoaded value)? loaded,
+    TResult Function(ProjectsError value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -420,9 +408,9 @@ class _$ProjectsLoaded implements ProjectsLoaded {
 abstract class ProjectsLoaded implements ProjectsState {
   const factory ProjectsLoaded(List<ProjectState> projects) = _$ProjectsLoaded;
 
-  List<ProjectState> get projects;
+  List<ProjectState> get projects => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ProjectsLoadedCopyWith<ProjectsLoaded> get copyWith;
+  $ProjectsLoadedCopyWith<ProjectsLoaded> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -460,26 +448,22 @@ class _$ProjectsError implements ProjectsError {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult loaded(List<ProjectState> projects),
-    @required TResult error(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<ProjectState> projects) loaded,
+    required TResult Function() error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return error();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult loaded(List<ProjectState> projects),
-    TResult error(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<ProjectState> projects)? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error();
     }
@@ -488,26 +472,22 @@ class _$ProjectsError implements ProjectsError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(ProjectsLoading value),
-    @required TResult loaded(ProjectsLoaded value),
-    @required TResult error(ProjectsError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectsLoading value) loading,
+    required TResult Function(ProjectsLoaded value) loaded,
+    required TResult Function(ProjectsError value) error,
   }) {
-    assert(loading != null);
-    assert(loaded != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(ProjectsLoading value),
-    TResult loaded(ProjectsLoaded value),
-    TResult error(ProjectsError value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectsLoading value)? loading,
+    TResult Function(ProjectsLoaded value)? loaded,
+    TResult Function(ProjectsError value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }

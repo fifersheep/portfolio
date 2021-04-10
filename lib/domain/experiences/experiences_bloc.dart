@@ -36,7 +36,8 @@ class ExperiencesBloc extends Bloc<ExperiencesEvent, ExperiencesState> {
   }
 
   ExperienceState _fromExperience(Experience experience) {
-    final categoryState = _categoryState[experience.category];
+    final categoryState =
+        _categoryState[experience.category] ?? const ExperienceStyling(ExperienceColor.blue, ExperienceIcon.done);
 
     final singleDateCategories = [
       ExperienceCategory.home,

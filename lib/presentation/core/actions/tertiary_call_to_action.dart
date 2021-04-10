@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TertiaryCallToAction extends StatelessWidget {
-  const TertiaryCallToAction({Key key, @required this.label, @required this.route, @required this.onPressed})
+  const TertiaryCallToAction({Key? key, required this.label, required this.route, required this.onPressed})
       : super(key: key);
 
   final String label;

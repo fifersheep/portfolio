@@ -1,10 +1,10 @@
-import 'package:auto_route/auto_route_annotations.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
 import 'package:portfolio/presentation/core/page_scaffold.dart';
 
 class ProjectDetailsPage extends StatelessWidget {
-  const ProjectDetailsPage({@required @PathParam() this.id});
+  const ProjectDetailsPage({@PathParam() required this.id});
 
   final String id;
 

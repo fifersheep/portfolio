@@ -7,7 +7,7 @@ import 'package:portfolio/presentation/projects/widgets/project_card_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatelessWidget {
-  const ProjectCard({this.project, this.imageAspectRatio});
+  const ProjectCard({required this.project, required this.imageAspectRatio});
 
   final ProjectState project;
   final double imageAspectRatio;
