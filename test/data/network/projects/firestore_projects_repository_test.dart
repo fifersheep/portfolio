@@ -1,111 +1,66 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_firestore_mocks/cloud_firestore_mocks.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/data/network/projects/firestore_project_parser.dart';
 import 'package:portfolio/data/network/projects/firestore_projects_repository.dart';
 import 'package:portfolio/domain/projects/entities/project.dart';
+import 'package:test/test.dart';
 
-import '../utils/firestore_mocks.dart';
+import '../utils/firestore_mocks.mocks.dart';
+import 'firestore_projects_repository_test.mocks.dart';
 
-class MockFirestoreProjectParser extends Mock implements FirestoreProjectParser {}
-
+@GenerateMocks([FirestoreProjectParser])
 void main() {
-  FirebaseFirestore firestore;
-  FirestoreProjectParser parser;
-  FirestoreProjectsRepository repository;
+  late FirebaseFirestore firestore;
+  late FirestoreProjectParser parser;
+  late FirestoreProjectsRepository repository;
+  late MockCollectionReference projectsReference;
+  late MockQuerySnapshot projectsQuery;
+  late MockCollectionReference tagsReference;
+  late MockQuerySnapshot tagsQuery;
 
   setUp(() {
-    firestore = MockFirestoreInstance();
-    parser = FirestoreProjectParser();
+    firestore = MockFirebaseFirestore();
+    parser = MockFirestoreProjectParser();
     repository = FirestoreProjectsRepository(firestore, parser);
+
+    projectsReference = MockCollectionReference();
+    projectsQuery = MockQuerySnapshot();
+    tagsReference = MockCollectionReference();
+    tagsQuery = MockQuerySnapshot();
+
+    when(firestore.collection('projects')).thenReturn(projectsReference);
+    when(projectsReference.get()).thenAnswer((_) async => projectsQuery);
+    when(firestore.collection('project_tags')).thenReturn(tagsReference);
+    when(tagsReference.get()).thenAnswer((_) async => tagsQuery);
   });
 
   test('should return an empty list of projects when firestore returns none', () async {
+    when(projectsQuery.docs).thenReturn([]);
+    when(tagsQuery.docs).thenReturn([]);
+
     final actual = await repository.getProjects();
-    expect(actual.getOrElse(() => null), equals([]));
+
+    actual.fold(
+      (l) => null,
+      (r) => expect(r, equals([])),
+    );
   });
 
-  test('should return a list of projects with no tags or call to actions when firestore returns some', () async {
-    const project = Project(
+  test('should return a list of projects when firestore returns some', () async {
+    final project = Project(
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
       coverImageUrl: 'Cover Image Url',
-      tags: [],
-      callToActions: [],
-    );
-
-    final projectData = {
-      'title': 'Title',
-      'summary': 'Summary',
-      'detail': 'Detail',
-      'cover_image_url': 'Cover Image Url',
-      'tags': [],
-      'call_to_actions': [],
-    };
-
-    final tagData = {
-      'label': 'Label',
-      'style': 'Style',
-      'color': 'Color',
-    };
-
-    await firestore.collection('projects').add(projectData);
-    await firestore.collection('project_tags').add(tagData);
-
-    final actual = await repository.getProjects();
-
-    expect(actual | null, equals([project]));
-  });
-
-  test('should return a list of tagged projects when firestore returns some', () async {
-    const project = Project(
-      title: 'Title',
-      summary: 'Summary',
-      detail: 'Detail',
-      coverImageUrl: 'Cover Image',
-      callToActions: [],
       tags: [
-        ProjectTag(label: 'Label', style: 'Style', color: 'Color', labelColor: 'Label Color'),
+        ProjectTag(
+          label: 'Label',
+          color: 'Color',
+          labelColor: 'Label Color',
+          style: 'Style',
+        ),
       ],
-    );
-
-    const tagID = 'Tag';
-    final tag = MockDocumentReference();
-    when(tag.id).thenReturn(tagID);
-
-    final projectData = {
-      'title': 'Title',
-      'summary': 'Summary',
-      'detail': 'Detail',
-      'cover_image_url': 'Cover Image',
-      'tags': [tag],
-      'call_to_actions': [],
-    };
-
-    final tagData = {
-      'label': 'Label',
-      'style': 'Style',
-      'color': 'Color',
-      'label_color': 'Label Color',
-    };
-
-    await firestore.collection('projects').add(projectData);
-    await firestore.collection('project_tags').doc(tagID).set(tagData);
-
-    final actual = await repository.getProjects();
-
-    expect(actual | null, equals([project]));
-  });
-
-  test('should return a list of projects with call to action when firestore returns some', () async {
-    const project = Project(
-      title: 'Title',
-      summary: 'Summary',
-      detail: 'Detail',
-      coverImageUrl: 'Cover Image',
-      tags: [],
       callToActions: [
         ProjectCallToAction(
           type: 'Type',
@@ -116,30 +71,30 @@ void main() {
       ],
     );
 
-    const callToActionID = 'CTA';
-    final callToAction = MockDocumentReference();
-    when(callToAction.id).thenReturn(callToActionID);
-
-    final callToActionData = {
-      'type': 'Type',
-      'action': 'Action',
-      'style': 'Style',
-      'label': 'Label',
-    };
+    final tagDocRef = MockDocumentReference();
+    when(tagDocRef.id).thenReturn('Tag ID');
 
     final projectData = {
-      'title': 'Title',
-      'summary': 'Summary',
-      'detail': 'Detail',
-      'cover_image_url': 'Cover Image',
-      'tags': [],
-      'call_to_actions': [callToActionData],
+      'tags': [
+        tagDocRef,
+      ],
     };
 
-    await firestore.collection('projects').add(projectData);
+    final projectDoc = MockQueryDocumentSnapshot();
+    final tagDoc = MockQueryDocumentSnapshot();
+    final unusedTagDoc = MockQueryDocumentSnapshot();
+
+    when(projectsQuery.docs).thenReturn([projectDoc]);
+    when(tagsQuery.docs).thenReturn([tagDoc, unusedTagDoc]);
+
+    when(projectDoc.data()).thenReturn(projectData);
+    when(tagDoc.id).thenReturn('Tag ID');
+    when(unusedTagDoc.id).thenReturn('Unused Tag');
+
+    when(parser.parseProject(projectDoc, [tagDoc])).thenReturn(project);
 
     final actual = await repository.getProjects();
 
-    expect(actual | null, equals([project]));
+    expect(actual | [], equals([project]));
   });
 }

@@ -9,12 +9,15 @@ class FirestoreExperienceParser extends ExperienceParser<DocumentSnapshot> {
   @override
   Experience parse(DocumentSnapshot source) {
     final data = source.data();
+    final startDate = data?['start_date'] as Timestamp?;
+    final endDate = data?['end_date'] as Timestamp?;
+
     return Experience(
         title: data?['title'] as String,
         content: data?['content'] as String,
         location: data?['location'] as String,
-        startDate: (data?['start_date'] as Timestamp).toDate(),
-        endDate: (data?['end_date'] as Timestamp).toDate(),
+        startDate: startDate?.toDate(),
+        endDate: endDate?.toDate(),
         category: ExperienceCategory.values
             .firstWhere((e) => _matchCategory(e, source), orElse: () => ExperienceCategory.unknown));
   }

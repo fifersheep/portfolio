@@ -1,19 +1,19 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/data/network/projects/firestore_project_parser.dart';
 import 'package:portfolio/domain/projects/entities/project.dart';
+import 'package:test/test.dart';
 
-import '../utils/firestore_mocks.dart';
+import '../utils/firestore_mocks.mocks.dart';
 
 void main() {
-  FirestoreProjectParser parser;
+  late FirestoreProjectParser parser;
 
   setUp(() async {
     parser = FirestoreProjectParser();
   });
 
   test('should parse a project with all properties', () async {
-    final projectDoc = MockDocumentSnapshot();
+    final projectDoc = MockQueryDocumentSnapshot();
     final projectDocData = {
       'title': 'Title',
       'summary': 'Summary',
@@ -29,10 +29,11 @@ void main() {
       ],
     };
 
-    final tagDoc = MockDocumentSnapshot();
+    final tagDoc = MockQueryDocumentSnapshot();
     final tagDocData = {
       'label': 'Label',
       'color': 'Color',
+      'label_color': 'Label Color',
       'style': 'Style',
     };
 
@@ -41,13 +42,13 @@ void main() {
 
     final actual = parser.parseProject(projectDoc, [tagDoc]);
 
-    const expected = Project(
+    final expected = Project(
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
       coverImageUrl: 'Cover Image Url',
       tags: [
-        ProjectTag(label: 'Label', color: 'Color', style: 'Style'),
+        ProjectTag(label: 'Label', color: 'Color', labelColor: 'Label Color', style: 'Style'),
       ],
       callToActions: [
         ProjectCallToAction(type: 'Type', action: 'Action', style: 'Style', label: 'Label'),

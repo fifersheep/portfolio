@@ -162,13 +162,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
-  cloud_firestore_mocks:
-    dependency: "direct dev"
-    description:
-      name: cloud_firestore_mocks
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.8.0"
   cloud_firestore_platform_interface:
     dependency: transitive
     description:
@@ -513,13 +506,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  quiver:
-    dependency: transitive
-    description:
-      name: quiver
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.1"
   shelf:
     dependency: transitive
     description:

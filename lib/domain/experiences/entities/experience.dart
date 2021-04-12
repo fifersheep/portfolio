@@ -8,8 +8,8 @@ class Experience with _$Experience {
     required String title,
     required String location,
     required String content,
-    required DateTime startDate,
-    required DateTime endDate,
+    required DateTime? startDate,
+    required DateTime? endDate,
     required ExperienceCategory category,
   }) = _Experience;
 }

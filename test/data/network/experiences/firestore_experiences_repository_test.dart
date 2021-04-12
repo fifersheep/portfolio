@@ -1,26 +1,48 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_firestore_mocks/cloud_firestore_mocks.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 import 'package:portfolio/data/network/experiences/firestore_experience_parser.dart';
 import 'package:portfolio/data/network/experiences/firestore_experiences_repository.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/experiences/entities/experience.dart';
+import 'package:test/test.dart';
 
+import '../utils/firestore_mocks.mocks.dart';
+import 'firestore_experiences_repository_test.mocks.dart';
+
+@GenerateMocks([FirestoreExperienceParser])
 void main() {
-  FirestoreExperiencesRepository repository;
-  FirebaseFirestore firestore;
-  FirestoreExperienceParser parser;
+  late FirestoreExperiencesRepository repository;
+  late FirebaseFirestore firestore;
+  late FirestoreExperienceParser parser;
+  late MockCollectionReference reference;
+  late MockQuery query;
+  late MockQuerySnapshot querySnapshot;
 
   setUp(() async {
-    firestore = MockFirestoreInstance();
-    parser = FirestoreExperienceParser(); // todo: find a way to run these tests while stubbing the parser
+    firestore = MockFirebaseFirestore();
+    parser = MockFirestoreExperienceParser();
     repository = FirestoreExperiencesRepository(firestore, parser);
+
+    reference = MockCollectionReference();
+    query = MockQuery();
+    querySnapshot = MockQuerySnapshot();
+
+    when(firestore.collection('experiences')).thenReturn(reference);
+    when(reference.orderBy('start_date', descending: true)).thenReturn(query);
+    when(query.get()).thenAnswer((_) async => querySnapshot);
   });
 
   test('should return an empty list of experiences when firestore returns none', () async {
+    when(querySnapshot.docs).thenReturn([]);
+
     final actual = await repository.getExperiences();
-    expect(actual.getOrElse(() => null), equals([]));
+
+    actual.fold(
+      (l) => null,
+      (r) => expect(r, equals([])),
+    );
   });
 
   test('should return a list of experiences when firestore returns values', () async {
@@ -33,77 +55,17 @@ void main() {
       category: ExperienceCategory.work,
     );
 
-    final data = {
-      'title': 'Title',
-      'location': 'Location',
-      'content': 'Content',
-      'start_date': DateTime.parse('2007-09-30'),
-      'end_date': DateTime.parse('2010-05-29'),
-      'category': 'work',
-    };
-
-    await firestore.collection('experiences').add(data);
+    final queryDocumentSnapshot = MockQueryDocumentSnapshot();
+    when(querySnapshot.docs).thenReturn([queryDocumentSnapshot]);
+    when(parser.parse(queryDocumentSnapshot)).thenReturn(experience);
 
     final actual = await repository.getExperiences();
 
-    expect(
-        actual | null,
-        equals([
-          experience,
-        ]));
+    expect(actual | [], equals([experience]));
   });
 
-  test('should return a list of experiences ordered by descending start date', () async {
-    final earliestExperience = Experience(
-        title: 'Earliest Experience',
-        location: 'Location',
-        content: 'Content',
-        startDate: DateTime.parse('2007-09-30'),
-        endDate: DateTime.parse('2010-05-29'),
-        category: ExperienceCategory.studies);
-
-    final latestExperience = Experience(
-        title: 'Latest Experience',
-        location: 'Location',
-        content: 'Content',
-        startDate: DateTime.parse('2010-10-01'),
-        endDate: DateTime.parse('2010-12-31'),
-        category: ExperienceCategory.work);
-
-    final earliestData = {
-      'title': 'Earliest Experience',
-      'location': 'Location',
-      'content': 'Content',
-      'start_date': DateTime.parse('2007-09-30'),
-      'end_date': DateTime.parse('2010-05-29'),
-      'category': 'studies',
-    };
-
-    final latestData = {
-      'title': 'Latest Experience',
-      'location': 'Location',
-      'content': 'Content',
-      'start_date': DateTime.parse('2010-10-01'),
-      'end_date': DateTime.parse('2010-12-31'),
-      'category': 'work',
-    };
-
-    await firestore.collection('experiences').add(earliestData);
-    await firestore.collection('experiences').add(latestData);
-
-    final actual = await repository.getExperiences();
-
-    expect(
-        actual | null,
-        equals([
-          latestExperience,
-          earliestExperience,
-        ]));
-  });
-
-  test('should return an error when firestore experiences are malformed', () async {
-    await firestore.collection('experiences').add({});
-    await firestore.collection('experiences').add({});
+  test('should return an error when firestore throws an exception', () async {
+    when(query.get()).thenAnswer((_) async => throw FormatException());
 
     final actual = await repository.getExperiences();
 

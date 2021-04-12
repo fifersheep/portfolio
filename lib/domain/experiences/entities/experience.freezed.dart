@@ -20,8 +20,8 @@ class _$ExperienceTearOff {
       {required String title,
       required String location,
       required String content,
-      required DateTime startDate,
-      required DateTime endDate,
+      required DateTime? startDate,
+      required DateTime? endDate,
       required ExperienceCategory category}) {
     return _Experience(
       title: title,
@@ -42,8 +42,8 @@ mixin _$Experience {
   String get title => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
-  DateTime get startDate => throw _privateConstructorUsedError;
-  DateTime get endDate => throw _privateConstructorUsedError;
+  DateTime? get startDate => throw _privateConstructorUsedError;
+  DateTime? get endDate => throw _privateConstructorUsedError;
   ExperienceCategory get category => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -57,8 +57,8 @@ abstract class $ExperienceCopyWith<$Res> {
       {String title,
       String location,
       String content,
-      DateTime startDate,
-      DateTime endDate,
+      DateTime? startDate,
+      DateTime? endDate,
       ExperienceCategory category});
 }
 
@@ -95,11 +95,11 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
       startDate: startDate == freezed
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       endDate: endDate == freezed
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -116,8 +116,8 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
       {String title,
       String location,
       String content,
-      DateTime startDate,
-      DateTime endDate,
+      DateTime? startDate,
+      DateTime? endDate,
       ExperienceCategory category});
 }
 
@@ -154,11 +154,11 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
       startDate: startDate == freezed
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       endDate: endDate == freezed
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -184,9 +184,9 @@ class _$_Experience implements _Experience {
   @override
   final String content;
   @override
-  final DateTime startDate;
+  final DateTime? startDate;
   @override
-  final DateTime endDate;
+  final DateTime? endDate;
   @override
   final ExperienceCategory category;
 
@@ -228,8 +228,8 @@ abstract class _Experience implements Experience {
       {required String title,
       required String location,
       required String content,
-      required DateTime startDate,
-      required DateTime endDate,
+      required DateTime? startDate,
+      required DateTime? endDate,
       required ExperienceCategory category}) = _$_Experience;
 
   @override
@@ -239,9 +239,9 @@ abstract class _Experience implements Experience {
   @override
   String get content => throw _privateConstructorUsedError;
   @override
-  DateTime get startDate => throw _privateConstructorUsedError;
+  DateTime? get startDate => throw _privateConstructorUsedError;
   @override
-  DateTime get endDate => throw _privateConstructorUsedError;
+  DateTime? get endDate => throw _privateConstructorUsedError;
   @override
   ExperienceCategory get category => throw _privateConstructorUsedError;
   @override
