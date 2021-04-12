@@ -9,6 +9,8 @@ void main() {
       await tester.pumpWidget(const MaterialApp(
         home: TextEmphasisBuilder(
           text: 'some text to emphasise, emphisising certain words',
+          textStyle: TextStyle(color: Colors.red),
+          emphasisStyle: TextStyle(color: Colors.blue),
         ),
       ));
 
@@ -20,11 +22,13 @@ void main() {
         home: TextEmphasisBuilder(
           text: 'some text to emphasise, emphisising certain words',
           emphases: ['emphasise', 'certain words'],
+          textStyle: TextStyle(color: Colors.red),
+          emphasisStyle: TextStyle(color: Colors.blue),
         ),
       ));
 
       WidgetPredicate isRichTextAtPosition(int pos, String text) =>
-          (w) => w is RichText && w.text.getSpanForPosition(TextPosition(offset: pos)).toPlainText() == text;
+          (w) => w is RichText && w.text.getSpanForPosition(TextPosition(offset: pos))?.toPlainText() == text;
 
       expect(find.byWidgetPredicate(isRichTextAtPosition(0, 'some text to ')), findsOneWidget);
       expect(find.byWidgetPredicate(isRichTextAtPosition(13, 'emphasise')), findsOneWidget);
@@ -39,11 +43,12 @@ void main() {
           text: 'some text to emphasise, emphisising certain words',
           textStyle: style,
           emphases: ['emphasise', 'certain words'],
+          emphasisStyle: TextStyle(color: Colors.blue),
         ),
       ));
 
       WidgetPredicate isRichTextAtPositionWithStyle(int pos) =>
-          (w) => w is RichText && w.text.getSpanForPosition(TextPosition(offset: pos)).style == style;
+          (w) => w is RichText && w.text.getSpanForPosition(TextPosition(offset: pos))?.style == style;
 
       expect(find.byWidgetPredicate(isRichTextAtPositionWithStyle(0)), findsOneWidget);
       expect(find.byWidgetPredicate(isRichTextAtPositionWithStyle(13)), findsNothing);
@@ -57,12 +62,13 @@ void main() {
         home: TextEmphasisBuilder(
           text: 'some text to emphasise, emphisising certain words',
           emphases: ['emphasise', 'certain words'],
+          textStyle: TextStyle(color: Colors.red),
           emphasisStyle: style,
         ),
       ));
 
       WidgetPredicate isRichTextAtPositionWithStyle(int pos) =>
-          (w) => w is RichText && w.text.getSpanForPosition(TextPosition(offset: pos)).style == style;
+          (w) => w is RichText && w.text.getSpanForPosition(TextPosition(offset: pos))?.style == style;
 
       expect(find.byWidgetPredicate(isRichTextAtPositionWithStyle(0)), findsNothing);
       expect(find.byWidgetPredicate(isRichTextAtPositionWithStyle(13)), findsOneWidget);

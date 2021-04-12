@@ -7,7 +7,7 @@ class TextEmphasisBuilder extends StatelessWidget {
     this.emphases = const [],
     required this.emphasisStyle,
     this.maxLines,
-    required this.overflow,
+    this.overflow = TextOverflow.ellipsis,
   });
 
   final String text;
@@ -15,7 +15,7 @@ class TextEmphasisBuilder extends StatelessWidget {
   final List<String> emphases;
   final TextStyle emphasisStyle;
   final int? maxLines;
-  final TextOverflow? overflow;
+  final TextOverflow overflow;
 
   @override
   Widget build(BuildContext context) {

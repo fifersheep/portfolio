@@ -1,18 +1,21 @@
+import 'package:bloc/bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/projects/entities/project.dart';
 import 'package:portfolio/domain/projects/project_state.dart';
 import 'package:portfolio/domain/projects/projects_bloc.dart';
 import 'package:portfolio/domain/projects/projects_repository.dart';
+import 'package:test/test.dart';
 
-class MockProjectsRepository extends Mock implements ProjectsRepository {}
+import 'projects_bloc_test.mocks.dart';
 
+@GenerateMocks([ProjectsRepository])
 void main() {
-  ProjectsBloc bloc;
-  ProjectsRepository repository;
+  late ProjectsBloc bloc;
+  late ProjectsRepository repository;
 
   setUp(() {
     repository = MockProjectsRepository();
@@ -27,7 +30,7 @@ void main() {
 
   group('LoadProjects', () {
     final projects = [
-      const Project(title: 'Title', summary: 'Summary', detail: 'Detail', coverImageUrl: 'Cover Image Url', tags: [
+      Project(title: 'Title', summary: 'Summary', detail: 'Detail', coverImageUrl: 'Cover Image Url', tags: [
         ProjectTag(
           label: 'Label',
           color: 'Color',
@@ -40,7 +43,7 @@ void main() {
     ];
 
     final projectStates = [
-      const ProjectState(
+      ProjectState(
         title: 'Title',
         summary: 'Summary',
         detail: 'Detail',
@@ -69,7 +72,7 @@ void main() {
         when(repository.getProjects()).thenAnswer((_) async => Right(projects));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       verify: (_) async => verify(repository.getProjects()),
     );
 
@@ -79,7 +82,7 @@ void main() {
         when(repository.getProjects()).thenAnswer((_) async => Right(projects));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       expect: () => [
         ProjectsState.loaded(projectStates),
       ],
@@ -103,7 +106,7 @@ void main() {
         when(repository.getProjects()).thenAnswer((_) async => Right(projectsWithStyles));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       expect: () => [
         ProjectsState.loaded(projectStatesWithStyles),
       ],
@@ -115,7 +118,7 @@ void main() {
         when(repository.getProjects()).thenAnswer((_) async => Right([_projectWithTagStyle('unknown')]));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       expect: () => [
         ProjectsState.loaded([_projectStateWithTagStyle(ProjectTagStyle.outline)]),
       ],
@@ -145,7 +148,7 @@ void main() {
         when(repository.getProjects()).thenAnswer((_) async => Right(projectWithCallToActions));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       expect: () => [
         ProjectsState.loaded(projectStateWithCallToActions),
       ],
@@ -157,7 +160,7 @@ void main() {
         when(repository.getProjects()).thenAnswer((_) async => Right([_projectWithCallToAction('unknown', 'unknown')]));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       expect: () => [
         ProjectsState.loaded(
             [_projectStateWithCallToAction(ProjectCallToActionType.route, ProjectCallToActionStyle.secondary)]),
@@ -170,7 +173,7 @@ void main() {
         when(repository.getProjects()).thenAnswer((_) async => const Left(Failure.dataRetrievalFailure()));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
+      act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       expect: () => [
         const ProjectsState.error(),
       ],

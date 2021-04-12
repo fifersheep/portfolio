@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:portfolio/domain/core/formatter/new_line_formatter.dart';
 
 void main() {
-  NewLineFormatter formatter;
+  late NewLineFormatter formatter;
 
   setUp(() {
     formatter = NewLineFormatter();
