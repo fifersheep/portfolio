@@ -2,53 +2,35 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
-import 'package:portfolio/presentation/routes/routes.gr.dart';
+import 'package:portfolio/presentation/routes/routes.dart';
 
 import '../../../injection.dart';
 import 'navigation_header.dart';
 import 'navigation_route_observer.dart';
 
-class NavigationDrawer extends StatefulWidget {
-  NavigationDrawer({Key? key}) : super(key: key);
-
-  final NavigationRouteObserver routeObserver = getIt<NavigationRouteObserver>();
+class NavigationDrawer extends StatefulWidget with RouteAware {
+  const NavigationDrawer({Key? key}) : super(key: key);
 
   @override
   _NavigationDrawerState createState() => _NavigationDrawerState();
 }
 
 class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
-  String? _activeRoute;
+  final NavigationRouteObserver _routeObserver = getIt<NavigationRouteObserver>();
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     final route = ModalRoute.of(context);
     if (route != null) {
-      widget.routeObserver.subscribe(this, route);
+      _routeObserver.subscribe(this, route);
     }
   }
 
   @override
   void dispose() {
-    widget.routeObserver.unsubscribe(this);
+    _routeObserver.unsubscribe(this);
     super.dispose();
-  }
-
-  @override
-  void didPush() {
-    final route = ModalRoute.of(context);
-    if (route != null) {
-      setState(() => _activeRoute = route.settings.name);
-    }
-  }
-
-  @override
-  void didPop() {
-    final route = ModalRoute.of(context);
-    if (route != null) {
-      setState(() => _activeRoute = route.settings.name);
-    }
   }
 
   @override
@@ -61,11 +43,11 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
           padding: EdgeInsets.zero,
           children: <Widget>[
             NavigationHeader(),
-            ..._menuItems(context, _activeRoute, [
-              NavigationItem(Strings.of(context).navItemIntro, Icons.face, const IntroRoute()),
-              NavigationItem(Strings.of(context).navItemProjects, Icons.code, const ProjectsRoute()),
-              NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, const ExperiencesRoute()),
-              NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, const BlogRoute())
+            ..._menuItems(context, [
+              NavigationItem(Strings.of(context).navItemIntro, Icons.face, Routes.intro),
+              NavigationItem(Strings.of(context).navItemProjects, Icons.code, Routes.projects),
+              NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, Routes.experiences),
+              NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, Routes.blog)
             ])
           ],
         ),
@@ -75,19 +57,19 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
 class NavigationItem {
   final String label;
   final IconData icon;
-  final PageRouteInfo route;
+  final String route;
 
   const NavigationItem(this.label, this.icon, this.route);
 }
 
-List<Widget> _menuItems(BuildContext context, String? activeRoute, List<NavigationItem> items) {
+List<Widget> _menuItems(BuildContext context, List<NavigationItem> items) {
   return items
       .map((item) => ListTile(
             key: Key(item.label),
             title: Text(item.label),
             leading: Icon(item.icon),
-            onTap: () => context.router.navigate(item.route),
-            selected: item.route.routeName == activeRoute,
+            onTap: () => context.router.navigateNamed(item.route),
+            selected: context.router.isPathActive(item.route),
           ))
       .toList();
 }
