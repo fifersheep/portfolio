@@ -81,6 +81,7 @@ class _$DataRetrievalFailureCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$DataRetrievalFailure implements DataRetrievalFailure {
   const _$DataRetrievalFailure();
 

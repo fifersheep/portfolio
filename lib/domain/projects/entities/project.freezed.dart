@@ -167,6 +167,7 @@ class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res> implement
 }
 
 /// @nodoc
+
 class _$_Project implements _Project {
   _$_Project(
       {required this.title,
@@ -363,6 +364,7 @@ class __$ProjectTagCopyWithImpl<$Res> extends _$ProjectTagCopyWithImpl<$Res> imp
 }
 
 /// @nodoc
+
 class _$_ProjectTag implements _ProjectTag {
   _$_ProjectTag({required this.label, required this.color, required this.labelColor, required this.style});
 
@@ -542,6 +544,7 @@ class __$ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopy
 }
 
 /// @nodoc
+
 class _$_ProjectCallToAction implements _ProjectCallToAction {
   _$_ProjectCallToAction({required this.type, required this.action, required this.style, required this.label});
 

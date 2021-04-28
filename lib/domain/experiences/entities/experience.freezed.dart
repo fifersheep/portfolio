@@ -168,6 +168,7 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
 }
 
 /// @nodoc
+
 class _$_Experience implements _Experience {
   _$_Experience(
       {required this.title,

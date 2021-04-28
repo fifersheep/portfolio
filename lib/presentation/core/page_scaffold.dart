@@ -21,17 +21,10 @@ class PageScaffold extends StatelessWidget {
 
     return Row(
       children: <Widget>[
-        if (!isMobile)
-          const NavigationDrawer(
-            pinOpen: true,
-          ),
+        if (!isMobile) NavigationDrawer(),
         Expanded(
           child: Scaffold(
-            drawer: isMobile
-                ? const NavigationDrawer(
-                    pinOpen: false,
-                  )
-                : null,
+            drawer: isMobile ? NavigationDrawer() : null,
             body: CustomScrollView(
               slivers: <Widget>[
                 SliverAppBar(

@@ -7,17 +7,17 @@ import 'constants/theme.dart';
 import 'core/navigation/navigation_route_observer.dart';
 
 class App extends StatelessWidget {
+  final _router = Router();
+
   @override
   Widget build(BuildContext context) {
-    final router = Router();
-
     return MaterialApp.router(
       title: Strings.of(context).appTitle,
       theme: appTheme,
-      routeInformationParser: router.defaultRouteParser(),
-      routerDelegate: router.delegate(
+      routeInformationParser: _router.defaultRouteParser(),
+      routerDelegate: _router.delegate(
         initialRoutes: [const IntroRoute()],
-        navigatorObservers: [getIt<NavigationRouteObserver>()],
+        navigatorObservers: () => [getIt<NavigationRouteObserver>()],
       ),
     );
   }

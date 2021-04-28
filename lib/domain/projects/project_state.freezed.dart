@@ -171,6 +171,7 @@ class __$ProjectStateCopyWithImpl<$Res> extends _$ProjectStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ProjectState implements _ProjectState {
   _$_ProjectState(
       {required this.title,
@@ -371,6 +372,7 @@ class __$ProjectTagStateCopyWithImpl<$Res> extends _$ProjectTagStateCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_ProjectTagState implements _ProjectTagState {
   _$_ProjectTagState({required this.label, required this.color, required this.labelColor, required this.style});
 
@@ -557,6 +559,7 @@ class __$ProjectCallToActionStateCopyWithImpl<$Res> extends _$ProjectCallToActio
 }
 
 /// @nodoc
+
 class _$_ProjectCallToActionState implements _ProjectCallToActionState {
   _$_ProjectCallToActionState({required this.type, required this.style, required this.action, required this.label});
 

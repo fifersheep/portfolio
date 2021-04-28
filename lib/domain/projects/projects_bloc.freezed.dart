@@ -82,6 +82,7 @@ class _$LoadProjectsCopyWithImpl<$Res> extends _$ProjectsEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LoadProjects implements LoadProjects {
   const _$LoadProjects();
 
@@ -231,6 +232,7 @@ class _$ProjectsLoadingCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$R
 }
 
 /// @nodoc
+
 class _$ProjectsLoading implements ProjectsLoading {
   const _$ProjectsLoading();
 
@@ -330,6 +332,7 @@ class _$ProjectsLoadedCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$ProjectsLoaded implements ProjectsLoaded {
   const _$ProjectsLoaded(this.projects);
 
@@ -430,6 +433,7 @@ class _$ProjectsErrorCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res
 }
 
 /// @nodoc
+
 class _$ProjectsError implements ProjectsError {
   const _$ProjectsError();
 

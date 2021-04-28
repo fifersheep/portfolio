@@ -161,6 +161,7 @@ class __$ExperienceStateCopyWithImpl<$Res> extends _$ExperienceStateCopyWithImpl
 }
 
 /// @nodoc
+
 class _$_ExperienceState implements _ExperienceState {
   const _$_ExperienceState(
       {required this.title,

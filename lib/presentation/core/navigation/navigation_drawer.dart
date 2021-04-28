@@ -4,13 +4,14 @@ import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
 import 'package:portfolio/presentation/routes/routes.gr.dart';
 
+import '../../../injection.dart';
 import 'navigation_header.dart';
 import 'navigation_route_observer.dart';
 
 class NavigationDrawer extends StatefulWidget {
-  const NavigationDrawer({Key? key, required this.pinOpen}) : super(key: key);
+  NavigationDrawer({Key? key}) : super(key: key);
 
-  final bool pinOpen;
+  final NavigationRouteObserver routeObserver = getIt<NavigationRouteObserver>();
 
   @override
   _NavigationDrawerState createState() => _NavigationDrawerState();
@@ -18,26 +19,19 @@ class NavigationDrawer extends StatefulWidget {
 
 class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
   String? _activeRoute;
-  NavigationRouteObserver? _routeObserver;
-
-  @override
-  void initState() {
-    super.initState();
-    _routeObserver = NavigationRouteObserver();
-  }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     final route = ModalRoute.of(context);
     if (route != null) {
-      _routeObserver?.subscribe(this, route);
+      widget.routeObserver.subscribe(this, route);
     }
   }
 
   @override
   void dispose() {
-    _routeObserver?.unsubscribe(this);
+    widget.routeObserver.unsubscribe(this);
     super.dispose();
   }
 
@@ -92,7 +86,7 @@ List<Widget> _menuItems(BuildContext context, String? activeRoute, List<Navigati
             key: Key(item.label),
             title: Text(item.label),
             leading: Icon(item.icon),
-            onTap: () => context.router.push(item.route),
+            onTap: () => context.router.navigate(item.route),
             selected: item.route.routeName == activeRoute,
           ))
       .toList();

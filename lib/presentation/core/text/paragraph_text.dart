@@ -7,13 +7,13 @@ class Paragraph extends StatelessWidget {
     this.text, {
     this.emphases = const [],
     this.maxLines,
-    this.overflow = TextOverflow.ellipsis,
+    this.overflow,
   });
 
   final String text;
   final List<String> emphases;
   final int? maxLines;
-  final TextOverflow overflow;
+  final TextOverflow? overflow;
 
   @override
   Widget build(BuildContext context) => TextEmphasisBuilder(

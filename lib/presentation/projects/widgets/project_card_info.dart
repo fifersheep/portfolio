@@ -32,7 +32,6 @@ class ProjectCardInfo extends StatelessWidget {
             Paragraph(
               summary,
               maxLines: 3,
-              overflow: TextOverflow.ellipsis,
             )
           ],
         ),

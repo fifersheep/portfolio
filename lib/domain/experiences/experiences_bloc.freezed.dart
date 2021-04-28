@@ -82,6 +82,7 @@ class _$LoadExperiencesCopyWithImpl<$Res> extends _$ExperiencesEventCopyWithImpl
 }
 
 /// @nodoc
+
 class _$LoadExperiences implements LoadExperiences {
   const _$LoadExperiences();
 
@@ -231,6 +232,7 @@ class _$ExperiencesLoadingCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithI
 }
 
 /// @nodoc
+
 class _$ExperiencesLoading implements ExperiencesLoading {
   const _$ExperiencesLoading();
 
@@ -330,6 +332,7 @@ class _$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithIm
 }
 
 /// @nodoc
+
 class _$ExperiencesLoaded implements ExperiencesLoaded {
   const _$ExperiencesLoaded(this.experiences);
 
@@ -431,6 +434,7 @@ class _$ExperiencesErrorCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImp
 }
 
 /// @nodoc
+
 class _$ExperiencesError implements ExperiencesError {
   const _$ExperiencesError();
 
