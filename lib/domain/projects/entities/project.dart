@@ -18,7 +18,7 @@ class Project with _$Project {
 class ProjectTag with _$ProjectTag {
   factory ProjectTag({
     required String label,
-    required String color,
+    String? color,
     required String labelColor,
     required String style,
   }) = _ProjectTag;

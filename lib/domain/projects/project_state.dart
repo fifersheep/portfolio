@@ -22,7 +22,7 @@ class ProjectState with _$ProjectState {
 class ProjectTagState with _$ProjectTagState {
   factory ProjectTagState({
     required String label,
-    required String color,
+    String? color,
     required String labelColor,
     required ProjectTagStyle style,
   }) = _ProjectTagState;

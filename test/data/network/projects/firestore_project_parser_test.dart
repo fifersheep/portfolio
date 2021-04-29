@@ -57,4 +57,40 @@ void main() {
 
     expect(actual, equals(expected));
   });
+
+  test('should parse a project containing a tag with no color', () async {
+    final projectDoc = MockQueryDocumentSnapshot();
+    final projectDocData = {
+      'title': 'Title',
+      'summary': 'Summary',
+      'detail': 'Detail',
+      'cover_image_url': 'Cover Image Url',
+      'call_to_actions': [],
+    };
+
+    final tagDoc = MockQueryDocumentSnapshot();
+    final tagDocData = {
+      'label': 'Label',
+      'label_color': 'Label Color',
+      'style': 'Style',
+    };
+
+    when(projectDoc.data()).thenReturn(projectDocData);
+    when(tagDoc.data()).thenReturn(tagDocData);
+
+    final actual = parser.parseProject(projectDoc, [tagDoc]);
+
+    final expected = Project(
+      title: 'Title',
+      summary: 'Summary',
+      detail: 'Detail',
+      coverImageUrl: 'Cover Image Url',
+      tags: [
+        ProjectTag(label: 'Label', labelColor: 'Label Color', style: 'Style'),
+      ],
+      callToActions: [],
+    );
+
+    expect(actual, equals(expected));
+  });
 }

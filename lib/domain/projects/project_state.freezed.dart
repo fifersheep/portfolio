@@ -259,7 +259,7 @@ class _$ProjectTagStateTearOff {
   const _$ProjectTagStateTearOff();
 
   _ProjectTagState call(
-      {required String label, required String color, required String labelColor, required ProjectTagStyle style}) {
+      {required String label, String? color, required String labelColor, required ProjectTagStyle style}) {
     return _ProjectTagState(
       label: label,
       color: color,
@@ -275,7 +275,7 @@ const $ProjectTagState = _$ProjectTagStateTearOff();
 /// @nodoc
 mixin _$ProjectTagState {
   String get label => throw _privateConstructorUsedError;
-  String get color => throw _privateConstructorUsedError;
+  String? get color => throw _privateConstructorUsedError;
   String get labelColor => throw _privateConstructorUsedError;
   ProjectTagStyle get style => throw _privateConstructorUsedError;
 
@@ -287,7 +287,7 @@ mixin _$ProjectTagState {
 abstract class $ProjectTagStateCopyWith<$Res> {
   factory $ProjectTagStateCopyWith(ProjectTagState value, $Res Function(ProjectTagState) then) =
       _$ProjectTagStateCopyWithImpl<$Res>;
-  $Res call({String label, String color, String labelColor, ProjectTagStyle style});
+  $Res call({String label, String? color, String labelColor, ProjectTagStyle style});
 }
 
 /// @nodoc
@@ -313,7 +313,7 @@ class _$ProjectTagStateCopyWithImpl<$Res> implements $ProjectTagStateCopyWith<$R
       color: color == freezed
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       labelColor: labelColor == freezed
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
@@ -331,7 +331,7 @@ abstract class _$ProjectTagStateCopyWith<$Res> implements $ProjectTagStateCopyWi
   factory _$ProjectTagStateCopyWith(_ProjectTagState value, $Res Function(_ProjectTagState) then) =
       __$ProjectTagStateCopyWithImpl<$Res>;
   @override
-  $Res call({String label, String color, String labelColor, ProjectTagStyle style});
+  $Res call({String label, String? color, String labelColor, ProjectTagStyle style});
 }
 
 /// @nodoc
@@ -358,7 +358,7 @@ class __$ProjectTagStateCopyWithImpl<$Res> extends _$ProjectTagStateCopyWithImpl
       color: color == freezed
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       labelColor: labelColor == freezed
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
@@ -374,12 +374,12 @@ class __$ProjectTagStateCopyWithImpl<$Res> extends _$ProjectTagStateCopyWithImpl
 /// @nodoc
 
 class _$_ProjectTagState implements _ProjectTagState {
-  _$_ProjectTagState({required this.label, required this.color, required this.labelColor, required this.style});
+  _$_ProjectTagState({required this.label, this.color, required this.labelColor, required this.style});
 
   @override
   final String label;
   @override
-  final String color;
+  final String? color;
   @override
   final String labelColor;
   @override
@@ -418,14 +418,14 @@ class _$_ProjectTagState implements _ProjectTagState {
 abstract class _ProjectTagState implements ProjectTagState {
   factory _ProjectTagState(
       {required String label,
-      required String color,
+      String? color,
       required String labelColor,
       required ProjectTagStyle style}) = _$_ProjectTagState;
 
   @override
   String get label => throw _privateConstructorUsedError;
   @override
-  String get color => throw _privateConstructorUsedError;
+  String? get color => throw _privateConstructorUsedError;
   @override
   String get labelColor => throw _privateConstructorUsedError;
   @override

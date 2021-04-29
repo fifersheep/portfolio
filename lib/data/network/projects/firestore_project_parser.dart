@@ -17,7 +17,7 @@ class FirestoreProjectParser extends ProjectParser<DocumentSnapshot> {
           final tagData = tag.data();
           return ProjectTag(
             label: tagData?['label'] as String,
-            color: tagData?['color'] as String,
+            color: tagData?['color'] as String?,
             labelColor: tagData?['label_color'] as String,
             style: tagData?['style'] as String,
           );
