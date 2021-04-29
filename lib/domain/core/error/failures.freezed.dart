@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'failures.dart';
 
@@ -9,40 +9,45 @@ part of 'failures.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$FailureTearOff {
   const _$FailureTearOff();
 
-// ignore: unused_element
   DataRetrievalFailure dataRetrievalFailure() {
     return const DataRetrievalFailure();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Failure = _$FailureTearOff();
 
 /// @nodoc
 mixin _$Failure {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult dataRetrievalFailure(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() dataRetrievalFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult dataRetrievalFailure(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? dataRetrievalFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult dataRetrievalFailure(DataRetrievalFailure value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(DataRetrievalFailure value) dataRetrievalFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult dataRetrievalFailure(DataRetrievalFailure value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DataRetrievalFailure value)? dataRetrievalFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -76,6 +81,7 @@ class _$DataRetrievalFailureCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Re
 }
 
 /// @nodoc
+
 class _$DataRetrievalFailure implements DataRetrievalFailure {
   const _$DataRetrievalFailure();
 
@@ -94,20 +100,18 @@ class _$DataRetrievalFailure implements DataRetrievalFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult dataRetrievalFailure(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() dataRetrievalFailure,
   }) {
-    assert(dataRetrievalFailure != null);
     return dataRetrievalFailure();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult dataRetrievalFailure(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? dataRetrievalFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (dataRetrievalFailure != null) {
       return dataRetrievalFailure();
     }
@@ -116,20 +120,18 @@ class _$DataRetrievalFailure implements DataRetrievalFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult dataRetrievalFailure(DataRetrievalFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(DataRetrievalFailure value) dataRetrievalFailure,
   }) {
-    assert(dataRetrievalFailure != null);
     return dataRetrievalFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult dataRetrievalFailure(DataRetrievalFailure value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DataRetrievalFailure value)? dataRetrievalFailure,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (dataRetrievalFailure != null) {
       return dataRetrievalFailure(this);
     }

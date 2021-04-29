@@ -1,6 +1,7 @@
+import 'package:bloc/bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/core/formatter/date_formatter.dart';
@@ -9,18 +10,16 @@ import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'package:portfolio/domain/experiences/experience_state.dart';
 import 'package:portfolio/domain/experiences/experiences_bloc.dart';
 import 'package:portfolio/domain/experiences/experiences_repository.dart';
+import 'package:test/test.dart';
 
-class MockExperiencesRepository extends Mock implements ExperiencesRepository {}
+import 'experiences_bloc_test.mocks.dart';
 
-class MockDateFormatter extends Mock implements DateFormatter {}
-
-class MockNewLineFormatter extends Mock implements NewLineFormatter {}
-
+@GenerateMocks([ExperiencesRepository, DateFormatter, NewLineFormatter])
 void main() {
-  ExperiencesBloc bloc;
-  ExperiencesRepository repository;
-  DateFormatter dateFormatter;
-  NewLineFormatter newLineFormatter;
+  late ExperiencesBloc bloc;
+  late ExperiencesRepository repository;
+  late DateFormatter dateFormatter;
+  late NewLineFormatter newLineFormatter;
 
   setUp(() {
     repository = MockExperiencesRepository();
@@ -68,7 +67,7 @@ void main() {
         when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
+      act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
       verify: (_) async => verify(repository.getExperiences()),
     );
 
@@ -78,7 +77,7 @@ void main() {
         when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
+      act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
       expect: () => [
         ExperiencesState.loaded(experienceStates),
       ],
@@ -106,7 +105,7 @@ void main() {
         when(repository.getExperiences()).thenAnswer((_) async => Right(experiencesWithCategory));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
+      act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
       expect: () => [
         ExperiencesState.loaded(experienceStatesWithColorAndIcon),
       ],
@@ -138,7 +137,7 @@ void main() {
             when(dateFormatter.monthYear(startDate)).thenAnswer((_) => 'Date');
             return bloc;
           },
-          act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
+          act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
           verify: (_) async {
             bloc.listen((state) {
               if (state is ExperiencesLoaded) {
@@ -166,7 +165,7 @@ void main() {
         when(newLineFormatter.format(content)).thenAnswer((_) => 'Formatted Content');
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
+      act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
       expect: () => [
         ExperiencesState.loaded([
           const ExperienceState(
@@ -187,7 +186,7 @@ void main() {
         when(repository.getExperiences()).thenAnswer((_) async => const Left(Failure.dataRetrievalFailure()));
         return bloc;
       },
-      act: (bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
+      act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
       expect: () => [
         const ExperiencesState.error(),
       ],

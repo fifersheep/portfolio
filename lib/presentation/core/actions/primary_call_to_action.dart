@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PrimaryCallToAction extends StatelessWidget {
-  const PrimaryCallToAction({Key key, @required this.label, @required this.route, @required this.onPressed})
+  const PrimaryCallToAction({Key? key, required this.label, required this.route, required this.onPressed})
       : super(key: key);
 
   final String label;

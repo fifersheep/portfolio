@@ -9,20 +9,20 @@ class FirestoreProjectParser extends ProjectParser<DocumentSnapshot> {
   Project parseProject(DocumentSnapshot projectDoc, List<DocumentSnapshot> tagsDoc) {
     final projectData = projectDoc.data();
     return Project(
-        title: projectData['title'] as String,
-        summary: projectData['summary'] as String,
-        detail: projectData['detail'] as String,
-        coverImageUrl: projectData['cover_image_url'] as String,
+        title: projectData?['title'] as String,
+        summary: projectData?['summary'] as String,
+        detail: projectData?['detail'] as String,
+        coverImageUrl: projectData?['cover_image_url'] as String,
         tags: tagsDoc.map((tag) {
           final tagData = tag.data();
           return ProjectTag(
-            label: tagData['label'] as String,
-            color: tagData['color'] as String,
-            labelColor: tagData['label_color'] as String,
-            style: tagData['style'] as String,
+            label: tagData?['label'] as String,
+            color: tagData?['color'] as String?,
+            labelColor: tagData?['label_color'] as String,
+            style: tagData?['style'] as String,
           );
         }).toList(),
-        callToActions: (projectData['call_to_actions'] as List<dynamic>)
+        callToActions: (projectData?['call_to_actions'] as List<dynamic>)
             .map((callToAction) => ProjectCallToAction(
                   type: callToAction['type'] as String,
                   action: callToAction['action'] as String,

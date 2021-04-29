@@ -4,13 +4,13 @@ import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/core/text/paragraph_text.dart';
 
 class ExperienceCard extends StatelessWidget {
-  const ExperienceCard({this.experience});
+  const ExperienceCard({required this.experience});
 
   final ExperienceState experience;
 
   @override
   Widget build(BuildContext context) {
-    final color = _colorMapper(context, experience.color);
+    final color = _colorMapper(context, experience.color) ?? ThemeColors.blue;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -32,7 +32,7 @@ final _iconMap = {
   ExperienceIcon.done: Icons.done,
 };
 
-Color _colorMapper(BuildContext context, ExperienceColor color) => {
+Color? _colorMapper(BuildContext context, ExperienceColor color) => {
       ExperienceColor.red: ThemeColors.red,
       ExperienceColor.orange: ThemeColors.orange,
       ExperienceColor.green: ThemeColors.green,

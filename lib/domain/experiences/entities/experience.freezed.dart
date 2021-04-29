@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'experience.dart';
 
@@ -9,18 +9,20 @@ part of 'experience.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ExperienceTearOff {
   const _$ExperienceTearOff();
 
-// ignore: unused_element
   _Experience call(
-      {String title,
-      String location,
-      String content,
-      DateTime startDate,
-      DateTime endDate,
-      ExperienceCategory category}) {
+      {required String title,
+      required String location,
+      required String content,
+      required DateTime? startDate,
+      required DateTime? endDate,
+      required ExperienceCategory category}) {
     return _Experience(
       title: title,
       location: location,
@@ -33,20 +35,19 @@ class _$ExperienceTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Experience = _$ExperienceTearOff();
 
 /// @nodoc
 mixin _$Experience {
-  String get title;
-  String get location;
-  String get content;
-  DateTime get startDate;
-  DateTime get endDate;
-  ExperienceCategory get category;
+  String get title => throw _privateConstructorUsedError;
+  String get location => throw _privateConstructorUsedError;
+  String get content => throw _privateConstructorUsedError;
+  DateTime? get startDate => throw _privateConstructorUsedError;
+  DateTime? get endDate => throw _privateConstructorUsedError;
+  ExperienceCategory get category => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceCopyWith<Experience> get copyWith;
+  $ExperienceCopyWith<Experience> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -56,8 +57,8 @@ abstract class $ExperienceCopyWith<$Res> {
       {String title,
       String location,
       String content,
-      DateTime startDate,
-      DateTime endDate,
+      DateTime? startDate,
+      DateTime? endDate,
       ExperienceCategory category});
 }
 
@@ -71,20 +72,38 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 
   @override
   $Res call({
-    Object title = freezed,
-    Object location = freezed,
-    Object content = freezed,
-    Object startDate = freezed,
-    Object endDate = freezed,
-    Object category = freezed,
+    Object? title = freezed,
+    Object? location = freezed,
+    Object? content = freezed,
+    Object? startDate = freezed,
+    Object? endDate = freezed,
+    Object? category = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed ? _value.title : title as String,
-      location: location == freezed ? _value.location : location as String,
-      content: content == freezed ? _value.content : content as String,
-      startDate: startDate == freezed ? _value.startDate : startDate as DateTime,
-      endDate: endDate == freezed ? _value.endDate : endDate as DateTime,
-      category: category == freezed ? _value.category : category as ExperienceCategory,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as String,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endDate: endDate == freezed
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      category: category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as ExperienceCategory,
     ));
   }
 }
@@ -97,8 +116,8 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
       {String title,
       String location,
       String content,
-      DateTime startDate,
-      DateTime endDate,
+      DateTime? startDate,
+      DateTime? endDate,
       ExperienceCategory category});
 }
 
@@ -112,27 +131,52 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
 
   @override
   $Res call({
-    Object title = freezed,
-    Object location = freezed,
-    Object content = freezed,
-    Object startDate = freezed,
-    Object endDate = freezed,
-    Object category = freezed,
+    Object? title = freezed,
+    Object? location = freezed,
+    Object? content = freezed,
+    Object? startDate = freezed,
+    Object? endDate = freezed,
+    Object? category = freezed,
   }) {
     return _then(_Experience(
-      title: title == freezed ? _value.title : title as String,
-      location: location == freezed ? _value.location : location as String,
-      content: content == freezed ? _value.content : content as String,
-      startDate: startDate == freezed ? _value.startDate : startDate as DateTime,
-      endDate: endDate == freezed ? _value.endDate : endDate as DateTime,
-      category: category == freezed ? _value.category : category as ExperienceCategory,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as String,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endDate: endDate == freezed
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      category: category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as ExperienceCategory,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Experience implements _Experience {
-  const _$_Experience({this.title, this.location, this.content, this.startDate, this.endDate, this.category});
+  _$_Experience(
+      {required this.title,
+      required this.location,
+      required this.content,
+      required this.startDate,
+      required this.endDate,
+      required this.category});
 
   @override
   final String title;
@@ -141,9 +185,9 @@ class _$_Experience implements _Experience {
   @override
   final String content;
   @override
-  final DateTime startDate;
+  final DateTime? startDate;
   @override
-  final DateTime endDate;
+  final DateTime? endDate;
   @override
   final ExperienceCategory category;
 
@@ -181,27 +225,27 @@ class _$_Experience implements _Experience {
 }
 
 abstract class _Experience implements Experience {
-  const factory _Experience(
-      {String title,
-      String location,
-      String content,
-      DateTime startDate,
-      DateTime endDate,
-      ExperienceCategory category}) = _$_Experience;
+  factory _Experience(
+      {required String title,
+      required String location,
+      required String content,
+      required DateTime? startDate,
+      required DateTime? endDate,
+      required ExperienceCategory category}) = _$_Experience;
 
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get location;
+  String get location => throw _privateConstructorUsedError;
   @override
-  String get content;
+  String get content => throw _privateConstructorUsedError;
   @override
-  DateTime get startDate;
+  DateTime? get startDate => throw _privateConstructorUsedError;
   @override
-  DateTime get endDate;
+  DateTime? get endDate => throw _privateConstructorUsedError;
   @override
-  ExperienceCategory get category;
+  ExperienceCategory get category => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ExperienceCopyWith<_Experience> get copyWith;
+  _$ExperienceCopyWith<_Experience> get copyWith => throw _privateConstructorUsedError;
 }

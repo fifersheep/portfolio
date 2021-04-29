@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Strings extends InheritedWidget {
-  static Strings of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<Strings>();
+  static Strings of(BuildContext context) {
+    final result = context.dependOnInheritedWidgetOfExactType<Strings>();
+    assert(result != null, 'No Strings found in context');
+    return result!;
+  }
 
-  const Strings({Key key, @required Widget child}) : super(key: key, child: child);
+  const Strings({Key? key, required Widget child}) : super(key: key, child: child);
 
   @override
   bool updateShouldNotify(Strings old) => false;

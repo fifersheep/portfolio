@@ -7,7 +7,7 @@ import 'package:portfolio/presentation/projects/widgets/naked_project_tag.dart';
 import 'package:portfolio/presentation/projects/widgets/outline_project_tag.dart';
 
 class ProjectCardInfo extends StatelessWidget {
-  const ProjectCardInfo({Key key, this.title, this.summary, this.tags}) : super(key: key);
+  const ProjectCardInfo({Key? key, required this.title, required this.summary, required this.tags}) : super(key: key);
 
   final String title;
   final String summary;
@@ -32,7 +32,6 @@ class ProjectCardInfo extends StatelessWidget {
             Paragraph(
               summary,
               maxLines: 3,
-              overflow: TextOverflow.ellipsis,
             )
           ],
         ),

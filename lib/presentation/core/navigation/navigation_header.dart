@@ -23,14 +23,14 @@ class NavigationHeader extends StatelessWidget {
                 color: Theme.of(context).primaryColorDark,
                 border: Border.all(
                   width: 2,
-                  color: Theme.of(context).primaryTextTheme.headline6.color,
+                  color: ThemeColors.textOnPrimary,
                 ),
               ),
             ),
             Container(
                 margin: const EdgeInsets.only(top: 16),
                 child: Text(Strings.of(context).navHeaderTitle,
-                    style: Theme.of(context).primaryTextTheme.headline4.apply(color: ThemeColors.textOnPrimary))),
+                    style: Theme.of(context).primaryTextTheme.headline4?.apply(color: ThemeColors.textOnPrimary))),
             Text(Strings.of(context).navHeaderSubtitle, style: Theme.of(context).primaryTextTheme.subtitle1),
           ],
         ),

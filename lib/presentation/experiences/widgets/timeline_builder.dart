@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'timeline_divider.dart';
 
 class TimelineBuilder<T> extends StatelessWidget {
-  const TimelineBuilder({this.items, this.builder});
+  const TimelineBuilder({required this.items, required this.builder});
 
   final List<T> items;
   final Widget Function(T) builder;

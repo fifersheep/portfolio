@@ -3,14 +3,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'experience_state.freezed.dart';
 
 @freezed
-abstract class ExperienceState with _$ExperienceState {
+class ExperienceState with _$ExperienceState {
   const factory ExperienceState({
-    String title,
-    String location,
-    String content,
-    String timeframe,
-    ExperienceIcon icon,
-    ExperienceColor color,
+    required String title,
+    required String location,
+    required String content,
+    required String timeframe,
+    required ExperienceIcon icon,
+    required ExperienceColor color,
   }) = _ExperienceState;
 }
 

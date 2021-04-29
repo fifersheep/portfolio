@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 
 class SecondaryCallToAction extends StatelessWidget {
-  const SecondaryCallToAction({Key key, @required this.label, @required this.route, @required this.onPressed})
+  const SecondaryCallToAction({Key? key, required this.label, required this.route, required this.onPressed})
       : super(key: key);
 
   final String label;

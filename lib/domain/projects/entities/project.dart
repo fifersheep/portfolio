@@ -3,33 +3,33 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'project.freezed.dart';
 
 @freezed
-abstract class Project with _$Project {
-  const factory Project({
-    String title,
-    String summary,
-    String detail,
-    String coverImageUrl,
-    List<ProjectTag> tags,
-    List<ProjectCallToAction> callToActions,
+class Project with _$Project {
+  factory Project({
+    required String title,
+    required String summary,
+    required String detail,
+    required String coverImageUrl,
+    required List<ProjectTag> tags,
+    required List<ProjectCallToAction> callToActions,
   }) = _Project;
 }
 
 @freezed
-abstract class ProjectTag with _$ProjectTag {
-  const factory ProjectTag({
-    String label,
-    String color,
-    String labelColor,
-    String style,
+class ProjectTag with _$ProjectTag {
+  factory ProjectTag({
+    required String label,
+    String? color,
+    required String labelColor,
+    required String style,
   }) = _ProjectTag;
 }
 
 @freezed
-abstract class ProjectCallToAction with _$ProjectCallToAction {
-  const factory ProjectCallToAction({
-    String type,
-    String action,
-    String style,
-    String label,
+class ProjectCallToAction with _$ProjectCallToAction {
+  factory ProjectCallToAction({
+    required String type,
+    required String action,
+    required String style,
+    required String label,
   }) = _ProjectCallToAction;
 }

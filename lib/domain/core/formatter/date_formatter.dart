@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 @lazySingleton
 class DateFormatter {
-  String monthYearRange(DateTime start, DateTime end) {
+  String monthYearRange(DateTime? start, DateTime? end) {
     if (start == null && end == null) {
       return 'Unknown';
     } else {
@@ -13,7 +13,7 @@ class DateFormatter {
     }
   }
 
-  String monthYear(DateTime date) {
+  String monthYear(DateTime? date) {
     return (date != null) ? DateFormat.yMMM().format(date) : 'Unknown';
   }
 }

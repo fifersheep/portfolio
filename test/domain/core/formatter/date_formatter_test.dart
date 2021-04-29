@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:portfolio/domain/core/formatter/date_formatter.dart';
 
 void main() {
-  DateFormatter formatter;
+  late DateFormatter formatter;
 
   setUp(() {
     formatter = DateFormatter();

@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 import 'navigation/navigation_drawer.dart';
 
 class PageScaffold extends StatelessWidget {
-  const PageScaffold({this.title, this.headerBackground, this.body, this.maxWidth = 1200.0});
+  const PageScaffold({
+    required this.title,
+    this.headerBackground,
+    required this.body,
+    this.maxWidth = 1200.0,
+  });
 
   final String title;
-  final String headerBackground;
+  final String? headerBackground;
   final Widget body;
   final double maxWidth;
 
@@ -16,17 +21,10 @@ class PageScaffold extends StatelessWidget {
 
     return Row(
       children: <Widget>[
-        if (!isMobile)
-          const NavigationDrawer(
-            pinOpen: true,
-          ),
+        if (!isMobile) const NavigationDrawer(),
         Expanded(
           child: Scaffold(
-            drawer: isMobile
-                ? const NavigationDrawer(
-                    pinOpen: false,
-                  )
-                : null,
+            drawer: isMobile ? const NavigationDrawer() : null,
             body: CustomScrollView(
               slivers: <Widget>[
                 SliverAppBar(
@@ -40,7 +38,7 @@ class PageScaffold extends StatelessWidget {
                     ),
                     background: headerBackground != null
                         ? Image.asset(
-                            headerBackground,
+                            headerBackground!,
                             fit: BoxFit.fitHeight,
                           )
                         : null,
