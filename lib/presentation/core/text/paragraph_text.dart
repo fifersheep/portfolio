@@ -18,7 +18,12 @@ class Paragraph extends StatelessWidget {
   @override
   Widget build(BuildContext context) => TextEmphasisBuilder(
         text: text,
-        textStyle: const TextStyle(height: 1.5),
+        textStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
+          height: 1.5,
+          fontFamilyFallback: [
+            'Noto Color Emoji',
+          ],
+        ),
         maxLines: maxLines,
         overflow: overflow,
         emphases: emphases,
