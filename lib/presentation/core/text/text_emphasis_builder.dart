@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TextEmphasisBuilder extends StatelessWidget {
   const TextEmphasisBuilder({
     required this.text,
-    required this.textStyle,
+    this.textStyle,
     this.emphases = const [],
     required this.emphasisStyle,
     this.maxLines,
@@ -11,9 +11,9 @@ class TextEmphasisBuilder extends StatelessWidget {
   });
 
   final String text;
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
   final List<String> emphases;
-  final TextStyle emphasisStyle;
+  final TextStyle? emphasisStyle;
   final int? maxLines;
   final TextOverflow? overflow;
 

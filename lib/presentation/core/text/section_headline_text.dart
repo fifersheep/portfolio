@@ -6,11 +6,8 @@ class SectionHeadline extends StatelessWidget {
   final String text;
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(top: 36, bottom: 16),
-        child: Text(
-          text,
-          style: Theme.of(context).textTheme.headline6,
-        ),
+  Widget build(BuildContext context) => Text(
+        text,
+        style: Theme.of(context).textTheme.headline6,
       );
 }

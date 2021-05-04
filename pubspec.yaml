@@ -55,3 +55,6 @@ flutter:
         - asset: assets/fonts/Montserrat-SemiBoldItalic.ttf
           weight: 600
           style: italic
+    - family: Noto Color Emoji
+      fonts:
+        - asset: assets/fonts/NotoColorEmoji.ttf
