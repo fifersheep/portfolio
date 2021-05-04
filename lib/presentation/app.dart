@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: Strings.of(context).appTitle,
-      theme: appTheme,
+      theme: AppTheme.defaultTheme,
       routeInformationParser: _router.defaultRouteParser(),
       routerDelegate: _router.delegate(
         initialRoutes: [const IntroRoute()],

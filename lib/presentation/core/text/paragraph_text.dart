@@ -16,20 +16,18 @@ class Paragraph extends StatelessWidget {
   final TextOverflow? overflow;
 
   @override
-  Widget build(BuildContext context) => TextEmphasisBuilder(
-        text: text,
-        textStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
-          height: 1.5,
-          fontFamilyFallback: [
-            'Noto Color Emoji',
-          ],
-        ),
-        maxLines: maxLines,
-        overflow: overflow,
-        emphases: emphases,
-        emphasisStyle: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Theme.of(context).primaryColor,
-        ),
-      );
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme.bodyText2;
+    return TextEmphasisBuilder(
+      text: text,
+      textStyle: textTheme,
+      maxLines: maxLines,
+      overflow: overflow,
+      emphases: emphases,
+      emphasisStyle: textTheme?.copyWith(
+        fontWeight: FontWeight.bold,
+        color: Theme.of(context).primaryColor,
+      ),
+    );
+  }
 }
