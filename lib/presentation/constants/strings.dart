@@ -14,7 +14,7 @@ class Strings extends InheritedWidget {
 
   String get appTitle => 'Scott Laing - Portfolio';
 
-  String get navHeaderTitle => 'Scott Laing';
+  String get navHeaderTitle => 'Scott\nLaing';
   String get navHeaderSubtitle => 'Software Engineer';
 
   String get navItemIntro => 'Intro';
