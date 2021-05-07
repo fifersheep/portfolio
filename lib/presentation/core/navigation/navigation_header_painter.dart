@@ -15,8 +15,8 @@ class NavigationHeaderPainter extends CustomPainter {
     final path = Path()
       ..moveTo(0, 0)
       ..lineTo(0, h)
-      ..arcToPoint(Offset(w * 0.45, h - 40), radius: Radius.circular(w * 0.6))
-      ..arcToPoint(Offset(w, h - 120), radius: Radius.circular(w * 0.6), clockwise: false)
+      ..arcToPoint(Offset(w * 0.5, h - 40), radius: Radius.circular(w * 0.5))
+      ..arcToPoint(Offset(w, h - 80), radius: Radius.circular(w * 0.5), clockwise: false)
       ..lineTo(size.width, 0);
 
     canvas.drawPath(path, paint);
