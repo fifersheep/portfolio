@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
-import 'package:portfolio/presentation/constants/strings.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_massage.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_menu.dart';
-import 'package:portfolio/presentation/core/text/paragraph_text.dart';
 
 import '../../../injection.dart';
 import 'navigation_header.dart';
