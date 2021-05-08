@@ -6,12 +6,14 @@ class Paragraph extends StatelessWidget {
   const Paragraph(
     this.text, {
     this.emphases = const [],
+    this.emphasesStyle,
     this.maxLines,
     this.overflow,
   });
 
   final String text;
   final List<String> emphases;
+  final TextStyle? emphasesStyle;
   final int? maxLines;
   final TextOverflow? overflow;
 
@@ -24,10 +26,7 @@ class Paragraph extends StatelessWidget {
       maxLines: maxLines,
       overflow: overflow,
       emphases: emphases,
-      emphasisStyle: textTheme?.copyWith(
-        fontWeight: FontWeight.bold,
-        color: Theme.of(context).primaryColor,
-      ),
+      emphasisStyle: textTheme?.merge(emphasesStyle),
     );
   }
 }

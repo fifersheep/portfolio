@@ -12,6 +12,10 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final strings = Strings.of(context);
+    final emphasesStyle = TextStyle(
+      fontWeight: FontWeight.bold,
+      color: Theme.of(context).primaryColor,
+    );
 
     return PageScaffold(
       title: strings.introTitle,
@@ -25,16 +29,19 @@ class IntroPage extends StatelessWidget {
             Paragraph(
               strings.introContent,
               emphases: const ['Scott Laing'],
+              emphasesStyle: emphasesStyle,
             ),
             SectionHeadline(strings.introCareerHeader),
             Paragraph(
               strings.introCareerContent,
               emphases: const ['Android', 'React', 'Flutter'],
+              emphasesStyle: emphasesStyle,
             ),
             SectionHeadline(strings.introInterestsHeader),
             Paragraph(
               strings.introInterestsContent,
               emphases: const ['American football', 'Pittsburgh Steelers', 'Edinburgh Wolves', 'Battlefield V'],
+              emphasesStyle: emphasesStyle,
             ),
           ],
         ),

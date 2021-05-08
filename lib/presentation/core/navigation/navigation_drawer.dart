@@ -1,8 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
-import 'package:portfolio/presentation/routes/routes.dart';
+import 'package:portfolio/presentation/core/navigation/navigation_massage.dart';
+import 'package:portfolio/presentation/core/navigation/navigation_menu.dart';
+import 'package:portfolio/presentation/core/text/paragraph_text.dart';
 
 import '../../../injection.dart';
 import 'navigation_header.dart';
@@ -41,35 +42,11 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
       child: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: <Widget>[
+          children: [
             NavigationHeader(),
-            ..._menuItems(context, [
-              NavigationItem(Strings.of(context).navItemIntro, Icons.face, Routes.intro),
-              NavigationItem(Strings.of(context).navItemProjects, Icons.code, Routes.projects),
-              NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, Routes.experiences),
-              NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, Routes.blog)
-            ])
+            NavigationMessage(),
+            ...navigationMenuItems(context),
           ],
         ),
       ));
-}
-
-class NavigationItem {
-  final String label;
-  final IconData icon;
-  final String route;
-
-  const NavigationItem(this.label, this.icon, this.route);
-}
-
-List<Widget> _menuItems(BuildContext context, List<NavigationItem> items) {
-  return items
-      .map((item) => ListTile(
-            key: Key(item.label),
-            title: Text(item.label),
-            leading: Icon(item.icon),
-            onTap: () => context.router.navigateNamed(item.route),
-            selected: context.router.isPathActive(item.route),
-          ))
-      .toList();
 }
