@@ -30,7 +30,7 @@ class SocialIcon extends StatelessWidget {
           onTap: () => launch(url),
           child: Icon(
             iconData,
-            color: ThemeColors.blue[600],
+            color: ThemeColors.primary[400],
           ),
         ),
       );

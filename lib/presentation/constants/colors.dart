@@ -13,6 +13,7 @@ class ThemeColors {
   static const Color textOnSecondary = Color(0x8F000000);
   static const Color textOnSecondaryLight = Color(0x96000000);
   static const Color textOnSecondaryDark = Color(0x8F000000);
+  static const Color textOnWhite = Color(0x96000000);
 
   static const Color white = Color(0xFFFFFFFF);
   static const Color white25 = Color(0x40FFFFFF);
