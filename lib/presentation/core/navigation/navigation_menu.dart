@@ -1,14 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
 import 'package:portfolio/presentation/routes/routes.dart';
 
 List<Widget> navigationMenuItems(BuildContext context) => _menuItems(context, [
-      NavigationItem(Strings.of(context).navItemIntro, Icons.face, Routes.intro),
-      NavigationItem(Strings.of(context).navItemProjects, Icons.code, Routes.projects),
-      NavigationItem(Strings.of(context).navItemExperience, Icons.assignment, Routes.experiences),
-      NavigationItem(Strings.of(context).navItemBlog, Icons.chat_bubble_outline, Routes.blog)
+      NavigationItem(Strings.of(context).navItemIntro, FontAwesomeIcons.idCard, Routes.intro),
+      NavigationItem(Strings.of(context).navItemProjects, FontAwesomeIcons.terminal, Routes.projects),
+      NavigationItem(Strings.of(context).navItemExperience, FontAwesomeIcons.globeEurope, Routes.experiences),
+      NavigationItem(Strings.of(context).navItemBlog, FontAwesomeIcons.featherAlt, Routes.blog)
     ]);
 
 class NavigationItem {
@@ -49,9 +50,10 @@ List<Widget> _menuItems(BuildContext context, List<NavigationItem> items) {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(12),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   child: Icon(
                     item.icon,
+                    size: 20,
                     color: iconColor,
                   ),
                 ),
