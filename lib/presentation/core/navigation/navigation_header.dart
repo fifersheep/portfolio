@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 
-import 'identity.dart';
 import 'navigation_header_painter.dart';
+import 'navigation_identity.dart';
 import 'social_bar.dart';
 
 class NavigationHeader extends StatelessWidget {
@@ -17,7 +17,7 @@ class NavigationHeader extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Identity(),
+                NavigationIdentity(),
                 const SizedBox(height: 56),
                 SocialBar(),
               ],

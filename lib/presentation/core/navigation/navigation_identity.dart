@@ -3,7 +3,7 @@ import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/images.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
 
-class Identity extends StatelessWidget {
+class NavigationIdentity extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
         children: [

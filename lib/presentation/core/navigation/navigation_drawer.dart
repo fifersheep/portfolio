@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
+import 'package:portfolio/presentation/core/navigation/navigation_footer.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_massage.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_menu.dart';
 
@@ -38,13 +39,23 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
         canvasColor: ThemeColors.white,
       ),
       child: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            NavigationHeader(),
-            NavigationMessage(),
-            ...navigationMenuItems(context),
-          ],
+        child: LayoutBuilder(
+          builder: (context, constraint) => SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraint.maxHeight),
+              child: IntrinsicHeight(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    NavigationHeader(),
+                    NavigationMessage(),
+                    ...navigationMenuItems(context),
+                    NavigationFooter(width: constraint.maxWidth),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
       ));
 }
