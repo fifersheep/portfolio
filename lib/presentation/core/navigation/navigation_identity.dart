@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/images.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
@@ -11,11 +12,13 @@ class NavigationIdentity extends StatelessWidget {
             margin: const EdgeInsets.only(top: 16),
             child: Text(
               Strings.of(context).navHeaderTitle,
-              style: const TextStyle(
-                fontSize: 32.0,
-                height: 1.2,
-                letterSpacing: 0.25,
-                color: ThemeColors.textOnPrimary,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.permanentMarker(
+                textStyle: const TextStyle(
+                  fontSize: 36,
+                  height: 1,
+                  color: ThemeColors.textOnPrimary,
+                ),
               ),
             ),
           ),
@@ -27,9 +30,10 @@ class NavigationIdentity extends StatelessWidget {
               height: 120,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(
-                  Images.of(context).avatar,
-                )),
+                  image: AssetImage(
+                    Images.of(context).avatar,
+                  ),
+                ),
                 shape: BoxShape.circle,
                 color: Theme.of(context).primaryColorDark,
                 border: Border.all(
