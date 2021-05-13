@@ -25,19 +25,19 @@ class Strings extends InheritedWidget {
 
   String get introTitle => 'Introduction';
   String get introHeader => 'Hello';
-  String get introCareerHeader => 'Career';
-  String get introCareerContent =>
-      'I’ve spent the past 5 years of my career as a professional software engineer with a focus on developing my front-end skillset, '
-      'starting with Android app development and then lately a little bit of React web development.\n\n'
-      "Lately, for personal projects, I've also been working with the Flutter framework to create various apps and this portfolio!";
-  String get introContent =>
+  String get introOpening =>
       "My name is Scott Laing - welcome to my digital space where I'll share with you a little about me.";
   String get introInterestsHeader => 'Interests';
   String get introInterestsContent =>
-      "For around 10 years now I've followed American football supporting the NFL's Pittsburgh Steelers, and then lately have been getting into the XFL, "
-      "although uncommited to a team as yet. I also like to watch a local amateur team where possible when they're at home - the Edinburgh Wolves.\n\n"
+      "For a number of years now I've followed American football supporting the NFL's Pittsburgh Steelers. "
+      "I also like to watch a local amateur team where possible when they're at home - the Edinburgh Wolves.\n\n"
       "Like many computer nerds, I enjoy playing computer games and have done since childhood. Typically I'll go for a FPS (currently Battlefield V), "
-      'but also partial to strategy games as well as the occassional sandbox/creation game such as Minecraft or Stardew Valley.';
+      'but also partial to strategy games as well as the occasional sandbox/creation game such as Minecraft or Stardew Valley.';
+  String get introCareerHeader => 'Career';
+  String get introCareerContent =>
+      'I’ve spent the past 6 years of my career as a professional software engineer with a focus on front-end, '
+      'starting with Android app development, then dabbling a little bit with React web development, and lately in-house native SDKs.\n\n'
+      "For personal projects, I've also been working with the Flutter framework, namely this portfolio!";
 
   String get blogTitle => 'Blog Title';
 

@@ -34,7 +34,7 @@ class PageScaffold extends StatelessWidget {
                   flexibleSpace: FlexibleSpaceBar(
                     title: Text(
                       title,
-                      style: Theme.of(context).primaryTextTheme.headline6,
+                      style: Theme.of(context).primaryTextTheme.headline6?.copyWith(height: 1),
                     ),
                     background: headerBackground != null
                         ? Image.asset(
@@ -54,7 +54,12 @@ class PageScaffold extends StatelessWidget {
                             maxWidth: maxWidth,
                             minHeight: constraints.remainingPaintExtent,
                           ),
-                          child: body,
+                          child: Column(
+                            children: [
+                              body,
+                              const SizedBox(height: 36)
+                            ],
+                          ),
                         ),
                       ),
                     ]),

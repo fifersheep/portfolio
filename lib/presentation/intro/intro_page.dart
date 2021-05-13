@@ -24,23 +24,23 @@ class IntroPage extends StatelessWidget {
         padding: const EdgeInsets.only(left: 24, right: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+          children: [
             Headline(strings.introHeader),
             Paragraph(
-              strings.introContent,
+              strings.introOpening,
               emphases: const ['Scott Laing'],
-              emphasesStyle: emphasesStyle,
-            ),
-            SectionHeadline(strings.introCareerHeader),
-            Paragraph(
-              strings.introCareerContent,
-              emphases: const ['Android', 'React', 'Flutter'],
               emphasesStyle: emphasesStyle,
             ),
             SectionHeadline(strings.introInterestsHeader),
             Paragraph(
               strings.introInterestsContent,
               emphases: const ['American football', 'Pittsburgh Steelers', 'Edinburgh Wolves', 'Battlefield V'],
+              emphasesStyle: emphasesStyle,
+            ),
+            SectionHeadline(strings.introCareerHeader),
+            Paragraph(
+              strings.introCareerContent,
+              emphases: const ['Android', 'React', 'Flutter'],
               emphasesStyle: emphasesStyle,
             ),
           ],
