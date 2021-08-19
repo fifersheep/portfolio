@@ -32,14 +32,21 @@ class PageScaffold extends StatelessWidget {
                   automaticallyImplyLeading: isMobile,
                   expandedHeight: 300.0,
                   flexibleSpace: FlexibleSpaceBar(
-                    title: Text(
-                      title,
-                      style: Theme.of(context).primaryTextTheme.headline6?.copyWith(height: 1),
-                    ),
                     background: headerBackground != null
-                        ? Image.asset(
-                            headerBackground!,
-                            fit: BoxFit.fitHeight,
+                        ? Stack(
+                          fit: StackFit.expand,
+                            children: [
+                              Image.asset(
+                                headerBackground!,
+                                fit: BoxFit.fitHeight,
+                              ),
+                              Center(
+                                child: Text(
+                                  title,
+                                  style: Theme.of(context).primaryTextTheme.headline6?.copyWith(height: 1),
+                                ),
+                              )
+                            ],
                           )
                         : null,
                   ),
@@ -55,10 +62,7 @@ class PageScaffold extends StatelessWidget {
                             minHeight: constraints.remainingPaintExtent,
                           ),
                           child: Column(
-                            children: [
-                              body,
-                              const SizedBox(height: 36)
-                            ],
+                            children: [body, const SizedBox(height: 36)],
                           ),
                         ),
                       ),
