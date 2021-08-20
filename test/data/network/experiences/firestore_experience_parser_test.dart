@@ -4,6 +4,7 @@ import 'package:portfolio/data/network/experiences/firestore_experience_parser.d
 import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'package:test/test.dart';
 
+import '../utils/firestore_mocks.dart';
 import '../utils/firestore_mocks.mocks.dart';
 
 void main() {
@@ -16,7 +17,6 @@ void main() {
   test('should parse an experience with all properties', () async {
     final startDate = DateTime.parse('2020-05-01');
     final endDate = DateTime.parse('2020-05-30');
-    final document = MockQueryDocumentSnapshot();
     final data = {
       'title': 'Title',
       'location': 'Location',
@@ -25,7 +25,7 @@ void main() {
       'end_date': Timestamp.fromDate(endDate),
       'category': 'work',
     };
-    when(document.data()).thenReturn(data);
+    final document = StubbedQueryDocumentSnapshot(stubbedData: data);
 
     final actual = parser.parse(document);
 
@@ -43,7 +43,6 @@ void main() {
 
   test('should parse an experience with no start date', () async {
     final endDate = DateTime.parse('2020-05-30');
-    final document = MockQueryDocumentSnapshot();
     final data = {
       'title': 'Title',
       'location': 'Location',
@@ -52,7 +51,7 @@ void main() {
       'end_date': Timestamp.fromDate(endDate),
       'category': 'work',
     };
-    when(document.data()).thenReturn(data);
+    final document = StubbedQueryDocumentSnapshot(stubbedData: data);
 
     final actual = parser.parse(document);
 
@@ -61,7 +60,6 @@ void main() {
 
   test('should parse an experience with no end date', () async {
     final startDate = DateTime.parse('2020-05-01');
-    final document = MockQueryDocumentSnapshot();
     final data = {
       'title': 'Title',
       'location': 'Location',
@@ -70,7 +68,7 @@ void main() {
       'end_date': null,
       'category': 'work',
     };
-    when(document.data()).thenReturn(data);
+    final document = StubbedQueryDocumentSnapshot(stubbedData: data);
 
     final actual = parser.parse(document);
 
@@ -89,7 +87,6 @@ void main() {
     test('should parse an experience with $category', () async {
       final startDate = DateTime.parse('2020-05-01');
       final endDate = DateTime.parse('2020-05-30');
-      final document = MockQueryDocumentSnapshot();
       final data = {
         'title': 'Title',
         'location': 'Location',
@@ -98,7 +95,7 @@ void main() {
         'end_date': Timestamp.fromDate(endDate),
         'category': key,
       };
-      when(document.data()).thenReturn(data);
+      final document = StubbedQueryDocumentSnapshot(stubbedData: data);
 
       final actual = parser.parse(document);
 

@@ -8,6 +8,7 @@ import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'package:test/test.dart';
 
+import '../utils/firestore_mocks.dart';
 import '../utils/firestore_mocks.mocks.dart';
 import 'firestore_experiences_repository_test.mocks.dart';
 
@@ -16,16 +17,16 @@ void main() {
   late FirestoreExperiencesRepository repository;
   late FirebaseFirestore firestore;
   late FirestoreExperienceParser parser;
-  late MockCollectionReference reference;
-  late MockQuery query;
-  late MockQuerySnapshot querySnapshot;
+  late MockCollectionReference<Map<String, dynamic>> reference;
+  late MockQuery<Map<String, dynamic>> query;
+  late MockQuerySnapshot<Map<String, dynamic>> querySnapshot;
 
   setUp(() async {
     firestore = MockFirebaseFirestore();
     parser = MockFirestoreExperienceParser();
     repository = FirestoreExperiencesRepository(firestore, parser);
 
-    reference = MockCollectionReference();
+    reference = MockCollectionReference<Map<String, dynamic>>();
     query = MockQuery();
     querySnapshot = MockQuerySnapshot();
 
@@ -34,7 +35,8 @@ void main() {
     when(query.get()).thenAnswer((_) async => querySnapshot);
   });
 
-  test('should return an empty list of experiences when firestore returns none', () async {
+  test('should return an empty list of experiences when firestore returns none',
+      () async {
     when(querySnapshot.docs).thenReturn([]);
 
     final actual = await repository.getExperiences();
@@ -45,7 +47,8 @@ void main() {
     );
   });
 
-  test('should return a list of experiences when firestore returns values', () async {
+  test('should return a list of experiences when firestore returns values',
+      () async {
     final experience = Experience(
       title: 'Title',
       location: 'Location',
@@ -55,7 +58,7 @@ void main() {
       category: ExperienceCategory.work,
     );
 
-    final queryDocumentSnapshot = MockQueryDocumentSnapshot();
+    final queryDocumentSnapshot = StubbedQueryDocumentSnapshot();
     when(querySnapshot.docs).thenReturn([queryDocumentSnapshot]);
     when(parser.parse(queryDocumentSnapshot)).thenReturn(experience);
 
