@@ -23,17 +23,18 @@ class _FakeEither_0<L, R> extends _i1.Fake implements _i2.Either<L, R> {}
 /// A class which mocks [ProjectsRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockProjectsRepository extends _i1.Mock implements _i3.ProjectsRepository {
+class MockProjectsRepository extends _i1.Mock
+    implements _i3.ProjectsRepository {
   MockProjectsRepository() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i6.Project>>> getProjects() => (super.noSuchMethod(
-          Invocation.method(#getProjects, []),
-          returnValue:
-              Future<_i2.Either<_i5.Failure, List<_i6.Project>>>.value(_FakeEither_0<_i5.Failure, List<_i6.Project>>()))
-      as _i4.Future<_i2.Either<_i5.Failure, List<_i6.Project>>>);
+  _i4.Future<_i2.Either<_i5.Failure, List<_i6.Project>>> getProjects() =>
+      (super.noSuchMethod(Invocation.method(#getProjects, []),
+          returnValue: Future<_i2.Either<_i5.Failure, List<_i6.Project>>>.value(
+              _FakeEither_0<_i5.Failure, List<_i6.Project>>())) as _i4
+          .Future<_i2.Either<_i5.Failure, List<_i6.Project>>>);
   @override
   String toString() => super.toString();
 }

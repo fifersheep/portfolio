@@ -44,15 +44,18 @@ mixin _$ProjectState {
   String get detail => throw _privateConstructorUsedError;
   String get coverImageUrl => throw _privateConstructorUsedError;
   List<ProjectTagState> get tags => throw _privateConstructorUsedError;
-  List<ProjectCallToActionState> get callToActions => throw _privateConstructorUsedError;
+  List<ProjectCallToActionState> get callToActions =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProjectStateCopyWith<ProjectState> get copyWith => throw _privateConstructorUsedError;
+  $ProjectStateCopyWith<ProjectState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProjectStateCopyWith<$Res> {
-  factory $ProjectStateCopyWith(ProjectState value, $Res Function(ProjectState) then) =
+  factory $ProjectStateCopyWith(
+          ProjectState value, $Res Function(ProjectState) then) =
       _$ProjectStateCopyWithImpl<$Res>;
   $Res call(
       {String title,
@@ -110,8 +113,10 @@ class _$ProjectStateCopyWithImpl<$Res> implements $ProjectStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ProjectStateCopyWith<$Res> implements $ProjectStateCopyWith<$Res> {
-  factory _$ProjectStateCopyWith(_ProjectState value, $Res Function(_ProjectState) then) =
+abstract class _$ProjectStateCopyWith<$Res>
+    implements $ProjectStateCopyWith<$Res> {
+  factory _$ProjectStateCopyWith(
+          _ProjectState value, $Res Function(_ProjectState) then) =
       __$ProjectStateCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -126,7 +131,8 @@ abstract class _$ProjectStateCopyWith<$Res> implements $ProjectStateCopyWith<$Re
 /// @nodoc
 class __$ProjectStateCopyWithImpl<$Res> extends _$ProjectStateCopyWithImpl<$Res>
     implements _$ProjectStateCopyWith<$Res> {
-  __$ProjectStateCopyWithImpl(_ProjectState _value, $Res Function(_ProjectState) _then)
+  __$ProjectStateCopyWithImpl(
+      _ProjectState _value, $Res Function(_ProjectState) _then)
       : super(_value, (v) => _then(v as _ProjectState));
 
   @override
@@ -203,14 +209,21 @@ class _$_ProjectState implements _ProjectState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProjectState &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.summary, summary) || const DeepCollectionEquality().equals(other.summary, summary)) &&
-            (identical(other.detail, detail) || const DeepCollectionEquality().equals(other.detail, detail)) &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.detail, detail) ||
+                const DeepCollectionEquality().equals(other.detail, detail)) &&
             (identical(other.coverImageUrl, coverImageUrl) ||
-                const DeepCollectionEquality().equals(other.coverImageUrl, coverImageUrl)) &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
+                const DeepCollectionEquality()
+                    .equals(other.coverImageUrl, coverImageUrl)) &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)) &&
             (identical(other.callToActions, callToActions) ||
-                const DeepCollectionEquality().equals(other.callToActions, callToActions)));
+                const DeepCollectionEquality()
+                    .equals(other.callToActions, callToActions)));
   }
 
   @override
@@ -225,7 +238,8 @@ class _$_ProjectState implements _ProjectState {
 
   @JsonKey(ignore: true)
   @override
-  _$ProjectStateCopyWith<_ProjectState> get copyWith => __$ProjectStateCopyWithImpl<_ProjectState>(this, _$identity);
+  _$ProjectStateCopyWith<_ProjectState> get copyWith =>
+      __$ProjectStateCopyWithImpl<_ProjectState>(this, _$identity);
 }
 
 abstract class _ProjectState implements ProjectState {
@@ -248,10 +262,12 @@ abstract class _ProjectState implements ProjectState {
   @override
   List<ProjectTagState> get tags => throw _privateConstructorUsedError;
   @override
-  List<ProjectCallToActionState> get callToActions => throw _privateConstructorUsedError;
+  List<ProjectCallToActionState> get callToActions =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ProjectStateCopyWith<_ProjectState> get copyWith => throw _privateConstructorUsedError;
+  _$ProjectStateCopyWith<_ProjectState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -259,7 +275,10 @@ class _$ProjectTagStateTearOff {
   const _$ProjectTagStateTearOff();
 
   _ProjectTagState call(
-      {required String label, String? color, required String labelColor, required ProjectTagStyle style}) {
+      {required String label,
+      String? color,
+      required String labelColor,
+      required ProjectTagStyle style}) {
     return _ProjectTagState(
       label: label,
       color: color,
@@ -280,18 +299,22 @@ mixin _$ProjectTagState {
   ProjectTagStyle get style => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProjectTagStateCopyWith<ProjectTagState> get copyWith => throw _privateConstructorUsedError;
+  $ProjectTagStateCopyWith<ProjectTagState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProjectTagStateCopyWith<$Res> {
-  factory $ProjectTagStateCopyWith(ProjectTagState value, $Res Function(ProjectTagState) then) =
+  factory $ProjectTagStateCopyWith(
+          ProjectTagState value, $Res Function(ProjectTagState) then) =
       _$ProjectTagStateCopyWithImpl<$Res>;
-  $Res call({String label, String? color, String labelColor, ProjectTagStyle style});
+  $Res call(
+      {String label, String? color, String labelColor, ProjectTagStyle style});
 }
 
 /// @nodoc
-class _$ProjectTagStateCopyWithImpl<$Res> implements $ProjectTagStateCopyWith<$Res> {
+class _$ProjectTagStateCopyWithImpl<$Res>
+    implements $ProjectTagStateCopyWith<$Res> {
   _$ProjectTagStateCopyWithImpl(this._value, this._then);
 
   final ProjectTagState _value;
@@ -327,17 +350,22 @@ class _$ProjectTagStateCopyWithImpl<$Res> implements $ProjectTagStateCopyWith<$R
 }
 
 /// @nodoc
-abstract class _$ProjectTagStateCopyWith<$Res> implements $ProjectTagStateCopyWith<$Res> {
-  factory _$ProjectTagStateCopyWith(_ProjectTagState value, $Res Function(_ProjectTagState) then) =
+abstract class _$ProjectTagStateCopyWith<$Res>
+    implements $ProjectTagStateCopyWith<$Res> {
+  factory _$ProjectTagStateCopyWith(
+          _ProjectTagState value, $Res Function(_ProjectTagState) then) =
       __$ProjectTagStateCopyWithImpl<$Res>;
   @override
-  $Res call({String label, String? color, String labelColor, ProjectTagStyle style});
+  $Res call(
+      {String label, String? color, String labelColor, ProjectTagStyle style});
 }
 
 /// @nodoc
-class __$ProjectTagStateCopyWithImpl<$Res> extends _$ProjectTagStateCopyWithImpl<$Res>
+class __$ProjectTagStateCopyWithImpl<$Res>
+    extends _$ProjectTagStateCopyWithImpl<$Res>
     implements _$ProjectTagStateCopyWith<$Res> {
-  __$ProjectTagStateCopyWithImpl(_ProjectTagState _value, $Res Function(_ProjectTagState) _then)
+  __$ProjectTagStateCopyWithImpl(
+      _ProjectTagState _value, $Res Function(_ProjectTagState) _then)
       : super(_value, (v) => _then(v as _ProjectTagState));
 
   @override
@@ -374,7 +402,11 @@ class __$ProjectTagStateCopyWithImpl<$Res> extends _$ProjectTagStateCopyWithImpl
 /// @nodoc
 
 class _$_ProjectTagState implements _ProjectTagState {
-  _$_ProjectTagState({required this.label, this.color, required this.labelColor, required this.style});
+  _$_ProjectTagState(
+      {required this.label,
+      this.color,
+      required this.labelColor,
+      required this.style});
 
   @override
   final String label;
@@ -394,11 +426,15 @@ class _$_ProjectTagState implements _ProjectTagState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProjectTagState &&
-            (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)) &&
-            (identical(other.color, color) || const DeepCollectionEquality().equals(other.color, color)) &&
+            (identical(other.label, label) ||
+                const DeepCollectionEquality().equals(other.label, label)) &&
+            (identical(other.color, color) ||
+                const DeepCollectionEquality().equals(other.color, color)) &&
             (identical(other.labelColor, labelColor) ||
-                const DeepCollectionEquality().equals(other.labelColor, labelColor)) &&
-            (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)));
+                const DeepCollectionEquality()
+                    .equals(other.labelColor, labelColor)) &&
+            (identical(other.style, style) ||
+                const DeepCollectionEquality().equals(other.style, style)));
   }
 
   @override
@@ -432,7 +468,8 @@ abstract class _ProjectTagState implements ProjectTagState {
   ProjectTagStyle get style => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ProjectTagStateCopyWith<_ProjectTagState> get copyWith => throw _privateConstructorUsedError;
+  _$ProjectTagStateCopyWith<_ProjectTagState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -464,19 +501,25 @@ mixin _$ProjectCallToActionState {
   String get label => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProjectCallToActionStateCopyWith<ProjectCallToActionState> get copyWith => throw _privateConstructorUsedError;
+  $ProjectCallToActionStateCopyWith<ProjectCallToActionState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProjectCallToActionStateCopyWith<$Res> {
-  factory $ProjectCallToActionStateCopyWith(
-          ProjectCallToActionState value, $Res Function(ProjectCallToActionState) then) =
+  factory $ProjectCallToActionStateCopyWith(ProjectCallToActionState value,
+          $Res Function(ProjectCallToActionState) then) =
       _$ProjectCallToActionStateCopyWithImpl<$Res>;
-  $Res call({ProjectCallToActionType type, ProjectCallToActionStyle style, String action, String label});
+  $Res call(
+      {ProjectCallToActionType type,
+      ProjectCallToActionStyle style,
+      String action,
+      String label});
 }
 
 /// @nodoc
-class _$ProjectCallToActionStateCopyWithImpl<$Res> implements $ProjectCallToActionStateCopyWith<$Res> {
+class _$ProjectCallToActionStateCopyWithImpl<$Res>
+    implements $ProjectCallToActionStateCopyWith<$Res> {
   _$ProjectCallToActionStateCopyWithImpl(this._value, this._then);
 
   final ProjectCallToActionState _value;
@@ -512,23 +555,30 @@ class _$ProjectCallToActionStateCopyWithImpl<$Res> implements $ProjectCallToActi
 }
 
 /// @nodoc
-abstract class _$ProjectCallToActionStateCopyWith<$Res> implements $ProjectCallToActionStateCopyWith<$Res> {
-  factory _$ProjectCallToActionStateCopyWith(
-          _ProjectCallToActionState value, $Res Function(_ProjectCallToActionState) then) =
+abstract class _$ProjectCallToActionStateCopyWith<$Res>
+    implements $ProjectCallToActionStateCopyWith<$Res> {
+  factory _$ProjectCallToActionStateCopyWith(_ProjectCallToActionState value,
+          $Res Function(_ProjectCallToActionState) then) =
       __$ProjectCallToActionStateCopyWithImpl<$Res>;
   @override
-  $Res call({ProjectCallToActionType type, ProjectCallToActionStyle style, String action, String label});
+  $Res call(
+      {ProjectCallToActionType type,
+      ProjectCallToActionStyle style,
+      String action,
+      String label});
 }
 
 /// @nodoc
-class __$ProjectCallToActionStateCopyWithImpl<$Res> extends _$ProjectCallToActionStateCopyWithImpl<$Res>
+class __$ProjectCallToActionStateCopyWithImpl<$Res>
+    extends _$ProjectCallToActionStateCopyWithImpl<$Res>
     implements _$ProjectCallToActionStateCopyWith<$Res> {
-  __$ProjectCallToActionStateCopyWithImpl(
-      _ProjectCallToActionState _value, $Res Function(_ProjectCallToActionState) _then)
+  __$ProjectCallToActionStateCopyWithImpl(_ProjectCallToActionState _value,
+      $Res Function(_ProjectCallToActionState) _then)
       : super(_value, (v) => _then(v as _ProjectCallToActionState));
 
   @override
-  _ProjectCallToActionState get _value => super._value as _ProjectCallToActionState;
+  _ProjectCallToActionState get _value =>
+      super._value as _ProjectCallToActionState;
 
   @override
   $Res call({
@@ -561,7 +611,11 @@ class __$ProjectCallToActionStateCopyWithImpl<$Res> extends _$ProjectCallToActio
 /// @nodoc
 
 class _$_ProjectCallToActionState implements _ProjectCallToActionState {
-  _$_ProjectCallToActionState({required this.type, required this.style, required this.action, required this.label});
+  _$_ProjectCallToActionState(
+      {required this.type,
+      required this.style,
+      required this.action,
+      required this.label});
 
   @override
   final ProjectCallToActionType type;
@@ -581,10 +635,14 @@ class _$_ProjectCallToActionState implements _ProjectCallToActionState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProjectCallToActionState &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)) &&
-            (identical(other.action, action) || const DeepCollectionEquality().equals(other.action, action)) &&
-            (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)));
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.style, style) ||
+                const DeepCollectionEquality().equals(other.style, style)) &&
+            (identical(other.action, action) ||
+                const DeepCollectionEquality().equals(other.action, action)) &&
+            (identical(other.label, label) ||
+                const DeepCollectionEquality().equals(other.label, label)));
   }
 
   @override
@@ -598,7 +656,8 @@ class _$_ProjectCallToActionState implements _ProjectCallToActionState {
   @JsonKey(ignore: true)
   @override
   _$ProjectCallToActionStateCopyWith<_ProjectCallToActionState> get copyWith =>
-      __$ProjectCallToActionStateCopyWithImpl<_ProjectCallToActionState>(this, _$identity);
+      __$ProjectCallToActionStateCopyWithImpl<_ProjectCallToActionState>(
+          this, _$identity);
 }
 
 abstract class _ProjectCallToActionState implements ProjectCallToActionState {
@@ -618,5 +677,6 @@ abstract class _ProjectCallToActionState implements ProjectCallToActionState {
   String get label => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ProjectCallToActionStateCopyWith<_ProjectCallToActionState> get copyWith => throw _privateConstructorUsedError;
+  _$ProjectCallToActionStateCopyWith<_ProjectCallToActionState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

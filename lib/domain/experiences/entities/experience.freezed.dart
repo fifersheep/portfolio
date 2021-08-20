@@ -47,12 +47,15 @@ mixin _$Experience {
   ExperienceCategory get category => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceCopyWith<Experience> get copyWith => throw _privateConstructorUsedError;
+  $ExperienceCopyWith<Experience> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceCopyWith<$Res> {
-  factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) = _$ExperienceCopyWithImpl<$Res>;
+  factory $ExperienceCopyWith(
+          Experience value, $Res Function(Experience) then) =
+      _$ExperienceCopyWithImpl<$Res>;
   $Res call(
       {String title,
       String location,
@@ -110,7 +113,9 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
-  factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) = __$ExperienceCopyWithImpl<$Res>;
+  factory _$ExperienceCopyWith(
+          _Experience value, $Res Function(_Experience) then) =
+      __$ExperienceCopyWithImpl<$Res>;
   @override
   $Res call(
       {String title,
@@ -122,8 +127,10 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> implements _$ExperienceCopyWith<$Res> {
-  __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then)
+class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
+    implements _$ExperienceCopyWith<$Res> {
+  __$ExperienceCopyWithImpl(
+      _Experience _value, $Res Function(_Experience) _then)
       : super(_value, (v) => _then(v as _Experience));
 
   @override
@@ -200,13 +207,23 @@ class _$_Experience implements _Experience {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Experience &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.location, location) ||
+                const DeepCollectionEquality()
+                    .equals(other.location, location)) &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality()
+                    .equals(other.content, content)) &&
             (identical(other.startDate, startDate) ||
-                const DeepCollectionEquality().equals(other.startDate, startDate)) &&
-            (identical(other.endDate, endDate) || const DeepCollectionEquality().equals(other.endDate, endDate)) &&
-            (identical(other.category, category) || const DeepCollectionEquality().equals(other.category, category)));
+                const DeepCollectionEquality()
+                    .equals(other.startDate, startDate)) &&
+            (identical(other.endDate, endDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.endDate, endDate)) &&
+            (identical(other.category, category) ||
+                const DeepCollectionEquality()
+                    .equals(other.category, category)));
   }
 
   @override
@@ -221,7 +238,8 @@ class _$_Experience implements _Experience {
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceCopyWith<_Experience> get copyWith => __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
+  _$ExperienceCopyWith<_Experience> get copyWith =>
+      __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
 }
 
 abstract class _Experience implements Experience {
@@ -247,5 +265,6 @@ abstract class _Experience implements Experience {
   ExperienceCategory get category => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ExperienceCopyWith<_Experience> get copyWith => throw _privateConstructorUsedError;
+  _$ExperienceCopyWith<_Experience> get copyWith =>
+      throw _privateConstructorUsedError;
 }
