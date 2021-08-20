@@ -6,8 +6,7 @@ import 'package:portfolio/domain/projects/entities/project.dart';
 @LazySingleton(as: ProjectParser)
 class FirestoreProjectParser extends ProjectParser<DocumentSnapshot> {
   @override
-  Project parseProject(
-      DocumentSnapshot projectDoc, List<DocumentSnapshot> tagsDoc) {
+  Project parseProject(DocumentSnapshot projectDoc, List<DocumentSnapshot> tagsDoc) {
     final projectData = projectDoc.data() as Map<String, dynamic>?;
     return Project(
         title: projectData?['title'] as String,

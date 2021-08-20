@@ -47,27 +47,19 @@ mixin _$ExperienceState {
   ExperienceColor get color => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ExperienceStateCopyWith<ExperienceState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ExperienceStateCopyWith<ExperienceState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperienceStateCopyWith<$Res> {
-  factory $ExperienceStateCopyWith(
-          ExperienceState value, $Res Function(ExperienceState) then) =
+  factory $ExperienceStateCopyWith(ExperienceState value, $Res Function(ExperienceState) then) =
       _$ExperienceStateCopyWithImpl<$Res>;
   $Res call(
-      {String title,
-      String location,
-      String content,
-      String timeframe,
-      ExperienceIcon icon,
-      ExperienceColor color});
+      {String title, String location, String content, String timeframe, ExperienceIcon icon, ExperienceColor color});
 }
 
 /// @nodoc
-class _$ExperienceStateCopyWithImpl<$Res>
-    implements $ExperienceStateCopyWith<$Res> {
+class _$ExperienceStateCopyWithImpl<$Res> implements $ExperienceStateCopyWith<$Res> {
   _$ExperienceStateCopyWithImpl(this._value, this._then);
 
   final ExperienceState _value;
@@ -113,27 +105,18 @@ class _$ExperienceStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ExperienceStateCopyWith<$Res>
-    implements $ExperienceStateCopyWith<$Res> {
-  factory _$ExperienceStateCopyWith(
-          _ExperienceState value, $Res Function(_ExperienceState) then) =
+abstract class _$ExperienceStateCopyWith<$Res> implements $ExperienceStateCopyWith<$Res> {
+  factory _$ExperienceStateCopyWith(_ExperienceState value, $Res Function(_ExperienceState) then) =
       __$ExperienceStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String title,
-      String location,
-      String content,
-      String timeframe,
-      ExperienceIcon icon,
-      ExperienceColor color});
+      {String title, String location, String content, String timeframe, ExperienceIcon icon, ExperienceColor color});
 }
 
 /// @nodoc
-class __$ExperienceStateCopyWithImpl<$Res>
-    extends _$ExperienceStateCopyWithImpl<$Res>
+class __$ExperienceStateCopyWithImpl<$Res> extends _$ExperienceStateCopyWithImpl<$Res>
     implements _$ExperienceStateCopyWith<$Res> {
-  __$ExperienceStateCopyWithImpl(
-      _ExperienceState _value, $Res Function(_ExperienceState) _then)
+  __$ExperienceStateCopyWithImpl(_ExperienceState _value, $Res Function(_ExperienceState) _then)
       : super(_value, (v) => _then(v as _ExperienceState));
 
   @override
@@ -210,21 +193,13 @@ class _$_ExperienceState implements _ExperienceState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExperienceState &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.location, location) ||
-                const DeepCollectionEquality()
-                    .equals(other.location, location)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality()
-                    .equals(other.content, content)) &&
+            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
             (identical(other.timeframe, timeframe) ||
-                const DeepCollectionEquality()
-                    .equals(other.timeframe, timeframe)) &&
-            (identical(other.icon, icon) ||
-                const DeepCollectionEquality().equals(other.icon, icon)) &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)));
+                const DeepCollectionEquality().equals(other.timeframe, timeframe)) &&
+            (identical(other.icon, icon) || const DeepCollectionEquality().equals(other.icon, icon)) &&
+            (identical(other.color, color) || const DeepCollectionEquality().equals(other.color, color)));
   }
 
   @override
@@ -266,6 +241,5 @@ abstract class _ExperienceState implements ExperienceState {
   ExperienceColor get color => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ExperienceStateCopyWith<_ExperienceState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ExperienceStateCopyWith<_ExperienceState> get copyWith => throw _privateConstructorUsedError;
 }

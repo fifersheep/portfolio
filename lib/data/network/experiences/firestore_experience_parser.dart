@@ -18,9 +18,8 @@ class FirestoreExperienceParser extends ExperienceParser<DocumentSnapshot> {
         location: data?['location'] as String,
         startDate: startDate?.toDate(),
         endDate: endDate?.toDate(),
-        category: ExperienceCategory.values.firstWhere(
-            (e) => _matchCategory(e, source),
-            orElse: () => ExperienceCategory.unknown));
+        category: ExperienceCategory.values
+            .firstWhere((e) => _matchCategory(e, source), orElse: () => ExperienceCategory.unknown));
   }
 
   bool _matchCategory(ExperienceCategory e, DocumentSnapshot document) {

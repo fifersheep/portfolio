@@ -10,8 +10,7 @@ import 'package:portfolio/domain/core/error/failures.dart' as _i5;
 import 'package:portfolio/domain/core/formatter/date_formatter.dart' as _i7;
 import 'package:portfolio/domain/core/formatter/new_line_formatter.dart' as _i8;
 import 'package:portfolio/domain/experiences/entities/experience.dart' as _i6;
-import 'package:portfolio/domain/experiences/experiences_repository.dart'
-    as _i3;
+import 'package:portfolio/domain/experiences/experiences_repository.dart' as _i3;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -26,8 +25,7 @@ class _FakeEither_0<L, R> extends _i1.Fake implements _i2.Either<L, R> {}
 /// A class which mocks [ExperiencesRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockExperiencesRepository extends _i1.Mock
-    implements _i3.ExperiencesRepository {
+class MockExperiencesRepository extends _i1.Mock implements _i3.ExperiencesRepository {
   MockExperiencesRepository() {
     _i1.throwOnMissingStub(this);
   }
@@ -35,9 +33,8 @@ class MockExperiencesRepository extends _i1.Mock
   @override
   _i4.Future<_i2.Either<_i5.Failure, List<_i6.Experience>>> getExperiences() =>
       (super.noSuchMethod(Invocation.method(#getExperiences, []),
-              returnValue:
-                  Future<_i2.Either<_i5.Failure, List<_i6.Experience>>>.value(
-                      _FakeEither_0<_i5.Failure, List<_i6.Experience>>()))
+              returnValue: Future<_i2.Either<_i5.Failure, List<_i6.Experience>>>.value(
+                  _FakeEither_0<_i5.Failure, List<_i6.Experience>>()))
           as _i4.Future<_i2.Either<_i5.Failure, List<_i6.Experience>>>);
   @override
   String toString() => super.toString();
@@ -53,12 +50,10 @@ class MockDateFormatter extends _i1.Mock implements _i7.DateFormatter {
 
   @override
   String monthYearRange(DateTime? start, DateTime? end) =>
-      (super.noSuchMethod(Invocation.method(#monthYearRange, [start, end]),
-          returnValue: '') as String);
+      (super.noSuchMethod(Invocation.method(#monthYearRange, [start, end]), returnValue: '') as String);
   @override
-  String monthYear(DateTime? date) => (super
-          .noSuchMethod(Invocation.method(#monthYear, [date]), returnValue: '')
-      as String);
+  String monthYear(DateTime? date) =>
+      (super.noSuchMethod(Invocation.method(#monthYear, [date]), returnValue: '') as String);
   @override
   String toString() => super.toString();
 }
@@ -72,9 +67,7 @@ class MockNewLineFormatter extends _i1.Mock implements _i8.NewLineFormatter {
   }
 
   @override
-  String format(String? input) =>
-      (super.noSuchMethod(Invocation.method(#format, [input]), returnValue: '')
-          as String);
+  String format(String? input) => (super.noSuchMethod(Invocation.method(#format, [input]), returnValue: '') as String);
   @override
   String toString() => super.toString();
 }

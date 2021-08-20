@@ -35,8 +35,7 @@ void main() {
     when(query.get()).thenAnswer((_) async => querySnapshot);
   });
 
-  test('should return an empty list of experiences when firestore returns none',
-      () async {
+  test('should return an empty list of experiences when firestore returns none', () async {
     when(querySnapshot.docs).thenReturn([]);
 
     final actual = await repository.getExperiences();
@@ -47,8 +46,7 @@ void main() {
     );
   });
 
-  test('should return a list of experiences when firestore returns values',
-      () async {
+  test('should return a list of experiences when firestore returns values', () async {
     final experience = Experience(
       title: 'Title',
       location: 'Location',

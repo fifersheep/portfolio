@@ -36,8 +36,7 @@ void main() {
       'style': 'Style',
     };
 
-    final projectDoc =
-        StubbedQueryDocumentSnapshot(stubbedData: projectDocData);
+    final projectDoc = StubbedQueryDocumentSnapshot(stubbedData: projectDocData);
     final tagDoc = StubbedQueryDocumentSnapshot(stubbedData: tagDocData);
 
     final actual = parser.parseProject(projectDoc, [tagDoc]);
@@ -48,15 +47,10 @@ void main() {
       detail: 'Detail',
       coverImageUrl: 'Cover Image Url',
       tags: [
-        ProjectTag(
-            label: 'Label',
-            color: 'Color',
-            labelColor: 'Label Color',
-            style: 'Style'),
+        ProjectTag(label: 'Label', color: 'Color', labelColor: 'Label Color', style: 'Style'),
       ],
       callToActions: [
-        ProjectCallToAction(
-            type: 'Type', action: 'Action', style: 'Style', label: 'Label'),
+        ProjectCallToAction(type: 'Type', action: 'Action', style: 'Style', label: 'Label'),
       ],
     );
 
@@ -78,8 +72,7 @@ void main() {
       'style': 'Style',
     };
 
-    final projectDoc =
-        StubbedQueryDocumentSnapshot(stubbedData: projectDocData);
+    final projectDoc = StubbedQueryDocumentSnapshot(stubbedData: projectDocData);
     final tagDoc = StubbedQueryDocumentSnapshot(stubbedData: tagDocData);
 
     final actual = parser.parseProject(projectDoc, [tagDoc]);

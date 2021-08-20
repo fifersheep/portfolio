@@ -36,8 +36,7 @@ void main() {
     when(tagsReference.get()).thenAnswer((_) async => tagsQuery);
   });
 
-  test('should return an empty list of projects when firestore returns none',
-      () async {
+  test('should return an empty list of projects when firestore returns none', () async {
     when(projectsQuery.docs).thenReturn([]);
     when(tagsQuery.docs).thenReturn([]);
 
@@ -49,8 +48,7 @@ void main() {
     );
   });
 
-  test('should return a list of projects when firestore returns some',
-      () async {
+  test('should return a list of projects when firestore returns some', () async {
     final project = Project(
       title: 'Title',
       summary: 'Summary',
