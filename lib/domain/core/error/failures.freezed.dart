@@ -52,8 +52,7 @@ mixin _$Failure {
 
 /// @nodoc
 abstract class $FailureCopyWith<$Res> {
-  factory $FailureCopyWith(Failure value, $Res Function(Failure) then) =
-      _$FailureCopyWithImpl<$Res>;
+  factory $FailureCopyWith(Failure value, $Res Function(Failure) then) = _$FailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -67,17 +66,14 @@ class _$FailureCopyWithImpl<$Res> implements $FailureCopyWith<$Res> {
 
 /// @nodoc
 abstract class $DataRetrievalFailureCopyWith<$Res> {
-  factory $DataRetrievalFailureCopyWith(DataRetrievalFailure value,
-          $Res Function(DataRetrievalFailure) then) =
+  factory $DataRetrievalFailureCopyWith(DataRetrievalFailure value, $Res Function(DataRetrievalFailure) then) =
       _$DataRetrievalFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DataRetrievalFailureCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res>
+class _$DataRetrievalFailureCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
     implements $DataRetrievalFailureCopyWith<$Res> {
-  _$DataRetrievalFailureCopyWithImpl(
-      DataRetrievalFailure _value, $Res Function(DataRetrievalFailure) _then)
+  _$DataRetrievalFailureCopyWithImpl(DataRetrievalFailure _value, $Res Function(DataRetrievalFailure) _then)
       : super(_value, (v) => _then(v as DataRetrievalFailure));
 
   @override

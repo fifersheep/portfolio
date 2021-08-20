@@ -15,51 +15,36 @@ import '../projects/project_details_page.dart' as _i5;
 import '../projects/projects_page.dart' as _i4;
 
 class Router extends _i1.RootStackRouter {
-  Router([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+  Router([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey]) : super(navigatorKey);
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    IntroRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return _i3.IntroPage();
-        }),
-    ProjectsRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return _i4.ProjectsPage();
-        }),
-    ProjectDetailsRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (data) {
-          final pathParams = data.pathParams;
-          final args = data.argsAs<ProjectDetailsRouteArgs>(
-              orElse: () =>
-                  ProjectDetailsRouteArgs(id: pathParams.getString('id')));
-          return _i5.ProjectDetailsPage(id: args.id);
-        }),
-    ExperiencesRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return _i6.ExperiencesPage();
-        }),
-    BlogRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return _i7.BlogPage();
-        }),
-    RouteNotFound.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return _i8.PageNotFound();
-        })
+    IntroRoute.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i3.IntroPage());
+    },
+    ProjectsRoute.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i4.ProjectsPage());
+    },
+    ProjectDetailsRoute.name: (routeData) {
+      var pathParams = routeData.pathParams;
+      final args = routeData.argsAs<ProjectDetailsRouteArgs>(
+          orElse: () => ProjectDetailsRouteArgs(id: pathParams.getString('id')));
+      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i5.ProjectDetailsPage(id: args.id));
+    },
+    ExperiencesRoute.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i6.ExperiencesPage());
+    },
+    BlogRoute.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i7.BlogPage());
+    },
+    RouteNotFound.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(routeData: routeData, child: _i8.PageNotFound());
+    }
   };
 
   @override
   List<_i1.RouteConfig> get routes => [
-        _i1.RouteConfig('/#redirect',
-            path: '/', redirectTo: '/intro', fullMatch: true),
+        _i1.RouteConfig('/#redirect', path: '/', redirectTo: '/intro', fullMatch: true),
         _i1.RouteConfig(IntroRoute.name, path: '/intro'),
         _i1.RouteConfig(ProjectsRoute.name, path: '/projects'),
         _i1.RouteConfig(ProjectDetailsRoute.name, path: '/projects/:id'),
@@ -83,10 +68,7 @@ class ProjectsRoute extends _i1.PageRouteInfo {
 
 class ProjectDetailsRoute extends _i1.PageRouteInfo<ProjectDetailsRouteArgs> {
   ProjectDetailsRoute({required String id})
-      : super(name,
-            path: '/projects/:id',
-            args: ProjectDetailsRouteArgs(id: id),
-            rawPathParams: {'id': id});
+      : super(name, path: '/projects/:id', args: ProjectDetailsRouteArgs(id: id), params: {'id': id});
 
   static const String name = 'ProjectDetailsRoute';
 }

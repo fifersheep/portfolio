@@ -52,14 +52,12 @@ mixin _$ProjectsEvent {
 
 /// @nodoc
 abstract class $ProjectsEventCopyWith<$Res> {
-  factory $ProjectsEventCopyWith(
-          ProjectsEvent value, $Res Function(ProjectsEvent) then) =
+  factory $ProjectsEventCopyWith(ProjectsEvent value, $Res Function(ProjectsEvent) then) =
       _$ProjectsEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProjectsEventCopyWithImpl<$Res>
-    implements $ProjectsEventCopyWith<$Res> {
+class _$ProjectsEventCopyWithImpl<$Res> implements $ProjectsEventCopyWith<$Res> {
   _$ProjectsEventCopyWithImpl(this._value, this._then);
 
   final ProjectsEvent _value;
@@ -69,16 +67,14 @@ class _$ProjectsEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $LoadProjectsCopyWith<$Res> {
-  factory $LoadProjectsCopyWith(
-          LoadProjects value, $Res Function(LoadProjects) then) =
+  factory $LoadProjectsCopyWith(LoadProjects value, $Res Function(LoadProjects) then) =
       _$LoadProjectsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class _$LoadProjectsCopyWithImpl<$Res> extends _$ProjectsEventCopyWithImpl<$Res>
     implements $LoadProjectsCopyWith<$Res> {
-  _$LoadProjectsCopyWithImpl(
-      LoadProjects _value, $Res Function(LoadProjects) _then)
+  _$LoadProjectsCopyWithImpl(LoadProjects _value, $Res Function(LoadProjects) _then)
       : super(_value, (v) => _then(v as LoadProjects));
 
   @override
@@ -206,14 +202,12 @@ mixin _$ProjectsState {
 
 /// @nodoc
 abstract class $ProjectsStateCopyWith<$Res> {
-  factory $ProjectsStateCopyWith(
-          ProjectsState value, $Res Function(ProjectsState) then) =
+  factory $ProjectsStateCopyWith(ProjectsState value, $Res Function(ProjectsState) then) =
       _$ProjectsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProjectsStateCopyWithImpl<$Res>
-    implements $ProjectsStateCopyWith<$Res> {
+class _$ProjectsStateCopyWithImpl<$Res> implements $ProjectsStateCopyWith<$Res> {
   _$ProjectsStateCopyWithImpl(this._value, this._then);
 
   final ProjectsState _value;
@@ -223,17 +217,14 @@ class _$ProjectsStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $ProjectsLoadingCopyWith<$Res> {
-  factory $ProjectsLoadingCopyWith(
-          ProjectsLoading value, $Res Function(ProjectsLoading) then) =
+  factory $ProjectsLoadingCopyWith(ProjectsLoading value, $Res Function(ProjectsLoading) then) =
       _$ProjectsLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProjectsLoadingCopyWithImpl<$Res>
-    extends _$ProjectsStateCopyWithImpl<$Res>
+class _$ProjectsLoadingCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
     implements $ProjectsLoadingCopyWith<$Res> {
-  _$ProjectsLoadingCopyWithImpl(
-      ProjectsLoading _value, $Res Function(ProjectsLoading) _then)
+  _$ProjectsLoadingCopyWithImpl(ProjectsLoading _value, $Res Function(ProjectsLoading) _then)
       : super(_value, (v) => _then(v as ProjectsLoading));
 
   @override
@@ -313,18 +304,15 @@ abstract class ProjectsLoading implements ProjectsState {
 
 /// @nodoc
 abstract class $ProjectsLoadedCopyWith<$Res> {
-  factory $ProjectsLoadedCopyWith(
-          ProjectsLoaded value, $Res Function(ProjectsLoaded) then) =
+  factory $ProjectsLoadedCopyWith(ProjectsLoaded value, $Res Function(ProjectsLoaded) then) =
       _$ProjectsLoadedCopyWithImpl<$Res>;
   $Res call({List<ProjectState> projects});
 }
 
 /// @nodoc
-class _$ProjectsLoadedCopyWithImpl<$Res>
-    extends _$ProjectsStateCopyWithImpl<$Res>
+class _$ProjectsLoadedCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
     implements $ProjectsLoadedCopyWith<$Res> {
-  _$ProjectsLoadedCopyWithImpl(
-      ProjectsLoaded _value, $Res Function(ProjectsLoaded) _then)
+  _$ProjectsLoadedCopyWithImpl(ProjectsLoaded _value, $Res Function(ProjectsLoaded) _then)
       : super(_value, (v) => _then(v as ProjectsLoaded));
 
   @override
@@ -360,14 +348,11 @@ class _$ProjectsLoaded implements ProjectsLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is ProjectsLoaded &&
-            (identical(other.projects, projects) ||
-                const DeepCollectionEquality()
-                    .equals(other.projects, projects)));
+            (identical(other.projects, projects) || const DeepCollectionEquality().equals(other.projects, projects)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(projects);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(projects);
 
   @JsonKey(ignore: true)
   @override
@@ -428,23 +413,19 @@ abstract class ProjectsLoaded implements ProjectsState {
 
   List<ProjectState> get projects => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ProjectsLoadedCopyWith<ProjectsLoaded> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ProjectsLoadedCopyWith<ProjectsLoaded> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ProjectsErrorCopyWith<$Res> {
-  factory $ProjectsErrorCopyWith(
-          ProjectsError value, $Res Function(ProjectsError) then) =
+  factory $ProjectsErrorCopyWith(ProjectsError value, $Res Function(ProjectsError) then) =
       _$ProjectsErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProjectsErrorCopyWithImpl<$Res>
-    extends _$ProjectsStateCopyWithImpl<$Res>
+class _$ProjectsErrorCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
     implements $ProjectsErrorCopyWith<$Res> {
-  _$ProjectsErrorCopyWithImpl(
-      ProjectsError _value, $Res Function(ProjectsError) _then)
+  _$ProjectsErrorCopyWithImpl(ProjectsError _value, $Res Function(ProjectsError) _then)
       : super(_value, (v) => _then(v as ProjectsError));
 
   @override

@@ -52,14 +52,12 @@ mixin _$ExperiencesEvent {
 
 /// @nodoc
 abstract class $ExperiencesEventCopyWith<$Res> {
-  factory $ExperiencesEventCopyWith(
-          ExperiencesEvent value, $Res Function(ExperiencesEvent) then) =
+  factory $ExperiencesEventCopyWith(ExperiencesEvent value, $Res Function(ExperiencesEvent) then) =
       _$ExperiencesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperiencesEventCopyWithImpl<$Res>
-    implements $ExperiencesEventCopyWith<$Res> {
+class _$ExperiencesEventCopyWithImpl<$Res> implements $ExperiencesEventCopyWith<$Res> {
   _$ExperiencesEventCopyWithImpl(this._value, this._then);
 
   final ExperiencesEvent _value;
@@ -69,17 +67,14 @@ class _$ExperiencesEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $LoadExperiencesCopyWith<$Res> {
-  factory $LoadExperiencesCopyWith(
-          LoadExperiences value, $Res Function(LoadExperiences) then) =
+  factory $LoadExperiencesCopyWith(LoadExperiences value, $Res Function(LoadExperiences) then) =
       _$LoadExperiencesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadExperiencesCopyWithImpl<$Res>
-    extends _$ExperiencesEventCopyWithImpl<$Res>
+class _$LoadExperiencesCopyWithImpl<$Res> extends _$ExperiencesEventCopyWithImpl<$Res>
     implements $LoadExperiencesCopyWith<$Res> {
-  _$LoadExperiencesCopyWithImpl(
-      LoadExperiences _value, $Res Function(LoadExperiences) _then)
+  _$LoadExperiencesCopyWithImpl(LoadExperiences _value, $Res Function(LoadExperiences) _then)
       : super(_value, (v) => _then(v as LoadExperiences));
 
   @override
@@ -207,14 +202,12 @@ mixin _$ExperiencesState {
 
 /// @nodoc
 abstract class $ExperiencesStateCopyWith<$Res> {
-  factory $ExperiencesStateCopyWith(
-          ExperiencesState value, $Res Function(ExperiencesState) then) =
+  factory $ExperiencesStateCopyWith(ExperiencesState value, $Res Function(ExperiencesState) then) =
       _$ExperiencesStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperiencesStateCopyWithImpl<$Res>
-    implements $ExperiencesStateCopyWith<$Res> {
+class _$ExperiencesStateCopyWithImpl<$Res> implements $ExperiencesStateCopyWith<$Res> {
   _$ExperiencesStateCopyWithImpl(this._value, this._then);
 
   final ExperiencesState _value;
@@ -224,17 +217,14 @@ class _$ExperiencesStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $ExperiencesLoadingCopyWith<$Res> {
-  factory $ExperiencesLoadingCopyWith(
-          ExperiencesLoading value, $Res Function(ExperiencesLoading) then) =
+  factory $ExperiencesLoadingCopyWith(ExperiencesLoading value, $Res Function(ExperiencesLoading) then) =
       _$ExperiencesLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperiencesLoadingCopyWithImpl<$Res>
-    extends _$ExperiencesStateCopyWithImpl<$Res>
+class _$ExperiencesLoadingCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
     implements $ExperiencesLoadingCopyWith<$Res> {
-  _$ExperiencesLoadingCopyWithImpl(
-      ExperiencesLoading _value, $Res Function(ExperiencesLoading) _then)
+  _$ExperiencesLoadingCopyWithImpl(ExperiencesLoading _value, $Res Function(ExperiencesLoading) _then)
       : super(_value, (v) => _then(v as ExperiencesLoading));
 
   @override
@@ -314,18 +304,15 @@ abstract class ExperiencesLoading implements ExperiencesState {
 
 /// @nodoc
 abstract class $ExperiencesLoadedCopyWith<$Res> {
-  factory $ExperiencesLoadedCopyWith(
-          ExperiencesLoaded value, $Res Function(ExperiencesLoaded) then) =
+  factory $ExperiencesLoadedCopyWith(ExperiencesLoaded value, $Res Function(ExperiencesLoaded) then) =
       _$ExperiencesLoadedCopyWithImpl<$Res>;
   $Res call({List<ExperienceState> experiences});
 }
 
 /// @nodoc
-class _$ExperiencesLoadedCopyWithImpl<$Res>
-    extends _$ExperiencesStateCopyWithImpl<$Res>
+class _$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
     implements $ExperiencesLoadedCopyWith<$Res> {
-  _$ExperiencesLoadedCopyWithImpl(
-      ExperiencesLoaded _value, $Res Function(ExperiencesLoaded) _then)
+  _$ExperiencesLoadedCopyWithImpl(ExperiencesLoaded _value, $Res Function(ExperiencesLoaded) _then)
       : super(_value, (v) => _then(v as ExperiencesLoaded));
 
   @override
@@ -362,13 +349,11 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
     return identical(this, other) ||
         (other is ExperiencesLoaded &&
             (identical(other.experiences, experiences) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiences, experiences)));
+                const DeepCollectionEquality().equals(other.experiences, experiences)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
 
   @JsonKey(ignore: true)
   @override
@@ -425,28 +410,23 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 }
 
 abstract class ExperiencesLoaded implements ExperiencesState {
-  const factory ExperiencesLoaded(List<ExperienceState> experiences) =
-      _$ExperiencesLoaded;
+  const factory ExperiencesLoaded(List<ExperienceState> experiences) = _$ExperiencesLoaded;
 
   List<ExperienceState> get experiences => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExperiencesErrorCopyWith<$Res> {
-  factory $ExperiencesErrorCopyWith(
-          ExperiencesError value, $Res Function(ExperiencesError) then) =
+  factory $ExperiencesErrorCopyWith(ExperiencesError value, $Res Function(ExperiencesError) then) =
       _$ExperiencesErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperiencesErrorCopyWithImpl<$Res>
-    extends _$ExperiencesStateCopyWithImpl<$Res>
+class _$ExperiencesErrorCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
     implements $ExperiencesErrorCopyWith<$Res> {
-  _$ExperiencesErrorCopyWithImpl(
-      ExperiencesError _value, $Res Function(ExperiencesError) _then)
+  _$ExperiencesErrorCopyWithImpl(ExperiencesError _value, $Res Function(ExperiencesError) _then)
       : super(_value, (v) => _then(v as ExperiencesError));
 
   @override

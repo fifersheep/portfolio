@@ -3,7 +3,6 @@ import 'package:portfolio/data/network/projects/firestore_project_parser.dart';
 import 'package:portfolio/domain/projects/entities/project.dart';
 import 'package:test/test.dart';
 
-import '../utils/firestore_mocks.dart';
 import '../utils/firestore_mocks.mocks.dart';
 
 void main() {
@@ -14,6 +13,7 @@ void main() {
   });
 
   test('should parse a project with all properties', () async {
+    final projectDoc = MockQueryDocumentSnapshot();
     final projectDocData = {
       'title': 'Title',
       'summary': 'Summary',
@@ -29,6 +29,7 @@ void main() {
       ],
     };
 
+    final tagDoc = MockQueryDocumentSnapshot();
     final tagDocData = {
       'label': 'Label',
       'color': 'Color',
@@ -36,9 +37,8 @@ void main() {
       'style': 'Style',
     };
 
-    final projectDoc =
-        StubbedQueryDocumentSnapshot(stubbedData: projectDocData);
-    final tagDoc = StubbedQueryDocumentSnapshot(stubbedData: tagDocData);
+    when(projectDoc.data()).thenReturn(projectDocData);
+    when(tagDoc.data()).thenReturn(tagDocData);
 
     final actual = parser.parseProject(projectDoc, [tagDoc]);
 
@@ -48,15 +48,10 @@ void main() {
       detail: 'Detail',
       coverImageUrl: 'Cover Image Url',
       tags: [
-        ProjectTag(
-            label: 'Label',
-            color: 'Color',
-            labelColor: 'Label Color',
-            style: 'Style'),
+        ProjectTag(label: 'Label', color: 'Color', labelColor: 'Label Color', style: 'Style'),
       ],
       callToActions: [
-        ProjectCallToAction(
-            type: 'Type', action: 'Action', style: 'Style', label: 'Label'),
+        ProjectCallToAction(type: 'Type', action: 'Action', style: 'Style', label: 'Label'),
       ],
     );
 
@@ -64,6 +59,7 @@ void main() {
   });
 
   test('should parse a project containing a tag with no color', () async {
+    final projectDoc = MockQueryDocumentSnapshot();
     final projectDocData = {
       'title': 'Title',
       'summary': 'Summary',
@@ -72,15 +68,15 @@ void main() {
       'call_to_actions': [],
     };
 
+    final tagDoc = MockQueryDocumentSnapshot();
     final tagDocData = {
       'label': 'Label',
       'label_color': 'Label Color',
       'style': 'Style',
     };
 
-    final projectDoc =
-        StubbedQueryDocumentSnapshot(stubbedData: projectDocData);
-    final tagDoc = StubbedQueryDocumentSnapshot(stubbedData: tagDocData);
+    when(projectDoc.data()).thenReturn(projectDocData);
+    when(tagDoc.data()).thenReturn(tagDocData);
 
     final actual = parser.parseProject(projectDoc, [tagDoc]);
 

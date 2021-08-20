@@ -23,25 +23,21 @@ class FirestoreProjectsRepository implements ProjectsRepository {
         ])).attempt().map(_failure).run().then(_success);
   }
 
-  FutureOr<Either<Failure, List<Project>>> _success(
-      Either<Failure, List<QuerySnapshot>> either) async {
+  FutureOr<Either<Failure, List<Project>>> _success(Either<Failure, List<QuerySnapshot>> either) async {
     return either.map((snapshots) {
       final projectsQuerySnapshot = snapshots[0].docs;
       final tagsQuerySnapshot = snapshots[1].docs;
 
       return projectsQuerySnapshot.map((projectDoc) {
-        final data = projectDoc.data()! as Map<String, dynamic>;
-        final projectTagDocs = data['tags'] as List;
-        bool _projectIsTagged(tagDoc) =>
-            projectTagDocs.map((ref) => ref.id).contains(tagDoc.id);
+        final projectTagDocs = projectDoc.data()['tags'] as List;
+        bool _projectIsTagged(tagDoc) => projectTagDocs.map((ref) => ref.id).contains(tagDoc.id);
         final tags = tagsQuerySnapshot.where(_projectIsTagged).toList();
         return _parser.parseProject(projectDoc, tags);
       }).toList();
     });
   }
 
-  Either<Failure, List<QuerySnapshot>> _failure(
-      Either<Object, List<QuerySnapshot>> either) {
+  Either<Failure, List<QuerySnapshot>> _failure(Either<Object, List<QuerySnapshot>> either) {
     return either.leftMap((_) => const Failure.dataRetrievalFailure());
   }
 }

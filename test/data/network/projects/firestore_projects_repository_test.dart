@@ -6,7 +6,6 @@ import 'package:portfolio/data/network/projects/firestore_projects_repository.da
 import 'package:portfolio/domain/projects/entities/project.dart';
 import 'package:test/test.dart';
 
-import '../utils/firestore_mocks.dart';
 import '../utils/firestore_mocks.mocks.dart';
 import 'firestore_projects_repository_test.mocks.dart';
 
@@ -15,10 +14,10 @@ void main() {
   late FirebaseFirestore firestore;
   late FirestoreProjectParser parser;
   late FirestoreProjectsRepository repository;
-  late MockCollectionReference<Map<String, dynamic>> projectsReference;
-  late MockQuerySnapshot<Map<String, dynamic>> projectsQuery;
-  late MockCollectionReference<Map<String, dynamic>> tagsReference;
-  late MockQuerySnapshot<Map<String, dynamic>> tagsQuery;
+  late MockCollectionReference projectsReference;
+  late MockQuerySnapshot projectsQuery;
+  late MockCollectionReference tagsReference;
+  late MockQuerySnapshot tagsQuery;
 
   setUp(() {
     firestore = MockFirebaseFirestore();
@@ -36,8 +35,7 @@ void main() {
     when(tagsReference.get()).thenAnswer((_) async => tagsQuery);
   });
 
-  test('should return an empty list of projects when firestore returns none',
-      () async {
+  test('should return an empty list of projects when firestore returns none', () async {
     when(projectsQuery.docs).thenReturn([]);
     when(tagsQuery.docs).thenReturn([]);
 
@@ -49,8 +47,7 @@ void main() {
     );
   });
 
-  test('should return a list of projects when firestore returns some',
-      () async {
+  test('should return a list of projects when firestore returns some', () async {
     final project = Project(
       title: 'Title',
       summary: 'Summary',
@@ -83,12 +80,16 @@ void main() {
       ],
     };
 
-    final projectDoc = StubbedQueryDocumentSnapshot(stubbedData: projectData);
-    final tagDoc = StubbedQueryDocumentSnapshot(id: 'Tag ID');
-    final unusedTagDoc = StubbedQueryDocumentSnapshot(id: 'Unused Tag');
+    final projectDoc = MockQueryDocumentSnapshot();
+    final tagDoc = MockQueryDocumentSnapshot();
+    final unusedTagDoc = MockQueryDocumentSnapshot();
 
     when(projectsQuery.docs).thenReturn([projectDoc]);
     when(tagsQuery.docs).thenReturn([tagDoc, unusedTagDoc]);
+
+    when(projectDoc.data()).thenReturn(projectData);
+    when(tagDoc.id).thenReturn('Tag ID');
+    when(unusedTagDoc.id).thenReturn('Unused Tag');
 
     when(parser.parseProject(projectDoc, [tagDoc])).thenReturn(project);
 
