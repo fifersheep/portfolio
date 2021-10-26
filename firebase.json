@@ -6,9 +6,16 @@
   "hosting": {
     "public": "build/web",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/foo",
+        "destination": "/bar",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
-        "source": "/",
+        "source": "/nonsense",
         "destination": "/index.html"
       }
     ]
