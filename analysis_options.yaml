@@ -5,6 +5,7 @@ analyzer:
     - lib/**.gr.dart
     - lib/**.freezed.dart
     - lib/injection.config.dart
+    - lib/generated_plugin_registrant.dart
     - test/**
   errors:
     missing_required_param: error

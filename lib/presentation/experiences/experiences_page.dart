@@ -30,30 +30,33 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
       maxWidth: 800,
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Headline(Strings.of(context).experienceTimelineHeader),
-          Paragraph(Strings.of(context).experienceTimelineDescription),
-          BlocBuilder<ExperiencesBloc, ExperiencesState>(
-            bloc: _bloc,
-            builder: (context, state) {
-              if (state is ExperiencesLoading) {
-                return LoadingIndicator();
-              } else if (state is ExperiencesLoaded) {
-                return Container(
-                  margin: const EdgeInsets.only(top: 32),
-                  padding: const EdgeInsets.only(bottom: 16),
-                  alignment: Alignment.centerLeft,
-                  child: TimelineBuilder<ExperienceState>(
-                    items: state.experiences,
-                    builder: (experience) => ExperienceCard(experience: experience),
-                  ),
-                );
-              } else {
-                return GenericFailure();
-              }
-            },
-          ),
-        ]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Headline(Strings.of(context).experienceTimelineHeader),
+            Paragraph(Strings.of(context).experienceTimelineDescription),
+            BlocBuilder<ExperiencesBloc, ExperiencesState>(
+              bloc: _bloc,
+              builder: (context, state) {
+                if (state is ExperiencesLoading) {
+                  return LoadingIndicator();
+                } else if (state is ExperiencesLoaded) {
+                  return Container(
+                    margin: const EdgeInsets.only(top: 32),
+                    padding: const EdgeInsets.only(bottom: 16),
+                    alignment: Alignment.centerLeft,
+                    child: TimelineBuilder<ExperienceState>(
+                      items: state.experiences,
+                      builder: (experience) => ExperienceCard(experience: experience),
+                    ),
+                  );
+                } else {
+                  return GenericFailure();
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

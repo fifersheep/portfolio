@@ -17,10 +17,12 @@ class FirestoreProjectsRepository implements ProjectsRepository {
 
   @override
   Future<Either<Failure, List<Project>>> getProjects() async {
-    return Task(() => Future.wait([
-          _firestore.collection('projects').get(),
-          _firestore.collection('project_tags').get(),
-        ])).attempt().map(_failure).run().then(_success);
+    return Task(
+      () => Future.wait([
+        _firestore.collection('projects').get(),
+        _firestore.collection('project_tags').get(),
+      ]),
+    ).attempt().map(_failure).run().then(_success);
   }
 
   FutureOr<Either<Failure, List<Project>>> _success(Either<Failure, List<QuerySnapshot>> either) async {

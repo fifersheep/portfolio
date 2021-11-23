@@ -7,17 +7,20 @@ class AppTheme {
   AppTheme._();
 
   static ThemeData get defaultTheme => ThemeData(
-      brightness: Brightness.light,
-      primarySwatch: ThemeColors.primary,
-      accentColor: ThemeColors.secondary[300],
-      typography: Typography.material2018(englishLike: _textTheme),
-      dividerColor: Colors.grey,
-      fontFamily: 'Montserrat',
-      pageTransitionsTheme: pageTransitionsTheme(),
-      buttonTheme: const ButtonThemeData(
-        layoutBehavior: ButtonBarLayoutBehavior.constrained,
-        height: 32,
-      ));
+        brightness: Brightness.light,
+        primarySwatch: ThemeColors.primary,
+        colorScheme: ColorScheme.light(
+          secondary: ThemeColors.secondary[300]!,
+        ),
+        typography: Typography.material2018(englishLike: _textTheme),
+        dividerColor: Colors.grey,
+        fontFamily: 'Montserrat',
+        pageTransitionsTheme: pageTransitionsTheme(),
+        buttonTheme: const ButtonThemeData(
+          layoutBehavior: ButtonBarLayoutBehavior.constrained,
+          height: 32,
+        ),
+      );
 
   static TextTheme get _textTheme => TextTheme(
         headline1: textStyle(fontSize: 96.0, fontWeight: FontWeight.w300, letterSpacing: -1.5),

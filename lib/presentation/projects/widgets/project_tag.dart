@@ -12,10 +12,12 @@ class ProjectTag extends StatelessWidget {
         margin: const EdgeInsets.only(right: 4),
         padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
         decoration: decoration,
-        child: Text(label,
-            style: TextStyle(
-              color: labelColor,
-              fontSize: 12,
-            )),
+        child: Text(
+          label,
+          style: TextStyle(
+            color: labelColor,
+            fontSize: 12,
+          ),
+        ),
       );
 }

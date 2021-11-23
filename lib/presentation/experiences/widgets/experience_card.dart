@@ -14,8 +14,14 @@ class ExperienceCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _top(context, color, experience.title, experience.location, experience.timeframe,
-            _iconMap[experience.icon] ?? Icons.adjust),
+        _top(
+          context,
+          color,
+          experience.title,
+          experience.location,
+          experience.timeframe,
+          _iconMap[experience.icon] ?? Icons.adjust,
+        ),
         _bottom(context, color, experience.content),
       ],
     );

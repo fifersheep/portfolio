@@ -18,21 +18,21 @@ part 'experiences_state.dart';
 @lazySingleton
 class ExperiencesBloc extends Bloc<ExperiencesEvent, ExperiencesState> {
   ExperiencesBloc(this._repository, this._dateFormatter, this._newLineFormatter)
-      : super(const ExperiencesState.loading());
+      : super(const ExperiencesState.loading()) {
+    on<LoadExperiences>(_onLoadExperiences);
+  }
 
   final ExperiencesRepository _repository;
   final DateFormatter _dateFormatter;
   final NewLineFormatter _newLineFormatter;
 
-  @override
-  Stream<ExperiencesState> mapEventToState(ExperiencesEvent event) async* {
-    if (event is LoadExperiences) {
-      final payload = await _repository.getExperiences();
-      yield payload.fold(
-        (failure) => const ExperiencesState.error(),
-        (experiences) => ExperiencesState.loaded(experiences.map(_fromExperience).toList()),
-      );
-    }
+  Future<void> _onLoadExperiences(ExperiencesEvent event, Emitter<ExperiencesState> emit) async {
+    final payload = await _repository.getExperiences();
+    final result = payload.fold(
+      (failure) => const ExperiencesState.error(),
+      (experiences) => ExperiencesState.loaded(experiences.map(_fromExperience).toList()),
+    );
+    emit(result);
   }
 
   ExperienceState _fromExperience(Experience experience) {
@@ -44,17 +44,16 @@ class ExperiencesBloc extends Bloc<ExperiencesEvent, ExperiencesState> {
       ExperienceCategory.love,
     ];
 
-    final formatterFunc = (singleDateCategories.contains(experience.category))
-        ? _dateFormatter.monthYear(experience.startDate)
-        : _dateFormatter.monthYearRange(experience.startDate, experience.endDate);
-
     return ExperienceState(
-        title: experience.title,
-        location: experience.location,
-        content: _newLineFormatter.format(experience.content),
-        timeframe: formatterFunc,
-        icon: categoryState.icon,
-        color: categoryState.color);
+      title: experience.title,
+      location: experience.location,
+      content: _newLineFormatter.format(experience.content),
+      timeframe: (singleDateCategories.contains(experience.category))
+          ? _dateFormatter.monthYear(experience.startDate)
+          : _dateFormatter.monthYearRange(experience.startDate, experience.endDate),
+      icon: categoryState.icon,
+      color: categoryState.color,
+    );
   }
 
   final _categoryState = {
