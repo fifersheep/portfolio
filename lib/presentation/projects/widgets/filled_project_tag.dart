@@ -13,14 +13,15 @@ class FilledProjectTag extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = tag.color?.toColor() ?? ThemeColors.primary;
     return ProjectTag(
-        label: tag.label,
-        labelColor: tag.labelColor.toColor(),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: color,
-          ),
+      label: tag.label,
+      labelColor: tag.labelColor.toColor(),
+      decoration: BoxDecoration(
+        border: Border.all(
           color: color,
-          borderRadius: const BorderRadius.all(Radius.circular(2)),
-        ));
+        ),
+        color: color,
+        borderRadius: const BorderRadius.all(Radius.circular(2)),
+      ),
+    );
   }
 }

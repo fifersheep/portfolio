@@ -14,54 +14,52 @@ part 'projects_state.dart';
 
 @lazySingleton
 class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
-  ProjectsBloc(this._repository) : super(const ProjectsState.loading());
+  ProjectsBloc(this._repository) : super(const ProjectsState.loading()) {
+    on<LoadProjects>(_onLoadProjects);
+  }
 
   final ProjectsRepository _repository;
 
-  @override
-  Stream<ProjectsState> mapEventToState(ProjectsEvent event) async* {
+  Future<void> _onLoadProjects(ProjectsEvent event, Emitter<ProjectsState> emit) async {
     final payload = await _repository.getProjects();
-    yield payload.fold(
+    final result = payload.fold(
       (failure) => const ProjectsState.error(),
       (projects) => ProjectsState.loaded(projects.map(_fromProject).toList()),
     );
+    emit(result);
   }
 
-  ProjectState _fromProject(Project project) {
-    return ProjectState(
-      title: project.title,
-      summary: project.summary,
-      detail: project.detail,
-      coverImageUrl: project.coverImageUrl,
-      tags: project.tags.map(_mapProjectTagStyle).toList(),
-      callToActions: project.callToActions.map(_mapProjectCallToActions).toList(),
-    );
-  }
+  ProjectState _fromProject(Project project) => ProjectState(
+        title: project.title,
+        summary: project.summary,
+        detail: project.detail,
+        coverImageUrl: project.coverImageUrl,
+        tags: project.tags.map(_mapProjectTagStyle).toList(),
+        callToActions: project.callToActions.map(_mapProjectCallToActions).toList(),
+      );
 
-  ProjectTagState _mapProjectTagStyle(ProjectTag tag) {
-    final style = ProjectTagStyle.values.firstWhere(
-      (tagStyle) => _matchEnum(tagStyle, tag.style),
-      orElse: () => ProjectTagStyle.outline,
-    );
-    return ProjectTagState(label: tag.label, color: tag.color, labelColor: tag.labelColor, style: style);
-  }
+  ProjectTagState _mapProjectTagStyle(ProjectTag tag) => ProjectTagState(
+        label: tag.label,
+        color: tag.color,
+        labelColor: tag.labelColor,
+        style: ProjectTagStyle.values.firstWhere(
+          (tagStyle) => _matchEnum(tagStyle, tag.style),
+          orElse: () => ProjectTagStyle.outline,
+        ),
+      );
 
-  ProjectCallToActionState _mapProjectCallToActions(ProjectCallToAction callToAction) {
-    final type = ProjectCallToActionType.values.firstWhere(
-      (callToActionType) => _matchEnum(callToActionType, callToAction.type),
-      orElse: () => ProjectCallToActionType.route,
-    );
-    final style = ProjectCallToActionStyle.values.firstWhere(
-      (callToActionStyle) => _matchEnum(callToActionStyle, callToAction.style),
-      orElse: () => ProjectCallToActionStyle.secondary,
-    );
-    return ProjectCallToActionState(
-      type: type,
-      style: style,
-      action: callToAction.action,
-      label: callToAction.label,
-    );
-  }
+  ProjectCallToActionState _mapProjectCallToActions(ProjectCallToAction callToAction) => ProjectCallToActionState(
+        type: ProjectCallToActionType.values.firstWhere(
+          (callToActionType) => _matchEnum(callToActionType, callToAction.type),
+          orElse: () => ProjectCallToActionType.route,
+        ),
+        style: ProjectCallToActionStyle.values.firstWhere(
+          (callToActionStyle) => _matchEnum(callToActionStyle, callToAction.style),
+          orElse: () => ProjectCallToActionStyle.secondary,
+        ),
+        action: callToAction.action,
+        label: callToAction.label,
+      );
 
   bool _matchEnum<T>(T t, String value) => t.toString().split('.')[1] == value;
 }

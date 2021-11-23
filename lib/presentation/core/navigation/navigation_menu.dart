@@ -33,41 +33,42 @@ List<Widget> _menuItems(BuildContext context, List<NavigationItem> items) {
     final iconColor = isSelected ? ThemeColors.textOnPrimary : ThemeColors.primary[400];
 
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-        child: InkWell(
-          hoverColor: hoverColor,
-          focusColor: ThemeColors.primary[50],
-          highlightColor: Colors.transparent,
-          splashColor: ThemeColors.primary[100],
-          borderRadius: borderRadius,
-          onTap: () => context.router.navigateNamed(item.route),
-          child: Container(
-            decoration: BoxDecoration(
-              color: backgroundColor,
-              borderRadius: borderRadius,
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                  child: Icon(
-                    item.icon,
-                    size: 20,
-                    color: iconColor,
-                  ),
-                ),
-                Text(
-                  item.label,
-                  style: TextStyle(
-                    fontSize: 16,
-                    height: 1,
-                    color: labelColor,
-                  ),
-                )
-              ],
-            ),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      child: InkWell(
+        hoverColor: hoverColor,
+        focusColor: ThemeColors.primary[50],
+        highlightColor: Colors.transparent,
+        splashColor: ThemeColors.primary[100],
+        borderRadius: borderRadius,
+        onTap: () => context.router.navigateNamed(item.route),
+        child: Container(
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: borderRadius,
           ),
-        ));
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                child: Icon(
+                  item.icon,
+                  size: 20,
+                  color: iconColor,
+                ),
+              ),
+              Text(
+                item.label,
+                style: TextStyle(
+                  fontSize: 16,
+                  height: 1,
+                  color: labelColor,
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }).toList();
 }

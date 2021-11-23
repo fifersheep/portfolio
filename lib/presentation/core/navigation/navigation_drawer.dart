@@ -35,27 +35,28 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
 
   @override
   Widget build(BuildContext context) => Theme(
-      data: Theme.of(context).copyWith(
-        canvasColor: ThemeColors.white,
-      ),
-      child: Drawer(
-        child: LayoutBuilder(
-          builder: (context, constraint) => SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraint.maxHeight),
-              child: IntrinsicHeight(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    NavigationHeader(),
-                    NavigationMessage(),
-                    ...navigationMenuItems(context),
-                    NavigationFooter(width: constraint.maxWidth),
-                  ],
+        data: Theme.of(context).copyWith(
+          canvasColor: ThemeColors.white,
+        ),
+        child: Drawer(
+          child: LayoutBuilder(
+            builder: (context, constraint) => SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraint.maxHeight),
+                child: IntrinsicHeight(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      NavigationHeader(),
+                      NavigationMessage(),
+                      ...navigationMenuItems(context),
+                      NavigationFooter(width: constraint.maxWidth),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
         ),
-      ));
+      );
 }

@@ -28,10 +28,12 @@ class TextEmphasisBuilder extends StatelessWidget {
     });
 
     final spans = textList
-        .map((text) => TextSpan(
-              text: text,
-              style: emphases.contains(text) ? emphasisStyle : textStyle,
-            ))
+        .map(
+          (text) => TextSpan(
+            text: text,
+            style: emphases.contains(text) ? emphasisStyle : textStyle,
+          ),
+        )
         .toList();
 
     return Text.rich(

@@ -42,11 +42,12 @@ class ProjectCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: ButtonBar(
-                      alignment: MainAxisAlignment.end,
-                      children: (project.callToActions
-                            ..sort((first, second) => second.style.index.compareTo(first.style.index)))
-                          .map((callToAction) => _callToActionMapper(context, callToAction))
-                          .toList()),
+                    alignment: MainAxisAlignment.end,
+                    children: (project.callToActions
+                          ..sort((first, second) => second.style.index.compareTo(first.style.index)))
+                        .map((callToAction) => _callToActionMapper(context, callToAction))
+                        .toList(),
+                  ),
                 ),
               ],
             )
