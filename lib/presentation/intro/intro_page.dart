@@ -34,7 +34,7 @@ class IntroPage extends StatelessWidget {
             SectionHeadline(strings.introInterestsHeader),
             Paragraph(
               strings.introInterestsContent,
-              emphases: const ['coffee', 'Fife, Scotland', 'Pittsburgh Steelers', 'Edinburgh Wolves', 'Hell Let Loose'],
+              emphases: const ['coffee', 'Fife, Scotland', 'Hell Let Loose', 'Pittsburgh Steelers', 'Edinburgh Wolves'],
               emphasesStyle: emphasesStyle,
             ),
             SectionHeadline(strings.introCareerHeader),
