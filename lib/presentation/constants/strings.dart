@@ -29,15 +29,17 @@ class Strings extends InheritedWidget {
       "My name is Scott Laing - welcome to my digital space where I'll share with you a little about me.";
   String get introInterestsHeader => 'Interests';
   String get introInterestsContent =>
-      "For a number of years now I've followed American football supporting the NFL's Pittsburgh Steelers. "
-      "I also like to watch a local amateur team where possible when they're at home - the Edinburgh Wolves.\n\n"
-      "Like many computer nerds, I enjoy playing computer games and have done since childhood. Typically I'll go for a FPS (currently Battlefield V), "
-      'but also partial to strategy games as well as the occasional sandbox/creation game such as Minecraft or Stardew Valley.';
+      "I'm a ritualistic coffee drinker and am originally from Fife, Scotland. "
+      "Like many computer nerds, I enjoy playing computer games and have done since childhood. Typically I'll go for an FPS (currently Hell Let Loose), but also "
+      "partial to a strategy game. In fact, it's one of the elements I love about HLL, I can jump in as a Squad Leader or even Commander if "
+      "I want to dabble in tactics or strategy of it!\n\n"
+      "For a number of years now I've had an interest in American football, supporting the NFL's Pittsburgh Steelers as "
+      "well as a local amateur team (when I can and when they're at home) - the Edinburgh Wolves\n\n";
   String get introCareerHeader => 'Career';
   String get introCareerContent =>
-      'I’ve spent the past 6 years of my career as a professional software engineer with a focus on front-end, '
-      'starting with Android app development, then dabbling a little bit with React web development, and lately in-house native SDKs.\n\n'
-      "For personal projects, I've also been working with the Flutter framework, namely this portfolio!";
+      "My career as a professional software engineer (since 2014) has had a focus on front-end, mostly Android app/sdk development. "
+      "I have a keen interest in keeping up-to-date with the latest Android software patterns, especially those around reactive designs and declarative UI. "
+      "For personal projects, I've also dabbled a bit with Google-backed Flutter cross-platform UI framework, including building a this web portfolio!";
 
   String get blogTitle => 'Blog Title';
 
