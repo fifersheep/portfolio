@@ -36,10 +36,10 @@ class Strings extends InheritedWidget {
       "For a number of years now I've had an interest in American football, supporting the NFL's Pittsburgh Steelers as "
       "well as a local amateur team (when I can and when they're at home) - the Edinburgh Wolves\n\n";
   String get introCareerHeader => 'Career';
-  String get introCareerContent =>
-      "My career as a professional software engineer (since 2014) has had a focus on front-end, mostly Android app/sdk development. "
-      "I have a keen interest in keeping up-to-date with the latest Android software patterns, especially those around reactive designs and declarative UI. "
-      "For personal projects, I've also dabbled a bit with Google-backed Flutter cross-platform UI framework, including building a this web portfolio!";
+  String get introCareerContent => "";
+    //   "My career as a professional software engineer (since 2014) has had a focus on front-end, mostly Android app/sdk development. "
+    //   "I have a keen interest in keeping up-to-date with the latest Android software patterns, especially those around reactive designs and declarative UI. "
+    //   "For personal projects, I've also dabbled a bit with Google-backed Flutter cross-platform UI framework, including building a this web portfolio!";
 
   String get blogTitle => 'Blog Title';
 
