@@ -34,13 +34,13 @@ class IntroPage extends StatelessWidget {
             SectionHeadline(strings.introInterestsHeader),
             Paragraph(
               strings.introInterestsContent,
-              emphases: const ['American football', 'Pittsburgh Steelers', 'Edinburgh Wolves', 'Battlefield V'],
+              emphases: const ['coffee', 'Fife, Scotland', 'Pittsburgh Steelers', 'Edinburgh Wolves', 'Hell Let Loose'],
               emphasesStyle: emphasesStyle,
             ),
             SectionHeadline(strings.introCareerHeader),
             Paragraph(
               strings.introCareerContent,
-              emphases: const ['Android', 'React', 'Flutter'],
+              emphases: const ['Android', 'reactive', 'declarative UI', 'Flutter'],
               emphasesStyle: emphasesStyle,
             ),
           ],
