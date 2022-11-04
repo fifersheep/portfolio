@@ -28,18 +28,17 @@ class Strings extends InheritedWidget {
   String get introOpening =>
       "My name is Scott Laing - welcome to my digital space where I'll share with you a little about me.";
   String get introInterestsHeader => 'Interests';
-  String get introInterestsContent =>
-      "I'm a ritualistic coffee drinker and am originally from Fife, Scotland. "
+  String get introInterestsContent => "I'm a ritualistic coffee drinker and am originally from Fife, Scotland. "
       "Like many computer nerds, I enjoy playing computer games and have done since childhood. Typically I'll go for an FPS (currently Hell Let Loose), but also "
       "partial to a strategy game. In fact, it's one of the elements I love about HLL, I can jump in as a Squad Leader or even Commander if "
       "I want to dabble in tactics or strategy of it!\n\n"
       "For a number of years now I've had an interest in American football, supporting the NFL's Pittsburgh Steelers as "
-      "well as a local amateur team (when I can and when they're at home) - the Edinburgh Wolves\n\n";
+      "well as a local amateur team (when I can and when they're at home) - the Edinburgh Wolves";
   String get introCareerHeader => 'Career';
-  String get introCareerContent => "";
-    //   "My career as a professional software engineer (since 2014) has had a focus on front-end, mostly Android app/sdk development. "
-    //   "I have a keen interest in keeping up-to-date with the latest Android software patterns, especially those around reactive designs and declarative UI. "
-    //   "For personal projects, I've also dabbled a bit with Google-backed Flutter cross-platform UI framework, including building a this web portfolio!";
+  String get introCareerContent =>
+      "My career as a professional software engineer (since 2014) has had a focus on front-end, mostly Android app/sdk development. "
+      "I have a keen interest in keeping up-to-date with the latest relevant software patterns, especially those around reactive designs and declarative UI.\n\n"
+      "For personal projects, I've also dabbled a bit with Google-backed Flutter cross-platform UI framework, including building a this web portfolio!";
 
   String get blogTitle => 'Blog Title';
 

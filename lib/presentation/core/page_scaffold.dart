@@ -34,7 +34,7 @@ class PageScaffold extends StatelessWidget {
                   flexibleSpace: FlexibleSpaceBar(
                     background: headerBackground != null
                         ? Stack(
-                          fit: StackFit.expand,
+                            fit: StackFit.expand,
                             children: [
                               Image.asset(
                                 headerBackground!,

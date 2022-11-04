@@ -28,7 +28,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.6.1"
+    version: "2.5.0"
   auto_route:
     dependency: "direct main"
     description:
@@ -477,7 +477,7 @@ packages:
       name: node_preamble
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "1.4.13"
   package_config:
     dependency: transitive
     description:
@@ -643,7 +643,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.0"
   stack_trace:
     dependency: transitive
     description:
@@ -685,21 +685,21 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.16.8"
+    version: "1.16.5"
   test_api:
     dependency: transitive
     description:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.0"
+    version: "0.2.19"
   test_core:
     dependency: transitive
     description:
       name: test_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.19"
+    version: "0.3.15"
   timing:
     dependency: transitive
     description:
@@ -820,5 +820,5 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.12.0 <3.0.0"
+  dart: ">=2.12.0 <2.17.0"
   flutter: ">=1.24.0-6.0.pre"
