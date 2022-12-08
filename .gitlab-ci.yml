@@ -21,16 +21,17 @@ build_web:
   extends: .flutter
   script:
     - flutter build web
+    - echo -e "<script>(function () {document.write('<base href=\"' + document.location.pathname + '\" />');}());</script>\n$(cat build/web/index.html)" > build/web/index.html
   artifacts:
     paths:
       - build/web
 
-staging_web:
-  image: node:14
+pages:
   stage: deploy
   script:
-    - npm i -g firebase-tools
-    - firebase use --token $FIREBASE_HOSTING_KEY
-    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_HOSTING_KEY
+    - cp -r build/web public
+  artifacts:
+    paths:
+      - public
   only:
     - main
