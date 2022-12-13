@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'project.dart';
 
@@ -10,32 +12,7 @@ part of 'project.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ProjectTearOff {
-  const _$ProjectTearOff();
-
-  _Project call(
-      {required String title,
-      required String summary,
-      required String detail,
-      required String coverImageUrl,
-      required List<ProjectTag> tags,
-      required List<ProjectCallToAction> callToActions}) {
-    return _Project(
-      title: title,
-      summary: summary,
-      detail: detail,
-      coverImageUrl: coverImageUrl,
-      tags: tags,
-      callToActions: callToActions,
-    );
-  }
-}
-
-/// @nodoc
-const $Project = _$ProjectTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Project {
@@ -52,7 +29,8 @@ mixin _$Project {
 
 /// @nodoc
 abstract class $ProjectCopyWith<$Res> {
-  factory $ProjectCopyWith(Project value, $Res Function(Project) then) = _$ProjectCopyWithImpl<$Res>;
+  factory $ProjectCopyWith(Project value, $Res Function(Project) then) = _$ProjectCopyWithImpl<$Res, Project>;
+  @useResult
   $Res call(
       {String title,
       String summary,
@@ -63,55 +41,58 @@ abstract class $ProjectCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
+class _$ProjectCopyWithImpl<$Res, $Val extends Project> implements $ProjectCopyWith<$Res> {
   _$ProjectCopyWithImpl(this._value, this._then);
 
-  final Project _value;
   // ignore: unused_field
-  final $Res Function(Project) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? summary = freezed,
-    Object? detail = freezed,
-    Object? coverImageUrl = freezed,
-    Object? tags = freezed,
-    Object? callToActions = freezed,
+    Object? title = null,
+    Object? summary = null,
+    Object? detail = null,
+    Object? coverImageUrl = null,
+    Object? tags = null,
+    Object? callToActions = null,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      summary: summary == freezed
+      summary: null == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as String,
-      detail: detail == freezed
+      detail: null == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as String,
-      coverImageUrl: coverImageUrl == freezed
+      coverImageUrl: null == coverImageUrl
           ? _value.coverImageUrl
           : coverImageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      tags: tags == freezed
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<ProjectTag>,
-      callToActions: callToActions == freezed
+      callToActions: null == callToActions
           ? _value.callToActions
           : callToActions // ignore: cast_nullable_to_non_nullable
               as List<ProjectCallToAction>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
-  factory _$ProjectCopyWith(_Project value, $Res Function(_Project) then) = __$ProjectCopyWithImpl<$Res>;
+abstract class _$$_ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
+  factory _$$_ProjectCopyWith(_$_Project value, $Res Function(_$_Project) then) = __$$_ProjectCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       String summary,
@@ -122,44 +103,43 @@ abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res> implements _$ProjectCopyWith<$Res> {
-  __$ProjectCopyWithImpl(_Project _value, $Res Function(_Project) _then) : super(_value, (v) => _then(v as _Project));
+class __$$_ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res, _$_Project>
+    implements _$$_ProjectCopyWith<$Res> {
+  __$$_ProjectCopyWithImpl(_$_Project _value, $Res Function(_$_Project) _then) : super(_value, _then);
 
-  @override
-  _Project get _value => super._value as _Project;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? summary = freezed,
-    Object? detail = freezed,
-    Object? coverImageUrl = freezed,
-    Object? tags = freezed,
-    Object? callToActions = freezed,
+    Object? title = null,
+    Object? summary = null,
+    Object? detail = null,
+    Object? coverImageUrl = null,
+    Object? tags = null,
+    Object? callToActions = null,
   }) {
-    return _then(_Project(
-      title: title == freezed
+    return _then(_$_Project(
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      summary: summary == freezed
+      summary: null == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as String,
-      detail: detail == freezed
+      detail: null == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as String,
-      coverImageUrl: coverImageUrl == freezed
+      coverImageUrl: null == coverImageUrl
           ? _value.coverImageUrl
           : coverImageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      tags: tags == freezed
-          ? _value.tags
+      tags: null == tags
+          ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<ProjectTag>,
-      callToActions: callToActions == freezed
-          ? _value.callToActions
+      callToActions: null == callToActions
+          ? _value._callToActions
           : callToActions // ignore: cast_nullable_to_non_nullable
               as List<ProjectCallToAction>,
     ));
@@ -174,8 +154,10 @@ class _$_Project implements _Project {
       required this.summary,
       required this.detail,
       required this.coverImageUrl,
-      required this.tags,
-      required this.callToActions});
+      required final List<ProjectTag> tags,
+      required final List<ProjectCallToAction> callToActions})
+      : _tags = tags,
+        _callToActions = callToActions;
 
   @override
   final String title;
@@ -185,10 +167,19 @@ class _$_Project implements _Project {
   final String detail;
   @override
   final String coverImageUrl;
+  final List<ProjectTag> _tags;
   @override
-  final List<ProjectTag> tags;
+  List<ProjectTag> get tags {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tags);
+  }
+
+  final List<ProjectCallToAction> _callToActions;
   @override
-  final List<ProjectCallToAction> callToActions;
+  List<ProjectCallToAction> get callToActions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_callToActions);
+  }
 
   @override
   String toString() {
@@ -198,74 +189,51 @@ class _$_Project implements _Project {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Project &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.summary, summary) || const DeepCollectionEquality().equals(other.summary, summary)) &&
-            (identical(other.detail, detail) || const DeepCollectionEquality().equals(other.detail, detail)) &&
-            (identical(other.coverImageUrl, coverImageUrl) ||
-                const DeepCollectionEquality().equals(other.coverImageUrl, coverImageUrl)) &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
-            (identical(other.callToActions, callToActions) ||
-                const DeepCollectionEquality().equals(other.callToActions, callToActions)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Project &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.summary, summary) || other.summary == summary) &&
+            (identical(other.detail, detail) || other.detail == detail) &&
+            (identical(other.coverImageUrl, coverImageUrl) || other.coverImageUrl == coverImageUrl) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            const DeepCollectionEquality().equals(other._callToActions, _callToActions));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(summary) ^
-      const DeepCollectionEquality().hash(detail) ^
-      const DeepCollectionEquality().hash(coverImageUrl) ^
-      const DeepCollectionEquality().hash(tags) ^
-      const DeepCollectionEquality().hash(callToActions);
+  int get hashCode => Object.hash(runtimeType, title, summary, detail, coverImageUrl,
+      const DeepCollectionEquality().hash(_tags), const DeepCollectionEquality().hash(_callToActions));
 
   @JsonKey(ignore: true)
   @override
-  _$ProjectCopyWith<_Project> get copyWith => __$ProjectCopyWithImpl<_Project>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ProjectCopyWith<_$_Project> get copyWith => __$$_ProjectCopyWithImpl<_$_Project>(this, _$identity);
 }
 
 abstract class _Project implements Project {
   factory _Project(
-      {required String title,
-      required String summary,
-      required String detail,
-      required String coverImageUrl,
-      required List<ProjectTag> tags,
-      required List<ProjectCallToAction> callToActions}) = _$_Project;
+      {required final String title,
+      required final String summary,
+      required final String detail,
+      required final String coverImageUrl,
+      required final List<ProjectTag> tags,
+      required final List<ProjectCallToAction> callToActions}) = _$_Project;
 
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get summary => throw _privateConstructorUsedError;
+  String get summary;
   @override
-  String get detail => throw _privateConstructorUsedError;
+  String get detail;
   @override
-  String get coverImageUrl => throw _privateConstructorUsedError;
+  String get coverImageUrl;
   @override
-  List<ProjectTag> get tags => throw _privateConstructorUsedError;
+  List<ProjectTag> get tags;
   @override
-  List<ProjectCallToAction> get callToActions => throw _privateConstructorUsedError;
+  List<ProjectCallToAction> get callToActions;
   @override
   @JsonKey(ignore: true)
-  _$ProjectCopyWith<_Project> get copyWith => throw _privateConstructorUsedError;
+  _$$_ProjectCopyWith<_$_Project> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$ProjectTagTearOff {
-  const _$ProjectTagTearOff();
-
-  _ProjectTag call({required String label, String? color, required String labelColor, required String style}) {
-    return _ProjectTag(
-      label: label,
-      color: color,
-      labelColor: labelColor,
-      style: style,
-    );
-  }
-}
-
-/// @nodoc
-const $ProjectTag = _$ProjectTagTearOff();
 
 /// @nodoc
 mixin _$ProjectTag {
@@ -280,82 +248,86 @@ mixin _$ProjectTag {
 
 /// @nodoc
 abstract class $ProjectTagCopyWith<$Res> {
-  factory $ProjectTagCopyWith(ProjectTag value, $Res Function(ProjectTag) then) = _$ProjectTagCopyWithImpl<$Res>;
+  factory $ProjectTagCopyWith(ProjectTag value, $Res Function(ProjectTag) then) =
+      _$ProjectTagCopyWithImpl<$Res, ProjectTag>;
+  @useResult
   $Res call({String label, String? color, String labelColor, String style});
 }
 
 /// @nodoc
-class _$ProjectTagCopyWithImpl<$Res> implements $ProjectTagCopyWith<$Res> {
+class _$ProjectTagCopyWithImpl<$Res, $Val extends ProjectTag> implements $ProjectTagCopyWith<$Res> {
   _$ProjectTagCopyWithImpl(this._value, this._then);
 
-  final ProjectTag _value;
   // ignore: unused_field
-  final $Res Function(ProjectTag) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? label = freezed,
+    Object? label = null,
     Object? color = freezed,
-    Object? labelColor = freezed,
-    Object? style = freezed,
+    Object? labelColor = null,
+    Object? style = null,
   }) {
     return _then(_value.copyWith(
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-      color: color == freezed
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelColor: labelColor == freezed
+      labelColor: null == labelColor
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
               as String,
-      style: style == freezed
+      style: null == style
           ? _value.style
           : style // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ProjectTagCopyWith<$Res> implements $ProjectTagCopyWith<$Res> {
-  factory _$ProjectTagCopyWith(_ProjectTag value, $Res Function(_ProjectTag) then) = __$ProjectTagCopyWithImpl<$Res>;
+abstract class _$$_ProjectTagCopyWith<$Res> implements $ProjectTagCopyWith<$Res> {
+  factory _$$_ProjectTagCopyWith(_$_ProjectTag value, $Res Function(_$_ProjectTag) then) =
+      __$$_ProjectTagCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String label, String? color, String labelColor, String style});
 }
 
 /// @nodoc
-class __$ProjectTagCopyWithImpl<$Res> extends _$ProjectTagCopyWithImpl<$Res> implements _$ProjectTagCopyWith<$Res> {
-  __$ProjectTagCopyWithImpl(_ProjectTag _value, $Res Function(_ProjectTag) _then)
-      : super(_value, (v) => _then(v as _ProjectTag));
+class __$$_ProjectTagCopyWithImpl<$Res> extends _$ProjectTagCopyWithImpl<$Res, _$_ProjectTag>
+    implements _$$_ProjectTagCopyWith<$Res> {
+  __$$_ProjectTagCopyWithImpl(_$_ProjectTag _value, $Res Function(_$_ProjectTag) _then) : super(_value, _then);
 
-  @override
-  _ProjectTag get _value => super._value as _ProjectTag;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? label = freezed,
+    Object? label = null,
     Object? color = freezed,
-    Object? labelColor = freezed,
-    Object? style = freezed,
+    Object? labelColor = null,
+    Object? style = null,
   }) {
-    return _then(_ProjectTag(
-      label: label == freezed
+    return _then(_$_ProjectTag(
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-      color: color == freezed
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelColor: labelColor == freezed
+      labelColor: null == labelColor
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
               as String,
-      style: style == freezed
+      style: null == style
           ? _value.style
           : style // ignore: cast_nullable_to_non_nullable
               as String,
@@ -385,61 +357,42 @@ class _$_ProjectTag implements _ProjectTag {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProjectTag &&
-            (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)) &&
-            (identical(other.color, color) || const DeepCollectionEquality().equals(other.color, color)) &&
-            (identical(other.labelColor, labelColor) ||
-                const DeepCollectionEquality().equals(other.labelColor, labelColor)) &&
-            (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ProjectTag &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.labelColor, labelColor) || other.labelColor == labelColor) &&
+            (identical(other.style, style) || other.style == style));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(label) ^
-      const DeepCollectionEquality().hash(color) ^
-      const DeepCollectionEquality().hash(labelColor) ^
-      const DeepCollectionEquality().hash(style);
+  int get hashCode => Object.hash(runtimeType, label, color, labelColor, style);
 
   @JsonKey(ignore: true)
   @override
-  _$ProjectTagCopyWith<_ProjectTag> get copyWith => __$ProjectTagCopyWithImpl<_ProjectTag>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ProjectTagCopyWith<_$_ProjectTag> get copyWith => __$$_ProjectTagCopyWithImpl<_$_ProjectTag>(this, _$identity);
 }
 
 abstract class _ProjectTag implements ProjectTag {
-  factory _ProjectTag({required String label, String? color, required String labelColor, required String style}) =
-      _$_ProjectTag;
+  factory _ProjectTag(
+      {required final String label,
+      final String? color,
+      required final String labelColor,
+      required final String style}) = _$_ProjectTag;
 
   @override
-  String get label => throw _privateConstructorUsedError;
+  String get label;
   @override
-  String? get color => throw _privateConstructorUsedError;
+  String? get color;
   @override
-  String get labelColor => throw _privateConstructorUsedError;
+  String get labelColor;
   @override
-  String get style => throw _privateConstructorUsedError;
+  String get style;
   @override
   @JsonKey(ignore: true)
-  _$ProjectTagCopyWith<_ProjectTag> get copyWith => throw _privateConstructorUsedError;
+  _$$_ProjectTagCopyWith<_$_ProjectTag> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$ProjectCallToActionTearOff {
-  const _$ProjectCallToActionTearOff();
-
-  _ProjectCallToAction call(
-      {required String type, required String action, required String style, required String label}) {
-    return _ProjectCallToAction(
-      type: type,
-      action: action,
-      style: style,
-      label: label,
-    );
-  }
-}
-
-/// @nodoc
-const $ProjectCallToAction = _$ProjectCallToActionTearOff();
 
 /// @nodoc
 mixin _$ProjectCallToAction {
@@ -455,84 +408,87 @@ mixin _$ProjectCallToAction {
 /// @nodoc
 abstract class $ProjectCallToActionCopyWith<$Res> {
   factory $ProjectCallToActionCopyWith(ProjectCallToAction value, $Res Function(ProjectCallToAction) then) =
-      _$ProjectCallToActionCopyWithImpl<$Res>;
+      _$ProjectCallToActionCopyWithImpl<$Res, ProjectCallToAction>;
+  @useResult
   $Res call({String type, String action, String style, String label});
 }
 
 /// @nodoc
-class _$ProjectCallToActionCopyWithImpl<$Res> implements $ProjectCallToActionCopyWith<$Res> {
+class _$ProjectCallToActionCopyWithImpl<$Res, $Val extends ProjectCallToAction>
+    implements $ProjectCallToActionCopyWith<$Res> {
   _$ProjectCallToActionCopyWithImpl(this._value, this._then);
 
-  final ProjectCallToAction _value;
   // ignore: unused_field
-  final $Res Function(ProjectCallToAction) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? action = freezed,
-    Object? style = freezed,
-    Object? label = freezed,
+    Object? type = null,
+    Object? action = null,
+    Object? style = null,
+    Object? label = null,
   }) {
     return _then(_value.copyWith(
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      action: action == freezed
+      action: null == action
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
               as String,
-      style: style == freezed
+      style: null == style
           ? _value.style
           : style // ignore: cast_nullable_to_non_nullable
               as String,
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ProjectCallToActionCopyWith<$Res> implements $ProjectCallToActionCopyWith<$Res> {
-  factory _$ProjectCallToActionCopyWith(_ProjectCallToAction value, $Res Function(_ProjectCallToAction) then) =
-      __$ProjectCallToActionCopyWithImpl<$Res>;
+abstract class _$$_ProjectCallToActionCopyWith<$Res> implements $ProjectCallToActionCopyWith<$Res> {
+  factory _$$_ProjectCallToActionCopyWith(_$_ProjectCallToAction value, $Res Function(_$_ProjectCallToAction) then) =
+      __$$_ProjectCallToActionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String type, String action, String style, String label});
 }
 
 /// @nodoc
-class __$ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopyWithImpl<$Res>
-    implements _$ProjectCallToActionCopyWith<$Res> {
-  __$ProjectCallToActionCopyWithImpl(_ProjectCallToAction _value, $Res Function(_ProjectCallToAction) _then)
-      : super(_value, (v) => _then(v as _ProjectCallToAction));
+class __$$_ProjectCallToActionCopyWithImpl<$Res> extends _$ProjectCallToActionCopyWithImpl<$Res, _$_ProjectCallToAction>
+    implements _$$_ProjectCallToActionCopyWith<$Res> {
+  __$$_ProjectCallToActionCopyWithImpl(_$_ProjectCallToAction _value, $Res Function(_$_ProjectCallToAction) _then)
+      : super(_value, _then);
 
-  @override
-  _ProjectCallToAction get _value => super._value as _ProjectCallToAction;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? action = freezed,
-    Object? style = freezed,
-    Object? label = freezed,
+    Object? type = null,
+    Object? action = null,
+    Object? style = null,
+    Object? label = null,
   }) {
-    return _then(_ProjectCallToAction(
-      type: type == freezed
+    return _then(_$_ProjectCallToAction(
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      action: action == freezed
+      action: null == action
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
               as String,
-      style: style == freezed
+      style: null == style
           ? _value.style
           : style // ignore: cast_nullable_to_non_nullable
               as String,
-      label: label == freezed
+      label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
@@ -562,43 +518,40 @@ class _$_ProjectCallToAction implements _ProjectCallToAction {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProjectCallToAction &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.action, action) || const DeepCollectionEquality().equals(other.action, action)) &&
-            (identical(other.style, style) || const DeepCollectionEquality().equals(other.style, style)) &&
-            (identical(other.label, label) || const DeepCollectionEquality().equals(other.label, label)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ProjectCallToAction &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.action, action) || other.action == action) &&
+            (identical(other.style, style) || other.style == style) &&
+            (identical(other.label, label) || other.label == label));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(action) ^
-      const DeepCollectionEquality().hash(style) ^
-      const DeepCollectionEquality().hash(label);
+  int get hashCode => Object.hash(runtimeType, type, action, style, label);
 
   @JsonKey(ignore: true)
   @override
-  _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith =>
-      __$ProjectCallToActionCopyWithImpl<_ProjectCallToAction>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ProjectCallToActionCopyWith<_$_ProjectCallToAction> get copyWith =>
+      __$$_ProjectCallToActionCopyWithImpl<_$_ProjectCallToAction>(this, _$identity);
 }
 
 abstract class _ProjectCallToAction implements ProjectCallToAction {
   factory _ProjectCallToAction(
-      {required String type,
-      required String action,
-      required String style,
-      required String label}) = _$_ProjectCallToAction;
+      {required final String type,
+      required final String action,
+      required final String style,
+      required final String label}) = _$_ProjectCallToAction;
 
   @override
-  String get type => throw _privateConstructorUsedError;
+  String get type;
   @override
-  String get action => throw _privateConstructorUsedError;
+  String get action;
   @override
-  String get style => throw _privateConstructorUsedError;
+  String get style;
   @override
-  String get label => throw _privateConstructorUsedError;
+  String get label;
   @override
   @JsonKey(ignore: true)
-  _$ProjectCallToActionCopyWith<_ProjectCallToAction> get copyWith => throw _privateConstructorUsedError;
+  _$$_ProjectCallToActionCopyWith<_$_ProjectCallToAction> get copyWith => throw _privateConstructorUsedError;
 }

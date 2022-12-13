@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/core/navigation/page_transition.dart';
-
-import 'colors.dart';
 
 class AppTheme {
   AppTheme._();
@@ -10,7 +9,8 @@ class AppTheme {
         brightness: Brightness.light,
         primarySwatch: ThemeColors.primary,
         colorScheme: ColorScheme.light(
-          secondary: ThemeColors.secondary[300]!,
+          primary: ThemeColors.primary,
+          secondary: ThemeColors.secondary.shade300,
         ),
         typography: Typography.material2018(englishLike: _textTheme),
         dividerColor: Colors.grey,

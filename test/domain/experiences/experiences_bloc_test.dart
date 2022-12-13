@@ -139,7 +139,7 @@ void main() {
           },
           act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
           verify: (_) async {
-            bloc.listen((state) {
+            bloc.stream.listen((state) {
               if (state is ExperiencesLoaded) {
                 expect(state.experiences.any((exp) => exp.timeframe == params.second), equals(true));
               }

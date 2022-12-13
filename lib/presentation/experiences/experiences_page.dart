@@ -9,9 +9,8 @@ import 'package:portfolio/presentation/core/loading.dart';
 import 'package:portfolio/presentation/core/page_scaffold.dart';
 import 'package:portfolio/presentation/core/text/headline_text.dart';
 import 'package:portfolio/presentation/core/text/paragraph_text.dart';
+import 'package:portfolio/presentation/experiences/widgets/experience_card.dart';
 import 'package:portfolio/presentation/experiences/widgets/timeline_builder.dart';
-
-import 'widgets/experience_card.dart';
 
 class ExperiencesPage extends StatefulWidget {
   const ExperiencesPage();
@@ -59,11 +58,5 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _bloc.close();
-    super.dispose();
   }
 }

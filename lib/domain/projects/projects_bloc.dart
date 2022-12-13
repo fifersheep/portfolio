@@ -3,8 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:portfolio/domain/projects/entities/project.dart';
 
-import 'project_state.dart';
-import 'projects_repository.dart';
+import 'package:portfolio/domain/projects/project_state.dart';
+import 'package:portfolio/domain/projects/projects_repository.dart';
 
 part 'projects_bloc.freezed.dart';
 

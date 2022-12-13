@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'projects_bloc.dart';
 
@@ -10,25 +12,18 @@ part of 'projects_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ProjectsEventTearOff {
-  const _$ProjectsEventTearOff();
-
-  LoadProjects loadProjects() {
-    return const LoadProjects();
-  }
-}
-
-/// @nodoc
-const $ProjectsEvent = _$ProjectsEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ProjectsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadProjects,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadProjects,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,6 +38,11 @@ mixin _$ProjectsEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadProjects value)? loadProjects,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadProjects value)? loadProjects,
     required TResult orElse(),
@@ -53,32 +53,29 @@ mixin _$ProjectsEvent {
 /// @nodoc
 abstract class $ProjectsEventCopyWith<$Res> {
   factory $ProjectsEventCopyWith(ProjectsEvent value, $Res Function(ProjectsEvent) then) =
-      _$ProjectsEventCopyWithImpl<$Res>;
+      _$ProjectsEventCopyWithImpl<$Res, ProjectsEvent>;
 }
 
 /// @nodoc
-class _$ProjectsEventCopyWithImpl<$Res> implements $ProjectsEventCopyWith<$Res> {
+class _$ProjectsEventCopyWithImpl<$Res, $Val extends ProjectsEvent> implements $ProjectsEventCopyWith<$Res> {
   _$ProjectsEventCopyWithImpl(this._value, this._then);
 
-  final ProjectsEvent _value;
   // ignore: unused_field
-  final $Res Function(ProjectsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $LoadProjectsCopyWith<$Res> {
-  factory $LoadProjectsCopyWith(LoadProjects value, $Res Function(LoadProjects) then) =
-      _$LoadProjectsCopyWithImpl<$Res>;
+abstract class _$$LoadProjectsCopyWith<$Res> {
+  factory _$$LoadProjectsCopyWith(_$LoadProjects value, $Res Function(_$LoadProjects) then) =
+      __$$LoadProjectsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadProjectsCopyWithImpl<$Res> extends _$ProjectsEventCopyWithImpl<$Res>
-    implements $LoadProjectsCopyWith<$Res> {
-  _$LoadProjectsCopyWithImpl(LoadProjects _value, $Res Function(LoadProjects) _then)
-      : super(_value, (v) => _then(v as LoadProjects));
-
-  @override
-  LoadProjects get _value => super._value as LoadProjects;
+class __$$LoadProjectsCopyWithImpl<$Res> extends _$ProjectsEventCopyWithImpl<$Res, _$LoadProjects>
+    implements _$$LoadProjectsCopyWith<$Res> {
+  __$$LoadProjectsCopyWithImpl(_$LoadProjects _value, $Res Function(_$LoadProjects) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -93,7 +90,7 @@ class _$LoadProjects implements LoadProjects {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadProjects);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadProjects);
   }
 
   @override
@@ -105,6 +102,14 @@ class _$LoadProjects implements LoadProjects {
     required TResult Function() loadProjects,
   }) {
     return loadProjects();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadProjects,
+  }) {
+    return loadProjects?.call();
   }
 
   @override
@@ -129,6 +134,14 @@ class _$LoadProjects implements LoadProjects {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadProjects value)? loadProjects,
+  }) {
+    return loadProjects?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadProjects value)? loadProjects,
     required TResult orElse(),
@@ -145,34 +158,19 @@ abstract class LoadProjects implements ProjectsEvent {
 }
 
 /// @nodoc
-class _$ProjectsStateTearOff {
-  const _$ProjectsStateTearOff();
-
-  ProjectsLoading loading() {
-    return const ProjectsLoading();
-  }
-
-  ProjectsLoaded loaded(List<ProjectState> projects) {
-    return ProjectsLoaded(
-      projects,
-    );
-  }
-
-  ProjectsError error() {
-    return const ProjectsError();
-  }
-}
-
-/// @nodoc
-const $ProjectsState = _$ProjectsStateTearOff();
-
-/// @nodoc
 mixin _$ProjectsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<ProjectState> projects) loaded,
     required TResult Function() error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<ProjectState> projects)? loaded,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -191,6 +189,13 @@ mixin _$ProjectsState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectsLoading value)? loading,
+    TResult? Function(ProjectsLoaded value)? loaded,
+    TResult? Function(ProjectsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectsLoading value)? loading,
     TResult Function(ProjectsLoaded value)? loaded,
@@ -203,32 +208,30 @@ mixin _$ProjectsState {
 /// @nodoc
 abstract class $ProjectsStateCopyWith<$Res> {
   factory $ProjectsStateCopyWith(ProjectsState value, $Res Function(ProjectsState) then) =
-      _$ProjectsStateCopyWithImpl<$Res>;
+      _$ProjectsStateCopyWithImpl<$Res, ProjectsState>;
 }
 
 /// @nodoc
-class _$ProjectsStateCopyWithImpl<$Res> implements $ProjectsStateCopyWith<$Res> {
+class _$ProjectsStateCopyWithImpl<$Res, $Val extends ProjectsState> implements $ProjectsStateCopyWith<$Res> {
   _$ProjectsStateCopyWithImpl(this._value, this._then);
 
-  final ProjectsState _value;
   // ignore: unused_field
-  final $Res Function(ProjectsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $ProjectsLoadingCopyWith<$Res> {
-  factory $ProjectsLoadingCopyWith(ProjectsLoading value, $Res Function(ProjectsLoading) then) =
-      _$ProjectsLoadingCopyWithImpl<$Res>;
+abstract class _$$ProjectsLoadingCopyWith<$Res> {
+  factory _$$ProjectsLoadingCopyWith(_$ProjectsLoading value, $Res Function(_$ProjectsLoading) then) =
+      __$$ProjectsLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProjectsLoadingCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
-    implements $ProjectsLoadingCopyWith<$Res> {
-  _$ProjectsLoadingCopyWithImpl(ProjectsLoading _value, $Res Function(ProjectsLoading) _then)
-      : super(_value, (v) => _then(v as ProjectsLoading));
-
-  @override
-  ProjectsLoading get _value => super._value as ProjectsLoading;
+class __$$ProjectsLoadingCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res, _$ProjectsLoading>
+    implements _$$ProjectsLoadingCopyWith<$Res> {
+  __$$ProjectsLoadingCopyWithImpl(_$ProjectsLoading _value, $Res Function(_$ProjectsLoading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -243,7 +246,7 @@ class _$ProjectsLoading implements ProjectsLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ProjectsLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ProjectsLoading);
   }
 
   @override
@@ -257,6 +260,16 @@ class _$ProjectsLoading implements ProjectsLoading {
     required TResult Function() error,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<ProjectState> projects)? loaded,
+    TResult? Function()? error,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -285,6 +298,16 @@ class _$ProjectsLoading implements ProjectsLoading {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectsLoading value)? loading,
+    TResult? Function(ProjectsLoaded value)? loaded,
+    TResult? Function(ProjectsError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectsLoading value)? loading,
     TResult Function(ProjectsLoaded value)? loaded,
@@ -303,28 +326,26 @@ abstract class ProjectsLoading implements ProjectsState {
 }
 
 /// @nodoc
-abstract class $ProjectsLoadedCopyWith<$Res> {
-  factory $ProjectsLoadedCopyWith(ProjectsLoaded value, $Res Function(ProjectsLoaded) then) =
-      _$ProjectsLoadedCopyWithImpl<$Res>;
+abstract class _$$ProjectsLoadedCopyWith<$Res> {
+  factory _$$ProjectsLoadedCopyWith(_$ProjectsLoaded value, $Res Function(_$ProjectsLoaded) then) =
+      __$$ProjectsLoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<ProjectState> projects});
 }
 
 /// @nodoc
-class _$ProjectsLoadedCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
-    implements $ProjectsLoadedCopyWith<$Res> {
-  _$ProjectsLoadedCopyWithImpl(ProjectsLoaded _value, $Res Function(ProjectsLoaded) _then)
-      : super(_value, (v) => _then(v as ProjectsLoaded));
+class __$$ProjectsLoadedCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res, _$ProjectsLoaded>
+    implements _$$ProjectsLoadedCopyWith<$Res> {
+  __$$ProjectsLoadedCopyWithImpl(_$ProjectsLoaded _value, $Res Function(_$ProjectsLoaded) _then) : super(_value, _then);
 
-  @override
-  ProjectsLoaded get _value => super._value as ProjectsLoaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? projects = freezed,
+    Object? projects = null,
   }) {
-    return _then(ProjectsLoaded(
-      projects == freezed
-          ? _value.projects
+    return _then(_$ProjectsLoaded(
+      null == projects
+          ? _value._projects
           : projects // ignore: cast_nullable_to_non_nullable
               as List<ProjectState>,
     ));
@@ -334,10 +355,14 @@ class _$ProjectsLoadedCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Re
 /// @nodoc
 
 class _$ProjectsLoaded implements ProjectsLoaded {
-  const _$ProjectsLoaded(this.projects);
+  const _$ProjectsLoaded(final List<ProjectState> projects) : _projects = projects;
 
+  final List<ProjectState> _projects;
   @override
-  final List<ProjectState> projects;
+  List<ProjectState> get projects {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_projects);
+  }
 
   @override
   String toString() {
@@ -347,17 +372,19 @@ class _$ProjectsLoaded implements ProjectsLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ProjectsLoaded &&
-            (identical(other.projects, projects) || const DeepCollectionEquality().equals(other.projects, projects)));
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectsLoaded &&
+            const DeepCollectionEquality().equals(other._projects, _projects));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(projects);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_projects));
 
   @JsonKey(ignore: true)
   @override
-  $ProjectsLoadedCopyWith<ProjectsLoaded> get copyWith =>
-      _$ProjectsLoadedCopyWithImpl<ProjectsLoaded>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ProjectsLoadedCopyWith<_$ProjectsLoaded> get copyWith =>
+      __$$ProjectsLoadedCopyWithImpl<_$ProjectsLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -367,6 +394,16 @@ class _$ProjectsLoaded implements ProjectsLoaded {
     required TResult Function() error,
   }) {
     return loaded(projects);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<ProjectState> projects)? loaded,
+    TResult? Function()? error,
+  }) {
+    return loaded?.call(projects);
   }
 
   @override
@@ -395,6 +432,16 @@ class _$ProjectsLoaded implements ProjectsLoaded {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectsLoading value)? loading,
+    TResult? Function(ProjectsLoaded value)? loaded,
+    TResult? Function(ProjectsError value)? error,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectsLoading value)? loading,
     TResult Function(ProjectsLoaded value)? loaded,
@@ -409,27 +456,23 @@ class _$ProjectsLoaded implements ProjectsLoaded {
 }
 
 abstract class ProjectsLoaded implements ProjectsState {
-  const factory ProjectsLoaded(List<ProjectState> projects) = _$ProjectsLoaded;
+  const factory ProjectsLoaded(final List<ProjectState> projects) = _$ProjectsLoaded;
 
-  List<ProjectState> get projects => throw _privateConstructorUsedError;
+  List<ProjectState> get projects;
   @JsonKey(ignore: true)
-  $ProjectsLoadedCopyWith<ProjectsLoaded> get copyWith => throw _privateConstructorUsedError;
+  _$$ProjectsLoadedCopyWith<_$ProjectsLoaded> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProjectsErrorCopyWith<$Res> {
-  factory $ProjectsErrorCopyWith(ProjectsError value, $Res Function(ProjectsError) then) =
-      _$ProjectsErrorCopyWithImpl<$Res>;
+abstract class _$$ProjectsErrorCopyWith<$Res> {
+  factory _$$ProjectsErrorCopyWith(_$ProjectsError value, $Res Function(_$ProjectsError) then) =
+      __$$ProjectsErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProjectsErrorCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res>
-    implements $ProjectsErrorCopyWith<$Res> {
-  _$ProjectsErrorCopyWithImpl(ProjectsError _value, $Res Function(ProjectsError) _then)
-      : super(_value, (v) => _then(v as ProjectsError));
-
-  @override
-  ProjectsError get _value => super._value as ProjectsError;
+class __$$ProjectsErrorCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res, _$ProjectsError>
+    implements _$$ProjectsErrorCopyWith<$Res> {
+  __$$ProjectsErrorCopyWithImpl(_$ProjectsError _value, $Res Function(_$ProjectsError) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -444,7 +487,7 @@ class _$ProjectsError implements ProjectsError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ProjectsError);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ProjectsError);
   }
 
   @override
@@ -458,6 +501,16 @@ class _$ProjectsError implements ProjectsError {
     required TResult Function() error,
   }) {
     return error();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<ProjectState> projects)? loaded,
+    TResult? Function()? error,
+  }) {
+    return error?.call();
   }
 
   @override
@@ -482,6 +535,16 @@ class _$ProjectsError implements ProjectsError {
     required TResult Function(ProjectsError value) error,
   }) {
     return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectsLoading value)? loading,
+    TResult? Function(ProjectsLoaded value)? loaded,
+    TResult? Function(ProjectsError value)? error,
+  }) {
+    return error?.call(this);
   }
 
   @override

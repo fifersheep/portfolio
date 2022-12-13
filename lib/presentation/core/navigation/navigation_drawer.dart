@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/injection.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_footer.dart';
+import 'package:portfolio/presentation/core/navigation/navigation_header.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_massage.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_menu.dart';
-
-import '../../../injection.dart';
-import 'navigation_header.dart';
-import 'navigation_route_observer.dart';
+import 'package:portfolio/presentation/core/navigation/navigation_route_observer.dart';
 
 class NavigationDrawer extends StatefulWidget with RouteAware {
   const NavigationDrawer({Key? key}) : super(key: key);

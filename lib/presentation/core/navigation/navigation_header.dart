@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 
-import 'navigation_header_painter.dart';
-import 'navigation_identity.dart';
-import 'social_bar.dart';
+import 'package:portfolio/presentation/core/navigation/navigation_header_painter.dart';
+import 'package:portfolio/presentation/core/navigation/navigation_identity.dart';
+import 'package:portfolio/presentation/core/navigation/social_bar.dart';
 
 class NavigationHeader extends StatelessWidget {
   @override

@@ -3,7 +3,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'project_state.freezed.dart';
 
 enum ProjectTagStyle { fill, outline, naked }
+
 enum ProjectCallToActionType { route, link }
+
 enum ProjectCallToActionStyle { primary, secondary, tertiary }
 
 @freezed
