@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'text_emphasis_builder.dart';
+import 'package:portfolio/presentation/core/text/text_emphasis_builder.dart';
 
 class Paragraph extends StatelessWidget {
   const Paragraph(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'timeline_divider.dart';
+import 'package:portfolio/presentation/experiences/widgets/timeline_divider.dart';
 
 class TimelineBuilder<T> extends StatelessWidget {
   const TimelineBuilder({required this.items, required this.builder});

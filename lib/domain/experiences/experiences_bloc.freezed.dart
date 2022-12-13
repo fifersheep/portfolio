@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experiences_bloc.dart';
 
@@ -10,25 +12,18 @@ part of 'experiences_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ExperiencesEventTearOff {
-  const _$ExperiencesEventTearOff();
-
-  LoadExperiences loadExperiences() {
-    return const LoadExperiences();
-  }
-}
-
-/// @nodoc
-const $ExperiencesEvent = _$ExperiencesEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ExperiencesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadExperiences,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadExperiences,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,6 +38,11 @@ mixin _$ExperiencesEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadExperiences value)? loadExperiences,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadExperiences value)? loadExperiences,
     required TResult orElse(),
@@ -53,32 +53,30 @@ mixin _$ExperiencesEvent {
 /// @nodoc
 abstract class $ExperiencesEventCopyWith<$Res> {
   factory $ExperiencesEventCopyWith(ExperiencesEvent value, $Res Function(ExperiencesEvent) then) =
-      _$ExperiencesEventCopyWithImpl<$Res>;
+      _$ExperiencesEventCopyWithImpl<$Res, ExperiencesEvent>;
 }
 
 /// @nodoc
-class _$ExperiencesEventCopyWithImpl<$Res> implements $ExperiencesEventCopyWith<$Res> {
+class _$ExperiencesEventCopyWithImpl<$Res, $Val extends ExperiencesEvent> implements $ExperiencesEventCopyWith<$Res> {
   _$ExperiencesEventCopyWithImpl(this._value, this._then);
 
-  final ExperiencesEvent _value;
   // ignore: unused_field
-  final $Res Function(ExperiencesEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $LoadExperiencesCopyWith<$Res> {
-  factory $LoadExperiencesCopyWith(LoadExperiences value, $Res Function(LoadExperiences) then) =
-      _$LoadExperiencesCopyWithImpl<$Res>;
+abstract class _$$LoadExperiencesCopyWith<$Res> {
+  factory _$$LoadExperiencesCopyWith(_$LoadExperiences value, $Res Function(_$LoadExperiences) then) =
+      __$$LoadExperiencesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadExperiencesCopyWithImpl<$Res> extends _$ExperiencesEventCopyWithImpl<$Res>
-    implements $LoadExperiencesCopyWith<$Res> {
-  _$LoadExperiencesCopyWithImpl(LoadExperiences _value, $Res Function(LoadExperiences) _then)
-      : super(_value, (v) => _then(v as LoadExperiences));
-
-  @override
-  LoadExperiences get _value => super._value as LoadExperiences;
+class __$$LoadExperiencesCopyWithImpl<$Res> extends _$ExperiencesEventCopyWithImpl<$Res, _$LoadExperiences>
+    implements _$$LoadExperiencesCopyWith<$Res> {
+  __$$LoadExperiencesCopyWithImpl(_$LoadExperiences _value, $Res Function(_$LoadExperiences) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -93,7 +91,7 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadExperiences);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadExperiences);
   }
 
   @override
@@ -105,6 +103,14 @@ class _$LoadExperiences implements LoadExperiences {
     required TResult Function() loadExperiences,
   }) {
     return loadExperiences();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadExperiences,
+  }) {
+    return loadExperiences?.call();
   }
 
   @override
@@ -129,6 +135,14 @@ class _$LoadExperiences implements LoadExperiences {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadExperiences value)? loadExperiences,
+  }) {
+    return loadExperiences?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadExperiences value)? loadExperiences,
     required TResult orElse(),
@@ -145,34 +159,19 @@ abstract class LoadExperiences implements ExperiencesEvent {
 }
 
 /// @nodoc
-class _$ExperiencesStateTearOff {
-  const _$ExperiencesStateTearOff();
-
-  ExperiencesLoading loading() {
-    return const ExperiencesLoading();
-  }
-
-  ExperiencesLoaded loaded(List<ExperienceState> experiences) {
-    return ExperiencesLoaded(
-      experiences,
-    );
-  }
-
-  ExperiencesError error() {
-    return const ExperiencesError();
-  }
-}
-
-/// @nodoc
-const $ExperiencesState = _$ExperiencesStateTearOff();
-
-/// @nodoc
 mixin _$ExperiencesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<ExperienceState> experiences) loaded,
     required TResult Function() error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<ExperienceState> experiences)? loaded,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -191,6 +190,13 @@ mixin _$ExperiencesState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ExperiencesLoading value)? loading,
+    TResult? Function(ExperiencesLoaded value)? loaded,
+    TResult? Function(ExperiencesError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ExperiencesLoading value)? loading,
     TResult Function(ExperiencesLoaded value)? loaded,
@@ -203,32 +209,30 @@ mixin _$ExperiencesState {
 /// @nodoc
 abstract class $ExperiencesStateCopyWith<$Res> {
   factory $ExperiencesStateCopyWith(ExperiencesState value, $Res Function(ExperiencesState) then) =
-      _$ExperiencesStateCopyWithImpl<$Res>;
+      _$ExperiencesStateCopyWithImpl<$Res, ExperiencesState>;
 }
 
 /// @nodoc
-class _$ExperiencesStateCopyWithImpl<$Res> implements $ExperiencesStateCopyWith<$Res> {
+class _$ExperiencesStateCopyWithImpl<$Res, $Val extends ExperiencesState> implements $ExperiencesStateCopyWith<$Res> {
   _$ExperiencesStateCopyWithImpl(this._value, this._then);
 
-  final ExperiencesState _value;
   // ignore: unused_field
-  final $Res Function(ExperiencesState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $ExperiencesLoadingCopyWith<$Res> {
-  factory $ExperiencesLoadingCopyWith(ExperiencesLoading value, $Res Function(ExperiencesLoading) then) =
-      _$ExperiencesLoadingCopyWithImpl<$Res>;
+abstract class _$$ExperiencesLoadingCopyWith<$Res> {
+  factory _$$ExperiencesLoadingCopyWith(_$ExperiencesLoading value, $Res Function(_$ExperiencesLoading) then) =
+      __$$ExperiencesLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperiencesLoadingCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
-    implements $ExperiencesLoadingCopyWith<$Res> {
-  _$ExperiencesLoadingCopyWithImpl(ExperiencesLoading _value, $Res Function(ExperiencesLoading) _then)
-      : super(_value, (v) => _then(v as ExperiencesLoading));
-
-  @override
-  ExperiencesLoading get _value => super._value as ExperiencesLoading;
+class __$$ExperiencesLoadingCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res, _$ExperiencesLoading>
+    implements _$$ExperiencesLoadingCopyWith<$Res> {
+  __$$ExperiencesLoadingCopyWithImpl(_$ExperiencesLoading _value, $Res Function(_$ExperiencesLoading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -243,7 +247,7 @@ class _$ExperiencesLoading implements ExperiencesLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ExperiencesLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ExperiencesLoading);
   }
 
   @override
@@ -257,6 +261,16 @@ class _$ExperiencesLoading implements ExperiencesLoading {
     required TResult Function() error,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<ExperienceState> experiences)? loaded,
+    TResult? Function()? error,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -285,6 +299,16 @@ class _$ExperiencesLoading implements ExperiencesLoading {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ExperiencesLoading value)? loading,
+    TResult? Function(ExperiencesLoaded value)? loaded,
+    TResult? Function(ExperiencesError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ExperiencesLoading value)? loading,
     TResult Function(ExperiencesLoaded value)? loaded,
@@ -303,28 +327,27 @@ abstract class ExperiencesLoading implements ExperiencesState {
 }
 
 /// @nodoc
-abstract class $ExperiencesLoadedCopyWith<$Res> {
-  factory $ExperiencesLoadedCopyWith(ExperiencesLoaded value, $Res Function(ExperiencesLoaded) then) =
-      _$ExperiencesLoadedCopyWithImpl<$Res>;
+abstract class _$$ExperiencesLoadedCopyWith<$Res> {
+  factory _$$ExperiencesLoadedCopyWith(_$ExperiencesLoaded value, $Res Function(_$ExperiencesLoaded) then) =
+      __$$ExperiencesLoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<ExperienceState> experiences});
 }
 
 /// @nodoc
-class _$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
-    implements $ExperiencesLoadedCopyWith<$Res> {
-  _$ExperiencesLoadedCopyWithImpl(ExperiencesLoaded _value, $Res Function(ExperiencesLoaded) _then)
-      : super(_value, (v) => _then(v as ExperiencesLoaded));
+class __$$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res, _$ExperiencesLoaded>
+    implements _$$ExperiencesLoadedCopyWith<$Res> {
+  __$$ExperiencesLoadedCopyWithImpl(_$ExperiencesLoaded _value, $Res Function(_$ExperiencesLoaded) _then)
+      : super(_value, _then);
 
-  @override
-  ExperiencesLoaded get _value => super._value as ExperiencesLoaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? experiences = freezed,
+    Object? experiences = null,
   }) {
-    return _then(ExperiencesLoaded(
-      experiences == freezed
-          ? _value.experiences
+    return _then(_$ExperiencesLoaded(
+      null == experiences
+          ? _value._experiences
           : experiences // ignore: cast_nullable_to_non_nullable
               as List<ExperienceState>,
     ));
@@ -334,10 +357,14 @@ class _$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithIm
 /// @nodoc
 
 class _$ExperiencesLoaded implements ExperiencesLoaded {
-  const _$ExperiencesLoaded(this.experiences);
+  const _$ExperiencesLoaded(final List<ExperienceState> experiences) : _experiences = experiences;
 
+  final List<ExperienceState> _experiences;
   @override
-  final List<ExperienceState> experiences;
+  List<ExperienceState> get experiences {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_experiences);
+  }
 
   @override
   String toString() {
@@ -347,18 +374,19 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ExperiencesLoaded &&
-            (identical(other.experiences, experiences) ||
-                const DeepCollectionEquality().equals(other.experiences, experiences)));
+        (other.runtimeType == runtimeType &&
+            other is _$ExperiencesLoaded &&
+            const DeepCollectionEquality().equals(other._experiences, _experiences));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_experiences));
 
   @JsonKey(ignore: true)
   @override
-  $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith =>
-      _$ExperiencesLoadedCopyWithImpl<ExperiencesLoaded>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ExperiencesLoadedCopyWith<_$ExperiencesLoaded> get copyWith =>
+      __$$ExperiencesLoadedCopyWithImpl<_$ExperiencesLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -368,6 +396,16 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
     required TResult Function() error,
   }) {
     return loaded(experiences);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<ExperienceState> experiences)? loaded,
+    TResult? Function()? error,
+  }) {
+    return loaded?.call(experiences);
   }
 
   @override
@@ -396,6 +434,16 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ExperiencesLoading value)? loading,
+    TResult? Function(ExperiencesLoaded value)? loaded,
+    TResult? Function(ExperiencesError value)? error,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ExperiencesLoading value)? loading,
     TResult Function(ExperiencesLoaded value)? loaded,
@@ -410,27 +458,24 @@ class _$ExperiencesLoaded implements ExperiencesLoaded {
 }
 
 abstract class ExperiencesLoaded implements ExperiencesState {
-  const factory ExperiencesLoaded(List<ExperienceState> experiences) = _$ExperiencesLoaded;
+  const factory ExperiencesLoaded(final List<ExperienceState> experiences) = _$ExperiencesLoaded;
 
-  List<ExperienceState> get experiences => throw _privateConstructorUsedError;
+  List<ExperienceState> get experiences;
   @JsonKey(ignore: true)
-  $ExperiencesLoadedCopyWith<ExperiencesLoaded> get copyWith => throw _privateConstructorUsedError;
+  _$$ExperiencesLoadedCopyWith<_$ExperiencesLoaded> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ExperiencesErrorCopyWith<$Res> {
-  factory $ExperiencesErrorCopyWith(ExperiencesError value, $Res Function(ExperiencesError) then) =
-      _$ExperiencesErrorCopyWithImpl<$Res>;
+abstract class _$$ExperiencesErrorCopyWith<$Res> {
+  factory _$$ExperiencesErrorCopyWith(_$ExperiencesError value, $Res Function(_$ExperiencesError) then) =
+      __$$ExperiencesErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperiencesErrorCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res>
-    implements $ExperiencesErrorCopyWith<$Res> {
-  _$ExperiencesErrorCopyWithImpl(ExperiencesError _value, $Res Function(ExperiencesError) _then)
-      : super(_value, (v) => _then(v as ExperiencesError));
-
-  @override
-  ExperiencesError get _value => super._value as ExperiencesError;
+class __$$ExperiencesErrorCopyWithImpl<$Res> extends _$ExperiencesStateCopyWithImpl<$Res, _$ExperiencesError>
+    implements _$$ExperiencesErrorCopyWith<$Res> {
+  __$$ExperiencesErrorCopyWithImpl(_$ExperiencesError _value, $Res Function(_$ExperiencesError) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -445,7 +490,7 @@ class _$ExperiencesError implements ExperiencesError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ExperiencesError);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ExperiencesError);
   }
 
   @override
@@ -459,6 +504,16 @@ class _$ExperiencesError implements ExperiencesError {
     required TResult Function() error,
   }) {
     return error();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<ExperienceState> experiences)? loaded,
+    TResult? Function()? error,
+  }) {
+    return error?.call();
   }
 
   @override
@@ -483,6 +538,16 @@ class _$ExperiencesError implements ExperiencesError {
     required TResult Function(ExperiencesError value) error,
   }) {
     return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ExperiencesLoading value)? loading,
+    TResult? Function(ExperiencesLoaded value)? loaded,
+    TResult? Function(ExperiencesError value)? error,
+  }) {
+    return error?.call(this);
   }
 
   @override

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'experience.dart';
 
@@ -10,32 +12,7 @@ part of 'experience.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ExperienceTearOff {
-  const _$ExperienceTearOff();
-
-  _Experience call(
-      {required String title,
-      required String location,
-      required String content,
-      required DateTime? startDate,
-      required DateTime? endDate,
-      required ExperienceCategory category}) {
-    return _Experience(
-      title: title,
-      location: location,
-      content: content,
-      startDate: startDate,
-      endDate: endDate,
-      category: category,
-    );
-  }
-}
-
-/// @nodoc
-const $Experience = _$ExperienceTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Experience {
@@ -52,7 +29,9 @@ mixin _$Experience {
 
 /// @nodoc
 abstract class $ExperienceCopyWith<$Res> {
-  factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) = _$ExperienceCopyWithImpl<$Res>;
+  factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) =
+      _$ExperienceCopyWithImpl<$Res, Experience>;
+  @useResult
   $Res call(
       {String title,
       String location,
@@ -63,55 +42,59 @@ abstract class $ExperienceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
+class _$ExperienceCopyWithImpl<$Res, $Val extends Experience> implements $ExperienceCopyWith<$Res> {
   _$ExperienceCopyWithImpl(this._value, this._then);
 
-  final Experience _value;
   // ignore: unused_field
-  final $Res Function(Experience) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? location = freezed,
-    Object? content = freezed,
+    Object? title = null,
+    Object? location = null,
+    Object? content = null,
     Object? startDate = freezed,
     Object? endDate = freezed,
-    Object? category = freezed,
+    Object? category = null,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      location: location == freezed
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String,
-      content: content == freezed
+      content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      startDate: startDate == freezed
+      startDate: freezed == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      endDate: endDate == freezed
+      endDate: freezed == endDate
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      category: category == freezed
+      category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as ExperienceCategory,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
-  factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) = __$ExperienceCopyWithImpl<$Res>;
+abstract class _$$_ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
+  factory _$$_ExperienceCopyWith(_$_Experience value, $Res Function(_$_Experience) then) =
+      __$$_ExperienceCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       String location,
@@ -122,44 +105,42 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> implements _$ExperienceCopyWith<$Res> {
-  __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then)
-      : super(_value, (v) => _then(v as _Experience));
+class __$$_ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res, _$_Experience>
+    implements _$$_ExperienceCopyWith<$Res> {
+  __$$_ExperienceCopyWithImpl(_$_Experience _value, $Res Function(_$_Experience) _then) : super(_value, _then);
 
-  @override
-  _Experience get _value => super._value as _Experience;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? location = freezed,
-    Object? content = freezed,
+    Object? title = null,
+    Object? location = null,
+    Object? content = null,
     Object? startDate = freezed,
     Object? endDate = freezed,
-    Object? category = freezed,
+    Object? category = null,
   }) {
-    return _then(_Experience(
-      title: title == freezed
+    return _then(_$_Experience(
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      location: location == freezed
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String,
-      content: content == freezed
+      content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      startDate: startDate == freezed
+      startDate: freezed == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      endDate: endDate == freezed
+      endDate: freezed == endDate
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      category: category == freezed
+      category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as ExperienceCategory,
@@ -199,53 +180,47 @@ class _$_Experience implements _Experience {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Experience &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-            (identical(other.startDate, startDate) ||
-                const DeepCollectionEquality().equals(other.startDate, startDate)) &&
-            (identical(other.endDate, endDate) || const DeepCollectionEquality().equals(other.endDate, endDate)) &&
-            (identical(other.category, category) || const DeepCollectionEquality().equals(other.category, category)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Experience &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.location, location) || other.location == location) &&
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.startDate, startDate) || other.startDate == startDate) &&
+            (identical(other.endDate, endDate) || other.endDate == endDate) &&
+            (identical(other.category, category) || other.category == category));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(startDate) ^
-      const DeepCollectionEquality().hash(endDate) ^
-      const DeepCollectionEquality().hash(category);
+  int get hashCode => Object.hash(runtimeType, title, location, content, startDate, endDate, category);
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceCopyWith<_Experience> get copyWith => __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ExperienceCopyWith<_$_Experience> get copyWith => __$$_ExperienceCopyWithImpl<_$_Experience>(this, _$identity);
 }
 
 abstract class _Experience implements Experience {
   factory _Experience(
-      {required String title,
-      required String location,
-      required String content,
-      required DateTime? startDate,
-      required DateTime? endDate,
-      required ExperienceCategory category}) = _$_Experience;
+      {required final String title,
+      required final String location,
+      required final String content,
+      required final DateTime? startDate,
+      required final DateTime? endDate,
+      required final ExperienceCategory category}) = _$_Experience;
 
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get location => throw _privateConstructorUsedError;
+  String get location;
   @override
-  String get content => throw _privateConstructorUsedError;
+  String get content;
   @override
-  DateTime? get startDate => throw _privateConstructorUsedError;
+  DateTime? get startDate;
   @override
-  DateTime? get endDate => throw _privateConstructorUsedError;
+  DateTime? get endDate;
   @override
-  ExperienceCategory get category => throw _privateConstructorUsedError;
+  ExperienceCategory get category;
   @override
   @JsonKey(ignore: true)
-  _$ExperienceCopyWith<_Experience> get copyWith => throw _privateConstructorUsedError;
+  _$$_ExperienceCopyWith<_$_Experience> get copyWith => throw _privateConstructorUsedError;
 }

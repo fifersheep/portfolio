@@ -8,7 +8,7 @@ import 'package:portfolio/presentation/routes/routes.dart';
 List<Widget> navigationMenuItems(BuildContext context) => _menuItems(context, [
       NavigationItem(Strings.of(context).navItemIntro, FontAwesomeIcons.idCard, Routes.intro),
       NavigationItem(Strings.of(context).navItemProjects, FontAwesomeIcons.terminal, Routes.projects),
-      NavigationItem(Strings.of(context).navItemExperience, FontAwesomeIcons.globeEurope, Routes.experiences),
+      NavigationItem(Strings.of(context).navItemExperience, FontAwesomeIcons.earthEurope, Routes.experiences),
       // NavigationItem(Strings.of(context).navItemBlog, FontAwesomeIcons.featherAlt, Routes.blog)
     ]);
 

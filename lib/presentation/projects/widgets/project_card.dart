@@ -16,42 +16,47 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Card(
         clipBehavior: Clip.antiAlias,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            AspectRatio(
-              aspectRatio: imageAspectRatio,
-              child: Image.network(
-                project.coverImageUrl,
-                fit: BoxFit.cover,
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                },
+        child: IntrinsicHeight(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              AspectRatio(
+                aspectRatio: imageAspectRatio,
+                child: Image.network(
+                  project.coverImageUrl,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                ),
               ),
-            ),
-            Column(
-              children: [
-                ProjectCardInfo(
-                  title: project.title,
-                  summary: project.summary,
-                  tags: project.tags,
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ProjectCardInfo(
+                      title: project.title,
+                      summary: project.summary,
+                      tags: project.tags,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ButtonBar(
+                        alignment: MainAxisAlignment.end,
+                        children: (List<ProjectCallToActionState>.from(project.callToActions)
+                              ..sort((first, second) => second.style.index.compareTo(first.style.index)))
+                            .map((callToAction) => _callToActionMapper(context, callToAction))
+                            .toList(),
+                      ),
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: ButtonBar(
-                    alignment: MainAxisAlignment.end,
-                    children: (project.callToActions
-                          ..sort((first, second) => second.style.index.compareTo(first.style.index)))
-                        .map((callToAction) => _callToActionMapper(context, callToAction))
-                        .toList(),
-                  ),
-                ),
-              ],
-            )
-          ],
+              )
+            ],
+          ),
         ),
       );
 

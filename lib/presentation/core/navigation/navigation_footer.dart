@@ -16,7 +16,7 @@ class NavigationFooter extends StatelessWidget {
           child: GestureDetector(
             onTap: () => showLicensePage(context: context),
             child: const Icon(
-              FontAwesomeIcons.questionCircle,
+              FontAwesomeIcons.circleQuestion,
               color: ThemeColors.black25,
             ),
           ),

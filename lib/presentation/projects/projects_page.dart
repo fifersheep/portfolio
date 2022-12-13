@@ -37,27 +37,28 @@ class _ProjectsPageState extends State<ProjectsPage> {
                   Headline(Strings.of(context).projectsHeader),
                   LayoutBuilder(
                     builder: (_, constraints) {
-                      int _crossAxisCount;
-                      double _imageAspectRatio;
+                      int crossAxisCount;
+                      double imageAspectRatio;
                       if (constraints.maxWidth < 760) {
-                        _crossAxisCount = 1;
-                        _imageAspectRatio = 5 / 2;
+                        crossAxisCount = 1;
+                        imageAspectRatio = 5 / 2;
                       } else if (constraints.maxWidth < 1100) {
-                        _crossAxisCount = 2;
-                        _imageAspectRatio = 5 / 3;
+                        crossAxisCount = 2;
+                        imageAspectRatio = 5 / 3;
                       } else {
-                        _crossAxisCount = 3;
-                        _imageAspectRatio = 5 / 3;
+                        crossAxisCount = 3;
+                        imageAspectRatio = 5 / 3;
                       }
 
-                      return StaggeredGridView.countBuilder(
+                      return AlignedGridView.count(
                         shrinkWrap: true,
                         physics: const ClampingScrollPhysics(),
-                        crossAxisCount: _crossAxisCount,
-                        staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
+                        crossAxisCount: crossAxisCount,
+                        mainAxisSpacing: 8,
+                        crossAxisSpacing: 8,
                         itemBuilder: (_, index) => ProjectCard(
                           project: state.projects[index],
-                          imageAspectRatio: _imageAspectRatio,
+                          imageAspectRatio: imageAspectRatio,
                         ),
                         itemCount: state.projects.length,
                       );
@@ -72,11 +73,5 @@ class _ProjectsPageState extends State<ProjectsPage> {
         },
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _bloc.close();
-    super.dispose();
   }
 }

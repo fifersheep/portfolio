@@ -15,4 +15,5 @@ class ExperienceState with _$ExperienceState {
 }
 
 enum ExperienceIcon { code, book, home, heart, done }
+
 enum ExperienceColor { red, orange, green, blue, purple }
