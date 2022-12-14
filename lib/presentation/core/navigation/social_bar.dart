@@ -11,7 +11,7 @@ class SocialBar extends StatelessWidget {
           height: 32,
           child: Row(
             children: const [
-              SocialIcon(FontAwesomeIcons.gitlab, "https://gitlab.com/fifersheep"),
+              SocialIcon(FontAwesomeIcons.github, "https://github.com/fifersheep"),
               SocialIcon(FontAwesomeIcons.twitter, "https://twitter.com/fifersheep"),
               SocialIcon(FontAwesomeIcons.linkedin, "https://linkedin.com/in/scott-laing-edi"),
             ],
