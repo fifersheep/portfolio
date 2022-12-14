@@ -32,6 +32,13 @@ final supabase = ProjectTag(
   style: "fill",
 );
 
+final netlify = ProjectTag(
+  label: "Netlify",
+  labelColor: "#000000",
+  color: "#30C8C9",
+  style: "fill",
+);
+
 final openSource = ProjectTag(
   label: "Open Source",
   labelColor: "#6E9FCD",
@@ -88,7 +95,7 @@ class StubbedProjectsRepository implements ProjectsRepository {
           detail: "Detail",
           coverImageUrl:
               "https://cxmpioxuqmkkjbsihpbb.supabase.co/storage/v1/object/sign/projects/covers/portfolio.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9qZWN0cy9jb3ZlcnMvcG9ydGZvbGlvLnBuZyIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MDUzODU4OCwiZXhwIjoxOTg1ODk4NTg4fQ.dbgRuqAX5279tU-ey-xIuPu7OB483N7-1B8tRSDUWgg",
-          tags: [flutter, openSource],
+          tags: [flutter, netlify, openSource],
           callToActions: [
             ProjectCallToAction(
               type: "route",
