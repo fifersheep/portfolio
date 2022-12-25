@@ -1,4 +1,4 @@
-# portfolio
+# portfolio [![GitHub](https://img.shields.io/github/license/fifersheep/portfolio?color=blue)](https://github.com/fifersheep/portfolio/blob/main/LICENSE.md) [![GitHub](https://img.shields.io/badge/made%20with-Flutter-027dfd)](https://flutter.dev/) [![Netlify Status](https://api.netlify.com/api/v1/badges/8a9672c7-ef4e-41eb-abf8-7f6dd57936b6/deploy-status)](https://app.netlify.com/sites/fifersheep-portfolio/deploys)
 
 My personal portfolio
 
