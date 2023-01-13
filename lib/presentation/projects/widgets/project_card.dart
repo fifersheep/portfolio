@@ -63,7 +63,7 @@ class ProjectCard extends StatelessWidget {
   Widget _callToActionMapper(BuildContext context, ProjectCallToActionState callToAction) {
     void onPressed() => callToAction.type == ProjectCallToActionType.route
         ? AutoRouter.of(context).pushNamed(callToAction.action)
-        : launch(callToAction.action);
+        : launchUrl(Uri.parse(callToAction.action));
 
     final primaryCallToAction = PrimaryCallToAction(
       label: callToAction.label,
