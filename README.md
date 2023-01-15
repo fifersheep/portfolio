@@ -4,11 +4,48 @@ My personal portfolio
 
 ## Development
 
-## Frontend
+### Frontend
 
-- Run a dev build with Chrome: `flutter run -d chrome`
-- Run build runner as watcher for code generation: `flutter packages pub run build_runner watch --delete-conflicting-outputs`
-- Run build runner once for code generation: `flutter packages pub run build_runner build --delete-conflicting-outputs`
+Create a VS Code`launch.json` config and add local Supabase vars:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=SUPABASE_URL={url}",
+        "--dart-define=SUPABASE_ANON_KEY={key}"
+      ]
+    }
+  ]
+}
+```
+
+Or, run from the command line:
+
+```
+flutter run -d chrome \
+    --dart-define=SUPABASE_URL={url} \
+    --dart-define=SUPABASE_ANNON_KEY={key}
+```
+
+Run build runner as watcher for code generation:
+
+```
+flutter packages pub run build_runner watch \
+    --delete-conflicting-outputs
+```
+
+Run build runner once for code generation:
+
+```
+flutter packages pub run build_runner build \
+    --delete-conflicting-outputs
+```
 
 ### Backend
 
@@ -19,9 +56,9 @@ My personal portfolio
 
 #### Run Locally
 
-1. Run `supabase start`
+- Run `supabase start`
 
-#### DB
+#### Database changes
 
 - Create db diff: `supabase db diff --use-migra -f file_name`
 
@@ -29,3 +66,7 @@ My personal portfolio
 
 - Run all widget tests: `flutter test`
 - Run a single widget test file: `flutter test test/widgets/navigation/navigation_drawer_test.dart`
+
+## Deployment
+
+- Run `scripts/deploy.sh`
