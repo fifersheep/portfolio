@@ -3,9 +3,10 @@ if [ ! -d "flutter" ]; then
     git clone https://github.com/flutter/flutter.git
 fi
 
+cd flutter
 ls -la
-
-cd flutter && git checkout v3.3.9 && cd ..
+git checkout v3.3.9
+cd ..
 export PATH="$PATH:`pwd`/flutter/bin"
 
 flutter packages get
