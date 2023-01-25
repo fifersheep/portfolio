@@ -5,7 +5,7 @@ fi
 
 cd flutter
 ls -la
-git checkout v3.3.9
+git checkout 3.3.9
 cd ..
 export PATH="$PATH:`pwd`/flutter/bin"
 
