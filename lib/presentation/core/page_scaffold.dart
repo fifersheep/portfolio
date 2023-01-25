@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide NavigationDrawer;
 
 import 'package:portfolio/presentation/core/navigation/navigation_drawer.dart';
 
@@ -43,7 +43,7 @@ class PageScaffold extends StatelessWidget {
                               Center(
                                 child: Text(
                                   title,
-                                  style: Theme.of(context).primaryTextTheme.headline6?.copyWith(height: 1),
+                                  style: Theme.of(context).primaryTextTheme.titleLarge?.copyWith(height: 1),
                                 ),
                               )
                             ],
