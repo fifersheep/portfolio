@@ -7,5 +7,5 @@ class Response<T> with _$Response<T> {
   const Response._();
 
   const factory Response.success(T data) = Success<T>;
-  const factory Response.failure(String errorMessage) = Failure;
+  const factory Response.failure(String errorMessage) = Failure<T>;
 }

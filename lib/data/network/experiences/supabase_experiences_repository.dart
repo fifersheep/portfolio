@@ -14,14 +14,14 @@ class SupabaseExperiencesRepository implements ExperiencesRepository {
 
   @override
   Future<Response<List<Experience>>> getExperiences() async {
-    return _api.getExperiences().then(
-      (res) {
-        final experiences = res as List;
-        final mapped = experiences.map(
-          (experience) => Experience.fromJson(experience),
-        );
-        return Response.success(List<Experience>.from(mapped));
-      },
+    return _api.getExperiences().then((res) {
+      final experiences = res as List;
+      final mapped = experiences.map(
+        (experience) => Experience.fromJson(experience),
+      );
+      return Response.success(List<Experience>.from(mapped));
+    }).catchError(
+      (_) => const Response<List<Experience>>.failure('Failed to parse experience'),
     );
   }
 }

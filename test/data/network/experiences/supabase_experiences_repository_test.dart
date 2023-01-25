@@ -147,4 +147,20 @@ void main() {
       });
     });
   });
+
+  test('a failure is returned when experience can\'t be parsed', () async {
+    final endDate = '2007-09-01';
+    when(api.getExperiences()).thenAnswer((_) => Future.value([
+          {
+            'nonsense': 'data',
+          }
+        ]));
+
+    final actual = await repository.getExperiences();
+
+    expect(
+      actual,
+      Response<List<Experience>>.failure('Failed to parse experience'),
+    );
+  });
 }
