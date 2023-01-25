@@ -4,10 +4,10 @@ if [ ! -d "flutter" ]; then
 fi
 
 cd flutter
-ls -la
 git checkout 3.7.0
 cd ..
 export PATH="$PATH:`pwd`/flutter/bin"
 
+flutter clean
 flutter packages get
 flutter build web --dart-define=SUPABASE_URL=$SUPABASE_URL --dart-define=SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY
