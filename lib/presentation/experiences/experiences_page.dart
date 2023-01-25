@@ -36,23 +36,11 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
             Paragraph(Strings.of(context).experienceTimelineDescription),
             BlocBuilder<ExperiencesBloc, ExperiencesState>(
               bloc: _bloc,
-              builder: (context, state) {
-                if (state is ExperiencesLoading) {
-                  return LoadingIndicator();
-                } else if (state is ExperiencesLoaded) {
-                  return Container(
-                    margin: const EdgeInsets.only(top: 32),
-                    padding: const EdgeInsets.only(bottom: 16),
-                    alignment: Alignment.centerLeft,
-                    child: TimelineBuilder<ExperienceState>(
-                      items: state.experiences,
-                      builder: (experience) => ExperienceCard(experience: experience),
-                    ),
-                  );
-                } else {
-                  return GenericFailure();
-                }
-              },
+              builder: (context, state) => state.when(
+                loading: () => LoadingIndicator(),
+                loaded: (experiences) => _content(experiences),
+                error: () => GenericFailure(),
+              ),
             ),
           ],
         ),
@@ -60,3 +48,13 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
     );
   }
 }
+
+Widget _content(List<ExperienceState> experiences) => Container(
+      margin: const EdgeInsets.only(top: 32),
+      padding: const EdgeInsets.only(bottom: 16),
+      alignment: Alignment.centerLeft,
+      child: TimelineBuilder<ExperienceState>(
+        items: experiences,
+        builder: (experience) => ExperienceCard(experience: experience),
+      ),
+    );

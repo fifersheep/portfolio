@@ -8,7 +8,9 @@ import 'package:portfolio/presentation/constants/images.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('licenses/OFL.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);

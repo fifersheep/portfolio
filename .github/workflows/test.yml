@@ -12,5 +12,7 @@ jobs:
         with:
           flutter-version: "3.3.9"
           channel: "stable"
+      - run: echo SUPABASE_URL=${{ secrets.SUPABASE_URL }} >> .env
+      - run: echo SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }} >> .env
       - run: flutter pub get
       - run: flutter test

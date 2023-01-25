@@ -28,9 +28,9 @@ class ExperiencesBloc extends Bloc<ExperiencesEvent, ExperiencesState> {
 
   Future<void> _onLoadExperiences(ExperiencesEvent event, Emitter<ExperiencesState> emit) async {
     final payload = await _repository.getExperiences();
-    final result = payload.fold(
-      (failure) => const ExperiencesState.error(),
-      (experiences) => ExperiencesState.loaded(experiences.map(_fromExperience).toList()),
+    final result = payload.when(
+      failure: (_) => const ExperiencesState.error(),
+      success: (experiences) => ExperiencesState.loaded(experiences.map(_fromExperience).toList()),
     );
     emit(result);
   }

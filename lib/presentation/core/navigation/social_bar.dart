@@ -57,7 +57,7 @@ class _SocialIconState extends State<SocialIcon> {
             });
           },
           child: GestureDetector(
-            onTap: () => launch(widget.url),
+            onTap: () => launchUrl(Uri.parse(widget.url)),
             child: TweenAnimationBuilder(
               duration: const Duration(milliseconds: 100),
               tween: Tween<double>(begin: _originalSize, end: _size),

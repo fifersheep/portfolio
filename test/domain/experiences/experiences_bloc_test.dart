@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
-import 'package:dartz/dartz.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:portfolio/domain/core/error/failures.dart';
@@ -10,6 +9,7 @@ import 'package:portfolio/domain/experiences/entities/experience.dart';
 import 'package:portfolio/domain/experiences/experience_state.dart';
 import 'package:portfolio/domain/experiences/experiences_bloc.dart';
 import 'package:portfolio/domain/experiences/experiences_repository.dart';
+import 'package:portfolio/data/network/response.dart';
 import 'package:test/test.dart';
 
 import 'experiences_bloc_test.mocks.dart';
@@ -41,6 +41,7 @@ void main() {
   group('LoadExperiences', () {
     final experiences = [
       Experience(
+        id: 1,
         title: 'Exp Title',
         location: 'Exp Location',
         content: 'Exp Content',
@@ -64,7 +65,7 @@ void main() {
     blocTest(
       'should get data from get experiences repository',
       build: () {
-        when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+        when(repository.getExperiences()).thenAnswer((_) async => Response.success(experiences));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
@@ -74,7 +75,7 @@ void main() {
     blocTest(
       'should emit [Loading, Loaded] when data is retrieved successfully',
       build: () {
-        when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+        when(repository.getExperiences()).thenAnswer((_) async => Response.success(experiences));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
@@ -102,7 +103,7 @@ void main() {
     blocTest(
       'should map categories to colors and icons',
       build: () {
-        when(repository.getExperiences()).thenAnswer((_) async => Right(experiencesWithCategory));
+        when(repository.getExperiences()).thenAnswer((_) async => Response.success(experiencesWithCategory));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
@@ -124,6 +125,7 @@ void main() {
           build: () {
             final experiences = [
               Experience(
+                id: 1,
                 title: 'Exp Title',
                 location: 'Exp Location',
                 content: 'Exp Content',
@@ -132,7 +134,7 @@ void main() {
                 category: params.first,
               ),
             ];
-            when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+            when(repository.getExperiences()).thenAnswer((_) async => Response.success(experiences));
             when(dateFormatter.monthYearRange(startDate, endDate)).thenAnswer((_) => 'Range');
             when(dateFormatter.monthYear(startDate)).thenAnswer((_) => 'Date');
             return bloc;
@@ -153,6 +155,7 @@ void main() {
         final content = 'Unformatted Content';
         final experiences = [
           Experience(
+            id: 1,
             title: 'Exp Title',
             location: 'Exp Location',
             content: content,
@@ -161,7 +164,7 @@ void main() {
             category: ExperienceCategory.work,
           ),
         ];
-        when(repository.getExperiences()).thenAnswer((_) async => Right(experiences));
+        when(repository.getExperiences()).thenAnswer((_) async => Response.success(experiences));
         when(newLineFormatter.format(content)).thenAnswer((_) => 'Formatted Content');
         return bloc;
       },
@@ -183,7 +186,7 @@ void main() {
     blocTest(
       'should emit [Loading, Error] when data retrieval is unsuccessful',
       build: () {
-        when(repository.getExperiences()).thenAnswer((_) async => const Left(Failure.dataRetrievalFailure()));
+        when(repository.getExperiences()).thenAnswer((_) async => const Response.failure(""));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ExperiencesEvent.loadExperiences()),
@@ -199,6 +202,7 @@ final DateTime endDate = DateTime.parse('2007-09-30');
 const String timeframe = 'Exp Timeframe';
 
 Experience _experienceWithCategory(ExperienceCategory category) => Experience(
+      id: 1,
       title: 'Exp Title',
       location: 'Exp Location',
       content: 'Exp Content',

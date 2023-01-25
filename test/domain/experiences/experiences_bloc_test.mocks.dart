@@ -5,12 +5,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:portfolio/domain/core/error/failures.dart' as _i5;
-import 'package:portfolio/domain/core/formatter/date_formatter.dart' as _i7;
-import 'package:portfolio/domain/core/formatter/new_line_formatter.dart' as _i8;
-import 'package:portfolio/domain/experiences/entities/experience.dart' as _i6;
+import 'package:portfolio/data/network/response.dart' as _i2;
+import 'package:portfolio/domain/core/formatter/date_formatter.dart' as _i6;
+import 'package:portfolio/domain/core/formatter/new_line_formatter.dart' as _i7;
+import 'package:portfolio/domain/experiences/entities/experience.dart' as _i5;
 import 'package:portfolio/domain/experiences/experiences_repository.dart' as _i3;
 
 // ignore_for_file: type=lint
@@ -24,8 +23,8 @@ import 'package:portfolio/domain/experiences/experiences_repository.dart' as _i3
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
-  _FakeEither_0(
+class _FakeResponse_0<T> extends _i1.SmartFake implements _i2.Response<T> {
+  _FakeResponse_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -43,26 +42,25 @@ class MockExperiencesRepository extends _i1.Mock implements _i3.ExperiencesRepos
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i6.Experience>>> getExperiences() => (super.noSuchMethod(
+  _i4.Future<_i2.Response<List<_i5.Experience>>> getExperiences() => (super.noSuchMethod(
         Invocation.method(
           #getExperiences,
           [],
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, List<_i6.Experience>>>.value(
-            _FakeEither_0<_i5.Failure, List<_i6.Experience>>(
+        returnValue: _i4.Future<_i2.Response<List<_i5.Experience>>>.value(_FakeResponse_0<List<_i5.Experience>>(
           this,
           Invocation.method(
             #getExperiences,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, List<_i6.Experience>>>);
+      ) as _i4.Future<_i2.Response<List<_i5.Experience>>>);
 }
 
 /// A class which mocks [DateFormatter].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockDateFormatter extends _i1.Mock implements _i7.DateFormatter {
+class MockDateFormatter extends _i1.Mock implements _i6.DateFormatter {
   MockDateFormatter() {
     _i1.throwOnMissingStub(this);
   }
@@ -95,7 +93,7 @@ class MockDateFormatter extends _i1.Mock implements _i7.DateFormatter {
 /// A class which mocks [NewLineFormatter].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNewLineFormatter extends _i1.Mock implements _i8.NewLineFormatter {
+class MockNewLineFormatter extends _i1.Mock implements _i7.NewLineFormatter {
   MockNewLineFormatter() {
     _i1.throwOnMissingStub(this);
   }
