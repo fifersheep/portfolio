@@ -7,7 +7,7 @@ class Strings extends InheritedWidget {
     return result!;
   }
 
-  const Strings({Key? key, required Widget child}) : super(key: key, child: child);
+  const Strings({super.key, required super.child});
 
   @override
   bool updateShouldNotify(Strings old) => false;

@@ -8,7 +8,7 @@ import 'package:portfolio/presentation/core/navigation/navigation_menu.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_route_observer.dart';
 
 class NavigationDrawer extends StatefulWidget with RouteAware {
-  const NavigationDrawer({Key? key}) : super(key: key);
+  const NavigationDrawer({super.key});
 
   @override
   _NavigationDrawerState createState() => _NavigationDrawerState();

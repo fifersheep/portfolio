@@ -19,7 +19,7 @@ class Paragraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme.bodyText2;
+    final textTheme = Theme.of(context).textTheme.bodyMedium;
     return TextEmphasisBuilder(
       text: text,
       textStyle: textTheme,

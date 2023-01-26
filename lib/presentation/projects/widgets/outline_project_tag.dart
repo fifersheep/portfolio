@@ -5,7 +5,7 @@ import 'package:portfolio/presentation/core/presentation_extensions.dart';
 import 'package:portfolio/presentation/projects/widgets/project_tag.dart';
 
 class OutlineProjectTag extends StatelessWidget {
-  const OutlineProjectTag({Key? key, required this.tag}) : super(key: key);
+  const OutlineProjectTag({super.key, required this.tag});
 
   final ProjectTagState tag;
 

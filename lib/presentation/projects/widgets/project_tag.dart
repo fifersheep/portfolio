@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProjectTag extends StatelessWidget {
-  const ProjectTag({Key? key, required this.label, required this.labelColor, this.decoration}) : super(key: key);
+  const ProjectTag({super.key, required this.label, required this.labelColor, this.decoration});
 
   final String label;
   final Color labelColor;

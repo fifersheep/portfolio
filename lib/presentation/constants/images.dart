@@ -7,7 +7,7 @@ class Images extends InheritedWidget {
     return result!;
   }
 
-  const Images({Key? key, required Widget child}) : super(key: key, child: child);
+  const Images({super.key, required super.child});
 
   @override
   bool updateShouldNotify(Images old) => false;

@@ -23,24 +23,24 @@ class AppTheme {
       );
 
   static TextTheme get _textTheme => TextTheme(
-        headline1: textStyle(fontSize: 96.0, fontWeight: FontWeight.w300, letterSpacing: -1.5),
-        headline2: textStyle(fontSize: 60.0, fontWeight: FontWeight.w300, letterSpacing: -0.5),
-        headline3: textStyle(fontSize: 48.0, fontWeight: FontWeight.w400, letterSpacing: 0.0),
-        headline4: textStyle(
+        displayLarge: textStyle(fontSize: 96.0, fontWeight: FontWeight.w300, letterSpacing: -1.5),
+        displayMedium: textStyle(fontSize: 60.0, fontWeight: FontWeight.w300, letterSpacing: -0.5),
+        displaySmall: textStyle(fontSize: 48.0, fontWeight: FontWeight.w400, letterSpacing: 0.0),
+        headlineMedium: textStyle(
           fontSize: 34.0,
           fontWeight: FontWeight.w400,
           height: 3.0,
           letterSpacing: 0.25,
         ),
-        headline5: textStyle(fontSize: 24.0, fontWeight: FontWeight.w400, letterSpacing: 0.0),
-        headline6: textStyle(
+        headlineSmall: textStyle(fontSize: 24.0, fontWeight: FontWeight.w400, letterSpacing: 0.0),
+        titleLarge: textStyle(
           fontSize: 20.0,
           fontWeight: FontWeight.w500,
           height: 3.0,
           letterSpacing: 0.15,
         ),
-        bodyText1: textStyle(fontSize: 16.0, fontWeight: FontWeight.w400, letterSpacing: 0.5),
-        bodyText2: textStyle(
+        bodyLarge: textStyle(fontSize: 16.0, fontWeight: FontWeight.w400, letterSpacing: 0.5),
+        bodyMedium: textStyle(
           fontSize: 14.0,
           fontWeight: FontWeight.w400,
           height: 1.6,
@@ -49,11 +49,11 @@ class AppTheme {
             'Noto Color Emoji',
           ],
         ),
-        subtitle1: textStyle(fontSize: 16.0, fontWeight: FontWeight.w400, letterSpacing: 0.15),
-        subtitle2: textStyle(fontSize: 14.0, fontWeight: FontWeight.w500, letterSpacing: 0.1),
-        button: textStyle(fontSize: 14.0, fontWeight: FontWeight.w500, letterSpacing: 1.25),
-        caption: textStyle(fontSize: 12.0, fontWeight: FontWeight.w400, letterSpacing: 0.4),
-        overline: textStyle(fontSize: 10.0, fontWeight: FontWeight.w400, letterSpacing: 1.5),
+        titleMedium: textStyle(fontSize: 16.0, fontWeight: FontWeight.w400, letterSpacing: 0.15),
+        titleSmall: textStyle(fontSize: 14.0, fontWeight: FontWeight.w500, letterSpacing: 0.1),
+        labelLarge: textStyle(fontSize: 14.0, fontWeight: FontWeight.w500, letterSpacing: 1.25),
+        bodySmall: textStyle(fontSize: 12.0, fontWeight: FontWeight.w400, letterSpacing: 0.4),
+        labelSmall: textStyle(fontSize: 10.0, fontWeight: FontWeight.w400, letterSpacing: 1.5),
       );
 }
 

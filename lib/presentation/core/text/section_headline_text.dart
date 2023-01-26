@@ -8,6 +8,6 @@ class SectionHeadline extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
         text,
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.titleLarge,
       );
 }
