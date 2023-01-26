@@ -7,7 +7,7 @@ import 'package:portfolio/presentation/projects/widgets/naked_project_tag.dart';
 import 'package:portfolio/presentation/projects/widgets/outline_project_tag.dart';
 
 class ProjectCardInfo extends StatelessWidget {
-  const ProjectCardInfo({Key? key, required this.title, required this.summary, required this.tags}) : super(key: key);
+  const ProjectCardInfo({super.key, required this.title, required this.summary, required this.tags});
 
   final String title;
   final String summary;
