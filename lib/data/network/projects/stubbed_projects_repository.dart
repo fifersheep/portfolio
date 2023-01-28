@@ -77,7 +77,7 @@ class StubbedProjectsRepository implements ProjectsRepository {
           callToActions: [
             ProjectCallToAction(
               type: "route",
-              action: "projects/android-names-in-a-hat",
+              action: "/projects/android-names-in-a-hat",
               style: "primary",
               label: "Details",
             ),
@@ -99,7 +99,7 @@ class StubbedProjectsRepository implements ProjectsRepository {
           callToActions: [
             ProjectCallToAction(
               type: "route",
-              action: "projects/portfolio",
+              action: "/projects/portfolio",
               style: "primary",
               label: "Details",
             ),

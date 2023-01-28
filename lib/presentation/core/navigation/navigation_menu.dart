@@ -1,6 +1,6 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
 import 'package:portfolio/presentation/routes/routes.dart';
@@ -26,7 +26,7 @@ List<Widget> _menuItems(BuildContext context, List<NavigationItem> items) {
   );
 
   return items.map((item) {
-    final isSelected = context.router.isPathActive(item.route);
+    final isSelected = GoRouter.of(context).location.startsWith(item.route);
     final backgroundColor = isSelected ? ThemeColors.primary : Colors.transparent;
     final hoverColor = isSelected ? Colors.transparent : ThemeColors.primary[50];
     final labelColor = isSelected ? ThemeColors.textOnPrimary : ThemeColors.textOnWhite;
@@ -40,7 +40,7 @@ List<Widget> _menuItems(BuildContext context, List<NavigationItem> items) {
         highlightColor: Colors.transparent,
         splashColor: ThemeColors.primary[100],
         borderRadius: borderRadius,
-        onTap: () => context.router.navigateNamed(item.route),
+        onTap: () => context.go(item.route),
         child: Container(
           decoration: BoxDecoration(
             color: backgroundColor,
