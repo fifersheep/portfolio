@@ -1,4 +1,4 @@
-import 'package:auto_route/annotations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:portfolio/presentation/blog/blog_page.dart';
 import 'package:portfolio/presentation/core/page_not_found.dart';
 import 'package:portfolio/presentation/experiences/experiences_page.dart';
@@ -15,15 +15,11 @@ class Routes {
   static const String blog = '/blog';
 }
 
-@MaterialAutoRouter(
-  replaceInRouteName: 'Page,Route',
-  routes: <AutoRoute>[
-    MaterialRoute(path: Routes.intro, page: IntroPage, initial: true),
-    MaterialRoute(path: Routes.projects, page: ProjectsPage),
-    MaterialRoute(path: '/projects/:id', page: ProjectDetailsPage),
-    MaterialRoute(path: Routes.experiences, page: ExperiencesPage),
-    MaterialRoute(path: Routes.blog, page: BlogPage),
-    MaterialRoute(path: '*', page: PageNotFound),
-  ],
-)
-class $Router {}
+final routes = <RouteBase>[
+  GoRoute(path: Routes.intro, builder: (context, state) => const IntroPage()),
+  GoRoute(path: Routes.projects, builder: (context, state) => const ProjectsPage()),
+  GoRoute(path: '/projects/:id', builder: (context, state) => ProjectDetailsPage(id: state.params['id'] ?? '')),
+  GoRoute(path: Routes.experiences, builder: (context, state) => const ExperiencesPage()),
+  GoRoute(path: Routes.blog, builder: (context, state) => const BlogPage()),
+  GoRoute(path: '/*', builder: (context, state) => PageNotFound()),
+];
