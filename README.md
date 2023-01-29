@@ -70,3 +70,8 @@ flutter packages pub run build_runner build \
 ## Deployment
 
 - Run `scripts/deploy.sh`
+
+#### Supabase Functions
+
+- Create new: `supabase functions new function_name`
+- Serve locally: `supabase functions serve function_name`
