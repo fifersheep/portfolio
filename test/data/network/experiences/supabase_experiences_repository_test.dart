@@ -18,15 +18,17 @@ void main() {
   });
 
   test('experiences with no dates are successfully returned', () async {
-    when(api.getExperiences()).thenAnswer((_) => Future.value([
-          {
-            'id': 123,
-            'title': 'Title',
-            'location': 'Location',
-            'content': 'Content',
-            'category': 'work',
-          }
-        ]));
+    when(api.getExperiences()).thenAnswer((_) => Future.value({
+          'experiences': [
+            {
+              'id': 123,
+              'title': 'Title',
+              'location': 'Location',
+              'content': 'Content',
+              'category': 'work',
+            }
+          ]
+        }));
 
     final actual = await repository.getExperiences();
 
@@ -48,16 +50,18 @@ void main() {
 
   test('experiences with start dates are successfully returned', () async {
     final startDate = '2007-09-01';
-    when(api.getExperiences()).thenAnswer((_) => Future.value([
-          {
-            'id': 123,
-            'title': '',
-            'location': '',
-            'content': '',
-            'category': 'work',
-            'start_date': startDate,
-          }
-        ]));
+    when(api.getExperiences()).thenAnswer((_) => Future.value({
+          'experiences': [
+            {
+              'id': 123,
+              'title': '',
+              'location': '',
+              'content': '',
+              'category': 'work',
+              'start_date': startDate,
+            }
+          ]
+        }));
 
     final actual = await repository.getExperiences();
 
@@ -78,16 +82,18 @@ void main() {
   });
   test('experiences with end dates are successfully returned', () async {
     final endDate = '2007-09-01';
-    when(api.getExperiences()).thenAnswer((_) => Future.value([
-          {
-            'id': 123,
-            'title': '',
-            'location': '',
-            'content': '',
-            'category': 'work',
-            'end_date': endDate,
-          }
-        ]));
+    when(api.getExperiences()).thenAnswer((_) => Future.value({
+          'experiences': [
+            {
+              'id': 123,
+              'title': '',
+              'location': '',
+              'content': '',
+              'category': 'work',
+              'end_date': endDate,
+            }
+          ]
+        }));
 
     final actual = await repository.getExperiences();
 
@@ -118,15 +124,17 @@ void main() {
 
     params.forEach((originalString, parsedCategory) {
       test(originalString, () async {
-        when(api.getExperiences()).thenAnswer((_) => Future.value([
-              {
-                'id': 123,
-                'title': '',
-                'location': '',
-                'content': '',
-                'category': originalString,
-              }
-            ]));
+        when(api.getExperiences()).thenAnswer((_) => Future.value({
+              'experiences': [
+                {
+                  'id': 123,
+                  'title': '',
+                  'location': '',
+                  'content': '',
+                  'category': originalString,
+                }
+              ]
+            }));
 
         final actual = await repository.getExperiences();
 
@@ -150,11 +158,13 @@ void main() {
 
   test('a failure is returned when experience can\'t be parsed', () async {
     final endDate = '2007-09-01';
-    when(api.getExperiences()).thenAnswer((_) => Future.value([
-          {
-            'nonsense': 'data',
-          }
-        ]));
+    when(api.getExperiences()).thenAnswer((_) => Future.value({
+          'experiences': [
+            {
+              'nonsense': 'data',
+            }
+          ]
+        }));
 
     final actual = await repository.getExperiences();
 
