@@ -11,26 +11,48 @@ interface ProjectTag {
   style: string;
 }
 
-interface ProjectTagsForProject {
+interface TagsForProject {
   project_id: number;
   project_tag_id: number;
   project_tags: [ProjectTag];
+}
+interface ProjectCallToAction {
+  id: number;
+  label: string;
+  type: string;
+  action: string;
+  style: string;
+}
+
+interface CallToActionsForProject {
+  project_id: number;
+  project_call_to_action_id: number;
+  project_call_to_actions: [ProjectCallToAction];
 }
 
 supabase_request("/projects", async (supabaseClient) => {
   const { data, error } = await supabaseClient
     .from("projects")
-    .select("*, project_tags_for_project!inner(*, project_tags!inner(*))");
+    .select(
+      "*, project_tags_for_project!inner(*, project_tags!inner(*)), project_call_to_actions_for_project!inner(*, project_call_to_actions!inner(*))"
+    );
 
   if (error) throw error;
 
   if (data) {
     const r = data.map((project) => {
-      const { project_tags_for_project, ...rest } = project;
+      const {
+        project_tags_for_project,
+        project_call_to_actions_for_project,
+        ...rest
+      } = project;
       const tags = project_tags_for_project.map(
-        (ptfp: ProjectTagsForProject) => ptfp.project_tags
+        (tfp: TagsForProject) => tfp.project_tags
       );
-      return { ...rest, tags };
+      const ctas = project_call_to_actions_for_project.map(
+        (ctafp: CallToActionsForProject) => ctafp.project_call_to_actions
+      );
+      return { ...rest, tags, ctas };
     });
     return new Response(JSON.stringify(r), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
