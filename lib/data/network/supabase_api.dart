@@ -2,7 +2,7 @@ import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract class Api {
-  Future getExperiences();
+  Future<Map<String, dynamic>> getExperiences();
 }
 
 @LazySingleton(as: Api)
@@ -13,13 +13,6 @@ class SupabaseApi extends Api {
   );
 
   @override
-  PostgrestTransformBuilder getExperiences() => _instance
-      .from(
-        'experiences',
-      )
-      .select()
-      .order(
-        'start_date',
-        ascending: false,
-      );
+  Future<Map<String, dynamic>> getExperiences() =>
+      _instance.functions.invoke('experiences').then((res) => res.data as Map<String, dynamic>);
 }

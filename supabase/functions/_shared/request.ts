@@ -5,7 +5,10 @@ import {
 } from "https://esm.sh/@supabase/supabase-js@2";
 import { corsHeaders } from "../_shared/cors.ts";
 
-export function supabase_request(path: string, from: string, select: string) {
+export function supabase_request(
+  path: string,
+  request: (supabaseClient: SupabaseClient) => Promise<Response>
+) {
   serve(async (req) => {
     const { url, method } = req;
 
@@ -27,17 +30,8 @@ export function supabase_request(path: string, from: string, select: string) {
       const taskPattern = new URLPattern({ pathname: path });
       const matchingPath = taskPattern.exec(url);
 
-      if (method === "GET") {
-        const { data: task, error } = await supabaseClient
-          .from(from)
-          .select(select);
-
-        if (error) throw error;
-
-        return new Response(JSON.stringify({ task }), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-          status: 200,
-        });
+      if (method === "POST") {
+        return request(supabaseClient);
       } else {
         return new Response(JSON.stringify({ error: "Method not in use" }), {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
