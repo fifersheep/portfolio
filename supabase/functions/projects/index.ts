@@ -34,13 +34,13 @@ supabase_request("/projects", async (supabaseClient) => {
   const { data, error } = await supabaseClient
     .from("projects")
     .select(
-      "*, project_tags_for_project!inner(*, project_tags!inner(*)), project_call_to_actions_for_project!inner(*, project_call_to_actions!inner(*))"
+      "*, project_tags_for_project!left(*, project_tags!inner(*)), project_call_to_actions_for_project!left(*, project_call_to_actions!inner(*))"
     );
 
   if (error) throw error;
 
   if (data) {
-    const r = data.map((project) => {
+    const projects = data.map((project) => {
       const {
         project_tags_for_project,
         project_call_to_actions_for_project,
@@ -49,12 +49,12 @@ supabase_request("/projects", async (supabaseClient) => {
       const tags = project_tags_for_project.map(
         (tfp: TagsForProject) => tfp.project_tags
       );
-      const ctas = project_call_to_actions_for_project.map(
+      const call_to_actions = project_call_to_actions_for_project.map(
         (ctafp: CallToActionsForProject) => ctafp.project_call_to_actions
       );
-      return { ...rest, tags, ctas };
+      return { ...rest, tags, call_to_actions };
     });
-    return new Response(JSON.stringify(r), {
+    return new Response(JSON.stringify({ projects }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });

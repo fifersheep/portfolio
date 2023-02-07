@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/core/formatter/date_formatter.dart';
 import 'package:portfolio/domain/core/formatter/new_line_formatter.dart';
 import 'package:portfolio/domain/experiences/entities/experience.dart';

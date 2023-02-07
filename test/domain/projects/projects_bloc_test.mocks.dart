@@ -5,10 +5,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:portfolio/domain/core/error/failures.dart' as _i5;
-import 'package:portfolio/domain/projects/entities/project.dart' as _i6;
+import 'package:portfolio/data/network/response.dart' as _i2;
+import 'package:portfolio/domain/projects/entities/project.dart' as _i5;
 import 'package:portfolio/domain/projects/projects_repository.dart' as _i3;
 
 // ignore_for_file: type=lint
@@ -22,8 +21,8 @@ import 'package:portfolio/domain/projects/projects_repository.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
-  _FakeEither_0(
+class _FakeResponse_0<T> extends _i1.SmartFake implements _i2.Response<T> {
+  _FakeResponse_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -41,18 +40,17 @@ class MockProjectsRepository extends _i1.Mock implements _i3.ProjectsRepository 
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i6.Project>>> getProjects() => (super.noSuchMethod(
+  _i4.Future<_i2.Response<List<_i5.Project>>> getProjects() => (super.noSuchMethod(
         Invocation.method(
           #getProjects,
           [],
         ),
-        returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, List<_i6.Project>>>.value(_FakeEither_0<_i5.Failure, List<_i6.Project>>(
+        returnValue: _i4.Future<_i2.Response<List<_i5.Project>>>.value(_FakeResponse_0<List<_i5.Project>>(
           this,
           Invocation.method(
             #getProjects,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, List<_i6.Project>>>);
+      ) as _i4.Future<_i2.Response<List<_i5.Project>>>);
 }

@@ -3,11 +3,11 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:portfolio/domain/core/error/failures.dart';
 import 'package:portfolio/domain/projects/entities/project.dart';
 import 'package:portfolio/domain/projects/project_state.dart';
 import 'package:portfolio/domain/projects/projects_bloc.dart';
 import 'package:portfolio/domain/projects/projects_repository.dart';
+import 'package:portfolio/data/network/response.dart';
 import 'package:test/test.dart';
 
 import 'projects_bloc_test.mocks.dart';
@@ -30,15 +30,16 @@ void main() {
 
   group('LoadProjects', () {
     final projects = [
-      Project(title: 'Title', summary: 'Summary', detail: 'Detail', coverImageUrl: 'Cover Image Url', tags: [
+      Project(id: 123, title: 'Title', summary: 'Summary', detail: 'Detail', coverImageUrl: 'Cover Image Url', tags: [
         ProjectTag(
+          id: 456,
           label: 'Label',
           color: 'Color',
           labelColor: 'Label Color',
           style: 'outline',
         )
       ], callToActions: [
-        ProjectCallToAction(type: 'link', action: 'Action', style: 'primary', label: 'Label')
+        ProjectCallToAction(id: 789, type: 'link', action: 'Action', style: 'primary', label: 'Label')
       ])
     ];
 
@@ -69,7 +70,7 @@ void main() {
     blocTest(
       'should get data from get projects repository',
       build: () {
-        when(repository.getProjects()).thenAnswer((_) async => Right(projects));
+        when(repository.getProjects()).thenAnswer((_) async => Response.success(projects));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
@@ -79,7 +80,7 @@ void main() {
     blocTest(
       'should emit [Loaded] when data is retrieved successfully',
       build: () {
-        when(repository.getProjects()).thenAnswer((_) async => Right(projects));
+        when(repository.getProjects()).thenAnswer((_) async => Response.success(projects));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
@@ -103,7 +104,7 @@ void main() {
     blocTest(
       'should map tag styles',
       build: () {
-        when(repository.getProjects()).thenAnswer((_) async => Right(projectsWithStyles));
+        when(repository.getProjects()).thenAnswer((_) async => Response.success(projectsWithStyles));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
@@ -115,7 +116,7 @@ void main() {
     blocTest(
       'tag style should default to outline',
       build: () {
-        when(repository.getProjects()).thenAnswer((_) async => Right([_projectWithTagStyle('unknown')]));
+        when(repository.getProjects()).thenAnswer((_) async => Response.success([_projectWithTagStyle('unknown')]));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
@@ -145,7 +146,7 @@ void main() {
     blocTest(
       'should map call to action types and styles',
       build: () {
-        when(repository.getProjects()).thenAnswer((_) async => Right(projectWithCallToActions));
+        when(repository.getProjects()).thenAnswer((_) async => Response.success(projectWithCallToActions));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
@@ -157,7 +158,8 @@ void main() {
     blocTest(
       'call to action type and style should default to route and secondary',
       build: () {
-        when(repository.getProjects()).thenAnswer((_) async => Right([_projectWithCallToAction('unknown', 'unknown')]));
+        when(repository.getProjects())
+            .thenAnswer((_) async => Response.success([_projectWithCallToAction('unknown', 'unknown')]));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
@@ -170,24 +172,26 @@ void main() {
     blocTest(
       'should emit [Error] when data retrieval is unsuccessful',
       build: () {
-        when(repository.getProjects()).thenAnswer((_) async => const Left(Failure.dataRetrievalFailure()));
+        when(repository.getProjects()).thenAnswer((_) async => const Response.failure('Error message'));
         return bloc;
       },
       act: (Bloc bloc) async => bloc.add(const ProjectsEvent.loadProjects()),
       expect: () => [
-        const ProjectsState.error(),
+        const ProjectsState.error('Error message'),
       ],
     );
   });
 }
 
 Project _projectWithTagStyle(String style) => Project(
+      id: 123,
       title: 'Title',
       summary: 'Summary',
       detail: 'Detail',
       coverImageUrl: 'Cover Image Url',
       tags: [
         ProjectTag(
+          id: 456,
           label: 'Label',
           color: 'Color',
           labelColor: 'Label Color',
@@ -214,12 +218,13 @@ ProjectState _projectStateWithTagStyle(ProjectTagStyle style) => ProjectState(
     );
 
 Project _projectWithCallToAction(String type, String style) => Project(
+    id: 123,
     title: 'Title',
     summary: 'Summary',
     detail: 'Detail',
     coverImageUrl: 'Cover Image Url',
     tags: [],
-    callToActions: [ProjectCallToAction(type: type, style: style, action: 'Action', label: 'Label')]);
+    callToActions: [ProjectCallToAction(id: 789, type: type, style: style, action: 'Action', label: 'Label')]);
 
 ProjectState _projectStateWithCallToAction(ProjectCallToActionType type, ProjectCallToActionStyle style) =>
     ProjectState(
