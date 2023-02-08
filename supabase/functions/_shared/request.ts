@@ -6,8 +6,7 @@ import {
 import { corsHeaders } from "../_shared/cors.ts";
 
 export function supabase_request(
-  path: string,
-  request: (supabaseClient: SupabaseClient) => Promise<Response>
+  request: (supabaseClient: SupabaseClient) => Promise<{}>
 ) {
   serve(async (req) => {
     const { url, method } = req;
@@ -27,11 +26,12 @@ export function supabase_request(
         }
       );
 
-      const taskPattern = new URLPattern({ pathname: path });
-      const matchingPath = taskPattern.exec(url);
-
       if (method === "POST") {
-        return request(supabaseClient);
+        const payload = await request(supabaseClient);
+        return new Response(JSON.stringify(payload), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 200,
+        });
       } else {
         return new Response(JSON.stringify({ error: "Method not in use" }), {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
