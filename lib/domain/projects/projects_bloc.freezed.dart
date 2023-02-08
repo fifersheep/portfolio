@@ -163,21 +163,21 @@ mixin _$ProjectsState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<ProjectState> projects) loaded,
-    required TResult Function() error,
+    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<ProjectState> projects)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<ProjectState> projects)? loaded,
-    TResult Function()? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -257,7 +257,7 @@ class _$ProjectsLoading implements ProjectsLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<ProjectState> projects) loaded,
-    required TResult Function() error,
+    required TResult Function(String message) error,
   }) {
     return loading();
   }
@@ -267,7 +267,7 @@ class _$ProjectsLoading implements ProjectsLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<ProjectState> projects)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String message)? error,
   }) {
     return loading?.call();
   }
@@ -277,7 +277,7 @@ class _$ProjectsLoading implements ProjectsLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<ProjectState> projects)? loaded,
-    TResult Function()? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -392,7 +392,7 @@ class _$ProjectsLoaded implements ProjectsLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<ProjectState> projects) loaded,
-    required TResult Function() error,
+    required TResult Function(String message) error,
   }) {
     return loaded(projects);
   }
@@ -402,7 +402,7 @@ class _$ProjectsLoaded implements ProjectsLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<ProjectState> projects)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String message)? error,
   }) {
     return loaded?.call(projects);
   }
@@ -412,7 +412,7 @@ class _$ProjectsLoaded implements ProjectsLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<ProjectState> projects)? loaded,
-    TResult Function()? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -468,40 +468,67 @@ abstract class ProjectsLoaded implements ProjectsState {
 abstract class _$$ProjectsErrorCopyWith<$Res> {
   factory _$$ProjectsErrorCopyWith(_$ProjectsError value, $Res Function(_$ProjectsError) then) =
       __$$ProjectsErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
 }
 
 /// @nodoc
 class __$$ProjectsErrorCopyWithImpl<$Res> extends _$ProjectsStateCopyWithImpl<$Res, _$ProjectsError>
     implements _$$ProjectsErrorCopyWith<$Res> {
   __$$ProjectsErrorCopyWithImpl(_$ProjectsError _value, $Res Function(_$ProjectsError) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$ProjectsError(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ProjectsError implements ProjectsError {
-  const _$ProjectsError();
+  const _$ProjectsError(this.message);
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'ProjectsState.error()';
+    return 'ProjectsState.error(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ProjectsError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectsError &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectsErrorCopyWith<_$ProjectsError> get copyWith =>
+      __$$ProjectsErrorCopyWithImpl<_$ProjectsError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<ProjectState> projects) loaded,
-    required TResult Function() error,
+    required TResult Function(String message) error,
   }) {
-    return error();
+    return error(message);
   }
 
   @override
@@ -509,9 +536,9 @@ class _$ProjectsError implements ProjectsError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<ProjectState> projects)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String message)? error,
   }) {
-    return error?.call();
+    return error?.call(message);
   }
 
   @override
@@ -519,11 +546,11 @@ class _$ProjectsError implements ProjectsError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<ProjectState> projects)? loaded,
-    TResult Function()? error,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error();
+      return error(message);
     }
     return orElse();
   }
@@ -564,5 +591,9 @@ class _$ProjectsError implements ProjectsError {
 }
 
 abstract class ProjectsError implements ProjectsState {
-  const factory ProjectsError() = _$ProjectsError;
+  const factory ProjectsError(final String message) = _$ProjectsError;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$ProjectsErrorCopyWith<_$ProjectsError> get copyWith => throw _privateConstructorUsedError;
 }

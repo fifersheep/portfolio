@@ -39,7 +39,7 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
               builder: (context, state) => state.when(
                 loading: () => LoadingIndicator(),
                 loaded: (experiences) => _content(experiences),
-                error: () => GenericFailure(),
+                error: () => const GenericFailure(),
               ),
             ),
           ],

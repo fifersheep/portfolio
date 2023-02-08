@@ -22,9 +22,9 @@ class ProjectsBloc extends Bloc<ProjectsEvent, ProjectsState> {
 
   Future<void> _onLoadProjects(ProjectsEvent event, Emitter<ProjectsState> emit) async {
     final payload = await _repository.getProjects();
-    final result = payload.fold(
-      (failure) => const ProjectsState.error(),
-      (projects) => ProjectsState.loaded(projects.map(_fromProject).toList()),
+    final result = payload.when(
+      failure: (message) => ProjectsState.error(message),
+      success: (projects) => ProjectsState.loaded(projects.map(_fromProject).toList()),
     );
     emit(result);
   }
