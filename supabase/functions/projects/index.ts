@@ -15,25 +15,12 @@ interface TagsForProject {
   project_tag_id: number;
   project_tags: [ProjectTag];
 }
-interface ProjectCallToAction {
-  id: number;
-  label: string;
-  type: string;
-  action: string;
-  style: string;
-}
-
-interface CallToActionsForProject {
-  project_id: number;
-  project_call_to_action_id: number;
-  project_call_to_actions: [ProjectCallToAction];
-}
 
 supabase_request(async (supabaseClient) => {
   const { data, error } = await supabaseClient
     .from("projects")
     .select(
-      "*, project_tags_for_project!left(*, project_tags!inner(*)), project_call_to_actions_for_project!left(*, project_call_to_actions!inner(*))"
+      "*, project_tags_for_project!left(*, project_tags!inner(*)), project_call_to_actions!left(*)"
     );
 
   if (error) throw error;
@@ -42,16 +29,17 @@ supabase_request(async (supabaseClient) => {
     const projects = data.map((project) => {
       const {
         project_tags_for_project,
-        project_call_to_actions_for_project,
-        ...rest
+        project_call_to_actions,
+        ...remainingProperties
       } = project;
       const tags = project_tags_for_project.map(
         (tfp: TagsForProject) => tfp.project_tags
       );
-      const call_to_actions = project_call_to_actions_for_project.map(
-        (ctafp: CallToActionsForProject) => ctafp.project_call_to_actions
-      );
-      return { ...rest, tags, call_to_actions };
+      return {
+        ...remainingProperties,
+        tags,
+        call_to_actions: project_call_to_actions,
+      };
     });
     return { projects };
   }
