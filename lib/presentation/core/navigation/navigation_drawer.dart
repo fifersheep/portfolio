@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/data/network/auth/auth_repository.dart';
 import 'package:portfolio/injection.dart';
 import 'package:portfolio/presentation/constants/colors.dart';
+import 'package:portfolio/presentation/core/navigation/navigation_authentication.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_footer.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_header.dart';
 import 'package:portfolio/presentation/core/navigation/navigation_massage.dart';
@@ -16,6 +18,7 @@ class NavigationDrawer extends StatefulWidget with RouteAware {
 
 class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
   final NavigationRouteObserver _routeObserver = getIt<NavigationRouteObserver>();
+  final AuthRepository _authRepository = getIt<AuthRepository>();
 
   @override
   void didChangeDependencies() {
@@ -47,6 +50,11 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       NavigationHeader(),
+                      NavigationAuthentication(
+                        isAuthenticated: false,
+                        signIn: () => _authRepository.signIn(),
+                        signOut: () => _authRepository.signOut(),
+                      ),
                       NavigationMessage(),
                       ...navigationMenuItems(context),
                       NavigationFooter(width: constraint.maxWidth),
