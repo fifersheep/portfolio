@@ -5,6 +5,7 @@ abstract class Api {
   Future<bool> signInWithGoogle();
   Future<void> signOut();
   Stream<AuthState> get onAuthStateChange;
+  String? get email;
   Future<Map<String, dynamic>> getExperiences();
   Future<Map<String, dynamic>> getProjects();
 }
@@ -24,6 +25,9 @@ class SupabaseApi extends Api {
 
   @override
   Stream<AuthState> get onAuthStateChange => _instance.auth.onAuthStateChange;
+
+  @override
+  String? get email => _instance.auth.currentSession?.user.email;
 
   Future<Map<String, dynamic>> _get(String path) =>
       _instance.functions.invoke(path).then((res) => res.data as Map<String, dynamic>);

@@ -53,6 +53,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
                       StreamBuilder<AuthState>(
                         stream: _authRepository.stream,
                         builder: (context, snapshot) => NavigationAuthentication(
+                          email: _authRepository.email,
                           isAuthenticated: snapshot.data is SignedIn,
                           signIn: () => _authRepository.signIn(),
                           signOut: () => _authRepository.signOut(),

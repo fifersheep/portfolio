@@ -21,6 +21,8 @@ class AuthRepository extends Cubit<AuthState> {
 
   final Api _api;
 
+  String? get email => _api.email;
+
   Future<bool> signIn() async => _api.signInWithGoogle();
 
   Future<void> signOut() async => _api.signOut();
