@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -27,7 +29,11 @@ class SupabaseApi extends Api {
   Stream<AuthState> get onAuthStateChange => _instance.auth.onAuthStateChange;
 
   @override
-  String? get email => _instance.auth.currentSession?.user.email;
+  String? get email {
+    log('Reading email...');
+    log(_instance.auth.currentSession?.toString() ?? 'Nah');
+    return _instance.auth.currentSession?.user.email;
+  }
 
   Future<Map<String, dynamic>> _get(String path) =>
       _instance.functions.invoke(path).then((res) => res.data as Map<String, dynamic>);
