@@ -58,13 +58,11 @@ mixin _$AuthState {
 
 /// @nodoc
 abstract class $AuthStateCopyWith<$Res> {
-  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
-      _$AuthStateCopyWithImpl<$Res, AuthState>;
+  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) = _$AuthStateCopyWithImpl<$Res, AuthState>;
 }
 
 /// @nodoc
-class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
-    implements $AuthStateCopyWith<$Res> {
+class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState> implements $AuthStateCopyWith<$Res> {
   _$AuthStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -75,17 +73,13 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
 
 /// @nodoc
 abstract class _$$SignedInCopyWith<$Res> {
-  factory _$$SignedInCopyWith(
-          _$SignedIn value, $Res Function(_$SignedIn) then) =
-      __$$SignedInCopyWithImpl<$Res>;
+  factory _$$SignedInCopyWith(_$SignedIn value, $Res Function(_$SignedIn) then) = __$$SignedInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SignedInCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$SignedIn>
+class __$$SignedInCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$SignedIn>
     implements _$$SignedInCopyWith<$Res> {
-  __$$SignedInCopyWithImpl(_$SignedIn _value, $Res Function(_$SignedIn) _then)
-      : super(_value, _then);
+  __$$SignedInCopyWithImpl(_$SignedIn _value, $Res Function(_$SignedIn) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -100,8 +94,7 @@ class _$SignedIn extends SignedIn {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignedIn);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SignedIn);
   }
 
   @override
@@ -177,18 +170,13 @@ abstract class SignedIn extends AuthState {
 
 /// @nodoc
 abstract class _$$SignedOutCopyWith<$Res> {
-  factory _$$SignedOutCopyWith(
-          _$SignedOut value, $Res Function(_$SignedOut) then) =
-      __$$SignedOutCopyWithImpl<$Res>;
+  factory _$$SignedOutCopyWith(_$SignedOut value, $Res Function(_$SignedOut) then) = __$$SignedOutCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SignedOutCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$SignedOut>
+class __$$SignedOutCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$SignedOut>
     implements _$$SignedOutCopyWith<$Res> {
-  __$$SignedOutCopyWithImpl(
-      _$SignedOut _value, $Res Function(_$SignedOut) _then)
-      : super(_value, _then);
+  __$$SignedOutCopyWithImpl(_$SignedOut _value, $Res Function(_$SignedOut) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -203,8 +191,7 @@ class _$SignedOut extends SignedOut {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignedOut);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SignedOut);
   }
 
   @override

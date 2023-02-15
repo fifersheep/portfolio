@@ -56,8 +56,7 @@ class MockApi extends _i1.Mock implements _i2.Api {
           #getExperiences,
           [],
         ),
-        returnValue:
-            _i3.Future<Map<String, dynamic>>.value(<String, dynamic>{}),
+        returnValue: _i3.Future<Map<String, dynamic>>.value(<String, dynamic>{}),
       ) as _i3.Future<Map<String, dynamic>>);
   @override
   _i3.Future<Map<String, dynamic>> getProjects() => (super.noSuchMethod(
@@ -65,7 +64,6 @@ class MockApi extends _i1.Mock implements _i2.Api {
           #getProjects,
           [],
         ),
-        returnValue:
-            _i3.Future<Map<String, dynamic>>.value(<String, dynamic>{}),
+        returnValue: _i3.Future<Map<String, dynamic>>.value(<String, dynamic>{}),
       ) as _i3.Future<Map<String, dynamic>>);
 }

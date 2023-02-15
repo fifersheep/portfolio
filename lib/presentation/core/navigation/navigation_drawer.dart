@@ -50,10 +50,13 @@ class _NavigationDrawerState extends State<NavigationDrawer> with RouteAware {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       NavigationHeader(),
-                      NavigationAuthentication(
-                        isAuthenticated: false,
-                        signIn: () => _authRepository.signIn(),
-                        signOut: () => _authRepository.signOut(),
+                      StreamBuilder<AuthState>(
+                        stream: _authRepository.stream,
+                        builder: (context, snapshot) => NavigationAuthentication(
+                          isAuthenticated: snapshot.data is SignedIn,
+                          signIn: () => _authRepository.signIn(),
+                          signOut: () => _authRepository.signOut(),
+                        ),
                       ),
                       NavigationMessage(),
                       ...navigationMenuItems(context),
