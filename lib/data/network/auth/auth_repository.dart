@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -14,6 +15,7 @@ part 'auth_state.dart';
 class AuthRepository extends Cubit<AuthState> {
   AuthRepository(this._api) : super(const AuthState.signedOut()) {
     _api.onAuthStateChange.listen((data) {
+      log(data.toString());
       final AuthChangeEvent event = data.event;
       emit(event == AuthChangeEvent.signedIn ? const SignedIn() : const SignedOut());
     });
