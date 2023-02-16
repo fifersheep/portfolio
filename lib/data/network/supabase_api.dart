@@ -22,7 +22,7 @@ class SupabaseApi extends Api {
   @override
   Future<bool> signInWithGoogle() => _instance.auth.signInWithOAuth(
         Provider.google,
-        redirectTo: '${Uri.parse(const String.fromEnvironment('SUPABASE_URL')).host}://login-callback/',
+        redirectTo: 'https://deploy-preview-17--fifersheep-portfolio.netlify.app/',
       );
 
   @override
