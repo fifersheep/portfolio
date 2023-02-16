@@ -20,7 +20,10 @@ class SupabaseApi extends Api {
   );
 
   @override
-  Future<bool> signInWithGoogle() => _instance.auth.signInWithOAuth(Provider.google);
+  Future<bool> signInWithGoogle() => _instance.auth.signInWithOAuth(
+        Provider.google,
+        redirectTo: '${const String.fromEnvironment('SUPABASE_URL')}/auth/v1/callback',
+      );
 
   @override
   Future<void> signOut() => _instance.auth.signOut();
