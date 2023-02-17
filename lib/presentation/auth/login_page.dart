@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/data/network/auth/auth_repository.dart';
+import 'package:portfolio/domain/auth/login_cubit.dart';
 import 'package:portfolio/injection.dart';
 import 'package:portfolio/presentation/core/actions/primary_call_to_action.dart';
 import 'package:portfolio/presentation/core/page_scaffold.dart';
@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final AuthRepository _authRepository = getIt<AuthRepository>();
+  final LoginCubit _loginCubit = getIt<LoginCubit>();
 
   @override
   Widget build(BuildContext context) => PageScaffold(
@@ -25,25 +25,24 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 const Headline('Login'),
-                const TextField(
-                  decoration: InputDecoration(
+                TextField(
+                  decoration: const InputDecoration(
                     label: Text('Email'),
-                    floatingLabelBehavior: FloatingLabelBehavior.auto,
                   ),
+                  onChanged: _loginCubit.emailChanged,
                 ),
-                const TextField(
-                  decoration: InputDecoration(
+                TextField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
                     label: Text('Password'),
-                    floatingLabelBehavior: FloatingLabelBehavior.auto,
                   ),
+                  onChanged: _loginCubit.passwordChanged,
                 ),
                 const SizedBox(height: 32),
                 PrimaryCallToAction(
                   label: 'Login',
                   route: 'dunno what this does...',
-                  onPressed: () {
-                    _authRepository.signIn('', '');
-                  },
+                  onPressed: _loginCubit.signIn,
                 )
               ],
             ),
