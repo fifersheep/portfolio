@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -15,17 +14,18 @@ part 'auth_state.dart';
 class AuthRepository extends Cubit<AuthState> {
   AuthRepository(this._api) : super(const AuthState.signedOut()) {
     _api.onAuthStateChange.listen((data) {
-      log(data.toString());
       final AuthChangeEvent event = data.event;
-      emit(event == AuthChangeEvent.signedIn ? const SignedIn() : const SignedOut());
+      emit(
+        event == AuthChangeEvent.signedIn
+            ? AuthState.signedIn(data.session?.user.email ?? 'No email')
+            : const AuthState.signedOut(),
+      );
     });
   }
 
   final Api _api;
 
-  String? get email => _api.email;
-
-  Future<bool> signIn() async => _api.signInWithGoogle();
+  Future<void> signIn(String email, String password) async => _api.signInWithEmail(email, password);
 
   Future<void> signOut() async => _api.signOut();
 }

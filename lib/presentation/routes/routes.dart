@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:portfolio/presentation/auth/login_page.dart';
 import 'package:portfolio/presentation/blog/blog_page.dart';
 import 'package:portfolio/presentation/core/page_not_found.dart';
 import 'package:portfolio/presentation/experiences/experiences_page.dart';
@@ -13,6 +14,7 @@ class Routes {
   static const String projects = '/projects';
   static const String experiences = '/experiences';
   static const String blog = '/blog';
+  static const String login = '/login';
 }
 
 final routes = <RouteBase>[
@@ -21,5 +23,6 @@ final routes = <RouteBase>[
   GoRoute(path: '/projects/:id', builder: (context, state) => ProjectDetailsPage(id: state.params['id'] ?? '')),
   GoRoute(path: Routes.experiences, builder: (context, state) => const ExperiencesPage()),
   GoRoute(path: Routes.blog, builder: (context, state) => const BlogPage()),
+  GoRoute(path: Routes.login, builder: (context, state) => const LoginPage()),
   GoRoute(path: '/*', builder: (context, state) => PageNotFound()),
 ];

@@ -4,15 +4,13 @@ import 'package:portfolio/presentation/core/actions/secondary_call_to_action.dar
 class NavigationAuthentication extends StatelessWidget {
   const NavigationAuthentication({
     required this.email,
-    required this.isAuthenticated,
-    required this.signIn,
-    required this.signOut,
+    required this.buttonLabel,
+    required this.buttonOnPressed,
   });
 
-  final String? email;
-  final bool isAuthenticated;
-  final void Function() signIn;
-  final void Function() signOut;
+  final String email;
+  final String buttonLabel;
+  final void Function() buttonOnPressed;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -20,12 +18,12 @@ class NavigationAuthentication extends StatelessWidget {
         alignment: Alignment.center,
         child: Column(
           children: [
-            Text(email ?? 'Not Logged In'),
+            Text(email),
             const SizedBox(height: 8),
             SecondaryCallToAction(
-              label: isAuthenticated ? 'Sign Out' : 'Sign In',
+              label: buttonLabel,
               route: 'dunno what this does...',
-              onPressed: isAuthenticated ? signOut : signIn,
+              onPressed: buttonOnPressed,
             ),
           ],
         ),

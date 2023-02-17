@@ -34,13 +34,21 @@ class MockApi extends _i1.Mock implements _i2.Api {
         returnValue: _i3.Stream<_i4.AuthState>.empty(),
       ) as _i3.Stream<_i4.AuthState>);
   @override
-  _i3.Future<bool> signInWithGoogle() => (super.noSuchMethod(
+  _i3.Future<void> signInWithEmail(
+    String? email,
+    String? password,
+  ) =>
+      (super.noSuchMethod(
         Invocation.method(
-          #signInWithGoogle,
-          [],
+          #signInWithEmail,
+          [
+            email,
+            password,
+          ],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   _i3.Future<void> signOut() => (super.noSuchMethod(
         Invocation.method(

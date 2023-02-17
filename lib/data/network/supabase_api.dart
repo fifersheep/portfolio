@@ -1,13 +1,10 @@
-import 'dart:developer';
-
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract class Api {
-  Future<bool> signInWithGoogle();
+  Future<void> signInWithEmail(String email, String password);
   Future<void> signOut();
   Stream<AuthState> get onAuthStateChange;
-  String? get email;
   Future<Map<String, dynamic>> getExperiences();
   Future<Map<String, dynamic>> getProjects();
 }
@@ -20,9 +17,9 @@ class SupabaseApi extends Api {
   );
 
   @override
-  Future<bool> signInWithGoogle() => _instance.auth.signInWithOAuth(
-        Provider.google,
-        // redirectTo: '${Uri.parse(const String.fromEnvironment('SUPABASE_URL'))}/auth/v1/callback',
+  Future<void> signInWithEmail(String email, String password) => _instance.auth.signInWithPassword(
+        email: email,
+        password: password,
       );
 
   @override
@@ -30,13 +27,6 @@ class SupabaseApi extends Api {
 
   @override
   Stream<AuthState> get onAuthStateChange => _instance.auth.onAuthStateChange;
-
-  @override
-  String? get email {
-    log('Reading email...');
-    log(_instance.auth.currentSession?.toString() ?? 'Nah');
-    return _instance.auth.currentSession?.user.email;
-  }
 
   Future<Map<String, dynamic>> _get(String path) =>
       _instance.functions.invoke(path).then((res) => res.data as Map<String, dynamic>);

@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() signedIn,
+    required TResult Function(String email) signedIn,
     required TResult Function() signedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? signedIn,
+    TResult? Function(String email)? signedIn,
     TResult? Function()? signedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signedIn,
+    TResult Function(String email)? signedIn,
     TResult Function()? signedOut,
     required TResult orElse(),
   }) =>
@@ -74,59 +74,85 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState> implements $AuthStat
 /// @nodoc
 abstract class _$$SignedInCopyWith<$Res> {
   factory _$$SignedInCopyWith(_$SignedIn value, $Res Function(_$SignedIn) then) = __$$SignedInCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String email});
 }
 
 /// @nodoc
 class __$$SignedInCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$SignedIn>
     implements _$$SignedInCopyWith<$Res> {
   __$$SignedInCopyWithImpl(_$SignedIn _value, $Res Function(_$SignedIn) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_$SignedIn(
+      null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SignedIn extends SignedIn {
-  const _$SignedIn() : super._();
+  const _$SignedIn(this.email) : super._();
+
+  @override
+  final String email;
 
   @override
   String toString() {
-    return 'AuthState.signedIn()';
+    return 'AuthState.signedIn(email: $email)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SignedIn);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignedIn &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, email);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignedInCopyWith<_$SignedIn> get copyWith => __$$SignedInCopyWithImpl<_$SignedIn>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() signedIn,
+    required TResult Function(String email) signedIn,
     required TResult Function() signedOut,
   }) {
-    return signedIn();
+    return signedIn(email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? signedIn,
+    TResult? Function(String email)? signedIn,
     TResult? Function()? signedOut,
   }) {
-    return signedIn?.call();
+    return signedIn?.call(email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signedIn,
+    TResult Function(String email)? signedIn,
     TResult Function()? signedOut,
     required TResult orElse(),
   }) {
     if (signedIn != null) {
-      return signedIn();
+      return signedIn(email);
     }
     return orElse();
   }
@@ -164,8 +190,12 @@ class _$SignedIn extends SignedIn {
 }
 
 abstract class SignedIn extends AuthState {
-  const factory SignedIn() = _$SignedIn;
+  const factory SignedIn(final String email) = _$SignedIn;
   const SignedIn._() : super._();
+
+  String get email;
+  @JsonKey(ignore: true)
+  _$$SignedInCopyWith<_$SignedIn> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -200,7 +230,7 @@ class _$SignedOut extends SignedOut {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() signedIn,
+    required TResult Function(String email) signedIn,
     required TResult Function() signedOut,
   }) {
     return signedOut();
@@ -209,7 +239,7 @@ class _$SignedOut extends SignedOut {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? signedIn,
+    TResult? Function(String email)? signedIn,
     TResult? Function()? signedOut,
   }) {
     return signedOut?.call();
@@ -218,7 +248,7 @@ class _$SignedOut extends SignedOut {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signedIn,
+    TResult Function(String email)? signedIn,
     TResult Function()? signedOut,
     required TResult orElse(),
   }) {
