@@ -12,8 +12,8 @@ _$_Project _$$_ProjectFromJson(Map<String, dynamic> json) => _$_Project(
       summary: json['summary'] as String,
       detail: json['detail'] as String,
       coverImageUrl: json['cover_img_url'] as String,
-      tags: (json['tags'] as List<dynamic>).map((e) => ProjectTag.fromJson(e)).toList(),
-      callToActions: (json['call_to_actions'] as List<dynamic>).map((e) => ProjectCallToAction.fromJson(e)).toList(),
+      tags: (json['tags'] as List<dynamic>).map(ProjectTag.fromJson).toList(),
+      callToActions: (json['call_to_actions'] as List<dynamic>).map(ProjectCallToAction.fromJson).toList(),
     );
 
 Map<String, dynamic> _$$_ProjectToJson(_$_Project instance) => <String, dynamic>{
