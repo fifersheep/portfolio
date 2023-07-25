@@ -9,10 +9,10 @@ class BlogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageScaffold(
       title: Strings.of(context).blogTitle,
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               'Blog Content',
             ),

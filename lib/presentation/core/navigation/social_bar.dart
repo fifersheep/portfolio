@@ -5,12 +5,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 class SocialBar extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(left: 32.0),
+  Widget build(BuildContext context) => const Padding(
+        padding: EdgeInsets.only(left: 32.0),
         child: SizedBox(
           height: 32,
           child: Row(
-            children: const [
+            children: [
               SocialIcon(FontAwesomeIcons.github, "https://github.com/fifersheep"),
               SocialIcon(FontAwesomeIcons.twitter, "https://twitter.com/fifersheep"),
               SocialIcon(FontAwesomeIcons.linkedin, "https://linkedin.com/in/scott-laing-edi"),
