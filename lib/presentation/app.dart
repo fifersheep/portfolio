@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart' hide Router;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/injection.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
@@ -19,6 +20,8 @@ class App extends StatelessWidget {
       title: Strings.of(context).appTitle,
       theme: AppTheme.defaultTheme,
       routerConfig: _router,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

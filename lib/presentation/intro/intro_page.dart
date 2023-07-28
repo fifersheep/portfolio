@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:portfolio/presentation/constants/images.dart';
 import 'package:portfolio/presentation/constants/strings.dart';
 import 'package:portfolio/presentation/core/page_scaffold.dart';
@@ -18,7 +19,7 @@ class IntroPage extends StatelessWidget {
     );
 
     return PageScaffold(
-      title: strings.introTitle,
+      title: AppLocalizations.of(context)!.introHeader,
       headerBackground: Images.of(context).introHeaderBanner,
       body: Padding(
         padding: const EdgeInsets.only(left: 24, right: 24),

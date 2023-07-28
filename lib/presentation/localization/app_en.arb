@@ -1,0 +1,6 @@
+{
+  "introHeader": "Hello",
+  "@introHeader": {
+    "description": "An informal greeting"
+  }
+}
