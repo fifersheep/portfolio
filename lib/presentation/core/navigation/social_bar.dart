@@ -14,6 +14,7 @@ class SocialBar extends StatelessWidget {
               SocialIcon(FontAwesomeIcons.github, "https://github.com/fifersheep"),
               SocialIcon(FontAwesomeIcons.twitter, "https://twitter.com/fifersheep"),
               SocialIcon(FontAwesomeIcons.linkedin, "https://linkedin.com/in/scott-laing-edi"),
+              SocialIcon(FontAwesomeIcons.kaggle, "https://www.kaggle.com/fifersheep"),
             ],
           ),
         ),
